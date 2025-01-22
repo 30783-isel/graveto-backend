@@ -393,7 +393,7 @@ def get_tokens_analyzed_from_db():
             score = row[12]
             comprado = row[13]
             try:
-                token_atual = getTokenMetrics(id, symbol)
+                token_atual = getTokenMetrics(id)
                 if token_atual and 'data' in token_atual and len(token_atual['data']) > 0:
                     quote = token_atual['data'][str((id))]['quote']['USD']
                     if quote:
@@ -456,7 +456,7 @@ def get_tokens_analyzed_from_db():
 
 
 
-def getTokenMetrics(id, symbol):
+def getTokenMetrics(id):
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
     params = {
         'id': id,
@@ -553,6 +553,54 @@ def get_best_tokens_endpoint():
 def getTokens():
     resultados_formatados = get_tokens_analyzed_from_db()
     return jsonify(resultados_formatados), 200
+
+
+@app.route('/get-btc-quote', methods=['GET'])
+def getBTCQuote():
+    try:
+        BTC_QUOTE = getTokenMetrics('1')
+        data = processBTC(BTC_QUOTE)
+        return jsonify(data), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500
+    
+def processBTC(BTC_QUOTE):
+    if BTC_QUOTE and 'data' in BTC_QUOTE and len(BTC_QUOTE['data']) > 0:
+        # Extraindo as informações relevantes da variável BTC_QUOTE e removendo o campo 'tags'
+        btc_data = BTC_QUOTE['data']['1']
+
+        data = {
+            'id': btc_data['id'],
+            'symbol': btc_data['symbol'],
+            'name': btc_data['name'],
+            'platform_name': 'Bitcoin',  # A plataforma é Bitcoin
+            'price': btc_data['quote']['USD']['price'],
+            'percent_change_1h': btc_data['quote']['USD']['percent_change_1h'],
+            'percent_change_24h': btc_data['quote']['USD']['percent_change_24h'],
+            'percent_change_7d': btc_data['quote']['USD']['percent_change_7d'], 
+            'percent_change_30d': btc_data['quote']['USD']['percent_change_30d'],
+            'percent_change_60d': btc_data['quote']['USD']['percent_change_60d'],
+            'percent_change_90d': btc_data['quote']['USD']['percent_change_90d'],
+            'volume_24h': btc_data['quote']['USD']['volume_24h'],
+            'market_cap': btc_data['quote']['USD']['market_cap'],
+            'slug': btc_data['slug'], 
+            'num_market_pairs': btc_data['num_market_pairs'], 
+            'date_added': btc_data['date_added'], 
+            'max_supply': btc_data['max_supply'],  
+            'circulating_supply': btc_data['circulating_supply'], 
+            'total_supply': btc_data['total_supply'], 
+            'is_active': btc_data['is_active'], 
+            'infinite_supply': btc_data['infinite_supply'], 
+            'is_fiat': btc_data['is_fiat'],
+            'self_reported_circulating_supply': btc_data['self_reported_circulating_supply'],
+            'self_reported_market_cap': btc_data['self_reported_market_cap'], 
+            'tvl_ratio': btc_data['tvl_ratio'],  # TVL (Total Value Locked)
+            'last_updated': btc_data['last_updated'],  # Última atualização
+        }
+
+        print(data)
+        return data
 
 
 if __name__ == '__main__':

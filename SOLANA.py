@@ -399,13 +399,14 @@ def get_tokens_analyzed_from_db():
                     if quote:
                         price_atual = quote.get('price') 
                         if price_atual > max_price:
+                            max_price = price_atual
                             updatedData  = {
                                 'max_price': price_atual
                             } 
                             sucess = database.update_buy(updatedData, symbol)
                             if sucess:
                                 logger.info(f" ${symbol} - max_price updated from - ${max_price} - to - ${price_atual}")
-                        if price_atual < max_price:
+                        if price_atual < min_price:
                             updatedData  = {
                                 'min_price': price_atual
                             } 

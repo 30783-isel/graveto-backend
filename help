@@ -1,0 +1,29 @@
+
+[CENTRALIZED] #Trocar no dex.py e no dex_database
+urlGetListingLatest = https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest
+urlGetQuote = https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC&convert=USD
+urlGetTokenByBaseAssetContractAddress = https://pro-api.coinmarketcap.com/v4/dex/spot-pairs/latest?network_id=16&base_asset_contract_address=
+serverUrl = http://localhost:5010/swap
+table_name_buy = buy_dex
+table_name_top10 = top10
+SCHEDULER_EXECUTION = 60
+SWAP_EXECUTION = 20
+PERCENTAGE_LOSS = 10
+NUM_TOKENS_PROCESSED = 10
+NUM_TOKENS_COINMARKETCAP = 1000
+
+
+
+[CENTRALIZED]
+urlGetListingLatest = https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest
+urlGetQuote = https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC&convert=USD
+urlGetTokenByBaseAssetContractAddress = https://pro-api.coinmarketcap.com/v4/dex/spot-pairs/latest?network_id=16&base_asset_contract_address=
+serverUrl = http://localhost:5010/swap
+table_name_buy = buy_dex
+table_name_top10 = top10
+SCHEDULER_EXECUTION = 1
+SWAP_EXECUTION = 1
+PERCENTAGE_LOSS = 0
+NUM_TOKENS_PROCESSED = 10
+NUM_TOKENS_COINMARKETCAP = 300
+

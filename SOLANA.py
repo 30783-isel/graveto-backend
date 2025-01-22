@@ -384,14 +384,14 @@ def get_tokens_analyzed_from_db():
             name = row[3]
             platform_name = row[4]
             price = row[5]
-            min_price = row[5]
-            max_price = row[5]
-            percent_change_1h = row[6]
-            percent_change_24h = row[7]
-            volume_24h = row[8]
-            market_cap = row[9]
-            score = row[10]
-            comprado = row[11]
+            min_price = row[6]
+            max_price = row[7]
+            percent_change_1h = row[8]
+            percent_change_24h = row[9]
+            volume_24h = row[10]
+            market_cap = row[11]
+            score = row[12]
+            comprado = row[13]
             try:
                 token_atual = getTokenMetrics(id, symbol)
                 if token_atual and 'data' in token_atual and len(token_atual['data']) > 0:
@@ -443,6 +443,7 @@ def get_tokens_analyzed_from_db():
                     }
                     
                     resultados_formatados.append(resultado_formatado)
+                    #logger.info( json.dumps(resultados_formatados, indent=4))
                 else:
                     continue   
             except Exception as e:
@@ -556,7 +557,7 @@ def getTokens():
 if __name__ == '__main__':
     try:
         if not is_running and not os.environ.get('FLASK_DEBUG'):
-            start_scheduler()  # Inicia o scheduler
+            #start_scheduler()  # Inicia o scheduler
             print('')
     except Exception as e:
         logger.error(f"Error: {e}.")

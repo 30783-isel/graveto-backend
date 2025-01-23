@@ -606,7 +606,7 @@ def processBTC(BTC_QUOTE):
 if __name__ == '__main__':
     try:
         if not is_running and not os.environ.get('FLASK_DEBUG'):
-            #start_scheduler()  # Inicia o scheduler
+            start_scheduler()  # Inicia o scheduler
             print('')
     except Exception as e:
         logger.error(f"Error: {e}.")

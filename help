@@ -1,5 +1,5 @@
 
-[CENTRALIZED] #Trocar no dex.py e no dex_database
+[CENTRALIZED]
 urlGetListingLatest = https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest
 urlGetQuote = https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?symbol=BTC&convert=USD
 urlGetBTCQuote = https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest?id=1
@@ -23,7 +23,7 @@ urlGetTokenByBaseAssetContractAddress = https://pro-api.coinmarketcap.com/v4/dex
 serverUrl = http://localhost:5010/swap
 table_name_buy = buy_dex
 table_name_top10 = top10
-SCHEDULER_EXECUTION = 1
+SCHEDULER_EXECUTION = 3
 SWAP_EXECUTION = 1
 PERCENTAGE_LOSS = 0
 NUM_TOKENS_PROCESSED = 10

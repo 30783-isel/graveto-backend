@@ -176,7 +176,7 @@ def process_tokens(score_weights):
 
     
     
-def get_top_10_1h(pools):
+def buy_tokens(pools):
     # Pesos para os tokens "best"
     score_weights = {
         'percent_change_1h': 0.5,
@@ -199,7 +199,6 @@ def get_top_10_1h(pools):
     if new_tokens:
         logger.info("Novos tokens detectados:")
         for token in new_tokens:
-            logger.info(token['name'] + '  --------------------------------------------------------------------------------------')
             id = token.get('id', None),
             symbol = token.get('symbol', None),
             name = token.get('name', None),
@@ -227,6 +226,7 @@ def get_top_10_1h(pools):
                 'score': score,
                 'comprado': True,
             }
+            logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
             sucess = swapToken(data, pools)
             #sucess = True
             if(sucess):
@@ -317,6 +317,7 @@ def swapToken(swapPairs, pools):
 
 
 def sell_tokens(pools):
+    tokens_vendidos = []
     resultados_formatados = get_tokens_analyzed_from_db()
     
     if resultados_formatados:
@@ -339,7 +340,6 @@ def sell_tokens(pools):
             gain_percentage_with_current_price = resultado["gain_percentage_with_current_price"]
             gain_percentage_with_max_price = resultado["gain_percentage_with_max_price"]
 
-
             if(gain_percentage_with_max_price < -float(PERCENTAGE_LOSS)):
                 data = {
                     'id': id,
@@ -355,6 +355,7 @@ def sell_tokens(pools):
                     'score': score,
                     'comprado': False
                 }
+                logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
                 sucess = swapToken(data, pools)
 
                 if(sucess):
@@ -363,14 +364,15 @@ def sell_tokens(pools):
                     } 
                     #sucess = database.delete_buy_token(data)
                     sucess = database.update_buy(updatedData, symbol)
+                    tokens_vendidos.append(data)
                     time.sleep(int(SWAP_EXECUTION)) 
                 else:
-                    logger.error("Erro ao comprar " + name)
-                    #logger.error("Erro ao comprar " + name)
+                    logger.error("Erro ao vender " + name)
             else:
                 logger.info(name + f' tem saldo positivo {gain_percentage_with_current_price}%' )
     else:
         logger.info("DB buy centralized empty.")
+    return tokens_vendidos
 
 def get_tokens_analyzed_from_db():
     resultados = database.getTokens()
@@ -525,7 +527,7 @@ def start_scheduler():
 def scheduler_worker(pools):
     try:
         logger.info(" --------------------------- Iniciando execução do scheduler ---------------------------")
-        get_top_10_1h(pools)
+        buy_tokens(pools)
         sell_tokens(pools)
         logger.info(" --------------------------- Execução do scheduler finalizada ---------------------------")
 
@@ -541,13 +543,36 @@ def scheduler_worker(pools):
 def get_best_tokens_endpoint():
     try:
         pools = get_pools() 
-        top_tokens = get_top_10_1h(pools)
+        top_tokens = buy_tokens(pools)
         sell_tokens(pools) 
         return jsonify(top_tokens), 200
     except Exception as e:
         logger.error(f"Error: {e}.")
         return jsonify({"estado": "Erro"}), 500
-    
+
+@app.route('/buy-tokens', methods=['GET'])
+def buy_tokens_call():
+    try:
+        logger.info('buy_tokens - start get_pools')
+        pools = get_pools() 
+        logger.info('buy_tokens - end get_pools')
+        top_tokens = buy_tokens(pools)
+        return jsonify(top_tokens), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500   
+
+@app.route('/sell-tokens', methods=['GET'])
+def sell_tokens_call():
+    try:
+        logger.info('sell_tokens - start get_pools')
+        pools = get_pools() 
+        logger.info('sell_tokens - end get_pools')
+        tokens_vendidos = sell_tokens(pools) 
+        return jsonify(tokens_vendidos), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500   
 
 @app.route('/get-tokens', methods=['GET'])
 def getTokens():
@@ -606,7 +631,7 @@ def processBTC(BTC_QUOTE):
 if __name__ == '__main__':
     try:
         if not is_running and not os.environ.get('FLASK_DEBUG'):
-            start_scheduler()  # Inicia o scheduler
+            #start_scheduler()  # Inicia o scheduler
             print('')
     except Exception as e:
         logger.error(f"Error: {e}.")

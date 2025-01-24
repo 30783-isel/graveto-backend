@@ -338,8 +338,8 @@ def buy_tokens(pools):
                     'volume_24h': volume_24h,
                     'market_cap': market_cap,
                     'score': score,
-                    'token_amount' : solana_amount,
-                    'token_quantity' : token_quantity,
+                    'solana_amount' : solana_amount,
+                    'token_amount' : token_quantity,
                     'comprado': True,
                 }
 
@@ -381,11 +381,15 @@ def swapToken(swapPairs, pools):
 
     url = "http://localhost:3000/swap"
 
+    if swapPairs['comprado'] == True:
+        token_amount = swapPairs['token_amount']
+    else:
+        token_amount = swapPairs['solana_amount']
     payload = {
         "pairAdress": pair_address,
         "quoteAsset": swapPairs['platform_token_address'],
         "baseAsset": "So11111111111111111111111111111111111111112",
-        "tokenAmount": swapPairs['token_amount'],
+        "tokenAmount": token_amount,
         "buy": swapPairs['comprado']
     }
     headers = {
@@ -397,9 +401,9 @@ def swapToken(swapPairs, pools):
             response = requests.post(url, data=json.dumps(payload), headers=headers)
             if response.status_code == 200:
                 if swapPairs.get('comprado'): 
-                    logger.info(f"Swap com sucesso --- Token: {data['name']} \033[92mcomprado\033[0m.")
+                    logger.info(f"Swap com sucesso --- {swapPairs['solana_amount']} de SOLANA por {swapPairs['token_amount']} {swapPairs['name']} \033[92mcomprado\033[0m.")
                 else:
-                    logger.info(f"Swap com sucesso --- Token: {data['name']} \033[91mvendido\033[0m.")
+                    logger.info(f"Swap com sucesso --- {swapPairs['token_amount']} de {swapPairs['name']} por {swapPairs['solana_amount']} de SOLANA\033[91mvendido\033[0m.")
                 return True
             else:
                 logger.error(f"Falha na requisição: {response.json()}")
@@ -440,6 +444,7 @@ def sell_tokens(pools):
     resultados_formatados = get_tokens_analyzed_from_db()
     
     if resultados_formatados:
+        solana_quote = processTokenQuote('5426')
         for resultado in resultados_formatados:
             id = resultado.get('id', None) 
             platform_token_address = resultado.get('platform_token_address', None) 
@@ -455,10 +460,14 @@ def sell_tokens(pools):
             volume_24h = resultado["volume_24h"]
             market_cap = resultado["market_cap"]
             score = resultado["score"]
-            quantity = resultado["quantity"]
+            token_amount = resultado["token_amount"]
             comprado = 0
             gain_percentage_with_current_price = resultado["gain_percentage_with_current_price"]
             gain_percentage_with_max_price = resultado["gain_percentage_with_max_price"]
+
+            
+            sol_amount = get_solana_from_tokens(solana_quote['price'], current_price, token_amount)
+            solana_amount = sol_amount['solana_amount']
 
             if(gain_percentage_with_max_price < -float(PERCENTAGE_LOSS)):
                 data = {
@@ -473,9 +482,11 @@ def sell_tokens(pools):
                     'volume_24h': volume_24h,
                     'market_cap': market_cap,
                     'score': score,
-                    'quantity': quantity,
+                    'solana_amount' : solana_amount,
+                    'token_amount': token_amount,
                     'comprado': False
                 }
+
                 logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
                 sucess = swapToken(data, pools)
 
@@ -514,7 +525,8 @@ def get_tokens_analyzed_from_db():
             volume_24h = row[10]
             market_cap = row[11]
             score = row[12]
-            comprado = row[13]
+            token_amount = row[13]
+            comprado = row[14]
             try:
                 token_atual = getTokenMetrics(id)
                 if token_atual and 'data' in token_atual and len(token_atual['data']) > 0:
@@ -561,6 +573,7 @@ def get_tokens_analyzed_from_db():
                         'volume_24h': volume_24h,
                         'market_cap': market_cap,
                         'score': score,
+                        'token_amount': token_amount,
                         'comprado': comprado,
                         "gain_percentage_with_current_price": gain_percentage_with_current_price,
                         "gain_percentage_with_max_price": gain_percentage_with_max_price
@@ -647,6 +660,14 @@ def get_price_in_solana(solana_value, token_value, amount_in_usd):
     }
     return data
 
+
+def get_solana_from_tokens(solana_value, token_value, token_quantity):
+    solana_amount = (token_quantity * token_value) / solana_value
+    data = {
+        'solana_amount': solana_amount
+    }
+    
+    return data
 
 
 

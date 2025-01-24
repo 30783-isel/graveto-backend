@@ -382,9 +382,9 @@ def swapToken(swapPairs, pools):
     url = "http://localhost:3000/swap"
 
     if swapPairs['comprado'] == True:
-        token_amount = swapPairs['token_amount']
-    else:
         token_amount = swapPairs['solana_amount']
+    else:
+        token_amount = swapPairs['token_amount']
     payload = {
         "pairAdress": pair_address,
         "quoteAsset": swapPairs['platform_token_address'],
@@ -403,7 +403,7 @@ def swapToken(swapPairs, pools):
                 if swapPairs.get('comprado'): 
                     logger.info(f"Swap com sucesso --- {swapPairs['solana_amount']} de SOLANA por {swapPairs['token_amount']} {swapPairs['name']} \033[92mcomprado\033[0m.")
                 else:
-                    logger.info(f"Swap com sucesso --- {swapPairs['token_amount']} de {swapPairs['name']} por {swapPairs['solana_amount']} de SOLANA\033[91mvendido\033[0m.")
+                    logger.info(f"Swap com sucesso --- {swapPairs['token_amount']} de {swapPairs['name']} por {swapPairs['solana_amount']} de SOLANA \033[91mvendido\033[0m.")
                 return True
             else:
                 logger.error(f"Falha na requisição: {response.json()}")

@@ -61,6 +61,8 @@ SWAP_EXECUTION = config.get(type, 'SWAP_EXECUTION')
 PERCENTAGE_LOSS = config.get(type, 'PERCENTAGE_LOSS')
 NUM_TOKENS_PROCESSED = config.get(type, 'NUM_TOKENS_PROCESSED')
 NUM_TOKENS_COINMARKETCAP = config.get(type, 'NUM_TOKENS_COINMARKETCAP')
+BTC_1H_PERCENT = config.get(type, 'BTC_1H_PERCENT')
+
 
 # Definir URL e parâmetros da API
 # https://sandbox-api.coinmarketcap.com
@@ -281,7 +283,7 @@ def process_tokens(score_weights):
 def buy_tokens(pools):
     top_tokens = []
     global global_percent_change_1h 
-    if global_percent_change_1h > 0:
+    if global_percent_change_1h > int(BTC_1H_PERCENT):
     
         score_weights = {
             'percent_change_1h': 0.5,
@@ -302,6 +304,8 @@ def buy_tokens(pools):
 
 
         if new_tokens:
+            solana_quote = processTokenQuote('5426')
+
             logger.info("Novos tokens detectados:")
             for token in new_tokens:
                 id = token.get('id', None),
@@ -315,6 +319,11 @@ def buy_tokens(pools):
                 volume_24h = token.get('volume_24h', None)
                 market_cap = token.get('market_cap', None)
                 score = token.get('score', None)
+
+                data = get_price_in_solana(solana_quote['price'], token['price'], 1)
+                solana_amount = data['solana_amount']
+                token_quantity = data['token_quantity']
+
                 data = {
                     'id': id,
                     'platform_token_address': platform_token_address,
@@ -329,8 +338,11 @@ def buy_tokens(pools):
                     'volume_24h': volume_24h,
                     'market_cap': market_cap,
                     'score': score,
+                    'token_amount' : solana_amount,
+                    'token_quantity' : token_quantity,
                     'comprado': True,
                 }
+
                 logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
                 sucess = swapToken(data, pools)
                 #sucess = True
@@ -373,6 +385,7 @@ def swapToken(swapPairs, pools):
         "pairAdress": pair_address,
         "quoteAsset": swapPairs['platform_token_address'],
         "baseAsset": "So11111111111111111111111111111111111111112",
+        "tokenAmount": swapPairs['token_amount'],
         "buy": swapPairs['comprado']
     }
     headers = {
@@ -442,6 +455,7 @@ def sell_tokens(pools):
             volume_24h = resultado["volume_24h"]
             market_cap = resultado["market_cap"]
             score = resultado["score"]
+            quantity = resultado["quantity"]
             comprado = 0
             gain_percentage_with_current_price = resultado["gain_percentage_with_current_price"]
             gain_percentage_with_max_price = resultado["gain_percentage_with_max_price"]
@@ -459,6 +473,7 @@ def sell_tokens(pools):
                     'volume_24h': volume_24h,
                     'market_cap': market_cap,
                     'score': score,
+                    'quantity': quantity,
                     'comprado': False
                 }
                 logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)

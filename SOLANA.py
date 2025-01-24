@@ -169,7 +169,14 @@ def getValueQuantity():
 
 
 
-
+@app.route('/get-sol-wallet', methods=['GET'])
+def get_sol_wallet_value():
+    try:
+        data = val_sol_wallet()
+        return jsonify(data), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500
 
 
 
@@ -468,7 +475,7 @@ def sell_tokens(pools):
             gain_percentage_with_max_price = resultado["gain_percentage_with_max_price"]
 
             
-            sol_amount = get_solana_from_tokens(solana_quote['price'], current_price, token_amount)
+            sol_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
             solana_amount = sol_amount['solana_amount']
 
             if(gain_percentage_with_max_price < -float(PERCENTAGE_LOSS)):
@@ -494,7 +501,8 @@ def sell_tokens(pools):
 
                 if(sucess):
                     updatedData  = {
-                        'comprado': comprado
+                        'comprado': comprado,
+                        'val_sol_sell': solana_amount
                     } 
                     #sucess = database.delete_buy_token(data)
                     sucess = database.update_buy(updatedData, symbol)
@@ -529,6 +537,8 @@ def get_tokens_analyzed_from_db():
             score = row[12]
             token_amount = row[13]
             comprado = row[14]
+            val_sol_sell = row[15]
+            
             try:
                 token_atual = getTokenMetrics(id)
                 if token_atual and 'data' in token_atual and len(token_atual['data']) > 0:
@@ -578,7 +588,8 @@ def get_tokens_analyzed_from_db():
                         'token_amount': token_amount,
                         'comprado': comprado,
                         "gain_percentage_with_current_price": gain_percentage_with_current_price,
-                        "gain_percentage_with_max_price": gain_percentage_with_max_price
+                        "gain_percentage_with_max_price": gain_percentage_with_max_price,
+                        "val_sol_sell": val_sol_sell
                     }
                     
                     resultados_formatados.append(resultado_formatado)
@@ -663,7 +674,7 @@ def get_price_in_solana(solana_value, token_value, amount_in_usd):
     return data
 
 
-def get_solana_from_tokens(solana_value, token_value, token_quantity):
+def get_solana_from_token(solana_value, token_value, token_quantity):
     solana_amount = (token_quantity * token_value) / solana_value
     data = {
         'solana_amount': solana_amount
@@ -675,19 +686,19 @@ def get_solana_from_tokens(solana_value, token_value, token_quantity):
 
 
 
+def val_sol_wallet():
+    lista_tokens = get_tokens_analyzed_from_db()
+    soma_total_sol = 0
+    if lista_tokens:
+        solana_quote = processTokenQuote('5426')
+        for token in lista_tokens:
+            if token.get('comprado') == True:
+                sol_amount = get_solana_from_token(solana_quote['price'], token.get('current_price', 0), token.get('token_amount', 0))
+            else:    
+                sol_amount = token.get('val_sol_sell', 0)
 
-
-
-
-
-
-
-
-
-
-
-
-
+            soma_total_sol += sol_amount
+    return soma_total_sol
 
 
 

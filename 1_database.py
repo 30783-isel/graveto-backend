@@ -57,8 +57,8 @@ def insert_buy(data):
     
             # Comando SQL para inserção
             query = """
-                INSERT INTO degen.buy_contralized (`id`, `platform_token_address`,`symbol`,`name`,`platform_name`,`price`,`min_price`,`max_price`,`percent_change_1h`,`percent_change_24h`,`volume_24h`,`market_cap`,`score`,`quantity`, `comprado`)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO degen.buy_contralized (`id`, `platform_token_address`,`symbol`,`name`,`platform_name`,`price`,`min_price`,`max_price`,`percent_change_1h`,`percent_change_24h`,`volume_24h`,`market_cap`,`score`,`quantity`, `comprado`, `val_sol_sell`)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
 
 
@@ -79,6 +79,7 @@ def insert_buy(data):
                 commons.to_float(data.get('score', 0.0)),
                 commons.to_float(data.get('token_amount', 0.0)),
                 commons.to_float(data.get('comprado', True)),
+                commons.to_float(data.get('val_sol_sell', 0.0)),
             )
             
             # Executando o comando de inserção com os valores extraídos do dicionário

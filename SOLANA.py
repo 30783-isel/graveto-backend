@@ -442,10 +442,12 @@ def swapToken(swapPairs, pools):
 def sell_tokens(pools):
     tokens_vendidos = []
     resultados_formatados = get_tokens_analyzed_from_db()
+
+    lista_tokens = [token for token in resultados_formatados if token['comprado'] == True]
     
-    if resultados_formatados:
+    if lista_tokens:
         solana_quote = processTokenQuote('5426')
-        for resultado in resultados_formatados:
+        for resultado in lista_tokens:
             id = resultado.get('id', None) 
             platform_token_address = resultado.get('platform_token_address', None) 
             symbol = resultado.get('symbol', None)
@@ -726,38 +728,5 @@ if __name__ == '__main__':
         logger.error(f"Error: {e}.")
 
     app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)# TODO Alterar use_reloader=False
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

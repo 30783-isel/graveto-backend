@@ -154,6 +154,22 @@ def getSolanaQuote():
 
 
 
+@app.route('/get-value-quantity', methods=['GET'])
+def getValueQuantity():
+    try:
+        solana = processTokenQuote('5426')
+        token = processTokenQuote('21870')
+        data = get_price_in_solana(solana['price'], token['price'], 1)
+        return jsonify(data), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500
+
+
+
+
+
+
 
 
 
@@ -605,6 +621,17 @@ def processTokenQuote(id):
         
         print(f"percent_change_1h: {global_percent_change_1h}")
         return data
+
+
+def get_price_in_solana(solana_value, token_value, amount_in_usd):
+    solana_amount = amount_in_usd / solana_value
+    token_quantity = amount_in_usd / token_value
+    data = {
+        'solana_amount': solana_amount,
+        'token_quantity': token_quantity
+    }
+    return data
+
 
 
 

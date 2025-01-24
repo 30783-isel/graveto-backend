@@ -54,7 +54,9 @@ type = 'CENTRALIZED'
 urlGetLatestSpotPairs = config.get(type, 'urlGetListingLatest')
 urlGetTokenByBaseAssetContractAddress = config.get(type, 'urlGetTokenByBaseAssetContractAddress')
 serverUrl = config.get(type, 'serverUrl')
-SCHEDULER_EXECUTION = config.get(type, 'SCHEDULER_EXECUTION')
+SCHEDULER_EXECUTION_BTC_QUOTE = config.get(type, 'SCHEDULER_EXECUTION_BTC_QUOTE')
+SCHEDULER_EXECUTION_BUY = config.get(type, 'SCHEDULER_EXECUTION_BUY')
+SCHEDULER_EXECUTION_SELL = config.get(type, 'SCHEDULER_EXECUTION_SELL')
 SWAP_EXECUTION = config.get(type, 'SWAP_EXECUTION')
 PERCENTAGE_LOSS = config.get(type, 'PERCENTAGE_LOSS')
 NUM_TOKENS_PROCESSED = config.get(type, 'NUM_TOKENS_PROCESSED')
@@ -71,6 +73,81 @@ headers = {
     'Accepts': 'application/json',
     'X-CMC_PRO_API_KEY': 'ff716c6f-21b5-4f8c-850d-8c5b2792e9a2',  # Substitua com sua chave
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@app.route('/best-tokens', methods=['GET'])
+def get_best_tokens_endpoint():
+    try:
+        pools = get_pools() 
+        top_tokens = buy_tokens(pools)
+        sell_tokens(pools) 
+        return jsonify(top_tokens), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500
+
+@app.route('/buy-tokens', methods=['GET'])
+def buy_tokens_call():
+    try:
+        logger.info('buy_tokens - start get_pools')
+        pools = get_pools() 
+        logger.info('buy_tokens - end get_pools')
+        top_tokens = buy_tokens(pools)
+        return jsonify(top_tokens), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500   
+
+@app.route('/sell-tokens', methods=['GET'])
+def sell_tokens_call():
+    try:
+        logger.info('sell_tokens - start get_pools')
+        pools = get_pools() 
+        logger.info('sell_tokens - end get_pools')
+        tokens_vendidos = sell_tokens(pools) 
+        return jsonify(tokens_vendidos), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500   
+
+@app.route('/get-tokens', methods=['GET'])
+def getTokens():
+    resultados_formatados = get_tokens_analyzed_from_db()
+    return jsonify(resultados_formatados), 200
+
+
+@app.route('/get-btc-quote', methods=['GET'])
+def getBTCQuote():
+    try:
+        data = processBTCQuote()
+        return jsonify(data), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500
+
+
+
+
+
+
+
 
 
 
@@ -177,73 +254,77 @@ def process_tokens(score_weights):
     
     
 def buy_tokens(pools):
-    # Pesos para os tokens "best"
-    score_weights = {
-        'percent_change_1h': 0.5,
-        'percent_change_24h': 0.5,
-        'volume_24h': 0.0,
-        'market_cap': 0.0,
-        'liquidity': 0.0
-    }
+    top_tokens = []
+    global global_percent_change_1h 
+    if global_percent_change_1h > 0:
+    
+        score_weights = {
+            'percent_change_1h': 0.5,
+            'percent_change_24h': 0.5,
+            'volume_24h': 0.0,
+            'market_cap': 0.0,
+            'liquidity': 0.0
+        }
 
-    top_tokens = process_tokens(score_weights)
+        top_tokens = process_tokens(score_weights)
 
-    existing_tokens = database.get_existing_tokens()
+        existing_tokens = database.get_existing_tokens()
 
-    new_tokens = []
-    for token in top_tokens:
-        if token['symbol'] not in [existing['symbol'] for existing in existing_tokens]:
-            new_tokens.append(token)
+        new_tokens = []
+        for token in top_tokens:
+            if token['symbol'] not in [existing['symbol'] for existing in existing_tokens]:
+                new_tokens.append(token)
 
 
-    if new_tokens:
-        logger.info("Novos tokens detectados:")
-        for token in new_tokens:
-            id = token.get('id', None),
-            symbol = token.get('symbol', None),
-            name = token.get('name', None),
-            platform_name = token.get('platform_name', None),
-            platform_token_address = token.get('platform_token_address', None),
-            price = token.get('price', None)
-            percent_change_1h = token.get('percent_change_1h', None)
-            percent_change_24h = token.get('percent_change_24h', None),
-            volume_24h = token.get('volume_24h', None)
-            market_cap = token.get('market_cap', None)
-            score = token.get('score', None)
-            data = {
-                'id': id,
-                'platform_token_address': platform_token_address,
-                'symbol': symbol,
-                'name': name,
-                'platform_name': platform_name,
-                'price': price,
-                'min_price': price,
-                'max_price': price,
-                'percent_change_1h': percent_change_1h,
-                'percent_change_24h': percent_change_24h,
-                'volume_24h': volume_24h,
-                'market_cap': market_cap,
-                'score': score,
-                'comprado': True,
-            }
-            logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
-            sucess = swapToken(data, pools)
-            #sucess = True
-            if(sucess):
-                isInserted = database.insert_buy(data)
-            else:
-                logger.error("Erro ao comprar " + data['name'][0])
-                for token in top_tokens:
-                    if token['name'] == data['name'][0]:
-                        top_tokens.remove(token)
-                        break  # Para garantir que remove o primeiro token com o nome "Orca"
-            time.sleep(int(SWAP_EXECUTION)) 
+        if new_tokens:
+            logger.info("Novos tokens detectados:")
+            for token in new_tokens:
+                id = token.get('id', None),
+                symbol = token.get('symbol', None),
+                name = token.get('name', None),
+                platform_name = token.get('platform_name', None),
+                platform_token_address = token.get('platform_token_address', None),
+                price = token.get('price', None)
+                percent_change_1h = token.get('percent_change_1h', None)
+                percent_change_24h = token.get('percent_change_24h', None),
+                volume_24h = token.get('volume_24h', None)
+                market_cap = token.get('market_cap', None)
+                score = token.get('score', None)
+                data = {
+                    'id': id,
+                    'platform_token_address': platform_token_address,
+                    'symbol': symbol,
+                    'name': name,
+                    'platform_name': platform_name,
+                    'price': price,
+                    'min_price': price,
+                    'max_price': price,
+                    'percent_change_1h': percent_change_1h,
+                    'percent_change_24h': percent_change_24h,
+                    'volume_24h': volume_24h,
+                    'market_cap': market_cap,
+                    'score': score,
+                    'comprado': True,
+                }
+                logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
+                sucess = swapToken(data, pools)
+                #sucess = True
+                if(sucess):
+                    isInserted = database.insert_buy(data)
+                else:
+                    logger.error("Erro ao comprar " + data['name'][0])
+                    for token in top_tokens:
+                        if token['name'] == data['name'][0]:
+                            top_tokens.remove(token)
+                            break  # Para garantir que remove o primeiro token com o nome "Orca"
+                time.sleep(int(SWAP_EXECUTION)) 
 
-        # Atualizar banco de dados para ter apenas os 10 tokens mais recentes
-        database.save_tokens_to_db(top_tokens)
+            # Atualizar banco de dados para ter apenas os 10 tokens mais recentes
+            database.save_tokens_to_db(top_tokens)
 
-    else:
-        logger.info("Nenhuma alteração nos tokens detectada.")
+        else:
+            logger.info("Nenhuma alteração nos tokens detectada.")
+        return top_tokens
     return top_tokens
 
 
@@ -475,122 +556,9 @@ def getTokenMetrics(id):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-is_running = False
-
-def start_scheduler():
-    global is_running
-    if is_running:
-        logger.info("Scheduler já está em execução. Pulando execução.")
-        return
-    pools = get_pools() 
-    scheduler = BackgroundScheduler()
-    scheduler.add_job(lambda: scheduler_worker(pools), 'interval', minutes=int(SCHEDULER_EXECUTION),
-                      next_run_time=datetime.now())
-    scheduler.start()
-    is_running = True
-    logger.info("Scheduler iniciado com sucesso.")
-
-
-def scheduler_worker(pools):
-    try:
-        logger.info(" --------------------------- Iniciando execução do scheduler ---------------------------")
-        buy_tokens(pools)
-        sell_tokens(pools)
-        logger.info(" --------------------------- Execução do scheduler finalizada ---------------------------")
-
-    except Exception as e:
-        logger.error(f"Erro ao executar o scheduler: {e}")
-
-    finally:
-        global is_running
-        is_running = False
-
-
-@app.route('/best-tokens', methods=['GET'])
-def get_best_tokens_endpoint():
-    try:
-        pools = get_pools() 
-        top_tokens = buy_tokens(pools)
-        sell_tokens(pools) 
-        return jsonify(top_tokens), 200
-    except Exception as e:
-        logger.error(f"Error: {e}.")
-        return jsonify({"estado": "Erro"}), 500
-
-@app.route('/buy-tokens', methods=['GET'])
-def buy_tokens_call():
-    try:
-        logger.info('buy_tokens - start get_pools')
-        pools = get_pools() 
-        logger.info('buy_tokens - end get_pools')
-        top_tokens = buy_tokens(pools)
-        return jsonify(top_tokens), 200
-    except Exception as e:
-        logger.error(f"Error: {e}.")
-        return jsonify({"estado": "Erro"}), 500   
-
-@app.route('/sell-tokens', methods=['GET'])
-def sell_tokens_call():
-    try:
-        logger.info('sell_tokens - start get_pools')
-        pools = get_pools() 
-        logger.info('sell_tokens - end get_pools')
-        tokens_vendidos = sell_tokens(pools) 
-        return jsonify(tokens_vendidos), 200
-    except Exception as e:
-        logger.error(f"Error: {e}.")
-        return jsonify({"estado": "Erro"}), 500   
-
-@app.route('/get-tokens', methods=['GET'])
-def getTokens():
-    resultados_formatados = get_tokens_analyzed_from_db()
-    return jsonify(resultados_formatados), 200
-
-
-@app.route('/get-btc-quote', methods=['GET'])
-def getBTCQuote():
-    try:
-        BTC_QUOTE = getTokenMetrics('1')
-        data = processBTC(BTC_QUOTE)
-        return jsonify(data), 200
-    except Exception as e:
-        logger.error(f"Error: {e}.")
-        return jsonify({"estado": "Erro"}), 500
-    
-def processBTC(BTC_QUOTE):
+def processBTCQuote():
+    global global_percent_change_1h 
+    BTC_QUOTE = getTokenMetrics('1')
     if BTC_QUOTE and 'data' in BTC_QUOTE and len(BTC_QUOTE['data']) > 0:
         # Extraindo as informações relevantes da variável BTC_QUOTE e removendo o campo 'tags'
         btc_data = BTC_QUOTE['data']['1']
@@ -620,23 +588,102 @@ def processBTC(BTC_QUOTE):
             'is_fiat': btc_data['is_fiat'],
             'self_reported_circulating_supply': btc_data['self_reported_circulating_supply'],
             'self_reported_market_cap': btc_data['self_reported_market_cap'], 
-            'tvl_ratio': btc_data['tvl_ratio'],  # TVL (Total Value Locked)
-            'last_updated': btc_data['last_updated'],  # Última atualização
+            'tvl_ratio': btc_data['tvl_ratio'], 
+            'last_updated': btc_data['last_updated'], 
         }
 
-        print(data)
-        return data
+        global_percent_change_1h = btc_data['quote']['USD']['percent_change_1h']
+        
+        print(f"percent_change_1h: {global_percent_change_1h}")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+global_percent_change_1h = 0
+
+def start_scheduler_btc_quote():
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(lambda: processBTCQuote(), 'interval', minutes=int(SCHEDULER_EXECUTION_BTC_QUOTE),next_run_time=datetime.now())
+    scheduler.start()
+    logger.info("Scheduler btc quote iniciado com sucesso.")
+
+def start_scheduler_buy():
+    pools = get_pools() 
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(lambda: buy_tokens(pools), 'interval', minutes=int(SCHEDULER_EXECUTION_BUY),next_run_time=datetime.now())
+    scheduler.start()
+    logger.info("Scheduler buy iniciado com sucesso.")
+
+def start_scheduler_sell():
+    pools = get_pools() 
+    scheduler = BackgroundScheduler()
+    scheduler.add_job(lambda: sell_tokens(pools), 'interval', minutes=int(SCHEDULER_EXECUTION_SELL),next_run_time=datetime.now())
+    scheduler.start()
+    logger.info("Scheduler sell iniciado com sucesso.")
 
 
 if __name__ == '__main__':
     try:
-        if not is_running and not os.environ.get('FLASK_DEBUG'):
-            #start_scheduler()  # Inicia o scheduler
-            print('')
+        start_scheduler_btc_quote()
+        start_scheduler_buy()
+        start_scheduler_sell()
     except Exception as e:
         logger.error(f"Error: {e}.")
 
     app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)# TODO Alterar use_reloader=False
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

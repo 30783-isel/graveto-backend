@@ -136,12 +136,21 @@ def getTokens():
 @app.route('/get-btc-quote', methods=['GET'])
 def getBTCQuote():
     try:
-        data = processBTCQuote()
+        data = processTokenQuote('1')
         return jsonify(data), 200
     except Exception as e:
         logger.error(f"Error: {e}.")
         return jsonify({"estado": "Erro"}), 500
 
+
+@app.route('/get-solana-quote', methods=['GET'])
+def getSolanaQuote():
+    try:
+        data = processTokenQuote('5426')
+        return jsonify(data), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500
 
 
 
@@ -556,45 +565,46 @@ def getTokenMetrics(id):
 
 
 
-def processBTCQuote():
+def processTokenQuote(id):
     global global_percent_change_1h 
-    BTC_QUOTE = getTokenMetrics('1')
-    if BTC_QUOTE and 'data' in BTC_QUOTE and len(BTC_QUOTE['data']) > 0:
-        # Extraindo as informações relevantes da variável BTC_QUOTE e removendo o campo 'tags'
-        btc_data = BTC_QUOTE['data']['1']
+    QUOTE = getTokenMetrics(id)
+    if QUOTE and 'data' in QUOTE and len(QUOTE['data']) > 0:
+        # Extraindo as informações relevantes da variável QUOTE e removendo o campo 'tags'
+        token_quote = QUOTE['data'][id]
 
         data = {
-            'id': btc_data['id'],
-            'symbol': btc_data['symbol'],
-            'name': btc_data['name'],
+            'id': token_quote['id'],
+            'symbol': token_quote['symbol'],
+            'name': token_quote['name'],
             'platform_name': 'Bitcoin',  # A plataforma é Bitcoin
-            'price': btc_data['quote']['USD']['price'],
-            'percent_change_1h': btc_data['quote']['USD']['percent_change_1h'],
-            'percent_change_24h': btc_data['quote']['USD']['percent_change_24h'],
-            'percent_change_7d': btc_data['quote']['USD']['percent_change_7d'], 
-            'percent_change_30d': btc_data['quote']['USD']['percent_change_30d'],
-            'percent_change_60d': btc_data['quote']['USD']['percent_change_60d'],
-            'percent_change_90d': btc_data['quote']['USD']['percent_change_90d'],
-            'volume_24h': btc_data['quote']['USD']['volume_24h'],
-            'market_cap': btc_data['quote']['USD']['market_cap'],
-            'slug': btc_data['slug'], 
-            'num_market_pairs': btc_data['num_market_pairs'], 
-            'date_added': btc_data['date_added'], 
-            'max_supply': btc_data['max_supply'],  
-            'circulating_supply': btc_data['circulating_supply'], 
-            'total_supply': btc_data['total_supply'], 
-            'is_active': btc_data['is_active'], 
-            'infinite_supply': btc_data['infinite_supply'], 
-            'is_fiat': btc_data['is_fiat'],
-            'self_reported_circulating_supply': btc_data['self_reported_circulating_supply'],
-            'self_reported_market_cap': btc_data['self_reported_market_cap'], 
-            'tvl_ratio': btc_data['tvl_ratio'], 
-            'last_updated': btc_data['last_updated'], 
+            'price': token_quote['quote']['USD']['price'],
+            'percent_change_1h': token_quote['quote']['USD']['percent_change_1h'],
+            'percent_change_24h': token_quote['quote']['USD']['percent_change_24h'],
+            'percent_change_7d': token_quote['quote']['USD']['percent_change_7d'], 
+            'percent_change_30d': token_quote['quote']['USD']['percent_change_30d'],
+            'percent_change_60d': token_quote['quote']['USD']['percent_change_60d'],
+            'percent_change_90d': token_quote['quote']['USD']['percent_change_90d'],
+            'volume_24h': token_quote['quote']['USD']['volume_24h'],
+            'market_cap': token_quote['quote']['USD']['market_cap'],
+            'slug': token_quote['slug'], 
+            'num_market_pairs': token_quote['num_market_pairs'], 
+            'date_added': token_quote['date_added'], 
+            'max_supply': token_quote['max_supply'],  
+            'circulating_supply': token_quote['circulating_supply'], 
+            'total_supply': token_quote['total_supply'], 
+            'is_active': token_quote['is_active'], 
+            'infinite_supply': token_quote['infinite_supply'], 
+            'is_fiat': token_quote['is_fiat'],
+            'self_reported_circulating_supply': token_quote['self_reported_circulating_supply'],
+            'self_reported_market_cap': token_quote['self_reported_market_cap'], 
+            'tvl_ratio': token_quote['tvl_ratio'], 
+            'last_updated': token_quote['last_updated'], 
         }
 
-        global_percent_change_1h = btc_data['quote']['USD']['percent_change_1h']
+        global_percent_change_1h = token_quote['quote']['USD']['percent_change_1h']
         
         print(f"percent_change_1h: {global_percent_change_1h}")
+        return data
 
 
 
@@ -624,7 +634,7 @@ global_percent_change_1h = 0
 
 def start_scheduler_btc_quote():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(lambda: processBTCQuote(), 'interval', minutes=int(SCHEDULER_EXECUTION_BTC_QUOTE),next_run_time=datetime.now())
+    scheduler.add_job(lambda: processTokenQuote('1'), 'interval', minutes=int(SCHEDULER_EXECUTION_BTC_QUOTE),next_run_time=datetime.now())
     scheduler.start()
     logger.info("Scheduler btc quote iniciado com sucesso.")
 
@@ -645,9 +655,10 @@ def start_scheduler_sell():
 
 if __name__ == '__main__':
     try:
-        start_scheduler_btc_quote()
-        start_scheduler_buy()
-        start_scheduler_sell()
+        #start_scheduler_btc_quote()
+        #start_scheduler_buy()
+        #start_scheduler_sell()
+        print('')
     except Exception as e:
         logger.error(f"Error: {e}.")
 

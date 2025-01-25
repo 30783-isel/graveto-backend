@@ -308,3 +308,76 @@ def delete_buy_token(token):
         if connection.is_connected():
             cursor.close()
             connection.close()
+
+
+def updateNumberBuys():
+    try:
+        connection = mysql.connector.connect(**config)
+        if connection.is_connected():
+            cursor = connection.cursor()
+            query = "UPDATE number_buys SET number_buyscol = number_buyscol + 1 WHERE number = 1"
+            cursor.execute(query)
+            connection.commit()
+            print("Update realizado com sucesso.")
+    except mysql.connector.Error as err:
+        print(f"Erro: {err}")
+
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+def getNumberBuys():
+    try:
+        connection = mysql.connector.connect(**config)
+        if connection.is_connected():
+            cursor = connection.cursor()
+            query = "SELECT number_buyscol FROM number_buys WHERE number = 1"
+            cursor.execute(query)
+            resultado = cursor.fetchone()
+            if resultado:
+                return resultado[0]
+            else:
+                print("Registro não encontrado.")
+                return None
+    except mysql.connector.Error as err:
+        print(f"Erro: {err}")
+        return None
+
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+
+
+
+import mysql.connector
+
+def truncateMultipleTables():
+    try:
+        connection = mysql.connector.connect(**config)
+        if connection.is_connected():
+            cursor = connection.cursor()
+
+            query = "UPDATE number_buys SET number_buyscol = 0"
+            cursor.execute(query)
+            
+            tables_to_truncate = ["buy_contralized", "top10_centralized"]
+
+            for table in tables_to_truncate:
+                query = f"TRUNCATE TABLE {table}"
+                cursor.execute(query)
+
+            connection.commit()
+            print("Tabelas truncadas com sucesso.")
+    
+    except mysql.connector.Error as err:
+        print(f"Erro: {err}")
+    
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
+
+

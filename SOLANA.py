@@ -79,7 +79,7 @@ headers = {
 }
 
 
-global_number_of_buys = 0
+
 
 
 
@@ -292,7 +292,6 @@ def process_tokens(score_weights):
 def buy_tokens(pools):
     top_tokens = []
     global global_percent_change_1h 
-    global global_number_of_buys
     if global_percent_change_1h > int(BTC_1H_PERCENT): # TODO Trocar o valor de BTC_1H_PERCENT pois assim está sempre a comprar
     
         score_weights = {
@@ -358,7 +357,7 @@ def buy_tokens(pools):
                 #sucess = True
                 if(sucess):
                     isInserted = database.insert_buy(data)
-                    global_number_of_buys+=1
+                    database.updateNumberBuys()
                 else:
                     logger.error("Erro ao comprar " + data['name'][0])
                     for token in top_tokens:
@@ -524,22 +523,23 @@ def get_tokens_analyzed_from_db():
     if resultados:
         resultados_formatados = []
         for row in resultados:
-            id = row[0]
-            platform_token_address = row[1]
-            symbol = row[2]
-            name = row[3]
-            platform_name = row[4]
-            price = row[5]
-            min_price = row[6]
-            max_price = row[7]
-            percent_change_1h = row[8]
-            percent_change_24h = row[9]
-            volume_24h = row[10]
-            market_cap = row[11]
-            score = row[12]
-            token_amount = row[13]
-            comprado = row[14]
-            val_sol_sell = row[15]
+            idk = row[0]
+            id = row[1]
+            platform_token_address = row[2]
+            symbol = row[3]
+            name = row[4]
+            platform_name = row[5]
+            price = row[6]
+            min_price = row[7]
+            max_price = row[8]
+            percent_change_1h = row[9]
+            percent_change_24h = row[10]
+            volume_24h = row[11]
+            market_cap = row[12]
+            score = row[13]
+            token_amount = row[14]
+            comprado = row[15]
+            val_sol_sell = row[16]
             
             try:
                 token_atual = getTokenMetrics(id)
@@ -662,7 +662,7 @@ def processTokenQuote(id):
 
         global_percent_change_1h = token_quote['quote']['USD']['percent_change_1h']
         
-        print(f"percent_change_1h: {global_percent_change_1h}")
+
         return data
 
 
@@ -685,7 +685,6 @@ def get_solana_from_token(solana_value, token_value, token_quantity):
 
 
 def val_sol_wallet():
-    global global_number_of_buys
     lista_tokens = get_tokens_analyzed_from_db()
     soma_total_sol = 0
     if lista_tokens:
@@ -697,13 +696,13 @@ def val_sol_wallet():
                 sol_amount = token.get('val_sol_sell', 0)
 
             soma_total_sol += sol_amount
-
-
-    data = {
-        'valor_investido_usd': global_number_of_buys * int(BUY_VALUE_IN_USD),
-        'valor_total_sol': soma_total_sol,
-        'valor_total_usd': soma_total_sol * int(solana_quote['price']),
-    }
+    data = {}
+    if soma_total_sol:
+        data = {
+            'valor_investido_usd': database.getNumberBuys() * int(BUY_VALUE_IN_USD),
+            'valor_total_sol': soma_total_sol,
+            'valor_total_usd': soma_total_sol * int(solana_quote['price']),
+        }
     return data
 
 

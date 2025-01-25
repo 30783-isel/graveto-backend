@@ -569,7 +569,7 @@ def sell_tokens(pools):
 
             solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
 
-            if(gain_percentage_with_max_price < -float(PERCENTAGE_LOSS)):
+            if(gain_percentage_with_max_price < float(PERCENTAGE_LOSS)):
                 data = {
                     'id': id,
                     'platform_token_address': platform_token_address,
@@ -828,9 +828,9 @@ def start_scheduler_sell():
 
 if __name__ == '__main__':
     try:
-        #start_scheduler_btc_quote()
-        #start_scheduler_buy()
-        #start_scheduler_sell()
+        start_scheduler_btc_quote()
+        start_scheduler_buy()
+        start_scheduler_sell()
         print('')
     except Exception as e:
         logger.error(f"Error: {e}.")

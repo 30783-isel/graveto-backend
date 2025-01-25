@@ -198,6 +198,7 @@ def getCleanSlate():
 @app.route('/update-config', methods=['POST'])
 def update_config_endpoint():
     try:
+        print('teste')
         data = request.get_json()
 
         if not data:

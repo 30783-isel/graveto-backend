@@ -62,6 +62,8 @@ PERCENTAGE_LOSS = config.get(type, 'PERCENTAGE_LOSS')
 NUM_TOKENS_PROCESSED = config.get(type, 'NUM_TOKENS_PROCESSED')
 NUM_TOKENS_COINMARKETCAP = config.get(type, 'NUM_TOKENS_COINMARKETCAP')
 BTC_1H_PERCENT = config.get(type, 'BTC_1H_PERCENT')
+BUY_VALUE_IN_USD = config.get(type, 'BUY_VALUE_IN_USD')
+
 
 
 # Definir URL e parâmetros da API
@@ -77,7 +79,7 @@ headers = {
 }
 
 
-
+global_number_of_buys = 0
 
 
 
@@ -161,7 +163,7 @@ def getValueQuantity():
     try:
         solana = processTokenQuote('5426')
         token = processTokenQuote('21870')
-        data = get_price_in_solana(solana['price'], token['price'], 1)
+        data = get_price_in_solana(solana['price'], token['price'], int(BUY_VALUE_IN_USD))
         return jsonify(data), 200
     except Exception as e:
         logger.error(f"Error: {e}.")
@@ -290,7 +292,8 @@ def process_tokens(score_weights):
 def buy_tokens(pools):
     top_tokens = []
     global global_percent_change_1h 
-    if global_percent_change_1h > int(BTC_1H_PERCENT):
+    global global_number_of_buys
+    if global_percent_change_1h > int(BTC_1H_PERCENT): # TODO Trocar o valor de BTC_1H_PERCENT pois assim está sempre a comprar
     
         score_weights = {
             'percent_change_1h': 0.5,
@@ -327,7 +330,7 @@ def buy_tokens(pools):
                 market_cap = token.get('market_cap', None)
                 score = token.get('score', None)
 
-                data = get_price_in_solana(solana_quote['price'], token['price'], 1)
+                data = get_price_in_solana(solana_quote['price'], token['price'], int(BUY_VALUE_IN_USD))
                 solana_amount = data['solana_amount']
                 token_quantity = data['token_quantity']
 
@@ -355,6 +358,7 @@ def buy_tokens(pools):
                 #sucess = True
                 if(sucess):
                     isInserted = database.insert_buy(data)
+                    global_number_of_buys+=1
                 else:
                     logger.error("Erro ao comprar " + data['name'][0])
                     for token in top_tokens:
@@ -474,9 +478,7 @@ def sell_tokens(pools):
             gain_percentage_with_current_price = resultado["gain_percentage_with_current_price"]
             gain_percentage_with_max_price = resultado["gain_percentage_with_max_price"]
 
-            
-            sol_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
-            solana_amount = sol_amount['solana_amount']
+            solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
 
             if(gain_percentage_with_max_price < -float(PERCENTAGE_LOSS)):
                 data = {
@@ -676,17 +678,14 @@ def get_price_in_solana(solana_value, token_value, amount_in_usd):
 
 def get_solana_from_token(solana_value, token_value, token_quantity):
     solana_amount = (token_quantity * token_value) / solana_value
-    data = {
-        'solana_amount': solana_amount
-    }
-    
-    return data
+    return solana_amount
 
 
 
 
 
 def val_sol_wallet():
+    global global_number_of_buys
     lista_tokens = get_tokens_analyzed_from_db()
     soma_total_sol = 0
     if lista_tokens:
@@ -698,7 +697,15 @@ def val_sol_wallet():
                 sol_amount = token.get('val_sol_sell', 0)
 
             soma_total_sol += sol_amount
-    return soma_total_sol
+
+
+    data = {
+        'valor_investido_usd': global_number_of_buys * int(BUY_VALUE_IN_USD),
+        'valor_total_sol': soma_total_sol,
+        'valor_total_usd': soma_total_sol * int(solana_quote['price']),
+    }
+    return data
+
 
 
 

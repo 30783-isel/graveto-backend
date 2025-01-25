@@ -195,6 +195,32 @@ def getCleanSlate():
 
 
 
+
+@app.route('/get-config', methods=['GET'])
+def get_config_endpoint():
+    try:
+        config = read_config()
+        config_data = {
+            "SCHEDULER_EXECUTION_BTC_QUOTE": config.get('CENTRALIZED', 'SCHEDULER_EXECUTION_BTC_QUOTE'),
+            "SCHEDULER_EXECUTION_SELL": config.get('CENTRALIZED', 'SCHEDULER_EXECUTION_SELL'),
+            "SCHEDULER_EXECUTION_BUY": config.get('CENTRALIZED', 'SCHEDULER_EXECUTION_BUY'),
+            "SWAP_EXECUTION": config.get('CENTRALIZED', 'SWAP_EXECUTION'),
+            "PERCENTAGE_LOSS": config.get('CENTRALIZED', 'PERCENTAGE_LOSS'),
+            "NUM_TOKENS_PROCESSED": config.get('CENTRALIZED', 'NUM_TOKENS_PROCESSED'),
+            "NUM_TOKENS_COINMARKETCAP": config.get('CENTRALIZED', 'NUM_TOKENS_COINMARKETCAP'),
+            "BTC_1H_PERCENT": config.get('CENTRALIZED', 'BTC_1H_PERCENT'),
+            "BUY_VALUE_IN_USD": config.get('CENTRALIZED', 'BUY_VALUE_IN_USD')
+        }
+        return jsonify(config_data), 200
+
+    except Exception as e:
+        return jsonify({"estado": "Erro", "mensagem": str(e)}), 500
+
+
+
+
+
+
 @app.route('/update-config', methods=['POST'])
 def update_config_endpoint():
     try:

@@ -44,9 +44,9 @@ console_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
-
+config_file_path = 'config.centralized.properties'
 config = configparser.ConfigParser()
-config.read('config.centralized.properties')
+config.read(config_file_path)
 
 type = 'CENTRALIZED'
 
@@ -179,6 +179,69 @@ def get_sol_wallet_value():
     except Exception as e:
         logger.error(f"Error: {e}.")
         return jsonify({"estado": "Erro"}), 500
+    
+
+@app.route('/clean-slate', methods=['GET'])
+def getCleanSlate():
+    try:
+        data = database.clean_slate()
+        return jsonify({"estado": "Erro"}), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500
+    
+
+
+
+
+
+@app.route('/update-config', methods=['POST'])
+def update_config_endpoint():
+    try:
+        data = request.get_json()
+
+        if not data:
+            return jsonify({"estado": "Erro", "mensagem": "Nenhum dado enviado."}), 400
+
+        config = read_config()
+
+        if 'SCHEDULER_EXECUTION_BTC_QUOTE' in data:
+            config.set('CENTRALIZED', 'SCHEDULER_EXECUTION_BTC_QUOTE', str(data['SCHEDULER_EXECUTION_BTC_QUOTE']))
+        if 'SCHEDULER_EXECUTION_SELL' in data:
+            config.set('CENTRALIZED', 'SCHEDULER_EXECUTION_SELL', str(data['SCHEDULER_EXECUTION_SELL']))
+        if 'SCHEDULER_EXECUTION_BUY' in data:
+            config.set('CENTRALIZED', 'SCHEDULER_EXECUTION_BUY', str(data['SCHEDULER_EXECUTION_BUY']))
+        if 'SWAP_EXECUTION' in data:
+            config.set('CENTRALIZED', 'SWAP_EXECUTION', str(data['SWAP_EXECUTION']))
+        if 'PERCENTAGE_LOSS' in data:
+            config.set('CENTRALIZED', 'PERCENTAGE_LOSS', str(data['PERCENTAGE_LOSS']))
+        if 'NUM_TOKENS_PROCESSED' in data:
+            config.set('CENTRALIZED', 'NUM_TOKENS_PROCESSED', str(data['NUM_TOKENS_PROCESSED']))
+        if 'NUM_TOKENS_COINMARKETCAP' in data:
+            config.set('CENTRALIZED', 'NUM_TOKENS_COINMARKETCAP', str(data['NUM_TOKENS_COINMARKETCAP']))
+        if 'BTC_1H_PERCENT' in data:
+            config.set('CENTRALIZED', 'BTC_1H_PERCENT', str(data['BTC_1H_PERCENT']))
+        if 'BUY_VALUE_IN_USD' in data:
+            config.set('CENTRALIZED', 'BUY_VALUE_IN_USD', str(data['BUY_VALUE_IN_USD']))
+
+        save_config(config)
+
+        return jsonify({"estado": "Sucesso", "mensagem": "Propriedades atualizadas com sucesso."}), 200
+
+    except Exception as e:
+        return jsonify({"estado": "Erro", "mensagem": str(e)}), 500
+
+
+def read_config():
+    config = configparser.ConfigParser()
+    config.read(config_file_path)
+    return config
+
+def save_config(config):
+    with open(config_file_path, 'w') as configfile:
+        config.write(configfile)
+
+
 
 
 
@@ -635,7 +698,7 @@ def processTokenQuote(id):
             'id': token_quote['id'],
             'symbol': token_quote['symbol'],
             'name': token_quote['name'],
-            'platform_name': 'Bitcoin',  # A plataforma é Bitcoin
+            'platform_name': token_quote['platform'], 
             'price': token_quote['quote']['USD']['price'],
             'percent_change_1h': token_quote['quote']['USD']['percent_change_1h'],
             'percent_change_24h': token_quote['quote']['USD']['percent_change_24h'],
@@ -697,9 +760,10 @@ def val_sol_wallet():
 
             soma_total_sol += sol_amount
     data = {}
+    numberBuys = database.getNumberBuys()
     if soma_total_sol:
         data = {
-            'valor_investido_usd': database.getNumberBuys() * int(BUY_VALUE_IN_USD),
+            'valor_investido_usd': int(numberBuys) * int(BUY_VALUE_IN_USD),
             'valor_total_sol': soma_total_sol,
             'valor_total_usd': soma_total_sol * int(solana_quote['price']),
         }

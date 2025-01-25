@@ -318,7 +318,6 @@ def updateNumberBuys():
             query = "UPDATE number_buys SET number_buyscol = number_buyscol + 1 WHERE number = 1"
             cursor.execute(query)
             connection.commit()
-            print("Update realizado com sucesso.")
     except mysql.connector.Error as err:
         print(f"Erro: {err}")
 
@@ -354,7 +353,7 @@ def getNumberBuys():
 
 import mysql.connector
 
-def truncateMultipleTables():
+def clean_slate():
     try:
         connection = mysql.connector.connect(**config)
         if connection.is_connected():
@@ -362,7 +361,7 @@ def truncateMultipleTables():
 
             query = "UPDATE number_buys SET number_buyscol = 0"
             cursor.execute(query)
-            
+
             tables_to_truncate = ["buy_contralized", "top10_centralized"]
 
             for table in tables_to_truncate:

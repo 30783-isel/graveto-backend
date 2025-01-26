@@ -825,7 +825,6 @@ sell_scheduler = None
 
 global_percent_change_1h = 0
 
-# Variável global para armazenar o resultado de get_pools()
 pools = None
 
 def schedule_btc_quote(id):
@@ -840,70 +839,70 @@ def schedule_sell_tokens(pools):
 def start_scheduler_btc_quote():
     global btc_quote_scheduler
     if btc_quote_scheduler is None:
-        # Criar o scheduler se não existir
         btc_quote_scheduler = BackgroundScheduler()
         btc_quote_scheduler.add_job(schedule_btc_quote('1'), 'interval', minutes=int(config.get(type, 'SCHEDULER_EXECUTION_BTC_QUOTE')), next_run_time=datetime.now())
         btc_quote_scheduler.start()
         logger.info("Scheduler btc quote iniciado com sucesso.")
     else:
-        # Reiniciar o scheduler se já estiver em execução
-        logger.info("Scheduler btc quote já está em execução.")
-        # Você pode, se preferir, parar, remover e reiniciar se necessário:
-        # btc_quote_scheduler.remove_all_jobs()
-        # btc_quote_scheduler.add_job(schedule_btc_quote('1'), 'interval', minutes=int(config.get(type, 'SCHEDULER_EXECUTION_BTC_QUOTE')), next_run_time=datetime.now())
-        # btc_quote_scheduler.start()
+        btc_quote_scheduler.remove_all_jobs()
+        btc_quote_scheduler.shutdown() 
+        btc_quote_scheduler = None 
+        logger.info("Scheduler btc quote reiniciado com sucesso.")
+        start_scheduler_btc_quote()
 
 def start_scheduler_buy():
     global buy_scheduler
     global pools
     if buy_scheduler is None:
+        if pools is None: 
+            pools = get_pools()
         buy_scheduler = BackgroundScheduler()
         buy_scheduler.add_job(schedule_buy_tokens(pools), 'interval', minutes=int(config.get(type, 'SCHEDULER_EXECUTION_BUY')), next_run_time=datetime.now())
         buy_scheduler.start()
         logger.info("Scheduler buy iniciado com sucesso.")
     else:
-        # Reiniciar o scheduler se já estiver em execução
-        logger.info("Scheduler buy já está em execução.")
-        # Similar ao btc_quote_scheduler, aqui você pode remover os jobs existentes e reiniciar se necessário:
-        # buy_scheduler.remove_all_jobs()
-        # buy_scheduler.add_job(schedule_buy_tokens(pools), 'interval', minutes=int(config.get(type, 'SCHEDULER_EXECUTION_BUY')), next_run_time=datetime.now())
-        # buy_scheduler.start()
+        buy_scheduler.remove_all_jobs()
+        buy_scheduler.shutdown()
+        buy_scheduler = None  
+        logger.info("Scheduler buy reiniciado com sucesso.")
+        start_scheduler_buy()
 
 def start_scheduler_sell():
     global sell_scheduler
     global pools
     if sell_scheduler is None:
+        if pools is None:
+            pools = get_pools()
         sell_scheduler = BackgroundScheduler()
         sell_scheduler.add_job(schedule_sell_tokens(pools), 'interval', minutes=int(config.get(type, 'SCHEDULER_EXECUTION_SELL')), next_run_time=datetime.now())
         sell_scheduler.start()
         logger.info("Scheduler sell iniciado com sucesso.")
     else:
-        # Reiniciar o scheduler se já estiver em execução
-        logger.info("Scheduler sell já está em execução.")
-        # Similar aos anteriores, você pode remover os jobs existentes e reiniciar se necessário:
-        # sell_scheduler.remove_all_jobs()
-        # sell_scheduler.add_job(schedule_sell_tokens(pools), 'interval', minutes=int(config.get(type, 'SCHEDULER_EXECUTION_SELL')), next_run_time=datetime.now())
-        # sell_scheduler.start()
+        sell_scheduler.remove_all_jobs()
+        sell_scheduler.shutdown() 
+        sell_scheduler = None
+        logger.info("Scheduler sell reiniciado com sucesso.")
+        start_scheduler_sell()
 
-# Função para reiniciar todos os schedulers
 def restart_all_schedulers():
     global btc_quote_scheduler, buy_scheduler, sell_scheduler, pools
 
-    # Parar todos os schedulers
     if btc_quote_scheduler:
         btc_quote_scheduler.remove_all_jobs()
-        btc_quote_scheduler.shutdown()  # Desliga o scheduler
+        btc_quote_scheduler.shutdown() 
+        btc_quote_scheduler = None 
         logger.info("Scheduler btc quote removido.")
     if buy_scheduler:
         buy_scheduler.remove_all_jobs()
-        buy_scheduler.shutdown()  # Desliga o scheduler
+        buy_scheduler.shutdown() 
+        buy_scheduler = None  
         logger.info("Scheduler buy removido.")
     if sell_scheduler:
         sell_scheduler.remove_all_jobs()
-        sell_scheduler.shutdown()  # Desliga o scheduler
+        sell_scheduler.shutdown()  
+        sell_scheduler = None 
         logger.info("Scheduler sell removido.")
 
-    # Reiniciar todos os schedulers
     start_scheduler_btc_quote()
     start_scheduler_buy()
     start_scheduler_sell()
@@ -918,7 +917,6 @@ def restart_schedulers():
 
 if __name__ == '__main__':
     try:
-        # Chama get_pools() apenas uma vez
         pools = get_pools()
         start_scheduler_btc_quote()
         start_scheduler_buy()

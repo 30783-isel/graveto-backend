@@ -45,10 +45,10 @@ console_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
+config_file_path = 'config.centralized.properties'
 
 def get_config_value(key):
     try:
-        config_file_path = 'config.centralized.properties'
         config = configparser.ConfigParser(interpolation=None)
         config.read(config_file_path)
         val = config.get(type, key)
@@ -201,17 +201,18 @@ def getCleanSlate():
 @app.route('/get-config', methods=['GET'])
 def get_config_endpoint():
     try:
-        config = read_config()
         config_data = {
-            "SCHEDULER_EXECUTION_BTC_QUOTE": config.get('CENTRALIZED', 'SCHEDULER_EXECUTION_BTC_QUOTE'),
-            "SCHEDULER_EXECUTION_SELL": config.get('CENTRALIZED', 'SCHEDULER_EXECUTION_SELL'),
-            "SCHEDULER_EXECUTION_BUY": config.get('CENTRALIZED', 'SCHEDULER_EXECUTION_BUY'),
-            "SWAP_EXECUTION": config.get('CENTRALIZED', 'SWAP_EXECUTION'),
-            "PERCENTAGE_LOSS": config.get('CENTRALIZED', 'PERCENTAGE_LOSS'),
-            "NUM_TOKENS_PROCESSED": config.get('CENTRALIZED', 'NUM_TOKENS_PROCESSED'),
-            "NUM_TOKENS_COINMARKETCAP": config.get('CENTRALIZED', 'NUM_TOKENS_COINMARKETCAP'),
-            "BTC_1H_PERCENT": config.get('CENTRALIZED', 'BTC_1H_PERCENT'),
-            "BUY_VALUE_IN_USD": config.get('CENTRALIZED', 'BUY_VALUE_IN_USD')
+            "SCHEDULER_EXECUTION_BTC_QUOTE": get_config_value('SCHEDULER_EXECUTION_BTC_QUOTE'),
+            "SCHEDULER_EXECUTION_SELL": get_config_value('SCHEDULER_EXECUTION_SELL'),
+            "SCHEDULER_EXECUTION_BUY": get_config_value('SCHEDULER_EXECUTION_BUY'),
+            "SWAP_EXECUTION": get_config_value('SWAP_EXECUTION'),
+            "PERCENTAGE_LOSS": get_config_value('PERCENTAGE_LOSS'),
+            "NUM_TOKENS_PROCESSED": get_config_value('NUM_TOKENS_PROCESSED'),
+            "NUM_TOKENS_COINMARKETCAP": get_config_value('NUM_TOKENS_COINMARKETCAP'),
+            "BTC_1H_PERCENT": get_config_value('BTC_1H_PERCENT'),
+            "BUY_VALUE_IN_USD": get_config_value('BUY_VALUE_IN_USD'),
+            "EXECUTE_OPERATIONS": get_config_value('EXECUTE_OPERATIONS'),
+            "PAUSE_TOKEN_METRICS": get_config_value('PAUSE_TOKEN_METRICS')
         }
         return jsonify(config_data), 200
 
@@ -252,6 +253,10 @@ def update_config_endpoint():
             config.set('CENTRALIZED', 'BTC_1H_PERCENT', str(data['BTC_1H_PERCENT']))
         if 'BUY_VALUE_IN_USD' in data:
             config.set('CENTRALIZED', 'BUY_VALUE_IN_USD', str(data['BUY_VALUE_IN_USD']))
+        if 'EXECUTE_OPERATIONS' in data:
+            config.set('CENTRALIZED', 'EXECUTE_OPERATIONS', str(data['EXECUTE_OPERATIONS']))
+        if 'PAUSE_TOKEN_METRICS' in data:
+            config.set('CENTRALIZED', 'PAUSE_TOKEN_METRICS', str(data['PAUSE_TOKEN_METRICS']))
 
         save_config(config)
 
@@ -635,7 +640,7 @@ def get_tokens_analyzed_from_db():
             
             try:
                 token_atual = getTokenMetrics(id)
-                time.sleep(int(get_config_value('GET_TOKEN_METRICS')))
+                time.sleep(int(get_config_value('PAUSE_TOKEN_METRICS')))
                 if token_atual and 'data' in token_atual and len(token_atual['data']) > 0:
                     quote = token_atual['data'][str((id))]['quote']['USD']
                     if quote:

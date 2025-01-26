@@ -46,18 +46,18 @@ logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
 config_file_path = 'config.centralized.properties'
-config = configparser.ConfigParser()
+config = configparser.ConfigParser(interpolation=None)
 config.read(config_file_path)
 
 type = 'CENTRALIZED'
 
 parameters = {
     'start': '1',
-    'limit': config.get(type, 'NUM_TOKENS_COINMARKETCAP')  # Aumentamos o limite para pegar mais tokens
+    'limit': config.get(type, 'NUM_TOKENS_COINMARKETCAP') 
 }
 headers = {
     'Accepts': 'application/json',
-    'X-CMC_PRO_API_KEY': 'ff716c6f-21b5-4f8c-850d-8c5b2792e9a2',  # Substitua com sua chave
+    'X-CMC_PRO_API_KEY': 'ff716c6f-21b5-4f8c-850d-8c5b2792e9a2',  
 }
 
 
@@ -374,6 +374,7 @@ def process_tokens(score_weights):
     
     
 def buy_tokens(pools):
+    logger.info(' A iniciar BUY +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     top_tokens = []
     global global_percent_change_1h 
     if global_percent_change_1h > int(config.get(type, 'BTC_1H_PERCENT')): # TODO Trocar o valor de BTC_1H_PERCENT pois assim está sempre a comprar
@@ -447,15 +448,12 @@ def buy_tokens(pools):
                     for token in top_tokens:
                         if token['name'] == data['name'][0]:
                             top_tokens.remove(token)
-                            break  # Para garantir que remove o primeiro token com o nome "Orca"
+                            break 
                 time.sleep(int(config.get(type, 'SWAP_EXECUTION'))) 
-
-            # Atualizar banco de dados para ter apenas os 10 tokens mais recentes
             database.save_tokens_to_db(top_tokens)
-
         else:
             logger.info("Nenhuma alteração nos tokens detectada.")
-        return top_tokens
+    logger.info(' A concluir BUY ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     return top_tokens
 
 
@@ -534,6 +532,7 @@ def swapToken(swapPairs, pools):
 
 
 def sell_tokens(pools):
+    logger.info(' A iniciar SELL ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     tokens_vendidos = []
     resultados_formatados = get_tokens_analyzed_from_db()
 
@@ -599,6 +598,7 @@ def sell_tokens(pools):
                 logger.info(name + f' tem saldo positivo {gain_percentage_with_current_price}%' )
     else:
         logger.info("DB buy centralized empty.")
+    logger.info(' A concluir SELL +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     return tokens_vendidos
 
 def get_tokens_analyzed_from_db():
@@ -822,10 +822,12 @@ def val_sol_wallet():
 btc_quote_scheduler = None
 buy_scheduler = None
 sell_scheduler = None
-
 global_percent_change_1h = 0
-
 pools = None
+
+def get_config_value(key):
+    config.read(config_file_path)
+    return int(config.get(type, key))
 
 def schedule_btc_quote(id):
     return functools.partial(processTokenQuote, id)
@@ -839,8 +841,15 @@ def schedule_sell_tokens(pools):
 def start_scheduler_btc_quote():
     global btc_quote_scheduler
     if btc_quote_scheduler is None:
+        execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_BTC_QUOTE")
+        logger.info(f'A iniciar BTC-Quote scheduler!!! - Executa de {execute_every_x_minutes} minutos')
         btc_quote_scheduler = BackgroundScheduler()
-        btc_quote_scheduler.add_job(schedule_btc_quote('1'), 'interval', minutes=int(config.get(type, 'SCHEDULER_EXECUTION_BTC_QUOTE')), next_run_time=datetime.now())
+        btc_quote_scheduler.add_job(
+            schedule_btc_quote('1'), 
+            'interval', 
+            minutes=execute_every_x_minutes, 
+            next_run_time=datetime.now()
+        )
         btc_quote_scheduler.start()
         logger.info("Scheduler btc quote iniciado com sucesso.")
     else:
@@ -854,10 +863,17 @@ def start_scheduler_buy():
     global buy_scheduler
     global pools
     if buy_scheduler is None:
+        execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_BUY")
+        logger.info(f'A iniciar BUY scheduler!!! - Executa de {execute_every_x_minutes} minutos')
         if pools is None: 
             pools = get_pools()
         buy_scheduler = BackgroundScheduler()
-        buy_scheduler.add_job(schedule_buy_tokens(pools), 'interval', minutes=int(config.get(type, 'SCHEDULER_EXECUTION_BUY')), next_run_time=datetime.now())
+        buy_scheduler.add_job(
+            schedule_buy_tokens(pools), 
+            'interval', 
+            minutes=execute_every_x_minutes, 
+            next_run_time=datetime.now()
+        )
         buy_scheduler.start()
         logger.info("Scheduler buy iniciado com sucesso.")
     else:
@@ -871,10 +887,17 @@ def start_scheduler_sell():
     global sell_scheduler
     global pools
     if sell_scheduler is None:
+        execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_SELL")
+        logger.info(f'A iniciar SELL scheduler!!! - Executa de {execute_every_x_minutes} minutos')
         if pools is None:
             pools = get_pools()
         sell_scheduler = BackgroundScheduler()
-        sell_scheduler.add_job(schedule_sell_tokens(pools), 'interval', minutes=int(config.get(type, 'SCHEDULER_EXECUTION_SELL')), next_run_time=datetime.now())
+        sell_scheduler.add_job(
+            schedule_sell_tokens(pools), 
+            'interval', 
+            minutes=execute_every_x_minutes, 
+            next_run_time=datetime.now()
+        )
         sell_scheduler.start()
         logger.info("Scheduler sell iniciado com sucesso.")
     else:
@@ -926,3 +949,4 @@ if __name__ == '__main__':
         logger.error(f"Error: {e}.")
 
     app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)
+

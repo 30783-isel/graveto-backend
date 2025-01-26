@@ -49,11 +49,19 @@ config_file_path = 'config.centralized.properties'
 config = configparser.ConfigParser(interpolation=None)
 config.read(config_file_path)
 
+def get_config_value(key):
+    try:
+        val = config.get(type, key)
+        print(key + ' - ' + val)
+        return int(val)
+    except ValueError:
+        return config.get(type, key)
+
 type = 'CENTRALIZED'
 
 parameters = {
     'start': '1',
-    'limit': config.get(type, 'NUM_TOKENS_COINMARKETCAP') 
+    'limit': get_config_value('NUM_TOKENS_COINMARKETCAP') 
 }
 headers = {
     'Accepts': 'application/json',
@@ -66,18 +74,18 @@ headers = {
 
 
 # Obter a URL do arquivo de configurações
-urlGetLatestSpotPairs = config.get(type, 'urlGetListingLatest')
-urlGetTokenByBaseAssetContractAddress = config.get(type, 'urlGetTokenByBaseAssetContractAddress')
-serverUrl = config.get(type, 'serverUrl')
-SCHEDULER_EXECUTION_BTC_QUOTE = config.get(type, 'SCHEDULER_EXECUTION_BTC_QUOTE')
-SCHEDULER_EXECUTION_BUY = config.get(type, 'SCHEDULER_EXECUTION_BUY')
-SCHEDULER_EXECUTION_SELL = config.get(type, 'SCHEDULER_EXECUTION_SELL')
-SWAP_EXECUTION = config.get(type, 'SWAP_EXECUTION')
-PERCENTAGE_LOSS = config.get(type, 'PERCENTAGE_LOSS')
-NUM_TOKENS_PROCESSED = config.get(type, 'NUM_TOKENS_PROCESSED')
-NUM_TOKENS_COINMARKETCAP = config.get(type, 'NUM_TOKENS_COINMARKETCAP')
-BTC_1H_PERCENT = config.get(type, 'BTC_1H_PERCENT')
-BUY_VALUE_IN_USD = config.get(type, 'BUY_VALUE_IN_USD')
+urlGetLatestSpotPairs = config.get(type,'urlGetListingLatest')
+urlGetTokenByBaseAssetContractAddress = get_config_value('urlGetTokenByBaseAssetContractAddress')
+serverUrl = get_config_value('serverUrl')
+SCHEDULER_EXECUTION_BTC_QUOTE = get_config_value('SCHEDULER_EXECUTION_BTC_QUOTE')
+SCHEDULER_EXECUTION_BUY = get_config_value('SCHEDULER_EXECUTION_BUY')
+SCHEDULER_EXECUTION_SELL = get_config_value('SCHEDULER_EXECUTION_SELL')
+SWAP_EXECUTION = get_config_value('SWAP_EXECUTION')
+PERCENTAGE_LOSS = get_config_value('PERCENTAGE_LOSS')
+NUM_TOKENS_PROCESSED = get_config_value('NUM_TOKENS_PROCESSED')
+NUM_TOKENS_COINMARKETCAP = get_config_value('NUM_TOKENS_COINMARKETCAP')
+BTC_1H_PERCENT = get_config_value('BTC_1H_PERCENT')
+BUY_VALUE_IN_USD = get_config_value('BUY_VALUE_IN_USD')
 
 
 
@@ -116,7 +124,7 @@ def buy_tokens_call():
 @app.route('/sell-tokens', methods=['GET'])
 def sell_tokens_call():
     try:
-        logger.info('sell_tokens - start get_pools')
+        logger.info('sell_toke ns - start get_pools')
         pools = get_pools() 
         logger.info('sell_tokens - end get_pools')
         tokens_vendidos = sell_tokens(pools) 
@@ -157,7 +165,7 @@ def getValueQuantity():
     try:
         solana = processTokenQuote('5426')
         token = processTokenQuote('21870')
-        data = get_price_in_solana(solana['price'], token['price'], int(config.get(type, 'BUY_VALUE_IN_USD')))
+        data = get_price_in_solana(solana['price'], token['price'], int(get_config_value('BUY_VALUE_IN_USD')))
         return jsonify(data), 200
     except Exception as e:
         logger.error(f"Error: {e}.")
@@ -179,7 +187,7 @@ def get_sol_wallet_value():
 def getCleanSlate():
     try:
         data = database.clean_slate()
-        return jsonify({"estado": "Erro"}), 200
+        return jsonify({"estado": "Sucesso"}), 200
     except Exception as e:
         logger.error(f"Error: {e}.")
         return jsonify({"estado": "Erro"}), 500
@@ -367,7 +375,7 @@ def process_tokens(score_weights):
         all_data = pd.concat([all_data, row], ignore_index=True)
 
     # Ordenando os tokens pela pontuação, da maior para a menor
-    best_tokens = all_data.sort_values(by='score', ascending=False).head(int(config.get(type, 'NUM_TOKENS_PROCESSED')))
+    best_tokens = all_data.sort_values(by='score', ascending=False).head(int(get_config_value('NUM_TOKENS_PROCESSED')))
     
     return best_tokens.to_dict(orient='records')
 
@@ -377,7 +385,7 @@ def buy_tokens(pools):
     logger.info(' A iniciar BUY +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     top_tokens = []
     global global_percent_change_1h 
-    if global_percent_change_1h > int(config.get(type, 'BTC_1H_PERCENT')): # TODO Trocar o valor de BTC_1H_PERCENT pois assim está sempre a comprar
+    if global_percent_change_1h > int(get_config_value('BTC_1H_PERCENT')): # TODO Trocar o valor de BTC_1H_PERCENT pois assim está sempre a comprar
     
         score_weights = {
             'percent_change_1h': 0.5,
@@ -414,7 +422,7 @@ def buy_tokens(pools):
                 market_cap = token.get('market_cap', None)
                 score = token.get('score', None)
 
-                data = get_price_in_solana(solana_quote['price'], token['price'], int(config.get(type, 'BUY_VALUE_IN_USD')))
+                data = get_price_in_solana(solana_quote['price'], token['price'], int(get_config_value('BUY_VALUE_IN_USD')))
                 solana_amount = data['solana_amount']
                 token_quantity = data['token_quantity']
 
@@ -449,7 +457,7 @@ def buy_tokens(pools):
                         if token['name'] == data['name'][0]:
                             top_tokens.remove(token)
                             break 
-                time.sleep(int(config.get(type, 'SWAP_EXECUTION'))) 
+                time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
             database.save_tokens_to_db(top_tokens)
         else:
             logger.info("Nenhuma alteração nos tokens detectada.")
@@ -562,7 +570,7 @@ def sell_tokens(pools):
 
             solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
 
-            if(gain_percentage_with_max_price < float(config.get(type, 'PERCENTAGE_LOSS'))):
+            if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
                 data = {
                     'id': id,
                     'platform_token_address': platform_token_address,
@@ -591,7 +599,7 @@ def sell_tokens(pools):
                     #sucess = database.delete_buy_token(data)
                     sucess = database.update_buy(updatedData, symbol)
                     tokens_vendidos.append(data)
-                    time.sleep(int(config.get(type, 'SWAP_EXECUTION'))) 
+                    time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
                 else:
                     logger.error("Erro ao vender " + name)
             else:
@@ -627,7 +635,7 @@ def get_tokens_analyzed_from_db():
             
             try:
                 token_atual = getTokenMetrics(id)
-                time.sleep(int(config.get(type, 'GET_TOKEN_METRICS')))
+                time.sleep(int(get_config_value('GET_TOKEN_METRICS')))
                 if token_atual and 'data' in token_atual and len(token_atual['data']) > 0:
                     quote = token_atual['data'][str((id))]['quote']['USD']
                     if quote:
@@ -785,7 +793,7 @@ def val_sol_wallet():
     numberBuys = database.getNumberBuys()
     if soma_total_sol:
         data = {
-            'valor_investido_usd': int(numberBuys) * int(config.get(type, 'BUY_VALUE_IN_USD')),
+            'valor_investido_usd': int(numberBuys) * int(get_config_value('BUY_VALUE_IN_USD')),
             'valor_total_sol': soma_total_sol,
             'valor_total_usd': soma_total_sol * int(solana_quote['price']),
         }
@@ -825,9 +833,7 @@ sell_scheduler = None
 global_percent_change_1h = 0
 pools = None
 
-def get_config_value(key):
-    config.read(config_file_path)
-    return int(config.get(type, key))
+
 
 def schedule_btc_quote(id):
     return functools.partial(processTokenQuote, id)

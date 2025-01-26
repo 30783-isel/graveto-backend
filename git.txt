@@ -1,0 +1,2 @@
+eval $(ssh-agent -s)
+ssh-add /c/Users/P038320/.ssh/key

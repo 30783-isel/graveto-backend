@@ -45,14 +45,14 @@ console_handler.setFormatter(formatter)
 logger.addHandler(file_handler)
 logger.addHandler(console_handler)
 
-config_file_path = 'config.centralized.properties'
-config = configparser.ConfigParser(interpolation=None)
-config.read(config_file_path)
 
 def get_config_value(key):
     try:
+        config_file_path = 'config.centralized.properties'
+        config = configparser.ConfigParser(interpolation=None)
+        config.read(config_file_path)
         val = config.get(type, key)
-        print(key + ' - ' + val)
+        print(key + ' -' + val)
         return int(val)
     except ValueError:
         return config.get(type, key)
@@ -74,7 +74,7 @@ headers = {
 
 
 # Obter a URL do arquivo de configurações
-urlGetLatestSpotPairs = config.get(type,'urlGetListingLatest')
+urlGetLatestSpotPairs = get_config_value('urlGetListingLatest')
 urlGetTokenByBaseAssetContractAddress = get_config_value('urlGetTokenByBaseAssetContractAddress')
 serverUrl = get_config_value('serverUrl')
 SCHEDULER_EXECUTION_BTC_QUOTE = get_config_value('SCHEDULER_EXECUTION_BTC_QUOTE')
@@ -382,87 +382,87 @@ def process_tokens(score_weights):
     
     
 def buy_tokens(pools):
-    logger.info(' A iniciar BUY +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-    top_tokens = []
-    global global_percent_change_1h 
-    if global_percent_change_1h > int(get_config_value('BTC_1H_PERCENT')): # TODO Trocar o valor de BTC_1H_PERCENT pois assim está sempre a comprar
-    
-        score_weights = {
-            'percent_change_1h': 0.5,
-            'percent_change_24h': 0.5,
-            'volume_24h': 0.0,
-            'market_cap': 0.0,
-            'liquidity': 0.0
-        }
+    logger.info('INICIAR BUY ######################################################################################################################')
+    if(get_config_value("EXECUTE_OPERATIONS") == 1):
+        top_tokens = []
+        global global_percent_change_1h 
+        if global_percent_change_1h > int(get_config_value('BTC_1H_PERCENT')): # TODO Trocar o valor de BTC_1H_PERCENT pois assim está sempre a comprar
+        
+            score_weights = {
+                'percent_change_1h': 0.5,
+                'percent_change_24h': 0.5,
+                'volume_24h': 0.0,
+                'market_cap': 0.0,
+                'liquidity': 0.0
+            }
 
-        top_tokens = process_tokens(score_weights)
+            top_tokens = process_tokens(score_weights)
 
-        existing_tokens = database.get_existing_tokens()
+            existing_tokens = database.get_existing_tokens()
 
-        new_tokens = []
-        for token in top_tokens:
-            if token['symbol'] not in [existing['symbol'] for existing in existing_tokens]:
-                new_tokens.append(token)
+            new_tokens = []
+            for token in top_tokens:
+                if token['symbol'] not in [existing['symbol'] for existing in existing_tokens]:
+                    new_tokens.append(token)
 
 
-        if new_tokens:
-            solana_quote = processTokenQuote('5426')
+            if new_tokens:
+                solana_quote = processTokenQuote('5426')
 
-            logger.info("Novos tokens detectados:")
-            for token in new_tokens:
-                id = token.get('id', None),
-                symbol = token.get('symbol', None),
-                name = token.get('name', None),
-                platform_name = token.get('platform_name', None),
-                platform_token_address = token.get('platform_token_address', None),
-                price = token.get('price', None)
-                percent_change_1h = token.get('percent_change_1h', None)
-                percent_change_24h = token.get('percent_change_24h', None),
-                volume_24h = token.get('volume_24h', None)
-                market_cap = token.get('market_cap', None)
-                score = token.get('score', None)
+                logger.info("Novos tokens detectados:")
+                for token in new_tokens:
+                    id = token.get('id', None),
+                    symbol = token.get('symbol', None),
+                    name = token.get('name', None),
+                    platform_name = token.get('platform_name', None),
+                    platform_token_address = token.get('platform_token_address', None),
+                    price = token.get('price', None)
+                    percent_change_1h = token.get('percent_change_1h', None)
+                    percent_change_24h = token.get('percent_change_24h', None),
+                    volume_24h = token.get('volume_24h', None)
+                    market_cap = token.get('market_cap', None)
+                    score = token.get('score', None)
 
-                data = get_price_in_solana(solana_quote['price'], token['price'], int(get_config_value('BUY_VALUE_IN_USD')))
-                solana_amount = data['solana_amount']
-                token_quantity = data['token_quantity']
+                    data = get_price_in_solana(solana_quote['price'], token['price'], int(get_config_value('BUY_VALUE_IN_USD')))
+                    solana_amount = data['solana_amount']
+                    token_quantity = data['token_quantity']
 
-                data = {
-                    'id': id,
-                    'platform_token_address': platform_token_address,
-                    'symbol': symbol,
-                    'name': name,
-                    'platform_name': platform_name,
-                    'price': price,
-                    'min_price': price,
-                    'max_price': price,
-                    'percent_change_1h': percent_change_1h,
-                    'percent_change_24h': percent_change_24h,
-                    'volume_24h': volume_24h,
-                    'market_cap': market_cap,
-                    'score': score,
-                    'solana_amount' : solana_amount,
-                    'token_amount' : token_quantity,
-                    'comprado': True,
-                }
+                    data = {
+                        'id': id,
+                        'platform_token_address': platform_token_address,
+                        'symbol': symbol,
+                        'name': name,
+                        'platform_name': platform_name,
+                        'price': price,
+                        'min_price': price,
+                        'max_price': price,
+                        'percent_change_1h': percent_change_1h,
+                        'percent_change_24h': percent_change_24h,
+                        'volume_24h': volume_24h,
+                        'market_cap': market_cap,
+                        'score': score,
+                        'solana_amount' : solana_amount,
+                        'token_amount' : token_quantity,
+                        'comprado': True,
+                    }
 
-                logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
-                sucess = swapToken(data, pools)
-                #sucess = True
-                if(sucess):
-                    isInserted = database.insert_buy(data)
-                    database.updateNumberBuys()
-                else:
-                    logger.error("Erro ao comprar " + data['name'][0])
-                    for token in top_tokens:
-                        if token['name'] == data['name'][0]:
-                            top_tokens.remove(token)
-                            break 
-                time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
-            database.save_tokens_to_db(top_tokens)
-        else:
-            logger.info("Nenhuma alteração nos tokens detectada.")
-    logger.info(' A concluir BUY ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-    return top_tokens
+                    logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
+                    sucess = swapToken(data, pools)
+                    #sucess = True
+                    if(sucess):
+                        isInserted = database.insert_buy(data)
+                        database.updateNumberBuys()
+                    else:
+                        logger.error("Erro ao comprar " + data['name'][0])
+                        for token in top_tokens:
+                            if token['name'] == data['name'][0]:
+                                top_tokens.remove(token)
+                                break 
+                    time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
+                database.save_tokens_to_db(top_tokens)
+            else:
+                logger.info("Nenhuma alteração nos tokens detectada.")
+        return top_tokens
 
 
 
@@ -540,74 +540,74 @@ def swapToken(swapPairs, pools):
 
 
 def sell_tokens(pools):
-    logger.info(' A iniciar SELL ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-    tokens_vendidos = []
-    resultados_formatados = get_tokens_analyzed_from_db()
+    logger.info('INICIAR SELL #####################################################################################################################')
+    if(get_config_value("EXECUTE_OPERATIONS") == 1):
+        tokens_vendidos = []
+        resultados_formatados = get_tokens_analyzed_from_db()
 
-    lista_tokens = [token for token in resultados_formatados if token['comprado'] == True]
-    
-    if lista_tokens:
-        solana_quote = processTokenQuote('5426')
-        for resultado in lista_tokens:
-            id = resultado.get('id', None) 
-            platform_token_address = resultado.get('platform_token_address', None) 
-            symbol = resultado.get('symbol', None)
-            name = resultado["name"]
-            platform_name = resultado["platform_name"]
-            price = resultado["price"]
-            min_price = resultado["min_price"]
-            max_price = resultado["max_price"]
-            current_price = resultado["current_price"]
-            percent_change_1h = resultado["percent_change_1h"]
-            percent_change_24h = resultado["percent_change_24h"]
-            volume_24h = resultado["volume_24h"]
-            market_cap = resultado["market_cap"]
-            score = resultado["score"]
-            token_amount = resultado["token_amount"]
-            comprado = 0
-            gain_percentage_with_current_price = resultado["gain_percentage_with_current_price"]
-            gain_percentage_with_max_price = resultado["gain_percentage_with_max_price"]
+        lista_tokens = [token for token in resultados_formatados if token['comprado'] == True]
+        
+        if lista_tokens:
+            solana_quote = processTokenQuote('5426')
+            for resultado in lista_tokens:
+                id = resultado.get('id', None) 
+                platform_token_address = resultado.get('platform_token_address', None) 
+                symbol = resultado.get('symbol', None)
+                name = resultado["name"]
+                platform_name = resultado["platform_name"]
+                price = resultado["price"]
+                min_price = resultado["min_price"]
+                max_price = resultado["max_price"]
+                current_price = resultado["current_price"]
+                percent_change_1h = resultado["percent_change_1h"]
+                percent_change_24h = resultado["percent_change_24h"]
+                volume_24h = resultado["volume_24h"]
+                market_cap = resultado["market_cap"]
+                score = resultado["score"]
+                token_amount = resultado["token_amount"]
+                comprado = 0
+                gain_percentage_with_current_price = resultado["gain_percentage_with_current_price"]
+                gain_percentage_with_max_price = resultado["gain_percentage_with_max_price"]
 
-            solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
+                solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
 
-            if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
-                data = {
-                    'id': id,
-                    'platform_token_address': platform_token_address,
-                    'symbol': symbol,
-                    'name': name,
-                    'platform_name': platform_name,
-                    'price': price,
-                    'percent_change_1h': percent_change_1h,
-                    'percent_change_24h': percent_change_24h,
-                    'volume_24h': volume_24h,
-                    'market_cap': market_cap,
-                    'score': score,
-                    'solana_amount' : solana_amount,
-                    'token_amount': token_amount,
-                    'comprado': False
-                }
+                if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
+                    data = {
+                        'id': id,
+                        'platform_token_address': platform_token_address,
+                        'symbol': symbol,
+                        'name': name,
+                        'platform_name': platform_name,
+                        'price': price,
+                        'percent_change_1h': percent_change_1h,
+                        'percent_change_24h': percent_change_24h,
+                        'volume_24h': volume_24h,
+                        'market_cap': market_cap,
+                        'score': score,
+                        'solana_amount' : solana_amount,
+                        'token_amount': token_amount,
+                        'comprado': False
+                    }
 
-                logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
-                sucess = swapToken(data, pools)
+                    logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
+                    sucess = swapToken(data, pools)
 
-                if(sucess):
-                    updatedData  = {
-                        'comprado': comprado,
-                        'val_sol_sell': solana_amount
-                    } 
-                    #sucess = database.delete_buy_token(data)
-                    sucess = database.update_buy(updatedData, symbol)
-                    tokens_vendidos.append(data)
-                    time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
+                    if(sucess):
+                        updatedData  = {
+                            'comprado': comprado,
+                            'val_sol_sell': solana_amount
+                        } 
+                        #sucess = database.delete_buy_token(data)
+                        sucess = database.update_buy(updatedData, symbol)
+                        tokens_vendidos.append(data)
+                        time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
+                    else:
+                        logger.error("Erro ao vender " + name)
                 else:
-                    logger.error("Erro ao vender " + name)
-            else:
-                logger.info(name + f' tem saldo positivo {gain_percentage_with_current_price}%' )
-    else:
-        logger.info("DB buy centralized empty.")
-    logger.info(' A concluir SELL +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-    return tokens_vendidos
+                    logger.info(name + f' tem saldo positivo {gain_percentage_with_current_price}%' )
+        else:
+            logger.info("DB buy centralized empty.")
+        return tokens_vendidos
 
 def get_tokens_analyzed_from_db():
     resultados = database.getTokens()
@@ -836,82 +836,88 @@ pools = None
 
 
 def schedule_btc_quote(id):
+    logger.info(' A iniciar schedule_btc_quote ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     return functools.partial(processTokenQuote, id)
 
 def schedule_buy_tokens(pools):
+    logger.info(' A iniciar schedule_buy_tokens +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     return functools.partial(buy_tokens, pools)
 
 def schedule_sell_tokens(pools):
+    logger.info(' A iniciar schedule_sell_tokens ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     return functools.partial(sell_tokens, pools)
 
 def start_scheduler_btc_quote():
-    global btc_quote_scheduler
-    if btc_quote_scheduler is None:
-        execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_BTC_QUOTE")
-        logger.info(f'A iniciar BTC-Quote scheduler!!! - Executa de {execute_every_x_minutes} minutos')
-        btc_quote_scheduler = BackgroundScheduler()
-        btc_quote_scheduler.add_job(
-            schedule_btc_quote('1'), 
-            'interval', 
-            minutes=execute_every_x_minutes, 
-            next_run_time=datetime.now()
-        )
-        btc_quote_scheduler.start()
-        logger.info("Scheduler btc quote iniciado com sucesso.")
-    else:
-        btc_quote_scheduler.remove_all_jobs()
-        btc_quote_scheduler.shutdown() 
-        btc_quote_scheduler = None 
-        logger.info("Scheduler btc quote reiniciado com sucesso.")
-        start_scheduler_btc_quote()
+    if(get_config_value("EXECUTE_SCHEDULERS") == 1):
+        global btc_quote_scheduler
+        if btc_quote_scheduler is None:
+            execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_BTC_QUOTE")
+            logger.info(f'A iniciar BTC-Quote scheduler!!! - Executa de {execute_every_x_minutes} minutos')
+            btc_quote_scheduler = BackgroundScheduler()
+            btc_quote_scheduler.add_job(
+                schedule_btc_quote('1'), 
+                'interval', 
+                minutes=execute_every_x_minutes, 
+                next_run_time=datetime.now()
+            )
+            btc_quote_scheduler.start()
+            logger.info("Scheduler btc quote iniciado com sucesso.")
+        else:
+            btc_quote_scheduler.remove_all_jobs()
+            btc_quote_scheduler.shutdown() 
+            btc_quote_scheduler = None 
+            logger.info("Scheduler btc quote reiniciado com sucesso.")
+            start_scheduler_btc_quote()
 
 def start_scheduler_buy():
-    global buy_scheduler
-    global pools
-    if buy_scheduler is None:
-        execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_BUY")
-        logger.info(f'A iniciar BUY scheduler!!! - Executa de {execute_every_x_minutes} minutos')
-        if pools is None: 
-            pools = get_pools()
-        buy_scheduler = BackgroundScheduler()
-        buy_scheduler.add_job(
-            schedule_buy_tokens(pools), 
-            'interval', 
-            minutes=execute_every_x_minutes, 
-            next_run_time=datetime.now()
-        )
-        buy_scheduler.start()
-        logger.info("Scheduler buy iniciado com sucesso.")
-    else:
-        buy_scheduler.remove_all_jobs()
-        buy_scheduler.shutdown()
-        buy_scheduler = None  
-        logger.info("Scheduler buy reiniciado com sucesso.")
-        start_scheduler_buy()
+    if(get_config_value("EXECUTE_SCHEDULERS") == 1):
+        global buy_scheduler
+        global pools
+        if buy_scheduler is None:
+            execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_BUY")
+            logger.info(f'A iniciar BUY scheduler!!! - Executa de {execute_every_x_minutes} minutos')
+            if pools is None: 
+                pools = get_pools()
+            buy_scheduler = BackgroundScheduler()
+            buy_scheduler.add_job(
+                schedule_buy_tokens(pools), 
+                'interval', 
+                minutes=execute_every_x_minutes, 
+                next_run_time=datetime.now()
+            )
+            buy_scheduler.start()
+            logger.info("Scheduler buy iniciado com sucesso.")
+        else:
+            buy_scheduler.remove_all_jobs()
+            buy_scheduler.shutdown()
+            buy_scheduler = None  
+            logger.info("Scheduler buy reiniciado com sucesso.")
+            start_scheduler_buy()
 
 def start_scheduler_sell():
-    global sell_scheduler
-    global pools
-    if sell_scheduler is None:
-        execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_SELL")
-        logger.info(f'A iniciar SELL scheduler!!! - Executa de {execute_every_x_minutes} minutos')
-        if pools is None:
-            pools = get_pools()
-        sell_scheduler = BackgroundScheduler()
-        sell_scheduler.add_job(
-            schedule_sell_tokens(pools), 
-            'interval', 
-            minutes=execute_every_x_minutes, 
-            next_run_time=datetime.now()
-        )
-        sell_scheduler.start()
-        logger.info("Scheduler sell iniciado com sucesso.")
-    else:
-        sell_scheduler.remove_all_jobs()
-        sell_scheduler.shutdown() 
-        sell_scheduler = None
-        logger.info("Scheduler sell reiniciado com sucesso.")
-        start_scheduler_sell()
+    if(get_config_value("EXECUTE_SCHEDULERS") == 1):
+        global sell_scheduler
+        global pools
+        if sell_scheduler is None:
+            execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_SELL")
+            logger.info(f'A iniciar SELL scheduler!!! - Executa de {execute_every_x_minutes} minutos')
+            if pools is None:
+                pools = get_pools()
+            sell_scheduler = BackgroundScheduler()
+            sell_scheduler.add_job(
+                schedule_sell_tokens(pools), 
+                'interval', 
+                minutes=execute_every_x_minutes, 
+                next_run_time=datetime.now()
+            )
+            sell_scheduler.start()
+            logger.info("Scheduler sell iniciado com sucesso.")
+        else:
+            sell_scheduler.remove_all_jobs()
+            sell_scheduler.shutdown() 
+            sell_scheduler = None
+            logger.info("Scheduler sell reiniciado com sucesso.")
+            start_scheduler_sell()
 
 def restart_all_schedulers():
     global btc_quote_scheduler, buy_scheduler, sell_scheduler, pools

@@ -1,10 +1,11 @@
 import os
 import requests
-import pandas as pd
 import json
 import time
-import importlib
 import logging
+import importlib
+import functools
+import pandas as pd
 import configparser
 from datetime import datetime
 from flask import Flask, jsonify, request
@@ -805,23 +806,32 @@ def val_sol_wallet():
 
 global_percent_change_1h = 0
 
+def schedule_btc_quote(id):
+    return functools.partial(processTokenQuote, id)
+
+def schedule_buy_tokens(pools):
+    return functools.partial(buy_tokens, pools)
+
+def schedule_sell_tokens(pools):
+    return functools.partial(sell_tokens, pools)
+
 def start_scheduler_btc_quote():
     scheduler = BackgroundScheduler()
-    scheduler.add_job(lambda: processTokenQuote('1'), 'interval', minutes=int(SCHEDULER_EXECUTION_BTC_QUOTE),next_run_time=datetime.now())
+    scheduler.add_job(schedule_btc_quote('1'), 'interval', minutes=int(SCHEDULER_EXECUTION_BTC_QUOTE),next_run_time=datetime.now())
     scheduler.start()
     logger.info("Scheduler btc quote iniciado com sucesso.")
 
 def start_scheduler_buy():
     pools = get_pools() 
     scheduler = BackgroundScheduler()
-    scheduler.add_job(lambda: buy_tokens(pools), 'interval', minutes=int(SCHEDULER_EXECUTION_BUY),next_run_time=datetime.now())
+    scheduler.add_job(schedule_buy_tokens(pools), 'interval', minutes=int(SCHEDULER_EXECUTION_BUY),next_run_time=datetime.now())
     scheduler.start()
     logger.info("Scheduler buy iniciado com sucesso.")
 
 def start_scheduler_sell():
     pools = get_pools() 
     scheduler = BackgroundScheduler()
-    scheduler.add_job(lambda: sell_tokens(pools), 'interval', minutes=int(SCHEDULER_EXECUTION_SELL),next_run_time=datetime.now())
+    scheduler.add_job(schedule_sell_tokens(pools), 'interval', minutes=int(SCHEDULER_EXECUTION_SELL),next_run_time=datetime.now())
     scheduler.start()
     logger.info("Scheduler sell iniciado com sucesso.")
 

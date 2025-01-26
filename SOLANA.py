@@ -112,9 +112,7 @@ def get_best_tokens_endpoint():
 @app.route('/buy-tokens', methods=['GET'])
 def buy_tokens_call():
     try:
-        logger.info('buy_tokens - start get_pools')
-        pools = get_pools() 
-        logger.info('buy_tokens - end get_pools')
+        global pools
         top_tokens = buy_tokens(pools)
         return jsonify(top_tokens), 200
     except Exception as e:
@@ -124,9 +122,7 @@ def buy_tokens_call():
 @app.route('/sell-tokens', methods=['GET'])
 def sell_tokens_call():
     try:
-        logger.info('sell_toke ns - start get_pools')
-        pools = get_pools() 
-        logger.info('sell_tokens - end get_pools')
+        global pools
         tokens_vendidos = sell_tokens(pools) 
         return jsonify(tokens_vendidos), 200
     except Exception as e:

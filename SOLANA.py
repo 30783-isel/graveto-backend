@@ -861,7 +861,7 @@ def schedule_sell_tokens(pools):
     return functools.partial(sell_tokens, pools)
 
 def start_scheduler_btc_quote():
-    if(get_config_value("EXECUTE_SCHEDULERS") == 1):
+    if(get_config_value("EXECUTE_SCHEDULER") == 1):
         global btc_quote_scheduler
         if btc_quote_scheduler is None:
             execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_BTC_QUOTE")
@@ -883,7 +883,7 @@ def start_scheduler_btc_quote():
             start_scheduler_btc_quote()
 
 def start_scheduler_buy():
-    if(get_config_value("EXECUTE_SCHEDULERS") == 1):
+    if(get_config_value("EXECUTE_SCHEDULER") == 1):
         global buy_scheduler
         global pools
         if buy_scheduler is None:
@@ -908,7 +908,7 @@ def start_scheduler_buy():
             start_scheduler_buy()
 
 def start_scheduler_sell():
-    if(get_config_value("EXECUTE_SCHEDULERS") == 1):
+    if(get_config_value("EXECUTE_SCHEDULER") == 1):
         global sell_scheduler
         global pools
         if sell_scheduler is None:

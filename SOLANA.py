@@ -96,7 +96,7 @@ list_tokens = []
 @app.before_request
 def limit_remote_addr():
     client_ip = request.remote_addr
-    if client_ip.startswith('87.') or client_ip.startswith('192.168.') or client_ip == '127.0.0.1':
+    if client_ip.startswith('87.') or client_ip.startswith('89.') or client_ip.startswith('192.168.') or client_ip == '127.0.0.1':
         return None
     logger.error('Bloqueado Ip - ' + client_ip)
     return jsonify({"estado": "Erro", "mensagem": "IP não autorizado"}), 403

@@ -210,6 +210,7 @@ def get_config_endpoint():
             "BTC_1H_PERCENT": get_config_value('BTC_1H_PERCENT'),
             "BUY_VALUE_IN_USD": get_config_value('BUY_VALUE_IN_USD'),
             "EXECUTE_OPERATIONS": get_config_value('EXECUTE_OPERATIONS'),
+            "EXECUTE_SCHEDULER": get_config_value('EXECUTE_SCHEDULER'),
             "PAUSE_TOKEN_METRICS": get_config_value('PAUSE_TOKEN_METRICS'),
             "ADD_REPEATED": get_config_value('ADD_REPEATED')
             
@@ -259,7 +260,8 @@ def update_config_endpoint():
             config.set('CENTRALIZED', 'PAUSE_TOKEN_METRICS', str(data['PAUSE_TOKEN_METRICS']))
         if 'ADD_REPEATED' in data:
             config.set('CENTRALIZED', 'ADD_REPEATED', str(data['ADD_REPEATED']))
-
+        if 'EXECUTE_SCHEDULER' in data:
+            config.set('CENTRALIZED', 'EXECUTE_SCHEDULER', str(data['EXECUTE_SCHEDULER']))
 
         save_config(config)
 

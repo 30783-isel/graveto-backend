@@ -654,8 +654,8 @@ def get_tokens_analyzed_from_db():
             try:
                 token_atual = getTokenMetrics(id)
                 time.sleep(int(get_config_value('PAUSE_TOKEN_METRICS')))
-                if token_atual and 'data' in token_atual and len(token_atual['data']) > 0:
-                    quote = token_atual['data'][str((id))]['quote']['USD']
+                if token_atual:
+                    quote = token_atual['quote']['USD']
                     if quote:
                         price_atual = quote.get('price') 
                         if price_atual > max_price:

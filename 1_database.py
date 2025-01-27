@@ -120,9 +120,10 @@ def get_existing_tokens():
             existing_tokens = []
             for row in resultados:
                 existing_tokens.append({
-                    'id': row[0],
-                    'platform_token_address': row[1],
-                    'symbol': row[2],
+                    'idk': row[0],
+                    'id': row[1],
+                    'platform_token_address': row[2],
+                    'symbol': row[3],
                 })
                 
             return existing_tokens

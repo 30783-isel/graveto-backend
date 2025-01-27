@@ -86,6 +86,8 @@ NUM_TOKENS_PROCESSED = get_config_value('NUM_TOKENS_PROCESSED')
 NUM_TOKENS_COINMARKETCAP = get_config_value('NUM_TOKENS_COINMARKETCAP')
 BTC_1H_PERCENT = get_config_value('BTC_1H_PERCENT')
 BUY_VALUE_IN_USD = get_config_value('BUY_VALUE_IN_USD')
+ADD_REPEATED = get_config_value('ADD_REPEATED')
+
 
 
 
@@ -208,7 +210,9 @@ def get_config_endpoint():
             "BTC_1H_PERCENT": get_config_value('BTC_1H_PERCENT'),
             "BUY_VALUE_IN_USD": get_config_value('BUY_VALUE_IN_USD'),
             "EXECUTE_OPERATIONS": get_config_value('EXECUTE_OPERATIONS'),
-            "PAUSE_TOKEN_METRICS": get_config_value('PAUSE_TOKEN_METRICS')
+            "PAUSE_TOKEN_METRICS": get_config_value('PAUSE_TOKEN_METRICS'),
+            "ADD_REPEATED": get_config_value('ADD_REPEATED')
+            
         }
         return jsonify(config_data), 200
 
@@ -253,6 +257,9 @@ def update_config_endpoint():
             config.set('CENTRALIZED', 'EXECUTE_OPERATIONS', str(data['EXECUTE_OPERATIONS']))
         if 'PAUSE_TOKEN_METRICS' in data:
             config.set('CENTRALIZED', 'PAUSE_TOKEN_METRICS', str(data['PAUSE_TOKEN_METRICS']))
+        if 'ADD_REPEATED' in data:
+            config.set('CENTRALIZED', 'ADD_REPEATED', str(data['ADD_REPEATED']))
+
 
         save_config(config)
 
@@ -387,7 +394,7 @@ def buy_tokens(pools):
     if(get_config_value("EXECUTE_OPERATIONS") == 1):
         top_tokens = []
         global global_percent_change_1h 
-        if global_percent_change_1h > int(get_config_value('BTC_1H_PERCENT')): # TODO Trocar o valor de BTC_1H_PERCENT pois assim está sempre a comprar
+        if global_percent_change_1h > int(get_config_value('BTC_1H_PERCENT')):
         
             score_weights = {
                 'percent_change_1h': 0.5,
@@ -398,13 +405,16 @@ def buy_tokens(pools):
             }
 
             top_tokens = process_tokens(score_weights)
-
             existing_tokens = database.get_existing_tokens()
 
             new_tokens = []
-            for token in top_tokens:
-                if token['symbol'] not in [existing['symbol'] for existing in existing_tokens]:
-                    new_tokens.append(token)
+            if get_config_value('ADD_REPEATED') == 1:
+                new_tokens = top_tokens
+            else:
+                
+                for token in top_tokens:
+                    if token['symbol'] not in [existing['symbol'] for existing in existing_tokens]:
+                        new_tokens.append(token)
 
 
             if new_tokens:
@@ -424,7 +434,7 @@ def buy_tokens(pools):
                     market_cap = token.get('market_cap', None)
                     score = token.get('score', None)
 
-                    data = get_price_in_solana(solana_quote['price'], token['price'], int(get_config_value('BUY_VALUE_IN_USD')))
+                    data = get_price_in_solana(solana_quote['price'], token['price'], get_config_value('BUY_VALUE_IN_USD'))
                     solana_amount = data['solana_amount']
                     token_quantity = data['token_quantity']
 
@@ -572,7 +582,7 @@ def sell_tokens(pools):
 
                 solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
 
-                if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
+                if(gain_percentage_with_max_price < get_config_value('PERCENTAGE_LOSS')):
                     data = {
                         'id': id,
                         'platform_token_address': platform_token_address,

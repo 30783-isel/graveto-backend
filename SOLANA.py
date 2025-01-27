@@ -52,7 +52,7 @@ def get_config_value(key):
         config = configparser.ConfigParser(interpolation=None)
         config.read(config_file_path)
         val = config.get(type, key)
-        print(key + ' -' + val)
+        #print(key + ' -' + val)
         return int(val)
     except ValueError:
         return config.get(type, key)
@@ -67,9 +67,6 @@ headers = {
     'Accepts': 'application/json',
     'X-CMC_PRO_API_KEY': 'ff716c6f-21b5-4f8c-850d-8c5b2792e9a2',  
 }
-
-
-
 
 
 
@@ -90,7 +87,7 @@ ADD_REPEATED = get_config_value('ADD_REPEATED')
 
 
 
-
+list_tokens = []
 
 
 
@@ -298,9 +295,11 @@ def save_config(config):
 
 # Função para pegar os dados da API
 def fetch_data():
+    global list_tokens
     response = requests.get(urlGetLatestSpotPairs, params=parameters, headers=headers)
     if response.status_code == 200:
-        return response.json()
+        list_tokens = response.json()
+        return list_tokens
     else:
         logger.error(f"Erro ao fazer requisição: {response.status_code}")
         return None
@@ -720,6 +719,13 @@ def get_tokens_analyzed_from_db():
 
 
 def getTokenMetrics(id):
+
+    global list_tokens
+
+    token = [element for element in list_tokens["data"] if element["id"] == int(id)]
+    if token:
+        return token[0]
+    """"
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
     params = {
         'id': id,
@@ -731,6 +737,7 @@ def getTokenMetrics(id):
         return data
     else:
         logger.error(f"Erro ao acessar a API: {response.status_code}")
+    """
 
 
 
@@ -739,9 +746,8 @@ def getTokenMetrics(id):
 def processTokenQuote(id):
     global global_percent_change_1h 
     QUOTE = getTokenMetrics(id)
-    if QUOTE and 'data' in QUOTE and len(QUOTE['data']) > 0:
-        # Extraindo as informações relevantes da variável QUOTE e removendo o campo 'tags'
-        token_quote = QUOTE['data'][id]
+    if QUOTE:
+        token_quote = QUOTE
 
         data = {
             'id': token_quote['id'],
@@ -763,9 +769,7 @@ def processTokenQuote(id):
             'max_supply': token_quote['max_supply'],  
             'circulating_supply': token_quote['circulating_supply'], 
             'total_supply': token_quote['total_supply'], 
-            'is_active': token_quote['is_active'], 
             'infinite_supply': token_quote['infinite_supply'], 
-            'is_fiat': token_quote['is_fiat'],
             'self_reported_circulating_supply': token_quote['self_reported_circulating_supply'],
             'self_reported_market_cap': token_quote['self_reported_market_cap'], 
             'tvl_ratio': token_quote['tvl_ratio'], 

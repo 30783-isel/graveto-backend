@@ -215,8 +215,8 @@ def get_config_endpoint():
             "EXECUTE_OPERATIONS": get_config_value('EXECUTE_OPERATIONS'),
             "EXECUTE_SCHEDULER": get_config_value('EXECUTE_SCHEDULER'),
             "PAUSE_TOKEN_METRICS": get_config_value('PAUSE_TOKEN_METRICS'),
-            "ADD_REPEATED": get_config_value('ADD_REPEATED')
-            
+            "ADD_REPEATED": get_config_value('ADD_REPEATED'),
+            "EXECUTE_SWAP": get_config_value('EXECUTE_SWAP')
         }
         return jsonify(config_data), 200
 
@@ -265,6 +265,8 @@ def update_config_endpoint():
             config.set('CENTRALIZED', 'ADD_REPEATED', str(data['ADD_REPEATED']))
         if 'EXECUTE_SCHEDULER' in data:
             config.set('CENTRALIZED', 'EXECUTE_SCHEDULER', str(data['EXECUTE_SCHEDULER']))
+        if 'EXECUTE_SWAP' in data:
+            config.set('CENTRALIZED', 'EXECUTE_SWAP', str(data['EXECUTE_SWAP']))
 
         save_config(config)
 
@@ -444,6 +446,7 @@ def buy_tokens(pools):
                     data = get_price_in_solana(solana_quote['price'], token['price'], get_config_value('BUY_VALUE_IN_USD'))
                     solana_amount = data['solana_amount']
                     token_quantity = data['token_quantity']
+                    executeSwap = get_config_value("EXECUTE_SWAP") == '1'
 
                     data = {
                         'id': id,
@@ -462,6 +465,8 @@ def buy_tokens(pools):
                         'solana_amount' : solana_amount,
                         'token_amount' : token_quantity,
                         'comprado': True,
+                        'executeSwap': executeSwap
+
                     }
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
@@ -508,7 +513,8 @@ def swapToken(swapPairs, pools):
         "quoteAsset": swapPairs['platform_token_address'],
         "baseAsset": "So11111111111111111111111111111111111111112",
         "tokenAmount": token_amount,
-        "buy": swapPairs['comprado']
+        "buy": swapPairs['comprado'],
+        "executeSwap": swapPairs['executeSwap'],
     }
     headers = {
         'Content-Type': 'application/json'

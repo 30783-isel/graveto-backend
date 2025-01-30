@@ -53,7 +53,7 @@ def get_config_value(key):
         config.read(config_file_path)
         val = config.get(type, key)
         #print(key + ' -' + val)
-        return int(val)
+        return val
     except ValueError:
         return config.get(type, key)
 
@@ -400,7 +400,7 @@ def process_tokens(score_weights):
     
 def buy_tokens(pools):
     logger.info('INICIAR BUY ######################################################################################################################')
-    if(get_config_value("EXECUTE_OPERATIONS") == 1):
+    if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
         top_tokens = []
         global global_percent_change_1h 
         if global_percent_change_1h > int(get_config_value('BTC_1H_PERCENT')):
@@ -417,7 +417,7 @@ def buy_tokens(pools):
             existing_tokens = database.get_existing_tokens()
 
             new_tokens = []
-            if get_config_value('ADD_REPEATED') == 1:
+            if int(get_config_value('ADD_REPEATED')) == 1:
                 new_tokens = top_tokens
             else:
                 
@@ -443,7 +443,7 @@ def buy_tokens(pools):
                     market_cap = token.get('market_cap', None)
                     score = token.get('score', None)
 
-                    data = get_price_in_solana(solana_quote['price'], token['price'], get_config_value('BUY_VALUE_IN_USD'))
+                    data = get_price_in_solana(solana_quote['price'], token['price'], float(get_config_value('BUY_VALUE_IN_USD')))
                     solana_amount = data['solana_amount']
                     token_quantity = data['token_quantity']
                     executeSwap = get_config_value("EXECUTE_SWAP") == '1'
@@ -822,7 +822,7 @@ def val_sol_wallet():
     numberBuys = database.getNumberBuys()
     if soma_total_sol:
         data = {
-            'valor_investido_usd': int(numberBuys) * int(get_config_value('BUY_VALUE_IN_USD')),
+            'valor_investido_usd': int(numberBuys) * float(get_config_value('BUY_VALUE_IN_USD')),
             'valor_total_sol': soma_total_sol,
             'valor_total_usd': soma_total_sol * int(solana_quote['price']),
         }

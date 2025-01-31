@@ -446,7 +446,7 @@ def buy_tokens(pools):
                     data = get_price_in_solana(solana_quote['price'], token['price'], float(get_config_value('BUY_VALUE_IN_USD')))
                     solana_amount = data['solana_amount']
                     token_quantity = data['token_quantity']
-                    executeSwap = get_config_value("EXECUTE_SWAP") == '1'
+                    executeSwap = get_config_value("EXECUTE_SWAP")
 
                     data = {
                         'id': id,
@@ -471,7 +471,7 @@ def buy_tokens(pools):
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
                     response = swapToken(data, pools)
-                    #sucess = True
+                    print(response.json())
                     if(response.status_code == 200):
                         isInserted = database.insert_buy(data)
                         database.updateNumberBuys()
@@ -595,7 +595,7 @@ def sell_tokens(pools):
                 solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
 
                 if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
-                    executeSwap = get_config_value("EXECUTE_SWAP") == '1'
+                    executeSwap = get_config_value("EXECUTE_SWAP")
                     data = {
                         'id': id,
                         'platform_token_address': platform_token_address,
@@ -610,13 +610,13 @@ def sell_tokens(pools):
                         'score': score,
                         'solana_amount' : solana_amount,
                         'token_amount': token_amount,
-                        'comprado': False,
+                        'comprado': '0',
                         'executeSwap': executeSwap
                     }
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
                     response = swapToken(data, pools)
-
+                    print(response.json())
                     if(response.status_code == 200):
                         updatedData  = {
                             'comprado': comprado,

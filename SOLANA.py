@@ -464,7 +464,7 @@ def buy_tokens(pools):
                         'score': score,
                         'solana_amount' : solana_amount,
                         'token_amount' : token_quantity,
-                        'comprado': True,
+                        'comprado': '1',
                         'executeSwap': executeSwap
 
                     }
@@ -508,6 +508,8 @@ def swapToken(swapPairs, pools):
         token_amount = swapPairs['solana_amount']
     else:
         token_amount = swapPairs['token_amount']
+
+    """""    
     payload = {
         "pairAdress": pair_address,
         "quoteAsset": swapPairs['platform_token_address'],
@@ -516,6 +518,20 @@ def swapToken(swapPairs, pools):
         "buy": swapPairs['comprado'],
         "executeSwap": swapPairs['executeSwap'],
     }
+    """""
+
+
+
+    payload = {
+        "pairAdress": "58oQChx4yWmvKdwLLZzBi4ChoCc2fqCUWBkwMihLYQo2",
+        "quoteAsset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
+        "baseAsset": "So11111111111111111111111111111111111111112",
+        "tokenAmount": "0.004",
+        "buy": swapPairs['comprado'],
+        "executeSwap": swapPairs['executeSwap'],
+    }
+
+
     headers = {
         'Content-Type': 'application/json'
     }
@@ -619,7 +635,7 @@ def sell_tokens(pools):
                     print(response.json())
                     if(response.status_code == 200):
                         updatedData  = {
-                            'comprado': comprado,
+                            'comprado': '0',
                             'val_sol_sell': solana_amount
                         } 
                         #sucess = database.delete_buy_token(data)

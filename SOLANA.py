@@ -450,7 +450,7 @@ def buy_tokens(pools):
 
                     data = {
                         'id': id,
-                        'platform_token_address': platform_token_address,
+                        'platform_token_address': platform_token_address[0],
                         'symbol': symbol,
                         'name': name,
                         'platform_name': platform_name,
@@ -504,12 +504,12 @@ def swapToken(swapPairs, pools):
 
     url = "http://localhost:3000/swap"
 
-    if swapPairs['comprado'] == True:
+    if swapPairs['comprado'] == '1':
         token_amount = swapPairs['solana_amount']
     else:
         token_amount = swapPairs['token_amount']
 
-    """""    
+      
     payload = {
         "pairAdress": pair_address,
         "quoteAsset": swapPairs['platform_token_address'],
@@ -518,10 +518,10 @@ def swapToken(swapPairs, pools):
         "buy": swapPairs['comprado'],
         "executeSwap": swapPairs['executeSwap'],
     }
+    
+
+
     """""
-
-
-
     payload = {
         "pairAdress": "58oQChx4yWmvKdwLLZzBi4ChoCc2fqCUWBkwMihLYQo2",
         "quoteAsset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
@@ -530,7 +530,7 @@ def swapToken(swapPairs, pools):
         "buy": swapPairs['comprado'],
         "executeSwap": swapPairs['executeSwap'],
     }
-
+    """""
 
     headers = {
         'Content-Type': 'application/json'
@@ -540,7 +540,7 @@ def swapToken(swapPairs, pools):
         if pair_address is not None:
             response = requests.post(url, data=json.dumps(payload), headers=headers)
             if response.status_code == 200:
-                if swapPairs.get('comprado'): 
+                if swapPairs.get('comprado') == '1': 
                     logger.info(f"Swap com sucesso --- {swapPairs['solana_amount']} de SOLANA por {swapPairs['token_amount']} {swapPairs['name']} \033[92mcomprado\033[0m.")
                 else:
                     logger.info(f"Swap com sucesso --- {swapPairs['token_amount']} de {swapPairs['name']} por {swapPairs['solana_amount']} de SOLANA \033[91mvendido\033[0m.")

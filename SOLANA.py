@@ -466,22 +466,24 @@ def buy_tokens(pools):
                         'token_amount' : token_quantity,
                         'comprado': '1',
                         'executeSwap': executeSwap
-
                     }
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
                     response = swapToken(data, pools)
-                    print(response.json())
-                    if(response.status_code == 200):
-                        isInserted = database.insert_buy(data)
-                        database.updateNumberBuys()
-                    elif response == False or response.status_code != 200:
-                        logger.error("Erro ao comprar " + data['name'][0])
-                        for token in top_tokens:
-                            if token['name'] == data['name'][0]:
-                                top_tokens.remove(token)
-                                break 
-                    time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
+                    if response is not None:
+                        if(response.status_code == 200):
+                            if response.json().get('txid') is not None:
+                                data['token_amount'] = response.json().get('data').get('quantidadeTokenSaida')
+        
+                            isInserted = database.insert_buy(data)
+                            database.updateNumberBuys()
+                        elif response == False or response.status_code != 200:
+                            logger.error("Erro ao comprar " + data['name'][0])
+                            for token in top_tokens:
+                                if token['name'] == data['name'][0]:
+                                    top_tokens.remove(token)
+                                    break 
+                        time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
                 database.save_tokens_to_db(top_tokens)
             else:
                 logger.info("Nenhuma alteração nos tokens detectada.")
@@ -519,19 +521,6 @@ def swapToken(swapPairs, pools):
         "executeSwap": swapPairs['executeSwap'],
     }
     
-
-
-    """""
-    payload = {
-        "pairAdress": "58oQChx4yWmvKdwLLZzBi4ChoCc2fqCUWBkwMihLYQo2",
-        "quoteAsset": "EPjFWdd5AufqSSqeM2qN1xzybapC8G4wEGGkZwyTDt1v",
-        "baseAsset": "So11111111111111111111111111111111111111112",
-        "tokenAmount": "0.004",
-        "buy": swapPairs['comprado'],
-        "executeSwap": swapPairs['executeSwap'],
-    }
-    """""
-
     headers = {
         'Content-Type': 'application/json'
     }
@@ -632,18 +621,18 @@ def sell_tokens(pools):
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
                     response = swapToken(data, pools)
-                    print(response.json())
-                    if(response.status_code == 200):
-                        updatedData  = {
-                            'comprado': '0',
-                            'val_sol_sell': solana_amount
-                        } 
-                        #sucess = database.delete_buy_token(data)
-                        sucess = database.update_buy(updatedData, symbol)
-                        tokens_vendidos.append(data)
-                        time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
-                    elif response == False or response.status_code != 200:
-                        logger.error("Erro ao vender " + name)
+                    if response is not None:
+                        if(response.status_code == 200):
+                            updatedData  = {
+                                'comprado': '0',
+                                'val_sol_sell': solana_amount
+                            } 
+                            #sucess = database.delete_buy_token(data)
+                            sucess = database.update_buy(updatedData, symbol)
+                            tokens_vendidos.append(data)
+                            time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
+                        elif response == False or response.status_code != 200:
+                            logger.error("Erro ao vender " + name)
                 else:
                     logger.info(name + f' tem saldo positivo {gain_percentage_with_current_price}%' )
         else:

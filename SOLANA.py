@@ -472,7 +472,8 @@ def buy_tokens(pools):
                     response = swapToken(data, pools)
                     if response is not None:
                         if(response.status_code == 200):
-                            if response.json().get('txid') is not None:
+                            #if response.json().get('txid') is not None:
+                            if response.json().get('data') is not None:
                                 data['token_amount'] = response.json().get('data').get('quantidadeTokenSaida')
         
                             isInserted = database.insert_buy(data)

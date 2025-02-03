@@ -986,7 +986,7 @@ def restart_all_schedulers():
         geral_scheduler.remove_all_jobs()
         geral_scheduler.shutdown() 
         geral_scheduler = None 
-        logger.info("Scheduler btc quote removido.")
+        logger.info("Geral scheduler removido.")
     if btc_quote_scheduler:
         btc_quote_scheduler.remove_all_jobs()
         btc_quote_scheduler.shutdown() 

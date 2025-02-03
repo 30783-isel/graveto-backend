@@ -287,24 +287,13 @@ def save_config(config):
 
 
 
-
-
-
-
-
-
-
-
-# Função para pegar os dados da API
 def fetch_data():
     global list_tokens
     response = requests.get(urlGetLatestSpotPairs, params=parameters, headers=headers)
     if response.status_code == 200:
         list_tokens = response.json()
-        return list_tokens
     else:
         logger.error(f"Erro ao fazer requisição: {response.status_code}")
-        return None
 
 # Função comum para calcular a pontuação do token
 def calculate_score(token, score_weights):
@@ -332,7 +321,8 @@ def calculate_score(token, score_weights):
     return score
 
 def process_tokens(score_weights):
-    data = fetch_data()
+    global list_tokens
+    data = list_tokens
     if not data:
         return []
 
@@ -403,6 +393,7 @@ def buy_tokens(pools):
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
         top_tokens = []
         global global_percent_change_1h 
+        logger.info("BTC 1h % : " + str(global_percent_change_1h))
         if global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
         
             score_weights = {
@@ -488,8 +479,6 @@ def buy_tokens(pools):
                 database.save_tokens_to_db(top_tokens)
             else:
                 logger.info("Nenhuma alteração nos tokens detectada.")
-        else:
-            logger.info("BTC 1h % - " + str(global_percent_change_1h))
         return top_tokens
 
 
@@ -639,7 +628,7 @@ def sell_tokens(pools):
                         elif response == False or response.status_code != 200:
                             logger.error("Erro ao vender " + name)
                 else:
-                    logger.info(name + f' tem saldo positivo {gain_percentage_with_current_price}%' )
+                    logger.info(name + f' - ganho:  {gain_percentage_with_current_price}%' )
         else:
             logger.info("DB buy centralized empty.")
         return tokens_vendidos
@@ -793,7 +782,8 @@ def processTokenQuote(id):
             'last_updated': token_quote['last_updated'], 
         }
 
-        global_percent_change_1h = token_quote['quote']['USD']['percent_change_1h']
+        if(token_quote['name'] == 'Bitcoin'):
+            global_percent_change_1h = token_quote['quote']['USD']['percent_change_1h']
         
 
         return data
@@ -862,18 +852,24 @@ def val_sol_wallet():
 
 
 
+def exec_geral(pools):
+    fetch_data()
+    processTokenQuote('1')
+    top_tokens = buy_tokens(pools)
+    tokens_vendidos = sell_tokens(pools)
+    print('end')
 
 
-
-
-
+geral_scheduler = None
 btc_quote_scheduler = None
 buy_scheduler = None
 sell_scheduler = None
 global_percent_change_1h = 0
 pools = None
 
-
+def schedule_execute(pools):
+    logger.info(' A iniciar schedule_execute +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
+    return functools.partial(exec_geral, pools)
 
 def schedule_btc_quote(id):
     logger.info(' A iniciar schedule_btc_quote ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
@@ -887,6 +883,31 @@ def schedule_sell_tokens(pools):
     logger.info(' A iniciar schedule_sell_tokens ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     return functools.partial(sell_tokens, pools)
 
+def start_scheduler():
+    if(int(get_config_value("EXECUTE_SCHEDULER")) == 1):
+        global geral_scheduler
+        global pools
+        if geral_scheduler is None:
+            execute_every_x_minutes = int(get_config_value("SCHEDULER_EXECUTION_BUY"))
+            logger.info(f'A iniciar BUY scheduler!!! - Executa de {execute_every_x_minutes} minutos')
+            if pools is None: 
+                pools = get_pools()
+            geral_scheduler = BackgroundScheduler()
+            geral_scheduler.add_job(
+                schedule_execute(pools), 
+                'interval', 
+                minutes=execute_every_x_minutes, 
+                next_run_time=datetime.now()
+            )
+            geral_scheduler.start()
+            logger.info("Scheduler buy iniciado com sucesso.")
+        else:
+            geral_scheduler.remove_all_jobs()
+            geral_scheduler.shutdown()
+            geral_scheduler = None  
+            logger.info("Scheduler buy reiniciado com sucesso.")
+            start_scheduler_buy()
+            
 def start_scheduler_btc_quote():
     if(int(get_config_value("EXECUTE_SCHEDULER")) == 1):
         global btc_quote_scheduler
@@ -960,8 +981,12 @@ def start_scheduler_sell():
             start_scheduler_sell()
 
 def restart_all_schedulers():
-    global btc_quote_scheduler, buy_scheduler, sell_scheduler, pools
-
+    global btc_quote_scheduler, buy_scheduler, sell_scheduler, geral_scheduler, pools
+    if geral_scheduler:
+        geral_scheduler.remove_all_jobs()
+        geral_scheduler.shutdown() 
+        geral_scheduler = None 
+        logger.info("Scheduler btc quote removido.")
     if btc_quote_scheduler:
         btc_quote_scheduler.remove_all_jobs()
         btc_quote_scheduler.shutdown() 
@@ -978,9 +1003,10 @@ def restart_all_schedulers():
         sell_scheduler = None 
         logger.info("Scheduler sell removido.")
 
-    start_scheduler_btc_quote()
-    start_scheduler_buy()
-    start_scheduler_sell()
+    start_scheduler()
+    #start_scheduler_btc_quote()
+    #start_scheduler_buy()
+    #start_scheduler_sell()
 
 @app.route('/restart-schedulers', methods=['GET'])
 def restart_schedulers():
@@ -993,11 +1019,11 @@ def restart_schedulers():
 if __name__ == '__main__':
     try:
         pools = get_pools()
-        fetch_data()
-        start_scheduler_btc_quote()
-        start_scheduler_buy()
-        start_scheduler_sell()
-        print('Schedulers iniciados com sucesso!')
+        start_scheduler()
+        #start_scheduler_btc_quote()
+        #start_scheduler_buy()
+        #start_scheduler_sell()
+        #print('Schedulers iniciados com sucesso!')
     except Exception as e:
         logger.error(f"Error: {e}.")
 

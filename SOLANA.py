@@ -531,10 +531,10 @@ def swapToken(swapPairs, pools):
                 logger.error(f"Falha na requisição: {response.json()}")
             return response    
         else:
-            return False
+            return None
     except requests.exceptions.RequestException as e:
         logger.error(f"Erro na requisição: {e}")
-        return False
+        return None
 
 
 

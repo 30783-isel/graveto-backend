@@ -534,6 +534,8 @@ def swapToken(swapPairs, pools):
                     logger.info(f"Swap com sucesso --- {swapPairs['solana_amount']} de SOLANA por {swapPairs['token_amount']} {swapPairs['name']} \033[92mcomprado\033[0m.")
                 else:
                     logger.info(f"Swap com sucesso --- {swapPairs['token_amount']} de {swapPairs['name']} por {swapPairs['solana_amount']} de SOLANA \033[91mvendido\033[0m.")
+                if(response.json().get('txid') is not None):
+                    print(response.json().get('txid'))
             else:
                 logger.error(f"Falha na requisição: {response.json()}")
             return response    
@@ -626,7 +628,7 @@ def sell_tokens(pools):
                         if(response.status_code == 200):
                             updatedData  = {
                                 'comprado': '0',
-                                'val_sol_sell': solana_amount
+                                'val_sol_sell': response.json().get('data').get('quantidadeTokenSaida') if response.json().get('data') is not None else solana_amount
                             } 
                             #sucess = database.delete_buy_token(data)
                             sucess = database.update_buy(updatedData, symbol)

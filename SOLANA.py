@@ -488,6 +488,8 @@ def buy_tokens(pools):
                 database.save_tokens_to_db(top_tokens)
             else:
                 logger.info("Nenhuma alteração nos tokens detectada.")
+        else:
+            logger.info("BTC 1h % - " + str(global_percent_change_1h))
         return top_tokens
 
 
@@ -889,7 +891,7 @@ def start_scheduler_btc_quote():
     if(int(get_config_value("EXECUTE_SCHEDULER")) == 1):
         global btc_quote_scheduler
         if btc_quote_scheduler is None:
-            execute_every_x_minutes = get_config_value("SCHEDULER_EXECUTION_BTC_QUOTE")
+            execute_every_x_minutes = int(get_config_value("SCHEDULER_EXECUTION_BTC_QUOTE"))
             logger.info(f'A iniciar BTC-Quote scheduler!!! - Executa de {execute_every_x_minutes} minutos')
             btc_quote_scheduler = BackgroundScheduler()
             btc_quote_scheduler.add_job(
@@ -991,6 +993,7 @@ def restart_schedulers():
 if __name__ == '__main__':
     try:
         pools = get_pools()
+        fetch_data()
         start_scheduler_btc_quote()
         start_scheduler_buy()
         start_scheduler_sell()

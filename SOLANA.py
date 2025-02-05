@@ -278,7 +278,10 @@ def update_config_endpoint():
 
 
 @app.route('/get-wallet-tokens', methods=['GET'])
-def getWalleTokens():
+def getWalletTokens():
+    return getWalletTokensValues()
+    
+def getWalletTokensValues():
     url = "http://localhost:3000/get-tokens-value/7tcNYR21EzgxJeFGChktAW161xhqGrtpv52sULphcbk"
     
     response = requests.get(url, headers=headers)
@@ -302,12 +305,11 @@ def getWalleTokens():
             }
             account_info_list.append(account_info)
 
-        # Retornar os dados no formato JSON
-        return jsonify(account_info_list), 200
+        # Retornar apenas os dados
+        return account_info_list
     else:
-        # Em caso de erro, retornar uma mensagem de erro
-        return jsonify({"error": "Failed to fetch wallet tokens"}), 500
-    
+        # Em caso de erro, retornar uma lista vazia ou uma mensagem de erro
+        return {"error": "Failed to fetch wallet tokens"}
             
 
 def read_config():
@@ -598,6 +600,29 @@ def swapToken(swapPairs, pools):
 def sell_tokens(pools):
     logger.info('INICIAR SELL #####################################################################################################################')
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
+        
+        
+        
+        
+        
+        
+        tokens_wallet = getWalletTokensValues()
+
+        if 'error' in tokens_wallet:
+            # Se houve erro ao obter os tokens, logue o erro ou faça algum tratamento
+            logger.error(f"Erro ao obter tokens: {tokens_wallet['error']}")
+            return
+
+        # Agora você pode usar a lista de tokens, por exemplo:
+        for token in tokens_wallet:
+            mint = token['mint']
+            token_amount = token['tokenAmount']
+            
+            
+            
+            
+            
+            
         tokens_vendidos = []
         resultados_formatados = get_tokens_analyzed_from_db()
 

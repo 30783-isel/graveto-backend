@@ -276,6 +276,40 @@ def update_config_endpoint():
         return jsonify({"estado": "Erro", "mensagem": str(e)}), 500
 
 
+
+@app.route('/get-wallet-tokens', methods=['GET'])
+def getWalleTokens():
+    url = "http://localhost:3000/get-tokens-value/7tcNYR21EzgxJeFGChktAW161xhqGrtpv52sULphcbk"
+    
+    response = requests.get(url, headers=headers)
+    
+    # Verificar se a resposta foi bem-sucedida (código 200)
+    if response.status_code == 200:
+        # Já que response.json() retorna um dicionário, não precisamos de json.loads()
+        data = response.json()
+        
+        # Agora, extrair os dados necessários, como no exemplo anterior
+        account_info_list = []
+        for account in data['result']['value']:
+            account_info = {
+                'mint': account['account']['data']['parsed']['info']['mint'],
+                'tokenAmount': {
+                    'amount': account['account']['data']['parsed']['info']['tokenAmount']['amount'],
+                    'decimals': account['account']['data']['parsed']['info']['tokenAmount']['decimals'],
+                    'uiAmount': account['account']['data']['parsed']['info']['tokenAmount']['uiAmount'],
+                    'uiAmountString': account['account']['data']['parsed']['info']['tokenAmount']['uiAmountString']
+                }
+            }
+            account_info_list.append(account_info)
+
+        # Retornar os dados no formato JSON
+        return jsonify(account_info_list), 200
+    else:
+        # Em caso de erro, retornar uma mensagem de erro
+        return jsonify({"error": "Failed to fetch wallet tokens"}), 500
+    
+            
+
 def read_config():
     config = configparser.ConfigParser()
     config.read(config_file_path)
@@ -1018,6 +1052,7 @@ def restart_schedulers():
 
 if __name__ == '__main__':
     try:
+        fetch_data()
         pools = get_pools()
         start_scheduler()
         #start_scheduler_btc_quote()

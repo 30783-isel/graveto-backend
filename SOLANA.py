@@ -282,7 +282,7 @@ def getWalletTokens():
     return getWalletTokensValues()
     
 def getWalletTokensValues():
-    url = "http://localhost:3000/get-tokens-value/7tcNYR21EzgxJeFGChktAW161xhqGrtpv52sULphcbk"
+    url = "http://localhost:3000/get-tokens-value/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
     
     response = requests.get(url, headers=headers)
     
@@ -652,6 +652,19 @@ def sell_tokens(pools):
 
                 solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
 
+
+
+
+                token_amount_in_wallet = 0.0
+                for token in tokens_wallet:
+                    mint = token['mint']
+                    if(platform_token_address == mint):
+                        token_amount_in_wallet = token['tokenAmount']['uiAmount']
+
+
+
+
+
                 if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
                     executeSwap = get_config_value("EXECUTE_SWAP")
                     data = {
@@ -667,7 +680,7 @@ def sell_tokens(pools):
                         'market_cap': market_cap,
                         'score': score,
                         'solana_amount' : solana_amount,
-                        'token_amount': token_amount,
+                        'token_amount': token_amount_in_wallet,
                         'comprado': '0',
                         'executeSwap': executeSwap
                     }

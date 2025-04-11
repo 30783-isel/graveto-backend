@@ -283,9 +283,9 @@ def getWalletTokens():
     return getWalletTokensValues()
     
 def getWalletTokensValues():
-    url = "https://localhost:443/get-tokens-value/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
+    url = "https://localhost:443/get-token-accounts/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
     
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, verify=False, headers=headers)
     
     # Verificar se a resposta foi bem-sucedida (código 200)
     if response.status_code == 200:
@@ -632,7 +632,7 @@ def swapToken(swapPairs, pools):
     try:
         pair_address = payload.get('pairAdress')
         if pair_address is not None:
-            response = requests.post(url, data=json.dumps(payload), headers=headers)
+            response = requests.post(url, verify=False, data=json.dumps(payload), headers=headers)
             if response.status_code == 200:
                 if swapPairs.get('comprado') == '1': 
                     logger.info(f"Swap com sucesso --- {swapPairs['solana_amount']} de SOLANA por {swapPairs['token_amount']} {swapPairs['name']} \033[92mcomprado\033[0m.")
@@ -682,7 +682,7 @@ def sell_tokens(pools):
         
         
         
-        
+        """"
         tokens_wallet = getWalletTokensValues()
 
         if 'error' in tokens_wallet:
@@ -694,7 +694,7 @@ def sell_tokens(pools):
         for token in tokens_wallet:
             mint = token['mint']
             token_amount = token['tokenAmount']
-            
+        """    
             
             
             
@@ -731,13 +731,13 @@ def sell_tokens(pools):
 
 
 
-
+                """"
                 token_amount_in_wallet = 0.0
                 for token in tokens_wallet:
                     mint = token['mint']
                     if(platform_token_address == mint):
                         token_amount_in_wallet = token['tokenAmount']['uiAmount']
-
+                """
 
 
 
@@ -1154,9 +1154,9 @@ def restart_all_schedulers():
         logger.info("Scheduler sell removido.")
 
     start_scheduler()
-    #start_scheduler_btc_quote()
-    #start_scheduler_buy()
-    #start_scheduler_sell()
+    start_scheduler_btc_quote()
+    start_scheduler_buy()
+    start_scheduler_sell()
 
 @app.route('/restart-schedulers', methods=['GET'])
 def restart_schedulers():
@@ -1170,11 +1170,11 @@ if __name__ == '__main__':
     try:
         fetch_data()
         pools = get_pools()
-        #start_scheduler()
-        #start_scheduler_btc_quote()
-        #start_scheduler_buy()
-        #start_scheduler_sell()
-        #print('Schedulers iniciados com sucesso!')
+        start_scheduler()
+        start_scheduler_btc_quote()
+        start_scheduler_buy()
+        start_scheduler_sell()
+        print('Schedulers iniciados com sucesso!')
     except Exception as e:
         logger.error(f"Error: {e}.")
 

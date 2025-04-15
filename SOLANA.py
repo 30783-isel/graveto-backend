@@ -1,4 +1,6 @@
 import os
+import ssl
+from werkzeug.serving import run_simple
 import requests
 import json
 import time
@@ -1169,20 +1171,43 @@ def restart_schedulers():
 if __name__ == '__main__':
     try:
         fetch_data()
+        """"
         pools = get_pools()
         start_scheduler()
         start_scheduler_btc_quote()
         start_scheduler_buy()
         start_scheduler_sell()
         print('Schedulers iniciados com sucesso!')
+        """
     except Exception as e:
         logger.error(f"Error: {e}.")
 
+
+    @app.route('/test-certificate')
+    def hello():
+        cert = request.environ.get('SSL_CLIENT_CERT')
+        if cert:
+            return jsonify(message="Ligação segura com mTLS estabelecida!"), 200
+        return jsonify(error="Certificado cliente não encontrado."), 403
+    
+    
     # HTTP
     # app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)
     
-    # HTTPS
-    app.run(host='0.0.0.0',port=5000,debug=True,use_reloader=False,
-        ssl_context=("C:/Users/Paulo Janganga/.ssh/tst1/cert.pem", "C:/Users/Paulo Janganga/.ssh/tst1/key.pem"))
+    # HTTPS 1
+    # app.run(host='0.0.0.0',port=5000,debug=True,use_reloader=False,
+    #   ssl_context=("C:/Users/Paulo Janganga/.ssh/tst1/cert.pem", "C:/Users/Paulo Janganga/.ssh/tst1/key.pem"))
     
-    
+    context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+
+    # Carrega o certificado e a chave do servidor
+    context.load_cert_chain(
+        certfile='C:/x3la/xyz/cripto/security/ssl/python-server.crt',
+        keyfile='C:/x3la/xyz/cripto/security/ssl/python-server.key'
+    )
+    # Requer certificado do cliente e valida contra a CA
+    context.verify_mode = ssl.CERT_REQUIRED
+    context.load_verify_locations(cafile='C:/x3la/xyz/cripto/security/ssl/myCA.pem')
+
+    # Inicia o servidor Flask com contexto SSL + mTLS
+    run_simple('0.0.0.0', 4433, app, ssl_context=context)

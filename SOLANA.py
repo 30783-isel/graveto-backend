@@ -1,4 +1,6 @@
 import os
+import ssl
+from werkzeug.serving import run_simple
 import requests
 import json
 import time
@@ -9,6 +11,7 @@ import pandas as pd
 import configparser
 from datetime import datetime
 from flask import Flask, jsonify, request
+from infisical_sdk import InfisicalSDKClient
 from pairs import get_pair_with_sol, get_pools 
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
@@ -282,9 +285,9 @@ def getWalletTokens():
     return getWalletTokensValues()
     
 def getWalletTokensValues():
-    url = "http://localhost:3000/get-tokens-value/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
+    url = "https://localhost:443/get-token-accounts/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
     
-    response = requests.get(url, headers=headers)
+    response = requests.get(url, verify=False, headers=headers)
     
     # Verificar se a resposta foi bem-sucedida (código 200)
     if response.status_code == 200:
@@ -310,7 +313,83 @@ def getWalletTokensValues():
     else:
         # Em caso de erro, retornar uma lista vazia ou uma mensagem de erro
         return {"error": "Failed to fetch wallet tokens"}
-            
+   
+ 
+@app.route('/infscl-init', methods=['POST'])
+def getInfsclInit():
+    try:
+        global infisicaClient
+        # Obter os dados do corpo da requisição (espera-se JSON)
+        data = request.get_json()
+
+        # Verificar se os dados foram enviados e extrair client_id e client_secret
+        if not data or 'client_id' not in data or 'client_secret' not in data:
+            return jsonify({
+                "estado": "Erro",
+                "mensagem": "client_id e client_secret são obrigatórios no corpo da requisição."
+            }), 400
+
+        client_id = data['client_id']
+        client_secret = data['client_secret']
+
+        # Inicializar o client
+        infisicaClient = InfisicalSDKClient(host="https://eu.infisical.com")
+
+        # Autenticar usando os valores fornecidos na requisição
+        infisicaClient.auth.universal_auth.login(
+            client_id=client_id, 
+            client_secret=client_secret
+        )
+        
+        return jsonify({
+            "estado": "Sucesso"
+        }), 200
+
+    except Exception as e:
+        return jsonify({
+            "estado": "Erro",
+            "mensagem": str(e)
+        }), 500
+        
+                 
+@app.route('/infscl-get-secret', methods=['POST'])
+def getInfsclGetSecret():
+    try:
+        global infisicaClient
+        # Obter os dados do corpo da requisição (espera-se JSON)
+        data = request.get_json()
+
+        # Verificar se os dados foram enviados e extrair secret_name e project_id
+        if not data or 'secret_name' not in data or 'project_id' not in data:
+            return jsonify({
+                "estado": "Erro",
+                "mensagem": "secret_name e project_id são obrigatórios no corpo da requisição."
+            }), 400
+
+        secret_name = data['secret_name']
+        project_id = data['project_id']
+
+        # Buscar o segredo
+        secret = infisicaClient.secrets.get_secret_by_name(
+            secret_name=secret_name,
+            project_id=project_id,
+            environment_slug="dev",
+            secret_path="/"
+        )
+        
+        return jsonify({
+            "estado": "Sucesso",
+            "secret": secret.secretValue  # Inclui o valor do segredo na resposta
+        }), 200
+
+    except Exception as e:
+        return jsonify({
+            "estado": "Erro",
+            "mensagem": str(e)
+        }), 500
+    
+    
+    
 
 def read_config():
     config = configparser.ConfigParser()
@@ -532,7 +611,10 @@ def swapToken(swapPairs, pools):
     }
     pair_address = get_pair_with_sol(swapPairs['platform_token_address'], pools, logger)
 
-    url = "http://localhost:3000/swap"
+    client_cert = ('C:/x3la/xyz/cripto/security/ssl/node-client-cert.pem', 'C:/x3la/xyz/cripto/security/ssl/node-client-key.pem')
+    ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCa.pem'
+
+    url = "https://localhost:8443/swap"
 
     if swapPairs['comprado'] == '1':
         token_amount = swapPairs['solana_amount']
@@ -555,7 +637,7 @@ def swapToken(swapPairs, pools):
     try:
         pair_address = payload.get('pairAdress')
         if pair_address is not None:
-            response = requests.post(url, data=json.dumps(payload), headers=headers)
+            response = requests.post(url, cert=client_cert, verify=ca_cert, data=json.dumps(payload), headers=headers)
             if response.status_code == 200:
                 if swapPairs.get('comprado') == '1': 
                     logger.info(f"Swap com sucesso --- {swapPairs['solana_amount']} de SOLANA por {swapPairs['token_amount']} {swapPairs['name']} \033[92mcomprado\033[0m.")
@@ -605,7 +687,7 @@ def sell_tokens(pools):
         
         
         
-        
+        """"
         tokens_wallet = getWalletTokensValues()
 
         if 'error' in tokens_wallet:
@@ -617,7 +699,7 @@ def sell_tokens(pools):
         for token in tokens_wallet:
             mint = token['mint']
             token_amount = token['tokenAmount']
-            
+        """    
             
             
             
@@ -654,13 +736,13 @@ def sell_tokens(pools):
 
 
 
-
+                """"
                 token_amount_in_wallet = 0.0
                 for token in tokens_wallet:
                     mint = token['mint']
                     if(platform_token_address == mint):
                         token_amount_in_wallet = token['tokenAmount']['uiAmount']
-
+                """
 
 
 
@@ -938,6 +1020,7 @@ buy_scheduler = None
 sell_scheduler = None
 global_percent_change_1h = 0
 pools = None
+infisicaClient = None
 
 def schedule_execute(pools):
     logger.info(' A iniciar schedule_execute +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
@@ -1076,9 +1159,9 @@ def restart_all_schedulers():
         logger.info("Scheduler sell removido.")
 
     start_scheduler()
-    #start_scheduler_btc_quote()
-    #start_scheduler_buy()
-    #start_scheduler_sell()
+    start_scheduler_btc_quote()
+    start_scheduler_buy()
+    start_scheduler_sell()
 
 @app.route('/restart-schedulers', methods=['GET'])
 def restart_schedulers():
@@ -1092,13 +1175,42 @@ if __name__ == '__main__':
     try:
         fetch_data()
         pools = get_pools()
+        """"
         start_scheduler()
-        #start_scheduler_btc_quote()
-        #start_scheduler_buy()
-        #start_scheduler_sell()
-        #print('Schedulers iniciados com sucesso!')
+        start_scheduler_btc_quote()
+        start_scheduler_buy()
+        start_scheduler_sell()
+        print('Schedulers iniciados com sucesso!')
+        """
     except Exception as e:
         logger.error(f"Error: {e}.")
 
-    app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)
 
+    @app.route('/test-certificate')
+    def hello():
+        cert = request.environ.get('SSL_CLIENT_CERT')
+        if cert:
+            return jsonify(message="Ligação segura com mTLS estabelecida!"), 200
+        return jsonify(error="Certificado cliente não encontrado."), 403
+    
+    
+    # HTTP
+    # app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)
+    
+    # HTTPS 1
+    # app.run(host='0.0.0.0',port=5000,debug=True,use_reloader=False,
+    #   ssl_context=("C:/Users/Paulo Janganga/.ssh/tst1/cert.pem", "C:/Users/Paulo Janganga/.ssh/tst1/key.pem"))
+    
+    context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
+
+    # Carrega o certificado e a chave do servidor
+    context.load_cert_chain(
+        certfile='C:/x3la/xyz/cripto/security/ssl/python-server.crt',
+        keyfile='C:/x3la/xyz/cripto/security/ssl/python-server.key'
+    )
+    # Requer certificado do cliente e valida contra a CA
+    context.verify_mode = ssl.CERT_REQUIRED
+    context.load_verify_locations(cafile='C:/x3la/xyz/cripto/security/ssl/myCA.pem')
+
+    # Inicia o servidor Flask com contexto SSL + mTLS
+    run_simple('0.0.0.0', 4433, app, ssl_context=context)

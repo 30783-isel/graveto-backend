@@ -276,6 +276,42 @@ def update_config_endpoint():
         return jsonify({"estado": "Erro", "mensagem": str(e)}), 500
 
 
+
+@app.route('/get-wallet-tokens', methods=['GET'])
+def getWalletTokens():
+    return getWalletTokensValues()
+    
+def getWalletTokensValues():
+    url = "http://localhost:3000/get-tokens-value/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
+    
+    response = requests.get(url, headers=headers)
+    
+    # Verificar se a resposta foi bem-sucedida (código 200)
+    if response.status_code == 200:
+        # Já que response.json() retorna um dicionário, não precisamos de json.loads()
+        data = response.json()
+        
+        # Agora, extrair os dados necessários, como no exemplo anterior
+        account_info_list = []
+        for account in data['result']['value']:
+            account_info = {
+                'mint': account['account']['data']['parsed']['info']['mint'],
+                'tokenAmount': {
+                    'amount': account['account']['data']['parsed']['info']['tokenAmount']['amount'],
+                    'decimals': account['account']['data']['parsed']['info']['tokenAmount']['decimals'],
+                    'uiAmount': account['account']['data']['parsed']['info']['tokenAmount']['uiAmount'],
+                    'uiAmountString': account['account']['data']['parsed']['info']['tokenAmount']['uiAmountString']
+                }
+            }
+            account_info_list.append(account_info)
+
+        # Retornar apenas os dados
+        return account_info_list
+    else:
+        # Em caso de erro, retornar uma lista vazia ou uma mensagem de erro
+        return {"error": "Failed to fetch wallet tokens"}
+            
+
 def read_config():
     config = configparser.ConfigParser()
     config.read(config_file_path)
@@ -564,6 +600,29 @@ def swapToken(swapPairs, pools):
 def sell_tokens(pools):
     logger.info('INICIAR SELL #####################################################################################################################')
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
+        
+        
+        
+        
+        
+        
+        tokens_wallet = getWalletTokensValues()
+
+        if 'error' in tokens_wallet:
+            # Se houve erro ao obter os tokens, logue o erro ou faça algum tratamento
+            logger.error(f"Erro ao obter tokens: {tokens_wallet['error']}")
+            return
+
+        # Agora você pode usar a lista de tokens, por exemplo:
+        for token in tokens_wallet:
+            mint = token['mint']
+            token_amount = token['tokenAmount']
+            
+            
+            
+            
+            
+            
         tokens_vendidos = []
         resultados_formatados = get_tokens_analyzed_from_db()
 
@@ -593,6 +652,19 @@ def sell_tokens(pools):
 
                 solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
 
+
+
+
+                token_amount_in_wallet = 0.0
+                for token in tokens_wallet:
+                    mint = token['mint']
+                    if(platform_token_address == mint):
+                        token_amount_in_wallet = token['tokenAmount']['uiAmount']
+
+
+
+
+
                 if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
                     executeSwap = get_config_value("EXECUTE_SWAP")
                     data = {
@@ -608,7 +680,7 @@ def sell_tokens(pools):
                         'market_cap': market_cap,
                         'score': score,
                         'solana_amount' : solana_amount,
-                        'token_amount': token_amount,
+                        'token_amount': token_amount_in_wallet,
                         'comprado': '0',
                         'executeSwap': executeSwap
                     }
@@ -1018,6 +1090,7 @@ def restart_schedulers():
 
 if __name__ == '__main__':
     try:
+        fetch_data()
         pools = get_pools()
         start_scheduler()
         #start_scheduler_btc_quote()

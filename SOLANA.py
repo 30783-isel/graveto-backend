@@ -611,7 +611,10 @@ def swapToken(swapPairs, pools):
     }
     pair_address = get_pair_with_sol(swapPairs['platform_token_address'], pools, logger)
 
-    url = "https://localhost:443/swap"
+    client_cert = ('C:/x3la/xyz/cripto/security/ssl/node-client-cert.pem', 'C:/x3la/xyz/cripto/security/ssl/node-client-key.pem')
+    ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCa.pem'
+
+    url = "https://localhost:8443/swap"
 
     if swapPairs['comprado'] == '1':
         token_amount = swapPairs['solana_amount']
@@ -634,7 +637,7 @@ def swapToken(swapPairs, pools):
     try:
         pair_address = payload.get('pairAdress')
         if pair_address is not None:
-            response = requests.post(url, verify=False, data=json.dumps(payload), headers=headers)
+            response = requests.post(url, cert=client_cert, verify=ca_cert, data=json.dumps(payload), headers=headers)
             if response.status_code == 200:
                 if swapPairs.get('comprado') == '1': 
                     logger.info(f"Swap com sucesso --- {swapPairs['solana_amount']} de SOLANA por {swapPairs['token_amount']} {swapPairs['name']} \033[92mcomprado\033[0m.")
@@ -1171,8 +1174,8 @@ def restart_schedulers():
 if __name__ == '__main__':
     try:
         fetch_data()
-        """"
         pools = get_pools()
+        """"
         start_scheduler()
         start_scheduler_btc_quote()
         start_scheduler_buy()

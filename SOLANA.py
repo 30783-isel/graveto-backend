@@ -1209,14 +1209,25 @@ if __name__ == '__main__':
     
     context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
 
-    # Carrega o certificado e a chave do servidor
-    context.load_cert_chain(
+    var = 2
+    if var == 1:
+        context.load_cert_chain(
         certfile='C:/x3la/xyz/cripto/security/ssl/python-server.crt',
         keyfile='C:/x3la/xyz/cripto/security/ssl/python-server.key'
+        )
+    else: 
+        context.load_cert_chain(
+        certfile='/root/cripto-server/sec/python-server.crt',
+        keyfile='/root/cripto-server/sec/python-server.key'
     )
+        
     # Requer certificado do cliente e valida contra a CA
-    context.verify_mode = ssl.CERT_REQUIRED
-    context.load_verify_locations(cafile='C:/x3la/xyz/cripto/security/ssl/myCA.pem')
-
+    if var == 1:
+        context.verify_mode = ssl.CERT_REQUIRED
+        context.load_verify_locations(cafile='C:/x3la/xyz/cripto/security/ssl/myCA.pem')
+    else: 
+        context.verify_mode = ssl.CERT_REQUIRED
+        context.load_verify_locations(cafile='/root/cripto-server/sec/myCA.pem')
+        
     # Inicia o servidor Flask com contexto SSL + mTLS
     run_simple('0.0.0.0', 4433, app, ssl_context=context)

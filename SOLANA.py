@@ -510,8 +510,9 @@ def buy_tokens(pools):
         top_tokens = []
         global global_percent_change_1h 
         logger.info("BTC 1h % : " + str(global_percent_change_1h))
+        logger.info("BTC_1H_PERCENT % : " + float(get_config_value('BTC_1H_PERCENT')))
         if global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
-        
+            logger.info("after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):")
             score_weights = {
                 'percent_change_1h': 0.5,
                 'percent_change_24h': 0.5,

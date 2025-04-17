@@ -613,7 +613,7 @@ def swapToken(swapPairs, pools):
     pair_address = get_pair_with_sol(swapPairs['platform_token_address'], pools, logger)
 
 
-    var = 1
+    var = 2
     if var == 1:
         client_cert = ('C:/x3la/xyz/cripto/security/ssl/node-client-cert.pem', 'C:/x3la/xyz/cripto/security/ssl/node-client-key.pem')
         ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCA.pem'
@@ -1210,7 +1210,7 @@ if __name__ == '__main__':
     
     context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
 
-    var = 1
+    var = 2
     if var == 1:
         context.load_cert_chain(
         certfile='C:/x3la/xyz/cripto/security/ssl/python-server.crt',

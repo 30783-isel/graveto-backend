@@ -615,10 +615,10 @@ def swapToken(swapPairs, pools):
     var = 2
     if var == 1:
         client_cert = ('C:/x3la/xyz/cripto/security/ssl/node-client-cert.pem', 'C:/x3la/xyz/cripto/security/ssl/node-client-key.pem')
-        ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCa.pem'
+        ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCA.pem'
     else:
         client_cert = ('/root/cripto-server/sec/node-client-cert.pem', '/root/cripto-server/sec/node-client-key.pem')
-        ca_cert = '/root/cripto-server/sec/myCa.pem'
+        ca_cert = '/root/cripto-server/sec/myCA.pem'
 
     url = "https://localhost:8443/swap"
 

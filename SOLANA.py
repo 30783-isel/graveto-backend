@@ -505,6 +505,7 @@ def process_tokens(score_weights):
     
 def buy_tokens(pools):
     logger.info('INICIAR BUY ######################################################################################################################')
+    logger.info('EXECUTE_OPERATIONS: ' + get_config_value("EXECUTE_OPERATIONS"))
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
         top_tokens = []
         global global_percent_change_1h 

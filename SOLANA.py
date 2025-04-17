@@ -518,10 +518,11 @@ def buy_tokens(pools):
                 'market_cap': 0.0,
                 'liquidity': 0.0
             }
-
+            logger.info('entry process_tokens')
             top_tokens = process_tokens(score_weights)
+            logger.info('exit process_tokens entry database.get_existing_tokens()')
             existing_tokens = database.get_existing_tokens()
-
+            logger.info('exit database.get_existing_tokens()')
             new_tokens = []
             if int(get_config_value('ADD_REPEATED')) == 1:
                 new_tokens = top_tokens
@@ -548,7 +549,7 @@ def buy_tokens(pools):
                     volume_24h = token.get('volume_24h', None)
                     market_cap = token.get('market_cap', None)
                     score = token.get('score', None)
-
+                    logger.info('entry get_price_in_solana')
                     data = get_price_in_solana(solana_quote['price'], token['price'], float(get_config_value('BUY_VALUE_IN_USD')))
                     solana_amount = data['solana_amount']
                     token_quantity = data['token_quantity']
@@ -612,7 +613,7 @@ def swapToken(swapPairs, pools):
     pair_address = get_pair_with_sol(swapPairs['platform_token_address'], pools, logger)
 
 
-    var = 2
+    var = 1
     if var == 1:
         client_cert = ('C:/x3la/xyz/cripto/security/ssl/node-client-cert.pem', 'C:/x3la/xyz/cripto/security/ssl/node-client-key.pem')
         ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCA.pem'
@@ -1209,7 +1210,7 @@ if __name__ == '__main__':
     
     context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
 
-    var = 2
+    var = 1
     if var == 1:
         context.load_cert_chain(
         certfile='C:/x3la/xyz/cripto/security/ssl/python-server.crt',

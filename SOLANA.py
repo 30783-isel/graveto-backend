@@ -5,6 +5,7 @@ import requests
 import json
 import time
 import logging
+import platform
 import importlib
 import functools
 import pandas as pd
@@ -615,8 +616,7 @@ def swapToken(swapPairs, pools):
     pair_address = get_pair_with_sol(swapPairs['platform_token_address'], pools, logger)
 
 
-    var = 2
-    if var == 1:
+    if platform.system() == "Windows":
         client_cert = ('C:/x3la/xyz/cripto/security/ssl/node-client-cert.pem', 'C:/x3la/xyz/cripto/security/ssl/node-client-key.pem')
         ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCA.pem'
     else:
@@ -1211,26 +1211,21 @@ if __name__ == '__main__':
     #   ssl_context=("C:/Users/Paulo Janganga/.ssh/tst1/cert.pem", "C:/Users/Paulo Janganga/.ssh/tst1/key.pem"))
     
     context = ssl.create_default_context(ssl.Purpose.CLIENT_AUTH)
-
-    var = 2
-    if var == 1:
+    
+    if platform.system() == "Windows":
         context.load_cert_chain(
-        certfile='C:/x3la/xyz/cripto/security/ssl/python-server.crt',
-        keyfile='C:/x3la/xyz/cripto/security/ssl/python-server.key'
+            certfile='C:/x3la/xyz/cripto/security/ssl/python-server.crt',
+            keyfile='C:/x3la/xyz/cripto/security/ssl/python-server.key'
         )
-    else: 
-        context.load_cert_chain(
-        certfile='/etc/ssl/crp/python-server.crt',
-        keyfile='/etc/ssl/crp/python-server.key'
-    )
-        
-    # Requer certificado do cliente e valida contra a CA
-    if var == 1:
-        context.verify_mode = ssl.CERT_REQUIRED
         context.load_verify_locations(cafile='C:/x3la/xyz/cripto/security/ssl/myCA.pem')
-    else: 
-        context.verify_mode = ssl.CERT_REQUIRED
+    else:
+        context.load_cert_chain(
+            certfile='/etc/ssl/crp/python-server.crt',
+            keyfile='/etc/ssl/crp/python-server.key'
+        )
         context.load_verify_locations(cafile='/etc/ssl/crp/myCA.pem')
+
+    context.verify_mode = ssl.CERT_REQUIRED
         
     # Inicia o servidor Flask com contexto SSL + mTLS
     run_simple('0.0.0.0', 4433, app, ssl_context=context)

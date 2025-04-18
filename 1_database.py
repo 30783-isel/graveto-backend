@@ -5,7 +5,7 @@ commons = importlib.import_module("commons")
 
 # Configuração da conexão ao MySQL
 config = {
-    'host': '62.84.181.150',         # Endereço do servidor MySQL
+    'host': 'localhost',         # Endereço do servidor MySQL
     'user': 'janganga',       # Seu nome de usuário no MySQL
     'password': 'Terelowmow.123',     # Sua senha do MySQL
     'database': 'degen'  # Nome do banco de dados

@@ -1,0 +1,9 @@
+flask
+gunicorn
+pandas
+requests
+infisicalsdk
+werkzeug
+apscheduler
+mysql
+mysql-connector-python

@@ -286,7 +286,7 @@ def getWalletTokens():
     return getWalletTokensValues()
     
 def getWalletTokensValues():
-    url = "https://localhost:443/get-token-accounts/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
+    url = "https://node_app:8443/get-token-accounts/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
     
     response = requests.get(url, verify=False, headers=headers)
     
@@ -620,10 +620,10 @@ def swapToken(swapPairs, pools):
         client_cert = ('C:/x3la/xyz/cripto/security/ssl/node-client-cert.pem', 'C:/x3la/xyz/cripto/security/ssl/node-client-key.pem')
         ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCA.pem'
     else:
-        client_cert = ('/etc/ssl/crp/node-client-cert.pem', '/etc/ssl/crp/node-client-key.pem')
-        ca_cert = '/etc/ssl/crp/myCA.pem'
+        client_cert = ('/etc/ssl/myapp/node-client-cert.pem', '/etc/ssl/myapp/node-client-key.pem')
+        ca_cert = '/etc/ssl/myapp/myCA.pem'
 
-    url = "https://localhost:8443/swap"
+    url = "https://node_app:8443/swap"
 
     if swapPairs['comprado'] == '1':
         token_amount = swapPairs['solana_amount']
@@ -1220,12 +1220,15 @@ if __name__ == '__main__':
         context.load_verify_locations(cafile='C:/x3la/xyz/cripto/security/ssl/myCA.pem')
     else:
         context.load_cert_chain(
-            certfile='/etc/ssl/crp/python-server.crt',
-            keyfile='/etc/ssl/crp/python-server.key'
+            certfile='/etc/ssl/myapp/python-server.crt',
+            keyfile='/etc/ssl/myapp/python-server.key'
         )
-        context.load_verify_locations(cafile='/etc/ssl/crp/myCA.pem')
+        context.load_verify_locations(cafile='/etc/ssl/myapp/myCA.pem')
 
-    context.verify_mode = ssl.CERT_REQUIRED
+    if False:
+        context.verify_mode = ssl.CERT_REQUIRED  # mTLS
+    else:
+        context.verify_mode = ssl.CERT_NONE      # só HTTPS normal
         
     # Inicia o servidor Flask com contexto SSL + mTLS
     run_simple('0.0.0.0', 4433, app, ssl_context=context)

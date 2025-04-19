@@ -4818,3 +4818,453 @@
 2025-04-18 15:43:07,992 - INFO - exit process_tokens entry database.get_existing_tokens()
 2025-04-18 15:43:08,080 - INFO - exit database.get_existing_tokens()
 2025-04-18 15:43:08,086 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-18 16:31:15,551 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-18 16:31:15,560 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-18 16:31:15,567 - INFO - BTC 1h % : 0
+2025-04-18 16:31:15,574 - INFO - BTC_1H_PERCENT % : -10
+2025-04-18 16:31:15,581 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-18 16:31:15,582 - INFO - entry process_tokens
+2025-04-18 16:31:15,582 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-18 16:31:15,650 - INFO - exit database.get_existing_tokens()
+2025-04-18 16:31:15,657 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-18 16:33:20,830 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-18 16:33:20,840 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-18 16:33:20,848 - INFO - BTC 1h % : 0
+2025-04-18 16:33:20,855 - INFO - BTC_1H_PERCENT % : -10
+2025-04-18 16:33:20,861 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-18 16:33:20,863 - INFO - entry process_tokens
+2025-04-18 16:33:20,864 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-18 16:33:20,972 - INFO - exit database.get_existing_tokens()
+2025-04-18 16:33:20,979 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-18 17:21:07,618 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-18 17:21:07,624 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-18 17:21:07,631 - INFO - BTC 1h % : 0
+2025-04-18 17:21:07,641 - INFO - BTC_1H_PERCENT % : -10
+2025-04-18 17:21:07,653 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-18 17:21:07,654 - INFO - entry process_tokens
+2025-04-18 17:21:07,809 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-18 17:21:07,909 - INFO - exit database.get_existing_tokens()
+2025-04-18 17:21:07,914 - INFO - Novos tokens detectados:
+2025-04-18 17:21:07,915 - INFO - entry get_price_in_solana
+2025-04-18 17:21:07,922 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-18 17:21:08,080 - INFO - Par com SOL não encontrado!
+2025-04-18 17:21:08,081 - INFO - entry get_price_in_solana
+2025-04-18 17:21:08,092 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-04-18 17:21:08,112 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-04-18 17:21:08,115 - ERROR - Error: Could not find a suitable TLS CA certificate bundle, invalid path: /etc/ssl/crp/myCA.pem.
+2025-04-18 18:05:45,134 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-18 18:05:45,142 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-18 18:05:45,148 - INFO - BTC 1h % : 0
+2025-04-18 18:05:45,156 - INFO - BTC_1H_PERCENT % : -10
+2025-04-18 18:05:45,161 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-18 18:05:45,161 - INFO - entry process_tokens
+2025-04-18 18:05:45,307 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-18 18:05:45,385 - INFO - exit database.get_existing_tokens()
+2025-04-18 18:05:45,390 - INFO - Novos tokens detectados:
+2025-04-18 18:05:45,390 - INFO - entry get_price_in_solana
+2025-04-18 18:05:45,400 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-18 18:05:45,620 - INFO - Par com SOL não encontrado!
+2025-04-18 18:05:45,621 - INFO - entry get_price_in_solana
+2025-04-18 18:05:45,633 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-04-18 18:05:45,658 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-04-18 18:05:45,661 - ERROR - Error: Could not find a suitable TLS CA certificate bundle, invalid path: /etc/ssl/crp/myCA.pem.
+2025-04-18 18:07:21,517 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-18 18:07:21,523 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-18 18:07:21,527 - INFO - BTC 1h % : 0
+2025-04-18 18:07:21,533 - INFO - BTC_1H_PERCENT % : -10
+2025-04-18 18:07:21,538 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-18 18:07:21,539 - INFO - entry process_tokens
+2025-04-18 18:07:21,653 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-18 18:07:21,759 - INFO - exit database.get_existing_tokens()
+2025-04-18 18:07:21,766 - INFO - Novos tokens detectados:
+2025-04-18 18:07:21,768 - INFO - entry get_price_in_solana
+2025-04-18 18:07:21,778 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-18 18:07:21,926 - INFO - Par com SOL não encontrado!
+2025-04-18 18:07:21,927 - INFO - entry get_price_in_solana
+2025-04-18 18:07:21,937 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-18 18:07:22,078 - INFO - Par com SOL não encontrado!
+2025-04-18 18:07:22,079 - INFO - entry get_price_in_solana
+2025-04-18 18:07:22,089 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar GOHOME
+2025-04-18 18:07:22,153 - INFO - Par encontrado: GOHOME/WSOL 2Wu1g2ft7qZHfTpfzP3wLdfPeV1is4EwQ3CXBfRYAciD-So11111111111111111111111111111111111111112
+2025-04-18 18:07:22,160 - ERROR - Error: Could not find the TLS certificate file, invalid path: /etc/ssl/myapp/node-client-cert.pem.
+2025-04-18 18:12:06,822 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-18 18:12:06,831 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-18 18:12:06,843 - INFO - BTC 1h % : 0
+2025-04-18 18:12:06,852 - INFO - BTC_1H_PERCENT % : -10
+2025-04-18 18:12:06,864 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-18 18:12:06,865 - INFO - entry process_tokens
+2025-04-18 18:12:07,029 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-18 18:12:07,127 - INFO - exit database.get_existing_tokens()
+2025-04-18 18:12:07,135 - INFO - Novos tokens detectados:
+2025-04-18 18:12:07,135 - INFO - entry get_price_in_solana
+2025-04-18 18:12:07,144 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-18 18:12:07,499 - INFO - Par com SOL não encontrado!
+2025-04-18 18:12:07,500 - INFO - entry get_price_in_solana
+2025-04-18 18:12:07,513 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar GOHOME
+2025-04-18 18:12:07,580 - INFO - Par encontrado: GOHOME/WSOL 2Wu1g2ft7qZHfTpfzP3wLdfPeV1is4EwQ3CXBfRYAciD-So11111111111111111111111111111111111111112
+2025-04-18 18:12:07,594 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f899b48d090>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-18 18:12:07,595 - INFO - entry get_price_in_solana
+2025-04-18 18:12:07,606 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-18 18:12:07,759 - INFO - Par com SOL não encontrado!
+2025-04-18 18:12:07,760 - INFO - entry get_price_in_solana
+2025-04-18 18:12:07,769 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-04-18 18:12:07,819 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-04-18 18:12:07,830 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f899b4beed0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-18 18:12:07,831 - INFO - entry get_price_in_solana
+2025-04-18 18:12:07,842 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Magic Eden
+2025-04-18 18:12:07,856 - INFO - Par encontrado: ME/WSOL MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u-So11111111111111111111111111111111111111112
+2025-04-18 18:12:07,866 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f899b4bec50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-18 18:56:15,814 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-18 18:56:15,822 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-18 18:56:15,829 - INFO - BTC 1h % : 0
+2025-04-18 18:56:15,835 - INFO - BTC_1H_PERCENT % : -10
+2025-04-18 18:56:15,840 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-18 18:56:15,841 - INFO - entry process_tokens
+2025-04-18 18:56:16,091 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-18 18:56:16,447 - INFO - exit database.get_existing_tokens()
+2025-04-18 18:56:16,460 - INFO - Novos tokens detectados:
+2025-04-18 18:56:16,462 - INFO - entry get_price_in_solana
+2025-04-18 18:56:16,491 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-18 18:56:16,903 - INFO - Par com SOL não encontrado!
+2025-04-18 18:56:16,904 - INFO - entry get_price_in_solana
+2025-04-18 18:56:16,918 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-18 18:56:17,231 - INFO - Par com SOL não encontrado!
+2025-04-18 18:56:17,233 - INFO - entry get_price_in_solana
+2025-04-18 18:56:17,250 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar GOHOME
+2025-04-18 18:56:17,380 - INFO - Par encontrado: GOHOME/WSOL 2Wu1g2ft7qZHfTpfzP3wLdfPeV1is4EwQ3CXBfRYAciD-So11111111111111111111111111111111111111112
+2025-04-18 18:56:17,424 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f97d758e750>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-18 18:56:17,426 - INFO - entry get_price_in_solana
+2025-04-18 18:56:17,449 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Magic Eden
+2025-04-18 18:56:17,484 - INFO - Par encontrado: ME/WSOL MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u-So11111111111111111111111111111111111111112
+2025-04-18 18:56:17,501 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f97d7595ed0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-18 18:56:17,502 - INFO - entry get_price_in_solana
+2025-04-18 18:56:17,515 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-04-18 18:56:17,580 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-04-18 18:56:17,592 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f97d758d750>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-18 18:56:17,593 - INFO - entry get_price_in_solana
+2025-04-18 18:56:17,605 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-04-18 18:56:17,769 - INFO - Par com SOL não encontrado!
+2025-04-19 07:35:12,040 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 07:35:12,061 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 07:35:12,070 - INFO - BTC 1h % : 0
+2025-04-19 07:35:12,080 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 07:35:12,088 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 07:35:12,089 - INFO - entry process_tokens
+2025-04-19 07:35:13,032 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 07:35:14,142 - INFO - exit database.get_existing_tokens()
+2025-04-19 07:35:14,152 - INFO - Novos tokens detectados:
+2025-04-19 07:35:14,153 - INFO - entry get_price_in_solana
+2025-04-19 07:35:14,172 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-04-19 07:35:16,420 - INFO - Par com SOL não encontrado!
+2025-04-19 07:35:16,425 - INFO - entry get_price_in_solana
+2025-04-19 07:35:16,462 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-04-19 07:35:16,643 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-04-19 07:35:16,728 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc90a53e350>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 07:35:16,729 - INFO - entry get_price_in_solana
+2025-04-19 07:35:16,751 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Gigachad
+2025-04-19 07:35:17,309 - INFO - Par encontrado: GIGA/WSOL 63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9-So11111111111111111111111111111111111111112
+2025-04-19 07:35:17,332 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7fc90a54a5d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 07:35:17,334 - INFO - entry get_price_in_solana
+2025-04-19 07:35:17,352 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-19 07:35:18,038 - INFO - Par com SOL não encontrado!
+2025-04-19 07:35:18,039 - INFO - entry get_price_in_solana
+2025-04-19 07:35:18,064 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-19 07:35:18,776 - INFO - Par com SOL não encontrado!
+2025-04-19 07:35:18,787 - INFO - entry get_price_in_solana
+2025-04-19 07:35:18,809 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-19 07:35:19,514 - INFO - Par com SOL não encontrado!
+2025-04-19 07:46:41,224 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 07:46:41,238 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 07:46:41,248 - INFO - BTC 1h % : 0
+2025-04-19 07:46:41,257 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 07:46:41,264 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 07:46:41,265 - INFO - entry process_tokens
+2025-04-19 07:46:41,709 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 07:46:42,194 - INFO - exit database.get_existing_tokens()
+2025-04-19 07:46:42,202 - INFO - Novos tokens detectados:
+2025-04-19 07:46:42,203 - INFO - entry get_price_in_solana
+2025-04-19 07:46:42,213 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-04-19 07:46:42,530 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-04-19 07:46:42,560 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f068af6de90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 07:46:42,561 - INFO - entry get_price_in_solana
+2025-04-19 07:46:42,575 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-04-19 07:46:43,520 - INFO - Par com SOL não encontrado!
+2025-04-19 07:46:43,522 - INFO - entry get_price_in_solana
+2025-04-19 07:46:43,535 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Gigachad
+2025-04-19 07:46:43,882 - INFO - Par encontrado: GIGA/WSOL 63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9-So11111111111111111111111111111111111111112
+2025-04-19 07:46:43,904 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f073da82ad0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 07:46:43,906 - INFO - entry get_price_in_solana
+2025-04-19 07:46:43,921 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-19 07:46:44,184 - INFO - Par com SOL não encontrado!
+2025-04-19 07:46:44,185 - INFO - entry get_price_in_solana
+2025-04-19 07:46:44,198 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-19 07:46:44,380 - INFO - Par com SOL não encontrado!
+2025-04-19 07:46:44,381 - INFO - entry get_price_in_solana
+2025-04-19 07:46:44,391 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-19 07:46:44,547 - INFO - Par com SOL não encontrado!
+2025-04-19 07:57:22,553 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 07:57:22,561 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 07:57:22,569 - INFO - BTC 1h % : 0
+2025-04-19 07:57:22,578 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 07:57:22,586 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 07:57:22,588 - INFO - entry process_tokens
+2025-04-19 07:57:22,790 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 07:57:22,884 - INFO - exit database.get_existing_tokens()
+2025-04-19 07:57:22,890 - INFO - Novos tokens detectados:
+2025-04-19 07:57:22,890 - INFO - entry get_price_in_solana
+2025-04-19 07:57:22,898 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-04-19 07:57:22,957 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-04-19 07:57:32,976 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb5ed057e10>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-04-19 07:57:32,977 - INFO - entry get_price_in_solana
+2025-04-19 07:57:32,993 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Gigachad
+2025-04-19 07:57:33,470 - INFO - Par encontrado: GIGA/WSOL 63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9-So11111111111111111111111111111111111111112
+2025-04-19 07:57:43,494 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb69fc804d0>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-04-19 07:57:43,495 - INFO - entry get_price_in_solana
+2025-04-19 07:57:43,506 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-19 07:57:43,821 - INFO - Par com SOL não encontrado!
+2025-04-19 07:57:43,822 - INFO - entry get_price_in_solana
+2025-04-19 07:57:43,832 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-19 07:57:43,973 - INFO - Par com SOL não encontrado!
+2025-04-19 07:57:43,974 - INFO - entry get_price_in_solana
+2025-04-19 07:57:43,985 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-04-19 07:57:44,013 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-04-19 07:57:54,041 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb69fc82f10>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-04-19 07:57:54,045 - INFO - entry get_price_in_solana
+2025-04-19 07:57:54,064 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-19 07:57:55,103 - INFO - Par com SOL não encontrado!
+2025-04-19 08:08:34,169 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 08:08:34,182 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 08:08:34,189 - INFO - BTC 1h % : 0
+2025-04-19 08:08:34,196 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 08:08:34,206 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 08:08:34,207 - INFO - entry process_tokens
+2025-04-19 08:08:34,489 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 08:08:34,670 - INFO - exit database.get_existing_tokens()
+2025-04-19 08:08:34,676 - INFO - Novos tokens detectados:
+2025-04-19 08:08:34,677 - INFO - entry get_price_in_solana
+2025-04-19 08:08:34,690 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-04-19 08:08:34,863 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-04-19 08:08:34,876 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f5b3965f710>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 08:08:34,877 - INFO - entry get_price_in_solana
+2025-04-19 08:08:34,888 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-19 08:08:35,573 - INFO - Par com SOL não encontrado!
+2025-04-19 08:08:35,574 - INFO - entry get_price_in_solana
+2025-04-19 08:08:35,584 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-19 08:08:35,644 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-19 08:08:35,657 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f5b39672450>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 08:08:35,657 - INFO - entry get_price_in_solana
+2025-04-19 08:08:35,667 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-19 08:08:35,825 - INFO - Par com SOL não encontrado!
+2025-04-19 08:08:35,826 - INFO - entry get_price_in_solana
+2025-04-19 08:08:35,841 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Gigachad
+2025-04-19 08:08:35,975 - INFO - Par encontrado: GIGA/WSOL 63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9-So11111111111111111111111111111111111111112
+2025-04-19 08:08:35,987 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f5b39672f90>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 08:08:35,988 - INFO - entry get_price_in_solana
+2025-04-19 08:08:35,997 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-19 08:08:36,151 - INFO - Par com SOL não encontrado!
+2025-04-19 08:47:57,564 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 08:47:57,580 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 08:47:57,593 - INFO - BTC 1h % : 0
+2025-04-19 08:47:57,600 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 08:47:57,614 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 08:47:57,615 - INFO - entry process_tokens
+2025-04-19 08:47:57,950 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 08:47:58,078 - INFO - exit database.get_existing_tokens()
+2025-04-19 08:47:58,083 - INFO - Novos tokens detectados:
+2025-04-19 08:47:58,084 - INFO - entry get_price_in_solana
+2025-04-19 08:47:58,094 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-19 08:47:58,408 - INFO - Par com SOL não encontrado!
+2025-04-19 08:47:58,409 - INFO - entry get_price_in_solana
+2025-04-19 08:47:58,418 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-04-19 08:47:58,432 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-04-19 08:47:58,447 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f760ee022d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 08:47:58,447 - INFO - entry get_price_in_solana
+2025-04-19 08:47:58,457 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-04-19 08:47:58,599 - INFO - Par com SOL não encontrado!
+2025-04-19 08:47:58,600 - INFO - entry get_price_in_solana
+2025-04-19 08:47:58,615 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-19 08:47:58,675 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-19 08:47:58,687 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f760ee137d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 08:47:58,688 - INFO - entry get_price_in_solana
+2025-04-19 08:47:58,700 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-04-19 08:47:58,736 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-04-19 08:47:58,749 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f760ee122d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 08:47:58,750 - INFO - entry get_price_in_solana
+2025-04-19 08:47:58,762 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-04-19 08:47:58,909 - INFO - Par com SOL não encontrado!
+2025-04-19 08:47:58,910 - INFO - entry get_price_in_solana
+2025-04-19 08:47:58,919 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-04-19 08:47:59,065 - INFO - Par com SOL não encontrado!
+2025-04-19 09:06:44,564 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 09:06:44,569 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 09:06:44,574 - INFO - BTC 1h % : 0
+2025-04-19 09:06:44,579 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 09:06:44,584 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 09:06:44,584 - INFO - entry process_tokens
+2025-04-19 09:06:44,717 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 09:06:44,832 - INFO - exit database.get_existing_tokens()
+2025-04-19 09:06:44,837 - INFO - Novos tokens detectados:
+2025-04-19 09:06:44,837 - INFO - entry get_price_in_solana
+2025-04-19 09:06:44,848 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-04-19 09:06:45,010 - INFO - Par com SOL não encontrado!
+2025-04-19 09:06:45,010 - INFO - entry get_price_in_solana
+2025-04-19 09:06:45,020 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-19 09:06:45,163 - INFO - Par com SOL não encontrado!
+2025-04-19 09:06:45,164 - INFO - entry get_price_in_solana
+2025-04-19 09:06:45,173 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-19 09:06:45,247 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-19 09:06:45,257 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f75566c5190>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 09:06:45,258 - INFO - entry get_price_in_solana
+2025-04-19 09:06:45,268 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-04-19 09:06:45,281 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-04-19 09:06:45,290 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f75566d0a50>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 09:06:45,292 - INFO - entry get_price_in_solana
+2025-04-19 09:06:45,319 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-04-19 09:06:45,377 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-04-19 09:06:45,390 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f75566c6410>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 09:06:45,392 - INFO - entry get_price_in_solana
+2025-04-19 09:06:45,407 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-19 09:06:45,560 - INFO - Par com SOL não encontrado!
+2025-04-19 09:06:45,561 - INFO - entry get_price_in_solana
+2025-04-19 09:06:45,569 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-04-19 09:06:45,693 - INFO - Par com SOL não encontrado!
+2025-04-19 09:07:04,636 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 09:07:04,643 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 09:07:04,652 - INFO - BTC 1h % : 0
+2025-04-19 09:07:04,658 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 09:07:04,665 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 09:07:04,667 - INFO - entry process_tokens
+2025-04-19 09:07:04,834 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 09:07:04,914 - INFO - exit database.get_existing_tokens()
+2025-04-19 09:07:04,921 - INFO - Novos tokens detectados:
+2025-04-19 09:07:04,921 - INFO - entry get_price_in_solana
+2025-04-19 09:07:04,932 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-04-19 09:07:05,076 - INFO - Par com SOL não encontrado!
+2025-04-19 09:07:05,077 - INFO - entry get_price_in_solana
+2025-04-19 09:07:05,089 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-19 09:07:05,279 - INFO - Par com SOL não encontrado!
+2025-04-19 09:07:05,279 - INFO - entry get_price_in_solana
+2025-04-19 09:07:05,291 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-19 09:07:05,370 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-19 09:07:05,382 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f75566d2ad0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 09:07:05,382 - INFO - entry get_price_in_solana
+2025-04-19 09:07:05,392 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-04-19 09:07:05,409 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-04-19 09:07:05,420 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f75566d6190>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 09:07:05,420 - INFO - entry get_price_in_solana
+2025-04-19 09:07:05,431 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-04-19 09:07:05,469 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-04-19 09:07:05,481 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7f75566d9c10>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2025-04-19 09:07:05,481 - INFO - entry get_price_in_solana
+2025-04-19 09:07:05,490 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-19 09:07:05,606 - INFO - Par com SOL não encontrado!
+2025-04-19 09:07:05,607 - INFO - entry get_price_in_solana
+2025-04-19 09:07:05,617 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-04-19 09:07:05,747 - INFO - Par com SOL não encontrado!
+2025-04-19 09:14:34,241 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 09:14:34,250 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 09:14:34,256 - INFO - BTC 1h % : 0
+2025-04-19 09:14:34,262 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 09:14:34,267 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 09:14:34,268 - INFO - entry process_tokens
+2025-04-19 09:14:34,268 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 09:14:34,396 - INFO - exit database.get_existing_tokens()
+2025-04-19 09:14:34,401 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 09:15:04,149 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 09:15:04,156 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 09:15:04,163 - INFO - BTC 1h % : 0
+2025-04-19 09:15:04,171 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 09:15:04,180 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 09:15:04,181 - INFO - entry process_tokens
+2025-04-19 09:15:04,182 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 09:15:04,357 - INFO - exit database.get_existing_tokens()
+2025-04-19 09:15:04,599 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 09:16:22,741 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 09:16:22,746 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 09:16:22,750 - INFO - BTC 1h % : 0
+2025-04-19 09:16:22,755 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 09:16:22,762 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 09:16:22,762 - INFO - entry process_tokens
+2025-04-19 09:16:22,763 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 09:16:22,829 - INFO - exit database.get_existing_tokens()
+2025-04-19 09:16:22,835 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 09:19:49,594 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 09:19:49,605 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 09:19:49,611 - INFO - BTC 1h % : 0
+2025-04-19 09:19:49,620 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 09:19:49,629 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 09:19:49,630 - INFO - entry process_tokens
+2025-04-19 09:19:49,833 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 09:19:50,022 - INFO - exit database.get_existing_tokens()
+2025-04-19 09:19:50,030 - INFO - Novos tokens detectados:
+2025-04-19 09:19:50,031 - INFO - entry get_price_in_solana
+2025-04-19 09:19:50,042 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-04-19 09:19:50,278 - INFO - Par com SOL não encontrado!
+2025-04-19 09:19:50,279 - INFO - entry get_price_in_solana
+2025-04-19 09:19:50,288 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-19 09:19:50,408 - INFO - Par com SOL não encontrado!
+2025-04-19 09:19:50,409 - INFO - entry get_price_in_solana
+2025-04-19 09:19:50,419 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-19 09:19:50,558 - INFO - Par com SOL não encontrado!
+2025-04-19 09:19:50,558 - INFO - entry get_price_in_solana
+2025-04-19 09:19:50,569 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-19 09:19:50,648 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-19 09:19:50,690 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'node_app'. (_ssl.c:1016)")))
+2025-04-19 09:19:50,691 - INFO - entry get_price_in_solana
+2025-04-19 09:19:50,702 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-04-19 09:19:50,752 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-04-19 09:19:50,792 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'node_app'. (_ssl.c:1016)")))
+2025-04-19 09:19:50,792 - INFO - entry get_price_in_solana
+2025-04-19 09:19:50,803 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-04-19 09:19:50,819 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-04-19 09:19:50,848 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'node_app'. (_ssl.c:1016)")))
+2025-04-19 09:19:50,849 - INFO - entry get_price_in_solana
+2025-04-19 09:19:50,858 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-04-19 09:19:50,977 - INFO - Par com SOL não encontrado!
+2025-04-19 13:00:19,456 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 13:00:19,484 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 13:00:19,491 - INFO - BTC 1h % : 0
+2025-04-19 13:00:19,500 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 13:00:19,506 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 13:00:19,507 - INFO - entry process_tokens
+2025-04-19 13:00:19,926 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 13:00:20,046 - INFO - exit database.get_existing_tokens()
+2025-04-19 13:00:20,053 - INFO - Novos tokens detectados:
+2025-04-19 13:00:20,053 - INFO - entry get_price_in_solana
+2025-04-19 13:00:20,064 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-19 13:00:26,904 - INFO - Par com SOL não encontrado!
+2025-04-19 13:00:26,905 - INFO - entry get_price_in_solana
+2025-04-19 13:00:26,919 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-04-19 13:00:26,921 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-04-19 13:00:30,767 - INFO - Swap com sucesso --- 0.7212534042741797 de SOLANA por 12.001992866191992 ('OFFICIAL TRUMP',) [92mcomprado[0m.
+2025-04-19 13:00:51,160 - INFO - entry get_price_in_solana
+2025-04-19 13:00:51,175 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Gigachad
+2025-04-19 13:00:51,451 - INFO - Par encontrado: GIGA/WSOL 63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9-So11111111111111111111111111111111111111112
+2025-04-19 13:00:53,103 - INFO - Swap com sucesso --- 0.7212534042741797 de SOLANA por 6178.769142427463 ('Gigachad',) [92mcomprado[0m.
+2025-04-19 13:01:13,248 - INFO - entry get_price_in_solana
+2025-04-19 13:01:13,257 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-04-19 13:01:13,283 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-04-19 13:01:15,530 - INFO - Swap com sucesso --- 0.7212534042741797 de SOLANA por 685.0683552136358 ('Alchemist AI',) [92mcomprado[0m.
+2025-04-19 13:01:35,734 - INFO - entry get_price_in_solana
+2025-04-19 13:01:35,751 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Metaplex
+2025-04-19 13:01:35,871 - INFO - Par encontrado: MPLX/WSOL METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m-So11111111111111111111111111111111111111112
+2025-04-19 13:01:36,953 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-04-19 13:01:36,955 - ERROR - Erro ao comprar Metaplex
+2025-04-19 13:01:56,961 - INFO - entry get_price_in_solana
+2025-04-19 13:01:56,976 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-04-19 13:01:57,163 - INFO - Par com SOL não encontrado!
+2025-04-19 13:01:57,167 - INFO - entry get_price_in_solana
+2025-04-19 13:01:57,179 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-04-19 13:01:57,225 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-04-19 13:01:59,066 - INFO - Swap com sucesso --- 0.7212534042741797 de SOLANA por 45.004094390995526 ('Raydium',) [92mcomprado[0m.
+2025-04-19 13:02:19,294 - INFO - entry get_price_in_solana
+2025-04-19 13:02:19,309 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-04-19 13:02:19,342 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-04-19 13:02:20,926 - INFO - Swap com sucesso --- 0.7212534042741797 de SOLANA por 415.18012782417253 ('Popcat (SOL)',) [92mcomprado[0m.
+2025-04-19 13:02:41,174 - INFO - entry get_price_in_solana
+2025-04-19 13:02:41,193 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-04-19 13:02:41,416 - INFO - Par com SOL não encontrado!
+2025-04-19 13:02:41,418 - INFO - entry get_price_in_solana
+2025-04-19 13:02:41,432 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-04-19 13:02:41,449 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-04-19 13:02:43,205 - INFO - Swap com sucesso --- 0.7212534042741797 de SOLANA por 165.74365345458887 ('would',) [92mcomprado[0m.

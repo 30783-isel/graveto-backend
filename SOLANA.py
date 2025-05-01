@@ -8,6 +8,7 @@ import logging
 import platform
 import importlib
 import functools
+import asyncio
 import pandas as pd
 import configparser
 from datetime import datetime
@@ -110,7 +111,9 @@ def limit_remote_addr():
 @app.route('/best-tokens', methods=['GET'])
 def get_best_tokens_endpoint():
     try:
-        pools = get_pools() 
+        global pools
+        if pools is None:
+            pools = get_pools() 
         top_tokens = buy_tokens(pools)
         sell_tokens(pools) 
         return jsonify(top_tokens), 200
@@ -122,6 +125,8 @@ def get_best_tokens_endpoint():
 def buy_tokens_call():
     try:
         global pools
+        if pools is None:
+            pools = get_pools() 
         top_tokens = buy_tokens(pools)
         return jsonify(top_tokens), 200
     except Exception as e:
@@ -439,6 +444,7 @@ def calculate_score(token, score_weights):
 def process_tokens(score_weights):
     global list_tokens
     data = list_tokens
+    #print("process_tokens(score_weights)" + str(data))
     if not data:
         return []
 
@@ -532,6 +538,7 @@ def buy_tokens(pools):
             else:
                 
                 for token in top_tokens:
+                    #logger.info("top token: " + str(token))
                     if token['symbol'] not in [existing['symbol'] for existing in existing_tokens]:
                         new_tokens.append(token)
 
@@ -552,7 +559,6 @@ def buy_tokens(pools):
                     volume_24h = token.get('volume_24h', None)
                     market_cap = token.get('market_cap', None)
                     score = token.get('score', None)
-                    logger.info('entry get_price_in_solana')
                     data = get_price_in_solana(solana_quote['price'], token['price'], float(get_config_value('BUY_VALUE_IN_USD')))
                     solana_amount = data['solana_amount']
                     token_quantity = data['token_quantity']
@@ -594,10 +600,10 @@ def buy_tokens(pools):
                                 if token['name'] == data['name'][0]:
                                     top_tokens.remove(token)
                                     break 
-                        time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
+                    asyncio.sleep(int(get_config_value('SWAP_EXECUTION'))) 
                 database.save_tokens_to_db(top_tokens)
             else:
-                logger.info("Nenhuma alteração nos tokens detectada.")
+                logger.info("Nenhuma alteração nos tokens detectada. ---- ")
         return top_tokens
 
 
@@ -771,13 +777,15 @@ def sell_tokens(pools):
                         'market_cap': market_cap,
                         'score': score,
                         'solana_amount' : solana_amount,
-                        'token_amount': token_amount_in_wallet,
+                        'token_amount': '0',
+                        #'token_amount': token_amount_in_wallet,
                         'comprado': '0',
                         'executeSwap': executeSwap
                     }
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
                     response = swapToken(data, pools)
+                    logger.info(" --- out swapToken --- ")
                     if response is not None:
                         if(response.status_code == 200):
                             updatedData  = {
@@ -1180,29 +1188,32 @@ def restart_schedulers():
     except Exception as e:
         return jsonify({"estado": "Erro", "mensagem": f"Erro ao reiniciar schedulers: {str(e)}"}), 500
 
-if __name__ == '__main__':
-    try:
-        fetch_data()
-        pools = get_pools()
-        """"
-        start_scheduler()
-        start_scheduler_btc_quote()
-        start_scheduler_buy()
-        start_scheduler_sell()
-        print('Schedulers iniciados com sucesso!')
-        """
-    except Exception as e:
-        logger.error(f"Error: {e}.")
+@app.route('/test-certificate')
+def hello():
+    cert = request.environ.get('SSL_CLIENT_CERT')
+    if cert:
+        return jsonify(message="Ligação segura com mTLS estabelecida!"), 200
+    return jsonify(error="Certificado cliente não encontrado."), 403
 
 
-    @app.route('/test-certificate')
-    def hello():
-        cert = request.environ.get('SSL_CLIENT_CERT')
-        if cert:
-            return jsonify(message="Ligação segura com mTLS estabelecida!"), 200
-        return jsonify(error="Certificado cliente não encontrado."), 403
-    
-    
+
+def initializeApp():
+    fetch_data()
+    logger.info("init getPools ------------------------------------------------------------------------------------------------------------------------------------")
+    global pools
+    pools = get_pools()
+    logger.info("end getPools ------------------------------------------------------------------------------------------------------------------------------------")
+    """"
+    start_scheduler()
+    start_scheduler_btc_quote()
+    start_scheduler_buy()
+    start_scheduler_sell()
+    print('Schedulers iniciados com sucesso!')
+    """
+
+
+
+def initializeLocalServer():
     # HTTP
     # app.run(host='0.0.0.0', port=5000, debug=True, use_reloader=False)
     
@@ -1229,6 +1240,21 @@ if __name__ == '__main__':
         context.verify_mode = ssl.CERT_REQUIRED  # mTLS
     else:
         context.verify_mode = ssl.CERT_NONE      # só HTTPS normal
-        
+    
     # Inicia o servidor Flask com contexto SSL + mTLS
     run_simple('0.0.0.0', 4433, app, ssl_context=context)
+
+
+
+initializeApp()
+    
+if __name__ == '__main__':
+    try:
+        initializeLocalServer()
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+
+
+
+    
+    

@@ -5268,3 +5268,822 @@
 2025-04-19 13:02:41,432 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
 2025-04-19 13:02:41,449 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
 2025-04-19 13:02:43,205 - INFO - Swap com sucesso --- 0.7212534042741797 de SOLANA por 165.74365345458887 ('would',) [92mcomprado[0m.
+2025-04-19 13:42:48,233 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 13:42:48,242 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 13:42:48,247 - INFO - BTC 1h % : 0
+2025-04-19 13:42:48,255 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 13:42:48,260 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 13:42:48,261 - INFO - entry process_tokens
+2025-04-19 13:42:48,262 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 13:42:48,348 - INFO - exit database.get_existing_tokens()
+2025-04-19 13:42:48,354 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 13:42:53,183 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 13:42:53,189 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 13:42:53,197 - INFO - BTC 1h % : 0
+2025-04-19 13:42:53,204 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 13:42:53,211 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 13:42:53,211 - INFO - entry process_tokens
+2025-04-19 13:42:53,212 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 13:42:53,300 - INFO - exit database.get_existing_tokens()
+2025-04-19 13:42:53,308 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 13:43:08,832 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 13:43:08,838 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 13:43:08,843 - INFO - BTC 1h % : 0
+2025-04-19 13:43:08,848 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 13:43:08,853 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 13:43:08,853 - INFO - entry process_tokens
+2025-04-19 13:43:08,854 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 13:43:08,918 - INFO - exit database.get_existing_tokens()
+2025-04-19 13:43:08,924 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 13:45:40,228 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 13:45:40,235 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 13:45:40,241 - INFO - BTC 1h % : 0
+2025-04-19 13:45:40,246 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 13:45:40,251 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 13:45:40,252 - INFO - entry process_tokens
+2025-04-19 13:45:40,253 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 13:45:40,340 - INFO - exit database.get_existing_tokens()
+2025-04-19 13:45:40,348 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 19:36:05,274 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 19:36:05,280 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 19:36:05,286 - INFO - BTC 1h % : 0
+2025-04-19 19:36:05,290 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 19:36:05,296 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 19:36:05,297 - INFO - entry process_tokens
+2025-04-19 19:36:05,298 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 19:36:05,427 - INFO - exit database.get_existing_tokens()
+2025-04-19 19:36:05,434 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 19:36:11,508 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 19:36:11,518 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 19:36:11,532 - INFO - BTC 1h % : 0
+2025-04-19 19:36:11,543 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 19:36:11,551 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 19:36:11,552 - INFO - entry process_tokens
+2025-04-19 19:36:11,552 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 19:36:11,640 - INFO - exit database.get_existing_tokens()
+2025-04-19 19:36:11,646 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 19:48:39,373 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 19:48:39,381 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 19:48:39,386 - INFO - BTC 1h % : 0
+2025-04-19 19:48:39,390 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 19:48:39,394 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 19:48:39,394 - INFO - entry process_tokens
+2025-04-19 19:48:39,556 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 19:48:39,705 - INFO - exit database.get_existing_tokens()
+2025-04-19 19:48:39,710 - ERROR - Error: can only concatenate str (not "dict") to str.
+2025-04-19 21:07:17,432 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 21:07:17,443 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 21:07:17,449 - INFO - BTC 1h % : 0
+2025-04-19 21:07:17,455 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 21:07:17,461 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 21:07:17,462 - INFO - entry process_tokens
+2025-04-19 21:07:17,653 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 21:07:17,818 - INFO - exit database.get_existing_tokens()
+2025-04-19 21:07:17,823 - INFO - top token: {'id': 35336, 'name': 'OFFICIAL TRUMP', 'symbol': 'TRUMP', 'slug': 'official-trump', 'num_market_pairs': 564, 'date_added': '2025-01-18T04:19:35.000Z', 'max_supply': 999999993.45, 'circulating_supply': 199999414.72646, 'total_supply': 999999438.29046, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': '6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN', 'cmc_rank': 46, 'self_reported_circulating_supply': 200000000.0, 'self_reported_market_cap': 1668361182.9095316, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 8.341805914547658, 'volume_24h': 731992520.0372745, 'percent_change_1h': -0.68751695, 'percent_change_24h': 8.72656132, 'market_cap': 1668356300.6712542, 'market_cap_dominance': 0.0621, 'fully_diluted_market_cap': 8341805859.91, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 4.019522185}
+2025-04-19 21:07:17,824 - INFO - top token: {'id': 28541, 'name': 'Jito', 'symbol': 'JTO', 'slug': 'jito', 'num_market_pairs': 300, 'date_added': '2023-12-07T16:04:41.000Z', 'max_supply': nan, 'circulating_supply': 318292201.4, 'total_supply': 999999753.0163376, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL', 'cmc_rank': 100, 'self_reported_circulating_supply': nan, 'self_reported_market_cap': nan, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 1.6778525411509744, 'volume_24h': 21335587.96561788, 'percent_change_1h': 0.59140623, 'percent_change_24h': 4.80270611, 'market_cap': 534047378.9475277, 'market_cap_dominance': 0.0199, 'fully_diluted_market_cap': 1677852126.75, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 2.6970561699999998}
+2025-04-19 21:07:17,826 - INFO - top token: {'id': 34026, 'name': 'ai16z', 'symbol': 'AI16Z', 'slug': 'ai16z', 'num_market_pairs': 244, 'date_added': '2024-11-17T23:08:14.000Z', 'max_supply': 1099999958.01, 'circulating_supply': 1099998661.7937245, 'total_supply': 1099998661.7937245, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC', 'cmc_rank': 241, 'self_reported_circulating_supply': 1099999685.0, 'self_reported_market_cap': 151620062.6725444, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 0.13783646008275394, 'volume_24h': 31189290.09602757, 'percent_change_1h': -1.3953415, 'percent_change_24h': 5.35661394, 'market_cap': 151619921.63741347, 'market_cap_dominance': 0.0056, 'fully_diluted_market_cap': 151620100.3, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 1.98063622}
+2025-04-19 21:07:17,827 - INFO - top token: {'id': 34880, 'name': 'Alchemist AI', 'symbol': 'ALCH', 'slug': 'alchemist-ai', 'num_market_pairs': 125, 'date_added': '2024-12-26T08:47:25.000Z', 'max_supply': 1000000000.0, 'circulating_supply': 850000000.0, 'total_supply': 1000000000.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump', 'cmc_rank': 280, 'self_reported_circulating_supply': 1000000000.0, 'self_reported_market_cap': 148883777.97417426, 'last_updated': '2025-04-19T20:11:00.000Z', 'price': 0.14888377797417426, 'volume_24h': 50638799.45701482, 'percent_change_1h': 1.06984647, 'percent_change_24h': 2.79765649, 'market_cap': 126551211.27804813, 'market_cap_dominance': 0.0, 'fully_diluted_market_cap': 148883777.97, 'last_updated_quote': '2025-04-19T20:11:00.000Z', 'score': 1.9337514800000002}
+2025-04-19 21:07:17,828 - INFO - top token: {'id': 30063, 'name': 'Gigachad', 'symbol': 'GIGA', 'slug': 'gigachad-meme', 'num_market_pairs': 185, 'date_added': '2024-03-21T16:22:17.000Z', 'max_supply': 10000000000.0, 'circulating_supply': 9302411888.0, 'total_supply': 9603935545.16, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': '63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9', 'cmc_rank': 248, 'self_reported_circulating_supply': 9603935545.0, 'self_reported_market_cap': 151625375.2802328, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 0.01578783765986143, 'volume_24h': 4237316.43761206, 'percent_change_1h': 0.84748127, 'percent_change_24h': 2.92789086, 'market_cap': 146864968.73290905, 'market_cap_dominance': 0.0055, 'fully_diluted_market_cap': 157878376.6, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 1.887686065}
+2025-04-19 21:07:17,829 - INFO - top token: {'id': 29210, 'name': 'Jupiter', 'symbol': 'JUP', 'slug': 'jupiter-ag', 'num_market_pairs': 686, 'date_added': '2024-01-31T08:38:13.000Z', 'max_supply': 10000000000.0, 'circulating_supply': 2844383333.32, 'total_supply': 6999978134.838704, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN', 'cmc_rank': 60, 'self_reported_circulating_supply': nan, 'self_reported_market_cap': nan, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 0.3888332510790579, 'volume_24h': 30789925.69646336, 'percent_change_1h': -0.10924995, 'percent_change_24h': 3.73954211, 'market_cap': 1105990818.8099034, 'market_cap_dominance': 0.0412, 'fully_diluted_market_cap': 3888332510.79, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 1.8151460799999999}
+2025-04-19 21:07:17,830 - INFO - top token: {'id': 35837, 'name': 'would', 'symbol': 'WOULD', 'slug': 'wouldmeme', 'num_market_pairs': 9, 'date_added': '2025-02-20T06:36:44.000Z', 'max_supply': 1000000000.0, 'circulating_supply': 999452789.37, 'total_supply': 999452789.37, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump', 'cmc_rank': 206, 'self_reported_circulating_supply': 999452795.43, 'self_reported_market_cap': 608458471.7845902, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 0.6087916053332062, 'volume_24h': 243642.54606741, 'percent_change_1h': 0.62019346, 'percent_change_24h': 2.55250097, 'market_cap': 608458468.0953131, 'market_cap_dominance': 0.0, 'fully_diluted_market_cap': 608791605.33, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 1.586347215}
+2025-04-19 21:07:17,831 - INFO - top token: {'id': 34466, 'name': 'Pudgy Penguins', 'symbol': 'PENGU', 'slug': 'pudgy-penguins', 'num_market_pairs': 320, 'date_added': '2024-12-17T14:00:00.000Z', 'max_supply': nan, 'circulating_supply': 62860396090.04, 'total_supply': 88888888888.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': '2zMMhcVQEXDtdE6vsFS7S7D5oUodfJHE8vd1gnBouauv', 'cmc_rank': 139, 'self_reported_circulating_supply': 62860396090.0, 'self_reported_market_cap': 304481891.12099034, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 0.004843779391479655, 'volume_24h': 17061812.84394704, 'percent_change_1h': -0.26470982, 'percent_change_24h': 3.17808208, 'market_cap': 304481891.12118405, 'market_cap_dominance': 0.0113, 'fully_diluted_market_cap': 430558168.13, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 1.45668613}
+2025-04-19 21:07:17,832 - INFO - top token: {'id': 28782, 'name': 'Popcat (SOL)', 'symbol': 'POPCAT', 'slug': 'popcat-sol', 'num_market_pairs': 408, 'date_added': '2023-12-20T18:16:41.000Z', 'max_supply': 979973220.96, 'circulating_supply': 979973184.6, 'total_supply': 979973220.96, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': '7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr', 'cmc_rank': 159, 'self_reported_circulating_supply': 979973220.96, 'self_reported_market_cap': 235021640.38387826, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 0.2398245537297914, 'volume_24h': 64587493.07267005, 'percent_change_1h': 0.61685398, 'percent_change_24h': 2.22939604, 'market_cap': 235021631.6638575, 'market_cap_dominance': 0.0087, 'fully_diluted_market_cap': 235021640.38, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 1.4231250100000001}
+2025-04-19 21:07:17,833 - INFO - top token: {'id': 28752, 'name': 'dogwifhat', 'symbol': 'WIF', 'slug': 'dogwifhat', 'num_market_pairs': 678, 'date_added': '2023-12-19T09:08:50.000Z', 'max_supply': nan, 'circulating_supply': 998840793.924144, 'total_supply': 998840793.924144, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm', 'cmc_rank': 114, 'self_reported_circulating_supply': nan, 'self_reported_market_cap': nan, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 0.40885093015779655, 'volume_24h': 68771740.32463056, 'percent_change_1h': -0.45763497, 'percent_change_24h': 3.25382553, 'market_cap': 408376987.6754383, 'market_cap_dominance': 0.0152, 'fully_diluted_market_cap': 408376987.68, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 1.39809528}
+2025-04-19 21:07:17,834 - INFO - Novos tokens detectados:
+2025-04-19 21:07:17,835 - INFO - new tokens: {'id': 28541, 'name': 'Jito', 'symbol': 'JTO', 'slug': 'jito', 'num_market_pairs': 300, 'date_added': '2023-12-07T16:04:41.000Z', 'max_supply': nan, 'circulating_supply': 318292201.4, 'total_supply': 999999753.0163376, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL', 'cmc_rank': 100, 'self_reported_circulating_supply': nan, 'self_reported_market_cap': nan, 'last_updated': '2025-04-19T20:10:00.000Z', 'price': 1.6778525411509744, 'volume_24h': 21335587.96561788, 'percent_change_1h': 0.59140623, 'percent_change_24h': 4.80270611, 'market_cap': 534047378.9475277, 'market_cap_dominance': 0.0199, 'fully_diluted_market_cap': 1677852126.75, 'last_updated_quote': '2025-04-19T20:10:00.000Z', 'score': 2.6970561699999998}
+2025-04-19 21:07:17,836 - INFO - entry get_price_in_solana
+2025-04-19 21:07:17,847 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-04-19 21:07:17,920 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-04-19 21:07:21,951 - INFO - Swap com sucesso --- 0.7216512244280419 de SOLANA por 59.59999317425233 ('Jito',) [92mcomprado[0m.
+2025-04-19 21:43:08,575 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 21:43:08,613 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 21:43:08,620 - INFO - BTC 1h % : 0
+2025-04-19 21:43:08,626 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 21:43:08,633 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 21:43:08,634 - INFO - entry process_tokens
+2025-04-19 21:43:08,636 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 21:43:08,972 - INFO - exit database.get_existing_tokens()
+2025-04-19 21:43:08,978 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 22:33:54,932 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 22:33:54,999 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 22:33:55,044 - INFO - BTC 1h % : 0
+2025-04-19 22:33:55,096 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 22:33:55,158 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 22:33:55,163 - INFO - entry process_tokens
+2025-04-19 22:33:55,181 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 22:33:55,579 - INFO - exit database.get_existing_tokens()
+2025-04-19 22:33:55,605 - INFO - Nenhuma alteração nos tokens detectada.
+2025-04-19 22:54:14,068 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 22:54:14,075 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 22:54:14,081 - INFO - BTC 1h % : 0
+2025-04-19 22:54:14,088 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 22:54:14,093 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 22:54:14,093 - INFO - entry process_tokens
+2025-04-19 22:54:14,094 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 22:54:14,235 - INFO - exit database.get_existing_tokens()
+2025-04-19 22:54:14,241 - INFO - Nenhuma alteração nos tokens detectada. ---- 
+2025-04-19 22:59:11,054 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 22:59:11,059 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 22:59:11,063 - INFO - BTC 1h % : 0
+2025-04-19 22:59:11,070 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 22:59:11,074 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 22:59:11,075 - INFO - entry process_tokens
+2025-04-19 22:59:11,075 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 22:59:11,169 - INFO - exit database.get_existing_tokens()
+2025-04-19 22:59:11,179 - INFO - Nenhuma alteração nos tokens detectada. ---- 
+2025-04-19 22:59:21,169 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-19 22:59:21,176 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-19 22:59:21,183 - INFO - BTC 1h % : 0
+2025-04-19 22:59:21,190 - INFO - BTC_1H_PERCENT % : -10
+2025-04-19 22:59:21,196 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-19 22:59:21,196 - INFO - entry process_tokens
+2025-04-19 22:59:21,197 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-19 22:59:21,299 - INFO - exit database.get_existing_tokens()
+2025-04-19 22:59:21,307 - INFO - Nenhuma alteração nos tokens detectada. ---- 
+2025-04-20 06:53:00,537 - INFO - init fetch_data
+2025-04-20 06:53:01,354 - INFO - end fetch_data
+2025-04-20 06:53:01,419 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 06:55:16,332 - INFO - end getPools -------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 07:06:13,509 - INFO - init fetch_data
+2025-04-20 07:06:14,380 - INFO - end fetch_data
+2025-04-20 07:06:14,448 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 07:08:02,155 - INFO - end getPools -------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 07:24:37,788 - INFO - init fetch_data
+2025-04-20 07:24:41,915 - INFO - end fetch_data
+2025-04-20 07:24:42,017 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 07:26:02,097 - INFO - end getPools -------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 07:28:12,781 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 07:28:12,789 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 07:28:12,794 - INFO - BTC 1h % : 0
+2025-04-20 07:28:12,800 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 07:28:12,808 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 07:28:12,809 - INFO - entry process_tokens
+2025-04-20 07:28:12,988 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 07:28:13,139 - INFO - exit database.get_existing_tokens()
+2025-04-20 07:28:13,146 - INFO - Novos tokens detectados:
+2025-04-20 07:28:13,147 - INFO - new tokens: {'id': 34026, 'name': 'ai16z', 'symbol': 'AI16Z', 'slug': 'ai16z', 'num_market_pairs': 244, 'date_added': '2024-11-17T23:08:14.000Z', 'max_supply': 1099999958.01, 'circulating_supply': 1099998661.3262198, 'total_supply': 1099998661.3262198, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC', 'cmc_rank': 228, 'self_reported_circulating_supply': 1099999685.0, 'self_reported_market_cap': 167030696.4565598, 'last_updated': '2025-04-20T07:24:00.000Z', 'price': 0.15184613117099194, 'volume_24h': 46546734.65708568, 'percent_change_1h': -1.27672103, 'percent_change_24h': 13.51718368, 'market_cap': 167030541.0156567, 'market_cap_dominance': 0.0062, 'fully_diluted_market_cap': 167030737.91, 'last_updated_quote': '2025-04-20T07:24:00.000Z', 'score': 6.120231325000001}
+2025-04-20 07:28:13,148 - INFO - entry get_price_in_solana
+2025-04-20 07:28:13,160 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-20 07:28:13,415 - INFO - Par com SOL não encontrado!
+2025-04-20 07:28:13,416 - INFO - new tokens: {'id': 33597, 'name': 'Fartcoin', 'symbol': 'FARTCOIN', 'slug': 'fartcoin', 'num_market_pairs': 374, 'date_added': '2024-10-23T17:42:55.000Z', 'max_supply': 1000000000.0, 'circulating_supply': 999998256.0, 'total_supply': 1000000000.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': '9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump', 'cmc_rank': 70, 'self_reported_circulating_supply': 1000000000.0, 'self_reported_market_cap': 836382275.4520607, 'last_updated': '2025-04-20T07:24:00.000Z', 'price': 0.8363822754520607, 'volume_24h': 197965799.6675438, 'percent_change_1h': -1.42585752, 'percent_change_24h': 9.53281414, 'market_cap': 836380816.8013723, 'market_cap_dominance': 0.0312, 'fully_diluted_market_cap': 836382275.45, 'last_updated_quote': '2025-04-20T07:24:00.000Z', 'score': 4.053478309999999}
+2025-04-20 07:28:13,417 - INFO - entry get_price_in_solana
+2025-04-20 07:28:13,428 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-20 07:28:13,516 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-20 07:28:16,274 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-04-20 07:28:16,276 - ERROR - Erro ao comprar Fartcoin
+2025-04-20 07:28:36,285 - INFO - new tokens: {'id': 28752, 'name': 'dogwifhat', 'symbol': 'WIF', 'slug': 'dogwifhat', 'num_market_pairs': 678, 'date_added': '2023-12-19T09:08:50.000Z', 'max_supply': nan, 'circulating_supply': 998840793.733037, 'total_supply': 998840793.733037, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm', 'cmc_rank': 110, 'self_reported_circulating_supply': nan, 'self_reported_market_cap': nan, 'last_updated': '2025-04-20T07:23:00.000Z', 'price': 0.4310310756757511, 'volume_24h': 93483225.22132261, 'percent_change_1h': -1.13682004, 'percent_change_24h': 7.35049985, 'market_cap': 430531421.75157195, 'market_cap_dominance': 0.0161, 'fully_diluted_market_cap': 430531421.75, 'last_updated_quote': '2025-04-20T07:23:00.000Z', 'score': 3.106839905}
+2025-04-20 07:28:36,289 - INFO - entry get_price_in_solana
+2025-04-20 07:28:36,313 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-04-20 07:28:36,498 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-04-20 07:28:38,433 - INFO - Swap com sucesso --- 0.7194186123836972 de SOLANA por 232.0018338427792 ('dogwifhat',) [92mcomprado[0m.
+2025-04-20 07:28:58,707 - INFO - new tokens: {'id': 34880, 'name': 'Alchemist AI', 'symbol': 'ALCH', 'slug': 'alchemist-ai', 'num_market_pairs': 125, 'date_added': '2024-12-26T08:47:25.000Z', 'max_supply': 1000000000.0, 'circulating_supply': 850000000.0, 'total_supply': 1000000000.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump', 'cmc_rank': 280, 'self_reported_circulating_supply': 1000000000.0, 'self_reported_market_cap': 149215484.84071934, 'last_updated': '2025-04-20T07:24:00.000Z', 'price': 0.14921548484071934, 'volume_24h': 52785489.71791632, 'percent_change_1h': -1.49467736, 'percent_change_24h': 7.46592613, 'market_cap': 126833162.11461143, 'market_cap_dominance': 0.0, 'fully_diluted_market_cap': 149215484.84, 'last_updated_quote': '2025-04-20T07:24:00.000Z', 'score': 2.985624385}
+2025-04-20 07:28:58,708 - INFO - entry get_price_in_solana
+2025-04-20 07:28:58,724 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-04-20 07:28:58,763 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-04-20 07:29:00,520 - INFO - Swap com sucesso --- 0.7194186123836972 de SOLANA por 670.1717325567477 ('Alchemist AI',) [92mcomprado[0m.
+2025-04-20 07:29:20,757 - INFO - new tokens: {'id': 11165, 'name': 'Orca', 'symbol': 'ORCA', 'slug': 'orca', 'num_market_pairs': 213, 'date_added': '2021-08-05T00:00:00.000Z', 'max_supply': nan, 'circulating_supply': 55776556.0, 'total_supply': 74999703.402457, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE', 'cmc_rank': 238, 'self_reported_circulating_supply': 53275201.0, 'self_reported_market_cap': 148906773.49285015, 'last_updated': '2025-04-20T07:24:00.000Z', 'price': 2.795048553507103, 'volume_24h': 89386279.15392025, 'percent_change_1h': -0.55090045, 'percent_change_24h': 5.68715205, 'market_cap': 155898182.16740793, 'market_cap_dominance': 0.0058, 'fully_diluted_market_cap': 209627812.51, 'last_updated_quote': '2025-04-20T07:24:00.000Z', 'score': 2.5681258}
+2025-04-20 07:29:20,758 - INFO - entry get_price_in_solana
+2025-04-20 07:29:20,773 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-04-20 07:29:21,307 - INFO - Par com SOL não encontrado!
+2025-04-20 07:29:21,309 - INFO - new tokens: {'id': 35429, 'name': 'Solayer', 'symbol': 'LAYER', 'slug': 'solayer', 'num_market_pairs': 165, 'date_added': '2025-01-23T10:38:59.000Z', 'max_supply': nan, 'circulating_supply': 210000000.0, 'total_supply': 1000000000.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'LAYER4xPpTCb3QL8S9u41EAhAX7mhBn8Q6xMTwY2Yzc', 'cmc_rank': 109, 'self_reported_circulating_supply': 210000000.0, 'self_reported_market_cap': 452446035.0150776, 'last_updated': '2025-04-20T07:24:00.000Z', 'price': 2.1545049286432265, 'volume_24h': 126496219.06477177, 'percent_change_1h': 0.98130303, 'percent_change_24h': 3.33729506, 'market_cap': 452446035.0150776, 'market_cap_dominance': 0.0169, 'fully_diluted_market_cap': 2154504928.64, 'last_updated_quote': '2025-04-20T07:24:00.000Z', 'score': 2.159299045}
+2025-04-20 07:29:21,310 - INFO - entry get_price_in_solana
+2025-04-20 07:29:21,321 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-20 07:29:21,424 - INFO - Par com SOL não encontrado!
+2025-04-20 07:29:21,425 - INFO - new tokens: {'id': 32956, 'name': 'Grass', 'symbol': 'GRASS', 'slug': 'grass', 'num_market_pairs': 159, 'date_added': '2024-10-28T05:31:00.000Z', 'max_supply': nan, 'circulating_supply': 243905091.0, 'total_supply': 1000000000.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'Grass7B4RdKfBCjTKgSqnXkqjwiGvQyFbuSCUJr3XXjs', 'cmc_rank': 111, 'self_reported_circulating_supply': 275475576.0, 'self_reported_market_cap': 479685402.4145551, 'last_updated': '2025-04-20T07:24:00.000Z', 'price': 1.7412992083717618, 'volume_24h': 23419819.2555972, 'percent_change_1h': -0.01384796, 'percent_change_24h': 4.26219349, 'market_cap': 424711741.8761425, 'market_cap_dominance': 0.0158, 'fully_diluted_market_cap': 1741299208.37, 'last_updated_quote': '2025-04-20T07:24:00.000Z', 'score': 2.124172765}
+2025-04-20 07:29:21,426 - INFO - entry get_price_in_solana
+2025-04-20 07:29:21,437 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-04-20 07:29:21,591 - INFO - Par com SOL não encontrado!
+2025-04-20 07:29:21,591 - INFO - new tokens: {'id': 28782, 'name': 'Popcat (SOL)', 'symbol': 'POPCAT', 'slug': 'popcat-sol', 'num_market_pairs': 408, 'date_added': '2023-12-20T18:16:41.000Z', 'max_supply': 979973220.96, 'circulating_supply': 979973184.6, 'total_supply': 979973220.96, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': '7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr', 'cmc_rank': 157, 'self_reported_circulating_supply': 979973220.96, 'self_reported_market_cap': 242760861.53026533, 'last_updated': '2025-04-20T07:24:00.000Z', 'price': 0.2477219339651468, 'volume_24h': 75586688.59249339, 'percent_change_1h': -0.46205961, 'percent_change_24h': 4.54386292, 'market_cap': 242760852.52309582, 'market_cap_dominance': 0.0091, 'fully_diluted_market_cap': 242760861.53, 'last_updated_quote': '2025-04-20T07:24:00.000Z', 'score': 2.040901655}
+2025-04-20 07:29:21,592 - INFO - entry get_price_in_solana
+2025-04-20 07:29:21,604 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-04-20 07:29:21,626 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-04-20 07:29:23,708 - INFO - Swap com sucesso --- 0.7194186123836972 de SOLANA por 403.6784244307954 ('Popcat (SOL)',) [92mcomprado[0m.
+2025-04-20 07:29:43,915 - INFO - new tokens: {'id': 29210, 'name': 'Jupiter', 'symbol': 'JUP', 'slug': 'jupiter-ag', 'num_market_pairs': 686, 'date_added': '2024-01-31T08:38:13.000Z', 'max_supply': 10000000000.0, 'circulating_supply': 2844383333.32, 'total_supply': 6999978134.838703, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN', 'cmc_rank': 58, 'self_reported_circulating_supply': nan, 'self_reported_market_cap': nan, 'last_updated': '2025-04-20T07:24:00.000Z', 'price': 0.40017693716176933, 'volume_24h': 32847186.85810852, 'percent_change_1h': -0.83236441, 'percent_change_24h': 4.29495894, 'market_cap': 1138256610.4419818, 'market_cap_dominance': 0.0425, 'fully_diluted_market_cap': 4001769371.62, 'last_updated_quote': '2025-04-20T07:24:00.000Z', 'score': 1.7312972649999998}
+2025-04-20 07:29:43,917 - INFO - entry get_price_in_solana
+2025-04-20 07:29:43,932 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-04-20 07:29:44,000 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-04-20 07:29:45,736 - INFO - Swap com sucesso --- 0.7194186123836972 de SOLANA por 249.889463169077 ('Jupiter',) [92mcomprado[0m.
+2025-04-20 07:50:10,857 - INFO - init fetch_data
+2025-04-20 07:50:11,703 - INFO - end fetch_data
+2025-04-20 07:50:11,764 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 07:51:36,703 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 07:54:59,169 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 07:54:59,182 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 07:54:59,188 - INFO - BTC 1h % : 0
+2025-04-20 07:54:59,198 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 07:54:59,205 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 07:54:59,205 - INFO - entry process_tokens
+2025-04-20 07:54:59,440 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 07:54:59,587 - INFO - exit database.get_existing_tokens()
+2025-04-20 07:54:59,594 - INFO - Novos tokens detectados:
+2025-04-20 07:54:59,595 - INFO - new tokens: {'id': 34880, 'name': 'Alchemist AI', 'symbol': 'ALCH', 'slug': 'alchemist-ai', 'num_market_pairs': 125, 'date_added': '2024-12-26T08:47:25.000Z', 'max_supply': 1000000000.0, 'circulating_supply': 850000000.0, 'total_supply': 1000000000.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump', 'cmc_rank': 275, 'self_reported_circulating_supply': 1000000000.0, 'self_reported_market_cap': 151980208.9983542, 'last_updated': '2025-04-20T07:49:00.000Z', 'price': 0.1519802089983542, 'volume_24h': 52883913.26280604, 'percent_change_1h': 2.6182655, 'percent_change_24h': 9.98932833, 'market_cap': 129183177.64860108, 'market_cap_dominance': 0.0, 'fully_diluted_market_cap': 151980209.0, 'last_updated_quote': '2025-04-20T07:49:00.000Z', 'score': 6.3037969149999995}
+2025-04-20 07:54:59,596 - INFO - entry get_price_in_solana
+2025-04-20 07:54:59,604 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-04-20 07:54:59,813 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-04-20 07:55:02,970 - INFO - Swap com sucesso --- 0.7169582397102072 de SOLANA por 657.9804084957068 ('Alchemist AI',) [92mcomprado[0m.
+2025-04-20 07:55:23,277 - INFO - new tokens: {'id': 33597, 'name': 'Fartcoin', 'symbol': 'FARTCOIN', 'slug': 'fartcoin', 'num_market_pairs': 374, 'date_added': '2024-10-23T17:42:55.000Z', 'max_supply': 1000000000.0, 'circulating_supply': 999998256.0, 'total_supply': 1000000000.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': '9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump', 'cmc_rank': 70, 'self_reported_circulating_supply': 1000000000.0, 'self_reported_market_cap': 842900300.1116148, 'last_updated': '2025-04-20T07:49:00.000Z', 'price': 0.8429003001116149, 'volume_24h': 197455442.3901822, 'percent_change_1h': -0.53785335, 'percent_change_24h': 10.4188604, 'market_cap': 842898830.0934914, 'market_cap_dominance': 0.0315, 'fully_diluted_market_cap': 842900300.11, 'last_updated_quote': '2025-04-20T07:49:00.000Z', 'score': 4.940503525}
+2025-04-20 07:55:23,278 - INFO - entry get_price_in_solana
+2025-04-20 07:55:23,300 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-20 07:55:23,638 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-20 07:55:25,413 - INFO - Swap com sucesso --- 0.7169582397102072 de SOLANA por 118.6379931134895 ('Fartcoin',) [92mcomprado[0m.
+2025-04-20 07:55:45,651 - INFO - new tokens: {'id': 34026, 'name': 'ai16z', 'symbol': 'AI16Z', 'slug': 'ai16z', 'num_market_pairs': 244, 'date_added': '2024-11-17T23:08:14.000Z', 'max_supply': 1099999958.01, 'circulating_supply': 1099998661.3262198, 'total_supply': 1099998661.3262198, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'HeLp6NuQkmYB4pYWo2zYs22mESHXPQYzXbB8n4V98jwC', 'cmc_rank': 230, 'self_reported_circulating_supply': 1099999685.0, 'self_reported_market_cap': 164321760.27915752, 'last_updated': '2025-04-20T07:49:00.000Z', 'price': 0.14938346121358892, 'volume_24h': 47539698.23458304, 'percent_change_1h': -1.58723616, 'percent_change_24h': 11.28003651, 'market_cap': 164321607.3592251, 'market_cap_dominance': 0.0061, 'fully_diluted_market_cap': 164321801.06, 'last_updated_quote': '2025-04-20T07:49:00.000Z', 'score': 4.846400175}
+2025-04-20 07:55:45,652 - INFO - entry get_price_in_solana
+2025-04-20 07:55:45,674 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-20 07:55:46,817 - INFO - Par com SOL não encontrado!
+2025-04-20 07:55:46,822 - INFO - new tokens: {'id': 35429, 'name': 'Solayer', 'symbol': 'LAYER', 'slug': 'solayer', 'num_market_pairs': 165, 'date_added': '2025-01-23T10:38:59.000Z', 'max_supply': nan, 'circulating_supply': 210000000.0, 'total_supply': 1000000000.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'LAYER4xPpTCb3QL8S9u41EAhAX7mhBn8Q6xMTwY2Yzc', 'cmc_rank': 107, 'self_reported_circulating_supply': 210000000.0, 'self_reported_market_cap': 458492202.6580007, 'last_updated': '2025-04-20T07:48:00.000Z', 'price': 2.1832962031333367, 'volume_24h': 129394426.04615773, 'percent_change_1h': 2.76770233, 'percent_change_24h': 4.57935405, 'market_cap': 458492202.6580007, 'market_cap_dominance': 0.0171, 'fully_diluted_market_cap': 2183296203.13, 'last_updated_quote': '2025-04-20T07:48:00.000Z', 'score': 3.67352819}
+2025-04-20 07:55:46,823 - INFO - entry get_price_in_solana
+2025-04-20 07:55:46,841 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-20 07:55:47,026 - INFO - Par com SOL não encontrado!
+2025-04-20 07:55:47,027 - INFO - new tokens: {'id': 28752, 'name': 'dogwifhat', 'symbol': 'WIF', 'slug': 'dogwifhat', 'num_market_pairs': 678, 'date_added': '2023-12-19T09:08:50.000Z', 'max_supply': nan, 'circulating_supply': 998840793.733037, 'total_supply': 998840793.733037, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm', 'cmc_rank': 110, 'self_reported_circulating_supply': nan, 'self_reported_market_cap': nan, 'last_updated': '2025-04-20T07:49:00.000Z', 'price': 0.43013068848073205, 'volume_24h': 96939207.77961677, 'percent_change_1h': -1.73928873, 'percent_change_24h': 6.79843593, 'market_cap': 429632078.2910321, 'market_cap_dominance': 0.016, 'fully_diluted_market_cap': 429632078.29, 'last_updated_quote': '2025-04-20T07:49:00.000Z', 'score': 2.5295736}
+2025-04-20 07:55:47,027 - INFO - entry get_price_in_solana
+2025-04-20 07:55:47,041 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-04-20 07:55:47,085 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-04-20 07:55:48,744 - INFO - Swap com sucesso --- 0.7169582397102072 de SOLANA por 232.4874803823247 ('dogwifhat',) [92mcomprado[0m.
+2025-04-20 07:56:08,978 - INFO - new tokens: {'id': 11165, 'name': 'Orca', 'symbol': 'ORCA', 'slug': 'orca', 'num_market_pairs': 213, 'date_added': '2021-08-05T00:00:00.000Z', 'max_supply': nan, 'circulating_supply': 55776556.0, 'total_supply': 74999703.402457, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'orcaEKTdK7LKz57vaAYr9QeNsVEPfiu6QeMU1kektZE', 'cmc_rank': 239, 'self_reported_circulating_supply': 53275201.0, 'self_reported_market_cap': 148551478.99339077, 'last_updated': '2025-04-20T07:48:00.000Z', 'price': 2.7883795125126, 'volume_24h': 89541275.04785891, 'percent_change_1h': -0.99875527, 'percent_change_24h': 5.67557408, 'market_cap': 155526206.02891174, 'market_cap_dominance': 0.0058, 'fully_diluted_market_cap': 209127636.41, 'last_updated_quote': '2025-04-20T07:48:00.000Z', 'score': 2.3384094049999997}
+2025-04-20 07:56:08,979 - INFO - entry get_price_in_solana
+2025-04-20 07:56:08,992 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-04-20 07:56:09,146 - INFO - Par com SOL não encontrado!
+2025-04-20 07:56:09,147 - INFO - new tokens: {'id': 28782, 'name': 'Popcat (SOL)', 'symbol': 'POPCAT', 'slug': 'popcat-sol', 'num_market_pairs': 408, 'date_added': '2023-12-20T18:16:41.000Z', 'max_supply': 979973220.96, 'circulating_supply': 979973184.6, 'total_supply': 979973220.96, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': '7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr', 'cmc_rank': 157, 'self_reported_circulating_supply': 979973220.96, 'self_reported_market_cap': 242987718.03164095, 'last_updated': '2025-04-20T07:49:00.000Z', 'price': 0.2479534265167018, 'volume_24h': 75624997.69919138, 'percent_change_1h': -0.37887562, 'percent_change_24h': 4.39123981, 'market_cap': 242987709.01605436, 'market_cap_dominance': 0.0091, 'fully_diluted_market_cap': 242987718.03, 'last_updated_quote': '2025-04-20T07:49:00.000Z', 'score': 2.006182095}
+2025-04-20 07:56:09,148 - INFO - entry get_price_in_solana
+2025-04-20 07:56:09,160 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-04-20 07:56:09,189 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-04-20 07:56:10,672 - INFO - Swap com sucesso --- 0.7169582397102072 de SOLANA por 403.3015449910072 ('Popcat (SOL)',) [92mcomprado[0m.
+2025-04-20 07:56:30,928 - INFO - new tokens: {'id': 29210, 'name': 'Jupiter', 'symbol': 'JUP', 'slug': 'jupiter-ag', 'num_market_pairs': 686, 'date_added': '2024-01-31T08:38:13.000Z', 'max_supply': 10000000000.0, 'circulating_supply': 2844383333.32, 'total_supply': 6999978134.838703, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN', 'cmc_rank': 59, 'self_reported_circulating_supply': nan, 'self_reported_market_cap': nan, 'last_updated': '2025-04-20T07:49:00.000Z', 'price': 0.400924301927575, 'volume_24h': 33224823.1982074, 'percent_change_1h': -0.49483888, 'percent_change_24h': 4.06087352, 'market_cap': 1140382402.3257499, 'market_cap_dominance': 0.0426, 'fully_diluted_market_cap': 4009243019.28, 'last_updated_quote': '2025-04-20T07:49:00.000Z', 'score': 1.7830173200000001}
+2025-04-20 07:56:30,932 - INFO - entry get_price_in_solana
+2025-04-20 07:56:31,028 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-04-20 07:56:31,137 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-04-20 07:56:32,764 - INFO - Swap com sucesso --- 0.7169582397102072 de SOLANA por 249.42364311471573 ('Jupiter',) [92mcomprado[0m.
+2025-04-20 07:56:52,948 - INFO - new tokens: {'id': 32956, 'name': 'Grass', 'symbol': 'GRASS', 'slug': 'grass', 'num_market_pairs': 159, 'date_added': '2024-10-28T05:31:00.000Z', 'max_supply': nan, 'circulating_supply': 243905091.0, 'total_supply': 1000000000.0, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': 'Grass7B4RdKfBCjTKgSqnXkqjwiGvQyFbuSCUJr3XXjs', 'cmc_rank': 111, 'self_reported_circulating_supply': 275475576.0, 'self_reported_market_cap': 476405290.0270345, 'last_updated': '2025-04-20T07:49:00.000Z', 'price': 1.7293921186937986, 'volume_24h': 23367846.60929283, 'percent_change_1h': -0.53633425, 'percent_change_24h': 3.72666056, 'market_cap': 421807542.08469373, 'market_cap_dominance': 0.0157, 'fully_diluted_market_cap': 1729392118.69, 'last_updated_quote': '2025-04-20T07:49:00.000Z', 'score': 1.595163155}
+2025-04-20 07:56:52,949 - INFO - entry get_price_in_solana
+2025-04-20 07:56:52,968 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-04-20 07:56:53,212 - INFO - Par com SOL não encontrado!
+2025-04-20 07:56:53,213 - INFO - new tokens: {'id': 33788, 'name': 'Peanut the Squirrel', 'symbol': 'PNUT', 'slug': 'peanut-the-squirrel', 'num_market_pairs': 276, 'date_added': '2024-11-04T02:00:00.000Z', 'max_supply': nan, 'circulating_supply': 999852918.622009, 'total_supply': 999852918.622009, 'infinite_supply': False, 'platform_id': 5426, 'platform_name': 'Solana', 'platform_slug': 'solana', 'platform_symbol': 'SOL', 'platform_token_address': '2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump', 'cmc_rank': 263, 'self_reported_circulating_supply': 999852928.337544, 'self_reported_market_cap': 136858374.6845338, 'last_updated': '2025-04-20T07:48:00.000Z', 'price': 0.13687850563391188, 'volume_24h': 54861768.15531875, 'percent_change_1h': -2.86875903, 'percent_change_24h': 5.65962869, 'market_cap': 136858373.3546859, 'market_cap_dominance': 0.0051, 'fully_diluted_market_cap': 136858373.35, 'last_updated_quote': '2025-04-20T07:48:00.000Z', 'score': 1.39543483}
+2025-04-20 07:56:53,214 - INFO - entry get_price_in_solana
+2025-04-20 07:56:53,228 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-04-20 07:56:53,397 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-04-20 07:56:55,216 - INFO - Swap com sucesso --- 0.7169582397102072 de SOLANA por 730.5748958675425 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-04-20 08:15:05,201 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 08:16:22,912 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 08:19:56,744 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 08:19:56,790 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 08:19:56,803 - INFO - BTC 1h % : 0
+2025-04-20 08:19:56,813 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 08:19:56,827 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 08:19:56,828 - INFO - entry process_tokens
+2025-04-20 08:19:57,225 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 08:19:57,433 - INFO - exit database.get_existing_tokens()
+2025-04-20 08:19:57,438 - INFO - Novos tokens detectados:
+2025-04-20 08:19:57,439 - INFO - entry get_price_in_solana
+2025-04-20 08:19:57,452 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-20 08:19:58,751 - INFO - Par com SOL não encontrado!
+2025-04-20 08:19:58,752 - INFO - entry get_price_in_solana
+2025-04-20 08:19:58,762 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-20 08:19:58,827 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-20 08:20:02,472 - INFO - Swap com sucesso --- 0.7175125151377924 de SOLANA por 118.93638655211197 ('Fartcoin',) [92mcomprado[0m.
+2025-04-20 08:20:22,813 - INFO - entry get_price_in_solana
+2025-04-20 08:20:22,829 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-04-20 08:20:22,876 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-04-20 08:20:24,498 - INFO - Swap com sucesso --- 0.7175125151377924 de SOLANA por 675.0033904576462 ('Alchemist AI',) [92mcomprado[0m.
+2025-04-20 08:20:44,747 - INFO - entry get_price_in_solana
+2025-04-20 08:20:44,762 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-04-20 08:20:44,834 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-04-20 08:20:46,442 - INFO - Swap com sucesso --- 0.7175125151377924 de SOLANA por 233.34629383950772 ('dogwifhat',) [92mcomprado[0m.
+2025-04-20 08:21:06,648 - INFO - entry get_price_in_solana
+2025-04-20 08:21:06,663 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-20 08:21:06,882 - INFO - Par com SOL não encontrado!
+2025-04-20 08:21:06,884 - INFO - entry get_price_in_solana
+2025-04-20 08:21:06,900 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-04-20 08:21:06,943 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-04-20 08:21:08,540 - INFO - Swap com sucesso --- 0.7175125151377924 de SOLANA por 249.15409319432956 ('Jupiter',) [92mcomprado[0m.
+2025-04-20 08:21:28,720 - INFO - entry get_price_in_solana
+2025-04-20 08:21:28,739 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-04-20 08:21:28,921 - INFO - Par com SOL não encontrado!
+2025-04-20 08:21:28,922 - INFO - entry get_price_in_solana
+2025-04-20 08:21:28,937 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-04-20 08:21:29,100 - INFO - Par com SOL não encontrado!
+2025-04-20 08:21:29,101 - INFO - entry get_price_in_solana
+2025-04-20 08:21:29,113 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-04-20 08:21:29,221 - INFO - Par com SOL não encontrado!
+2025-04-20 08:21:29,222 - INFO - entry get_price_in_solana
+2025-04-20 08:21:29,236 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-04-20 08:21:29,263 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-04-20 08:21:30,841 - INFO - Swap com sucesso --- 0.7175125151377924 de SOLANA por 405.30329332619044 ('Popcat (SOL)',) [92mcomprado[0m.
+2025-04-20 09:01:16,700 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 09:03:21,683 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 09:33:41,959 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 09:33:41,980 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 09:33:41,989 - INFO - BTC 1h % : 0
+2025-04-20 09:33:41,995 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 09:33:42,003 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 09:33:42,004 - INFO - entry process_tokens
+2025-04-20 09:33:42,370 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 09:33:42,600 - INFO - exit database.get_existing_tokens()
+2025-04-20 09:33:42,607 - INFO - Novos tokens detectados:
+2025-04-20 09:33:42,608 - INFO - entry get_price_in_solana
+2025-04-20 09:33:42,620 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-20 09:33:48,769 - INFO - Par com SOL não encontrado!
+2025-04-20 09:33:48,770 - INFO - entry get_price_in_solana
+2025-04-20 09:33:48,781 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-20 09:33:48,845 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-20 09:33:53,920 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 119.35373147551343 ('Fartcoin',) [92mcomprado[0m.
+2025-04-20 09:34:14,111 - INFO - entry get_price_in_solana
+2025-04-20 09:34:14,132 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-04-20 09:34:14,251 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-04-20 09:34:15,978 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 672.4814424306472 ('Alchemist AI',) [92mcomprado[0m.
+2025-04-20 09:34:36,207 - INFO - entry get_price_in_solana
+2025-04-20 09:34:36,224 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-20 09:34:36,669 - INFO - Par com SOL não encontrado!
+2025-04-20 09:34:36,672 - INFO - entry get_price_in_solana
+2025-04-20 09:34:36,684 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-04-20 09:34:36,736 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-04-20 09:34:38,496 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 236.1849441858545 ('dogwifhat',) [92mcomprado[0m.
+2025-04-20 09:34:58,686 - INFO - entry get_price_in_solana
+2025-04-20 09:34:58,703 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-04-20 09:34:58,755 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-04-20 09:35:00,207 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 250.97985966384604 ('Jupiter',) [92mcomprado[0m.
+2025-04-20 09:35:20,416 - INFO - entry get_price_in_solana
+2025-04-20 09:35:20,429 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-04-20 09:35:20,636 - INFO - Par com SOL não encontrado!
+2025-04-20 09:35:20,637 - INFO - entry get_price_in_solana
+2025-04-20 09:35:20,649 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-04-20 09:35:20,785 - INFO - Par com SOL não encontrado!
+2025-04-20 09:35:20,786 - INFO - entry get_price_in_solana
+2025-04-20 09:35:20,796 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-04-20 09:35:20,929 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-04-20 09:35:22,596 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 742.5527302202064 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-04-20 09:35:42,753 - INFO - entry get_price_in_solana
+2025-04-20 09:35:42,766 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-04-20 09:35:42,809 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-04-20 09:35:44,305 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 408.5887837111498 ('Popcat (SOL)',) [92mcomprado[0m.
+2025-04-20 09:37:36,405 - INFO -  $JUP - max_price updated from - $0.39843834534745787 - to - $0.39843834534745787
+2025-04-20 09:37:37,490 - INFO -  $TRUMP - max_price updated from - $8.196882933662325 - to - $8.196882933662325
+2025-04-20 09:37:38,603 - INFO -  $BabyDoge - min_price updated from - $1.275079067531322e-09 - to - $1.266911555664999e-09
+2025-04-20 09:37:39,688 - INFO -  $PYTH - max_price updated from - $0.14074963159202672 - to - $0.14074963159202672
+2025-04-20 09:37:40,797 - INFO -  $MEW - max_price updated from - $0.0023774044061542184 - to - $0.0023774044061542184
+2025-04-20 09:37:41,861 - INFO -  $PNUT - max_price updated from - $0.1346705707624894 - to - $0.1346705707624894
+2025-04-20 09:37:42,936 - INFO -  $MPLX - max_price updated from - $0.20765269744410692 - to - $0.20765269744410692
+2025-04-20 09:38:05,348 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 09:38:05,356 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 09:38:05,362 - INFO - BTC 1h % : 0
+2025-04-20 09:38:05,368 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 09:38:05,374 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 09:38:05,375 - INFO - entry process_tokens
+2025-04-20 09:38:05,572 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 09:38:05,654 - INFO - exit database.get_existing_tokens()
+2025-04-20 09:38:05,661 - INFO - Novos tokens detectados:
+2025-04-20 09:38:05,662 - INFO - entry get_price_in_solana
+2025-04-20 09:38:05,676 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-20 09:38:05,936 - INFO - Par com SOL não encontrado!
+2025-04-20 09:38:05,937 - INFO - entry get_price_in_solana
+2025-04-20 09:38:05,949 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-20 09:38:06,029 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-20 09:38:07,047 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-04-20 09:38:07,048 - ERROR - Erro ao comprar Fartcoin
+2025-04-20 09:38:27,054 - INFO - entry get_price_in_solana
+2025-04-20 09:38:27,070 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-04-20 09:38:27,365 - INFO - Par com SOL não encontrado!
+2025-04-20 09:38:27,368 - INFO - entry get_price_in_solana
+2025-04-20 09:38:27,380 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-04-20 09:38:27,454 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-04-20 09:38:29,127 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 236.1849441858545 ('dogwifhat',) [92mcomprado[0m.
+2025-04-20 09:38:49,276 - INFO - entry get_price_in_solana
+2025-04-20 09:38:49,291 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-04-20 09:38:49,372 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-04-20 09:38:51,123 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 250.97985966384604 ('Jupiter',) [92mcomprado[0m.
+2025-04-20 09:39:11,372 - INFO - entry get_price_in_solana
+2025-04-20 09:39:11,382 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-04-20 09:39:11,682 - INFO - Par com SOL não encontrado!
+2025-04-20 09:39:11,684 - INFO - entry get_price_in_solana
+2025-04-20 09:39:11,694 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-04-20 09:39:11,840 - INFO - Par com SOL não encontrado!
+2025-04-20 09:39:11,841 - INFO - entry get_price_in_solana
+2025-04-20 09:39:11,849 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-04-20 09:39:11,995 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-04-20 09:39:13,620 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 742.5527302202064 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-04-20 09:39:33,833 - INFO - entry get_price_in_solana
+2025-04-20 09:39:33,853 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-04-20 09:39:33,932 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-04-20 09:39:35,799 - INFO - Swap com sucesso --- 0.7194500562696495 de SOLANA por 408.5887837111498 ('Popcat (SOL)',) [92mcomprado[0m.
+2025-04-20 09:47:34,521 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 09:51:19,056 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 09:53:42,777 - INFO -  $JUP - max_price updated from - $0.3988325929164891 - to - $0.3988325929164891
+2025-04-20 09:53:43,999 - INFO -  $TRUMP - max_price updated from - $8.170729943296884 - to - $8.170729943296884
+2025-04-20 09:53:45,113 - INFO -  $BabyDoge - min_price updated from - $1.275079067531322e-09 - to - $1.266783738521995e-09
+2025-04-20 09:53:46,220 - INFO -  $PYTH - max_price updated from - $0.14069553575716356 - to - $0.14069553575716356
+2025-04-20 09:53:47,313 - INFO -  $MEW - max_price updated from - $0.0023684231117196146 - to - $0.0023684231117196146
+2025-04-20 09:53:48,400 - INFO -  $PNUT - max_price updated from - $0.13563182442048372 - to - $0.13563182442048372
+2025-04-20 09:53:49,498 - INFO -  $MPLX - min_price updated from - $0.20762450284904188 - to - $0.20750731043583012
+2025-04-20 09:53:49,706 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 09:53:49,713 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 09:53:49,719 - INFO - BTC 1h % : 0
+2025-04-20 09:53:49,728 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 09:53:49,735 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 09:53:49,737 - INFO - entry process_tokens
+2025-04-20 09:53:50,098 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 09:53:50,240 - INFO - exit database.get_existing_tokens()
+2025-04-20 09:53:50,254 - INFO - Novos tokens detectados:
+2025-04-20 09:53:50,255 - INFO - entry get_price_in_solana
+2025-04-20 09:53:50,279 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-04-20 09:53:51,083 - INFO - Par com SOL não encontrado!
+2025-04-20 09:53:51,084 - INFO - entry get_price_in_solana
+2025-04-20 09:53:51,098 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-20 09:53:51,208 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-20 09:53:55,853 - INFO - Swap com sucesso --- 0.7195136948788388 de SOLANA por 119.3531766563971 ('Fartcoin',) [92mcomprado[0m.
+2025-04-20 09:54:16,230 - INFO - entry get_price_in_solana
+2025-04-20 09:54:16,240 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-20 09:54:16,437 - INFO - Par com SOL não encontrado!
+2025-04-20 09:54:16,439 - INFO - entry get_price_in_solana
+2025-04-20 09:54:16,450 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-04-20 09:54:16,621 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-04-20 09:54:18,234 - INFO - Swap com sucesso --- 0.7195136948788388 de SOLANA por 737.2900897504816 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-04-20 09:55:31,789 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 09:56:08,576 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 10:00:42,759 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 10:00:42,768 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 10:00:42,777 - INFO - BTC 1h % : 0
+2025-04-20 10:00:42,785 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 10:00:42,794 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 10:00:42,794 - INFO - entry process_tokens
+2025-04-20 10:00:42,958 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 10:00:43,068 - INFO - exit database.get_existing_tokens()
+2025-04-20 10:00:43,074 - INFO - Novos tokens detectados:
+2025-04-20 10:00:43,075 - INFO - entry get_price_in_solana
+2025-04-20 10:00:43,085 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-04-20 10:00:43,944 - INFO - Par com SOL não encontrado!
+2025-04-20 10:00:43,945 - INFO - entry get_price_in_solana
+2025-04-20 10:00:43,956 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-04-20 10:00:44,122 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-04-20 10:00:47,571 - INFO - Swap com sucesso --- 0.7192170894726455 de SOLANA por 729.0091333186141 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-04-20 10:01:07,736 - INFO - entry get_price_in_solana
+2025-04-20 10:01:07,751 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-20 10:01:08,008 - INFO - Par com SOL não encontrado!
+2025-04-20 10:01:08,009 - INFO - entry get_price_in_solana
+2025-04-20 10:01:08,021 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-04-20 10:01:08,100 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-04-20 10:01:09,600 - INFO - Swap com sucesso --- 0.7192170894726455 de SOLANA por 120.58506227557345 ('Fartcoin',) [92mcomprado[0m.
+2025-04-20 10:01:29,883 - INFO - entry get_price_in_solana
+2025-04-20 10:01:29,895 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-04-20 10:01:29,951 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-04-20 10:01:31,503 - INFO - Swap com sucesso --- 0.7192170894726455 de SOLANA por 237.2142266247547 ('dogwifhat',) [92mcomprado[0m.
+2025-04-20 10:01:51,743 - INFO - entry get_price_in_solana
+2025-04-20 10:01:51,758 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-04-20 10:01:52,039 - INFO - Par com SOL não encontrado!
+2025-04-20 10:01:52,042 - INFO - entry get_price_in_solana
+2025-04-20 10:01:52,063 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-04-20 10:01:52,130 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-04-20 10:01:53,090 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-04-20 10:01:53,092 - ERROR - Erro ao comprar Jupiter
+2025-04-20 10:02:13,102 - INFO - entry get_price_in_solana
+2025-04-20 10:02:13,115 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-04-20 10:02:13,285 - INFO - Par com SOL não encontrado!
+2025-04-20 10:02:13,288 - INFO - entry get_price_in_solana
+2025-04-20 10:02:13,297 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-04-20 10:02:13,333 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-04-20 10:02:14,990 - INFO - Swap com sucesso --- 0.7192170894726455 de SOLANA por 410.9211460497876 ('Popcat (SOL)',) [92mcomprado[0m.
+2025-04-20 10:06:06,149 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 10:06:28,948 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 11:26:20,649 - ERROR - Error: name 'context' is not defined.
+2025-04-20 11:26:21,436 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 11:27:12,620 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 11:31:07,412 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 11:32:12,581 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 11:34:51,387 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 11:34:51,390 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 11:34:51,392 - INFO - BTC 1h % : 0
+2025-04-20 11:34:51,396 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 11:34:51,399 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 11:34:51,401 - INFO - entry process_tokens
+2025-04-20 11:34:51,884 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 11:34:54,609 - ERROR - Error: local variable 'connection' referenced before assignment.
+2025-04-20 11:36:05,614 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 10:41:07,951 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 10:44:03,492 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 11:18:59,223 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 11:19:49,568 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 11:37:02,286 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 11:37:32,150 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 12:14:05,742 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 12:15:02,386 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 13:11:46,456 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 13:11:46,477 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 13:11:46,484 - INFO - BTC 1h % : 0
+2025-04-20 13:11:46,492 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 13:11:46,499 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 13:11:46,500 - INFO - entry process_tokens
+2025-04-20 13:11:46,779 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 13:11:47,141 - INFO - exit database.get_existing_tokens()
+2025-04-20 13:11:47,150 - INFO - Novos tokens detectados:
+2025-04-20 13:11:47,151 - INFO - entry get_price_in_solana
+2025-04-20 13:11:47,161 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-04-20 13:11:47,162 - ERROR - Error: 'NoneType' object is not iterable.
+2025-04-20 13:12:25,127 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 13:12:49,859 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-04-20 13:20:43,438 - INFO - INICIAR BUY ######################################################################################################################
+2025-04-20 13:20:43,446 - INFO - EXECUTE_OPERATIONS: 1
+2025-04-20 13:20:43,453 - INFO - BTC 1h % : 0
+2025-04-20 13:20:43,459 - INFO - BTC_1H_PERCENT % : -10
+2025-04-20 13:20:43,463 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-04-20 13:20:43,464 - INFO - entry process_tokens
+2025-04-20 13:20:43,619 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-04-20 13:20:43,707 - INFO - exit database.get_existing_tokens()
+2025-04-20 13:20:43,713 - INFO - Novos tokens detectados:
+2025-04-20 13:20:43,714 - INFO - entry get_price_in_solana
+2025-04-20 13:20:43,724 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-04-20 13:20:43,725 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 09:38:19,348 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 09:38:45,188 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 09:42:35,474 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 09:42:35,486 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 09:42:35,492 - INFO - BTC 1h % : 0
+2025-05-01 09:42:35,501 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 09:42:35,507 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 09:42:35,508 - INFO - entry process_tokens
+2025-05-01 09:42:35,720 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 09:42:35,915 - INFO - exit database.get_existing_tokens()
+2025-05-01 09:42:35,924 - INFO - Novos tokens detectados:
+2025-05-01 09:42:35,925 - INFO - entry get_price_in_solana
+2025-05-01 09:42:35,940 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Magic Eden
+2025-05-01 09:42:35,970 - INFO - Par encontrado: ME/WSOL MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u-So11111111111111111111111111111111111111112
+2025-05-01 09:42:38,234 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-05-01 09:42:38,236 - ERROR - Erro ao comprar Magic Eden
+2025-05-01 09:42:51,810 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 09:43:06,284 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 13:00:32,741 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 13:00:32,749 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 13:00:32,755 - INFO - BTC 1h % : 0
+2025-05-01 13:00:32,762 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 13:00:32,768 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 13:00:32,769 - INFO - entry process_tokens
+2025-05-01 13:00:32,912 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 13:00:32,996 - INFO - exit database.get_existing_tokens()
+2025-05-01 13:00:33,003 - INFO - Novos tokens detectados:
+2025-05-01 13:00:33,004 - INFO - entry get_price_in_solana
+2025-05-01 13:00:33,014 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-05-01 13:00:33,064 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-05-01 13:00:34,934 - INFO - Swap com sucesso --- 0.6594406547095815 de SOLANA por 79.23363023089635 ('Fartcoin',) [92mcomprado[0m.
+2025-05-01 13:00:46,712 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 13:01:03,610 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 13:28:36,734 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 13:28:56,966 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 16:07:18,932 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 16:07:19,162 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 16:07:19,195 - INFO - BTC 1h % : 0
+2025-05-01 16:07:19,224 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 16:07:19,246 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 16:07:19,248 - INFO - entry process_tokens
+2025-05-01 16:07:21,516 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 16:07:22,160 - INFO - exit database.get_existing_tokens()
+2025-05-01 16:07:22,183 - INFO - Novos tokens detectados:
+2025-05-01 16:07:22,191 - INFO - entry get_price_in_solana
+2025-05-01 16:07:22,232 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 16:07:22,243 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 16:20:45,166 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 16:21:01,200 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 16:37:18,122 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 16:37:18,129 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 16:37:18,136 - INFO - BTC 1h % : 0
+2025-05-01 16:37:18,142 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 16:37:18,154 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 16:37:18,155 - INFO - entry process_tokens
+2025-05-01 16:37:18,335 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 16:37:18,531 - INFO - exit database.get_existing_tokens()
+2025-05-01 16:37:18,538 - INFO - Novos tokens detectados:
+2025-05-01 16:37:18,539 - INFO - entry get_price_in_solana
+2025-05-01 16:37:18,544 - INFO - out get_price_in_solana
+2025-05-01 16:37:18,550 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-01 16:37:18,551 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 17:48:03,287 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 17:48:20,117 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 17:48:27,368 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 17:48:27,369 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 17:48:27,371 - INFO - BTC 1h % : 0
+2025-05-01 17:48:27,374 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 17:48:27,376 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 17:48:27,377 - INFO - entry process_tokens
+2025-05-01 17:48:27,795 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 17:48:30,526 - ERROR - Error: local variable 'connection' referenced before assignment.
+2025-05-01 18:06:49,027 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:06:59,114 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:09:42,096 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:09:42,098 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:09:42,100 - INFO - BTC 1h % : 0
+2025-05-01 18:09:42,102 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:09:42,104 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:09:42,105 - INFO - entry process_tokens
+2025-05-01 18:09:42,534 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:09:42,838 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:09:42,841 - INFO - Novos tokens detectados:
+2025-05-01 18:09:42,842 - INFO - entry get_price_in_solana
+2025-05-01 18:09:42,846 - INFO - out get_price_in_solana
+2025-05-01 18:09:42,848 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:09:42,849 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 18:10:33,353 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:10:42,962 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:10:50,208 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:10:50,211 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:10:50,213 - INFO - BTC 1h % : 0
+2025-05-01 18:10:50,215 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:10:50,217 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:10:50,217 - INFO - entry process_tokens
+2025-05-01 18:10:50,515 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:10:50,548 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:10:50,552 - INFO - Novos tokens detectados:
+2025-05-01 18:10:50,553 - INFO - entry get_price_in_solana
+2025-05-01 18:10:50,555 - INFO - out get_price_in_solana
+2025-05-01 18:10:50,556 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:10:50,557 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 18:11:04,469 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:11:04,473 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:11:04,474 - INFO - BTC 1h % : 0
+2025-05-01 18:11:04,477 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:11:04,480 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:11:04,481 - INFO - entry process_tokens
+2025-05-01 18:11:04,864 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:11:04,882 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:11:04,886 - INFO - Novos tokens detectados:
+2025-05-01 18:11:04,887 - INFO - entry get_price_in_solana
+2025-05-01 18:11:04,890 - INFO - out get_price_in_solana
+2025-05-01 18:11:04,895 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:11:04,896 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 18:11:57,471 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:12:11,316 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:12:17,366 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:12:17,368 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:12:17,370 - INFO - BTC 1h % : 0
+2025-05-01 18:12:17,373 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:12:17,376 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:12:17,377 - INFO - entry process_tokens
+2025-05-01 18:12:17,714 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:12:17,759 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:12:17,764 - INFO - Novos tokens detectados:
+2025-05-01 18:12:17,765 - INFO - entry get_price_in_solana
+2025-05-01 18:12:17,766 - INFO - out get_price_in_solana
+2025-05-01 18:12:17,769 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:12:17,770 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 18:13:52,756 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:14:02,977 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:18:25,212 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:18:39,172 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:19:15,058 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:19:15,061 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:19:15,064 - INFO - BTC 1h % : 0
+2025-05-01 18:19:15,068 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:19:15,071 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:19:15,072 - INFO - entry process_tokens
+2025-05-01 18:19:15,511 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:19:15,553 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:19:15,557 - INFO - Novos tokens detectados:
+2025-05-01 18:19:15,558 - INFO - entry get_price_in_solana
+2025-05-01 18:19:15,561 - INFO - out get_price_in_solana
+2025-05-01 18:19:15,564 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:19:15,566 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 18:19:49,920 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:19:49,923 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:19:49,925 - INFO - BTC 1h % : 0
+2025-05-01 18:19:49,927 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:19:49,928 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:19:49,929 - INFO - entry process_tokens
+2025-05-01 18:19:50,363 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:19:50,380 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:19:50,381 - INFO - Novos tokens detectados:
+2025-05-01 18:19:50,382 - INFO - entry get_price_in_solana
+2025-05-01 18:19:55,523 - INFO - out get_price_in_solana
+2025-05-01 18:20:09,611 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:20:30,914 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 18:20:33,705 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:20:33,708 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:20:33,711 - INFO - BTC 1h % : 0
+2025-05-01 18:20:33,714 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:20:33,717 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:20:33,718 - INFO - entry process_tokens
+2025-05-01 18:20:34,220 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:20:34,244 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:20:34,246 - INFO - Novos tokens detectados:
+2025-05-01 18:20:34,247 - INFO - entry get_price_in_solana
+2025-05-01 18:20:51,731 - INFO - out get_price_in_solana
+2025-05-01 18:21:11,106 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:21:36,894 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 18:24:23,528 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:24:23,531 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:24:23,534 - INFO - BTC 1h % : 0
+2025-05-01 18:24:23,538 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:24:23,543 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:24:23,544 - INFO - entry process_tokens
+2025-05-01 18:24:23,969 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:24:23,999 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:24:24,003 - INFO - Novos tokens detectados:
+2025-05-01 18:24:27,897 - INFO - entry get_price_in_solana
+2025-05-01 18:24:27,900 - INFO - out get_price_in_solana
+2025-05-01 18:24:31,110 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:24:31,112 - ERROR - Error: 'NoneType' object is not iterable.
+2025-05-01 18:24:34,526 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:24:34,529 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:24:34,531 - INFO - BTC 1h % : 0
+2025-05-01 18:24:34,533 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:24:34,535 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:24:34,535 - INFO - entry process_tokens
+2025-05-01 18:24:34,890 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:24:34,905 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:24:34,908 - INFO - Novos tokens detectados:
+2025-05-01 18:24:36,570 - INFO - entry get_price_in_solana
+2025-05-01 18:24:36,575 - INFO - out get_price_in_solana
+2025-05-01 18:54:41,931 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:55:09,992 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:55:27,829 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:55:27,841 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:55:27,845 - INFO - BTC 1h % : 0
+2025-05-01 18:55:27,855 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:55:27,860 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:55:27,868 - INFO - entry process_tokens
+2025-05-01 18:55:28,415 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:55:28,514 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:55:28,518 - INFO - Novos tokens detectados:
+2025-05-01 18:55:31,015 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:55:53,296 - INFO - Par com SOL n�o encontrado!
+2025-05-01 18:55:53,352 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-05-01 18:55:53,435 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-05-01 18:55:56,138 - ERROR - Erro na requisi��o: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E52F698FD0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2025-05-01 18:55:56,142 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-01 18:55:56,648 - INFO - Par com SOL n�o encontrado!
+2025-05-01 18:55:56,653 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Magic Eden
+2025-05-01 18:55:56,705 - INFO - Par encontrado: ME/WSOL MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u-So11111111111111111111111111111111111111112
+2025-05-01 18:55:59,394 - ERROR - Erro na requisi��o: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E52F7B8940>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2025-05-01 18:55:59,401 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-05-01 18:55:59,553 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-05-01 18:56:02,265 - ERROR - Erro na requisi��o: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E52F7B8DC0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2025-05-01 18:56:02,269 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Official Melania Meme
+2025-05-01 18:56:02,563 - INFO - Par encontrado: MELANIA/WSOL FUAfBo2jgks6gB4Z4LfZkqSZgzNucisEHqnNebaRxM1P-So11111111111111111111111111111111111111112
+2025-05-01 18:56:05,262 - ERROR - Erro na requisi��o: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E52F7830A0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2025-05-01 18:56:05,269 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-05-01 18:56:05,809 - INFO - Par com SOL n�o encontrado!
+2025-05-01 18:56:05,816 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-05-01 18:56:05,959 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-05-01 18:56:08,668 - ERROR - Erro na requisi��o: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E52F7B87F0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2025-05-01 18:56:08,674 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-05-01 18:56:09,200 - INFO - Par com SOL n�o encontrado!
+2025-05-01 18:56:09,204 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pyth Network
+2025-05-01 18:56:09,577 - INFO - Par encontrado: WSOL/PYTH So11111111111111111111111111111111111111112-HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3
+2025-05-01 18:56:12,291 - ERROR - Erro na requisi��o: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E5692EA7C0>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2025-05-01 17:57:17,119 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 17:57:36,356 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 19:03:30,465 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 19:03:30,470 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 19:03:30,473 - INFO - BTC 1h % : 0
+2025-05-01 19:03:30,477 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 19:03:30,483 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 19:03:30,485 - INFO - entry process_tokens
+2025-05-01 19:03:31,736 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 19:03:31,765 - INFO - exit database.get_existing_tokens()
+2025-05-01 19:03:31,774 - INFO - Novos tokens detectados:
+2025-05-01 19:03:31,785 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 19:03:32,518 - INFO - Par com SOL n�o encontrado!
+2025-05-01 19:03:32,524 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-05-01 19:03:32,647 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-05-01 19:03:35,371 - ERROR - Erro na requisi��o: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E52F797820>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2025-05-01 19:03:35,380 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-01 19:03:36,070 - INFO - Par com SOL n�o encontrado!
+2025-05-01 19:03:36,079 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Magic Eden
+2025-05-01 19:03:36,153 - INFO - Par encontrado: ME/WSOL MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u-So11111111111111111111111111111111111111112
+2025-05-01 19:03:38,875 - ERROR - Erro na requisi��o: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001E52F797E50>: Failed to establish a new connection: [Errno 11001] getaddrinfo failed'))
+2025-05-01 19:03:38,883 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-05-01 19:03:39,149 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-05-01 18:03:46,214 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:03:46,223 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:03:46,231 - INFO - BTC 1h % : 0
+2025-05-01 18:03:46,237 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:03:46,248 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:03:46,249 - INFO - entry process_tokens
+2025-05-01 18:03:46,533 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:03:46,549 - ERROR - Error: cannot access local variable 'connection' where it is not associated with a value.
+2025-05-01 18:04:52,702 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:05:15,035 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:11:23,108 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-01 18:11:23,116 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-01 18:11:23,123 - INFO - BTC 1h % : 0
+2025-05-01 18:11:23,132 - INFO - BTC_1H_PERCENT % : -10
+2025-05-01 18:11:23,140 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-01 18:11:23,141 - INFO - entry process_tokens
+2025-05-01 18:11:23,349 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-01 18:11:23,475 - INFO - exit database.get_existing_tokens()
+2025-05-01 18:11:23,482 - INFO - Novos tokens detectados:
+2025-05-01 18:11:23,491 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-01 18:11:23,900 - INFO - Par com SOL não encontrado!
+2025-05-01 18:11:23,934 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-01 18:11:24,104 - INFO - Par com SOL não encontrado!
+2025-05-01 18:11:24,118 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-05-01 18:11:24,140 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-05-01 18:11:30,337 - INFO - Swap com sucesso --- 0.6609379307914597 de SOLANA por 570.5096364677711 ('Alchemist AI',) [92mcomprado[0m.
+2025-05-01 18:11:30,560 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Magic Eden
+2025-05-01 18:11:30,575 - INFO - Par encontrado: ME/WSOL MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u-So11111111111111111111111111111111111111112
+2025-05-01 18:11:39,779 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'failed to get recent blockhash: Error: 429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "27fbc343-87f4-4b1b-b6f6-eea06ba41b5a" } \r\n'}
+2025-05-01 18:11:39,781 - ERROR - Erro ao comprar Magic Eden
+2025-05-01 18:11:39,798 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-05-01 18:11:39,947 - INFO - Par com SOL não encontrado!
+2025-05-01 18:11:39,962 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-05-01 18:11:40,004 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-05-01 18:11:48,676 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'failed to get recent blockhash: Error: 429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "7a3702ca-d559-4d6f-bb9e-a853601b6d0f" } \r\n'}
+2025-05-01 18:11:48,678 - ERROR - Erro ao comprar dogwifhat
+2025-05-01 18:11:48,694 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-05-01 18:11:48,811 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-05-01 18:11:56,853 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-01 18:12:17,656 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------

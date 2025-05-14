@@ -6087,3 +6087,329 @@
 2025-05-01 18:11:48,811 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
 2025-05-01 18:11:56,853 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
 2025-05-01 18:12:17,656 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-02 16:23:26,550 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-02 16:23:26,602 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-02 16:23:26,610 - INFO - BTC 1h % : 0
+2025-05-02 16:23:26,618 - INFO - BTC_1H_PERCENT % : -10
+2025-05-02 16:23:26,627 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-02 16:23:26,628 - INFO - entry process_tokens
+2025-05-02 16:23:27,079 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-02 16:23:27,208 - INFO - exit database.get_existing_tokens()
+2025-05-02 16:23:27,219 - INFO - Novos tokens detectados:
+2025-05-02 16:23:27,235 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-02 16:23:34,996 - INFO - Par com SOL não encontrado!
+2025-05-02 16:23:35,145 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-05-02 16:23:35,186 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-05-02 16:23:38,616 - INFO - Swap com sucesso --- 0.6612401197731234 de SOLANA por 570.9769311277204 ('Alchemist AI',) [92mcomprado[0m.
+2025-05-02 16:23:38,838 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-02 16:23:39,042 - INFO - Par com SOL não encontrado!
+2025-05-02 16:23:39,059 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Magic Eden
+2025-05-02 16:23:39,083 - INFO - Par encontrado: ME/WSOL MEFNBXixkEbait3xn9bkm8WsJzXtVsaJEn4c8Sam21u-So11111111111111111111111111111111111111112
+2025-05-02 16:23:41,396 - INFO - Swap com sucesso --- 0.6612401197731234 de SOLANA por 95.25597988139016 ('Magic Eden',) [92mcomprado[0m.
+2025-05-02 16:23:41,623 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-05-02 16:23:41,856 - INFO - Par com SOL não encontrado!
+2025-05-02 16:23:41,870 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-05-02 16:23:42,012 - INFO - Par com SOL não encontrado!
+2025-05-02 16:23:42,031 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-05-02 16:23:42,079 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-05-02 16:23:43,437 - INFO - Swap com sucesso --- 0.6612401197731234 de SOLANA por 34.366650532457086 ('Raydium',) [92mcomprado[0m.
+2025-05-02 16:23:43,656 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-05-02 16:23:43,691 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-05-02 16:23:53,070 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'failed to get recent blockhash: Error: 429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "453fcb6d-32d5-4a96-8907-a9b0d2f46d30" } \r\n'}
+2025-05-02 16:23:53,080 - ERROR - Erro ao comprar Jito
+2025-05-02 16:23:53,104 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-05-02 16:23:53,318 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-05-02 16:24:01,915 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-02 16:24:24,588 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 08:16:39,471 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 08:16:57,917 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 08:33:49,290 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-03 08:33:49,421 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-03 08:33:49,463 - INFO - BTC 1h % : 0
+2025-05-03 08:33:49,473 - INFO - BTC_1H_PERCENT % : -10
+2025-05-03 08:33:49,586 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-03 08:33:49,588 - INFO - entry process_tokens
+2025-05-03 08:33:50,557 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-03 08:33:51,952 - INFO - exit database.get_existing_tokens()
+2025-05-03 08:33:51,997 - INFO - Novos tokens detectados:
+2025-05-03 08:33:52,035 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-03 08:34:03,239 - INFO - Par com SOL não encontrado!
+2025-05-03 08:34:23,285 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-05-03 08:34:25,735 - INFO - Par com SOL não encontrado!
+2025-05-03 08:34:45,767 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-05-03 08:34:46,496 - INFO - Par com SOL não encontrado!
+2025-05-03 08:35:06,520 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-03 08:35:06,526 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-03 08:35:09,569 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-05-03 08:35:09,570 - ERROR - Erro ao comprar OFFICIAL TRUMP
+2025-05-03 08:35:29,588 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-05-03 08:35:29,835 - INFO - Par com SOL não encontrado!
+2025-05-03 08:35:49,864 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-05-03 08:35:50,665 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-05-03 08:35:54,020 - INFO - Swap com sucesso --- 0.6763553617182372 de SOLANA por 563.9127895668635 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-05-03 08:36:19,932 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-05-03 08:36:21,045 - INFO - Par com SOL não encontrado!
+2025-05-03 08:36:41,084 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Metaplex
+2025-05-03 08:36:41,164 - INFO - Par encontrado: MPLX/WSOL METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m-So11111111111111111111111111111111111111112
+2025-05-03 08:36:43,159 - INFO - Swap com sucesso --- 0.6763553617182372 de SOLANA por 499.50915060481367 ('Metaplex',) [92mcomprado[0m.
+2025-05-03 08:36:55,218 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 08:37:14,032 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 09:35:10,415 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 09:35:30,441 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 10:52:22,269 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 10:52:45,114 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 12:25:51,045 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 12:26:10,806 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 12:29:42,818 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-03 12:29:42,824 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-03 12:29:42,830 - INFO - BTC 1h % : 0
+2025-05-03 12:29:42,835 - INFO - BTC_1H_PERCENT % : -10
+2025-05-03 12:29:42,840 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-03 12:29:42,841 - INFO - entry process_tokens
+2025-05-03 12:29:43,027 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-03 12:29:43,565 - INFO - exit database.get_existing_tokens()
+2025-05-03 12:29:43,573 - INFO - Novos tokens detectados:
+2025-05-03 12:29:43,583 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-03 12:29:44,492 - INFO - Par com SOL não encontrado!
+2025-05-03 12:30:04,516 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-05-03 12:30:04,721 - INFO - Par com SOL não encontrado!
+2025-05-03 12:30:24,744 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-05-03 12:30:24,939 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-05-03 12:30:34,974 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fd60b553890>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-03 12:30:54,997 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-03 12:30:55,002 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-03 12:31:05,028 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fd60b57fd10>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-03 12:31:25,049 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-05-03 12:31:25,246 - INFO - Par com SOL não encontrado!
+2025-05-03 12:31:45,266 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-05-03 12:31:45,436 - INFO - Par com SOL não encontrado!
+2025-05-03 12:32:05,457 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Metaplex
+2025-05-03 12:32:05,571 - INFO - Par encontrado: MPLX/WSOL METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m-So11111111111111111111111111111111111111112
+2025-05-03 12:34:01,312 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 12:41:00,713 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 12:41:16,593 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-03 12:45:22,290 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-03 12:45:22,297 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-03 12:45:22,302 - INFO - BTC 1h % : 0
+2025-05-03 12:45:22,310 - INFO - BTC_1H_PERCENT % : -10
+2025-05-03 12:45:22,315 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-03 12:45:22,316 - INFO - entry process_tokens
+2025-05-03 12:45:22,449 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-03 12:45:22,608 - INFO - exit database.get_existing_tokens()
+2025-05-03 12:45:22,614 - INFO - Novos tokens detectados:
+2025-05-03 12:45:22,627 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-03 12:45:22,954 - INFO - Par com SOL não encontrado!
+2025-05-03 12:45:42,973 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-05-03 12:45:43,192 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-05-03 12:45:53,217 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb2799c3790>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-03 12:46:13,237 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-05-03 12:46:13,396 - INFO - Par com SOL não encontrado!
+2025-05-03 12:46:33,412 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Staika
+2025-05-03 12:46:33,635 - INFO - Par com SOL não encontrado!
+2025-05-03 12:46:53,656 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-03 12:46:53,661 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-03 12:47:03,687 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb2799d3150>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-03 12:47:23,711 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Metaplex
+2025-05-03 12:47:23,832 - INFO - Par encontrado: MPLX/WSOL METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m-So11111111111111111111111111111111111111112
+2025-05-03 12:47:33,858 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7fb2799c1290>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-03 12:47:53,873 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-05-03 12:47:54,046 - INFO - Par com SOL não encontrado!
+2025-05-03 12:48:14,241 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-03 12:48:14,689 - INFO - Par com SOL não encontrado!
+2025-05-05 19:04:33,673 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-05 19:04:51,683 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-05 19:15:06,832 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-05 19:15:06,894 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-05 19:15:06,903 - INFO - BTC 1h % : 0
+2025-05-05 19:15:06,913 - INFO - BTC_1H_PERCENT % : -10
+2025-05-05 19:15:06,925 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-05 19:15:06,927 - INFO - entry process_tokens
+2025-05-05 19:15:07,738 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-05 19:15:08,469 - INFO - exit database.get_existing_tokens()
+2025-05-05 19:15:08,481 - INFO - Novos tokens detectados:
+2025-05-05 19:15:08,496 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-05 19:15:13,028 - INFO - Par com SOL não encontrado!
+2025-05-05 19:15:33,054 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-05-05 19:15:33,099 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-05-05 19:15:43,217 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8c492a3790>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-05 19:16:03,235 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-05 19:16:03,440 - INFO - Par com SOL não encontrado!
+2025-05-05 19:16:23,455 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-05 19:16:23,725 - INFO - Par com SOL não encontrado!
+2025-05-05 19:16:43,775 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-05-05 19:16:44,361 - INFO - Par com SOL não encontrado!
+2025-05-05 19:17:04,392 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-05-05 19:17:04,464 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-05-05 19:17:14,520 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8c7a8577d0>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-05 19:17:34,570 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-05-05 19:17:35,783 - INFO - Par com SOL não encontrado!
+2025-05-05 19:17:55,812 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-05 19:17:55,815 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-05 19:18:05,875 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node_app', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f8c7a869c10>: Failed to resolve 'node_app' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-05 19:18:12,525 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-05 19:18:45,955 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-05 19:30:12,466 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-05 19:30:47,688 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-05 19:42:48,856 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-05 19:42:48,867 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-05 19:42:48,873 - INFO - BTC 1h % : 0
+2025-05-05 19:42:48,882 - INFO - BTC_1H_PERCENT % : -10
+2025-05-05 19:42:48,888 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-05 19:42:48,889 - INFO - entry process_tokens
+2025-05-05 19:42:49,218 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-05 19:42:49,671 - INFO - exit database.get_existing_tokens()
+2025-05-05 19:42:49,683 - INFO - Novos tokens detectados:
+2025-05-05 19:42:49,696 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-05 19:42:50,820 - INFO - Par com SOL não encontrado!
+2025-05-05 19:43:10,843 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-05 19:43:11,047 - INFO - Par com SOL não encontrado!
+2025-05-05 19:43:31,067 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-05-05 19:43:31,114 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-05-05 19:43:31,210 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node', port=8443): Max retries exceeded with url: /swap (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'node'. (_ssl.c:1016)")))
+2025-05-05 19:43:51,231 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-05 19:43:51,446 - INFO - Par com SOL não encontrado!
+2025-05-05 19:44:11,467 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-05-05 19:44:11,636 - INFO - Par com SOL não encontrado!
+2025-05-05 19:44:31,656 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-05-05 19:44:31,858 - INFO - Par com SOL não encontrado!
+2025-05-05 19:44:51,881 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-05-05 19:44:51,925 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-05-05 19:44:51,971 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node', port=8443): Max retries exceeded with url: /swap (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'node'. (_ssl.c:1016)")))
+2025-05-05 19:45:11,997 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Gigachad
+2025-05-05 19:45:12,168 - INFO - Par encontrado: GIGA/WSOL 63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9-So11111111111111111111111111111111111111112
+2025-05-05 19:45:12,230 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node', port=8443): Max retries exceeded with url: /swap (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'node'. (_ssl.c:1016)")))
+2025-05-05 19:45:32,251 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-05-05 19:45:32,354 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-05-05 19:45:32,406 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node', port=8443): Max retries exceeded with url: /swap (Caused by SSLError(SSLCertVerificationError(1, "[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'node'. (_ssl.c:1016)")))
+2025-05-05 19:45:53,480 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-05 19:46:13,374 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-13 21:13:22,679 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-13 21:13:41,030 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-13 21:24:41,977 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-13 21:24:41,987 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-13 21:24:41,997 - INFO - BTC 1h % : 0
+2025-05-13 21:24:42,005 - INFO - BTC_1H_PERCENT % : -10
+2025-05-13 21:24:42,011 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-13 21:24:42,012 - INFO - entry process_tokens
+2025-05-13 21:24:42,203 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-13 21:24:42,278 - INFO - exit database.get_existing_tokens()
+2025-05-13 21:24:42,286 - INFO - Novos tokens detectados:
+2025-05-13 21:24:42,297 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-13 21:24:42,877 - INFO - Par com SOL não encontrado!
+2025-05-13 21:25:02,896 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar BOOK OF MEME
+2025-05-13 21:25:02,982 - INFO - Par encontrado: BOME/WSOL ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82-So11111111111111111111111111111111111111112
+2025-05-13 21:25:13,008 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f75309e5110>: Failed to resolve 'node' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-13 21:25:33,036 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-13 21:25:33,249 - INFO - Par com SOL não encontrado!
+2025-05-13 21:25:53,270 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-05-13 21:25:53,459 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-05-13 21:26:03,483 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f75309f83d0>: Failed to resolve 'node' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-13 21:26:23,508 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-05-13 21:26:23,676 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-05-13 21:26:33,704 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f75309e6650>: Failed to resolve 'node' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-13 21:26:53,722 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-05-13 21:26:53,918 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-05-13 21:27:03,939 - ERROR - Erro na requisição: HTTPSConnectionPool(host='node', port=8443): Max retries exceeded with url: /swap (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f75309c17d0>: Failed to resolve 'node' ([Errno -3] Temporary failure in name resolution)"))
+2025-05-13 21:27:53,110 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-13 21:28:18,494 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-13 21:32:20,408 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-13 21:32:20,416 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-13 21:32:20,423 - INFO - BTC 1h % : 0
+2025-05-13 21:32:20,429 - INFO - BTC_1H_PERCENT % : -10
+2025-05-13 21:32:20,437 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-13 21:32:20,438 - INFO - entry process_tokens
+2025-05-13 21:32:20,616 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-13 21:32:20,732 - INFO - exit database.get_existing_tokens()
+2025-05-13 21:32:20,742 - INFO - Novos tokens detectados:
+2025-05-13 21:32:20,757 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-13 21:32:21,588 - INFO - Par com SOL não encontrado!
+2025-05-13 21:32:41,611 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-13 21:32:41,856 - INFO - Par com SOL não encontrado!
+2025-05-13 21:33:01,877 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar BOOK OF MEME
+2025-05-13 21:33:01,972 - INFO - Par encontrado: BOME/WSOL ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82-So11111111111111111111111111111111111111112
+2025-05-13 21:33:04,457 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-05-13 21:33:04,458 - ERROR - Erro ao comprar BOOK OF MEME
+2025-05-13 21:33:24,482 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-05-13 21:33:24,686 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-05-13 21:33:26,842 - INFO - Swap com sucesso --- 0.5483333817720157 de SOLANA por 48971931811.768456 ('Baby Doge Coin',) [92mcomprado[0m.
+2025-05-13 21:33:47,142 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-05-13 21:33:47,395 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-05-13 21:33:49,080 - INFO - Swap com sucesso --- 0.5483333817720157 de SOLANA por 224.48737829209648 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-05-13 21:34:09,408 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-13 21:34:09,639 - INFO - Par com SOL não encontrado!
+2025-05-13 21:34:29,654 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-05-13 21:34:29,832 - INFO - Par com SOL não encontrado!
+2025-05-13 21:34:49,851 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Goatseus Maximus
+2025-05-13 21:34:50,008 - INFO - Par encontrado: WSOL/GOAT So11111111111111111111111111111111111111112-CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump
+2025-05-13 21:34:51,172 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-05-13 21:34:51,174 - ERROR - Erro ao comprar Goatseus Maximus
+2025-05-13 21:36:29,561 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-13 21:36:29,566 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-13 21:36:29,570 - INFO - BTC 1h % : 0
+2025-05-13 21:36:29,576 - INFO - BTC_1H_PERCENT % : -10
+2025-05-13 21:36:29,581 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-13 21:36:29,582 - INFO - entry process_tokens
+2025-05-13 21:36:29,700 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-13 21:36:29,768 - INFO - exit database.get_existing_tokens()
+2025-05-13 21:36:29,776 - INFO - Novos tokens detectados:
+2025-05-13 21:36:29,786 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-13 21:36:30,002 - INFO - Par com SOL não encontrado!
+2025-05-13 21:36:50,021 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-13 21:36:50,273 - INFO - Par com SOL não encontrado!
+2025-05-13 21:37:10,290 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar BOOK OF MEME
+2025-05-13 21:37:10,356 - INFO - Par encontrado: BOME/WSOL ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82-So11111111111111111111111111111111111111112
+2025-05-13 21:37:12,341 - INFO - Swap com sucesso --- 0.5483333817720157 de SOLANA por 31769.676242765814 ('BOOK OF MEME',) [92mcomprado[0m.
+2025-05-13 21:37:32,555 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-05-13 21:37:32,812 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-05-13 21:37:33,239 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-05-13 21:37:33,242 - ERROR - Erro ao comprar Moo Deng (moodengsol.com)
+2025-05-13 21:37:53,264 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-05-13 21:37:53,574 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-05-13 21:37:55,207 - INFO - Swap com sucesso --- 0.5483333817720157 de SOLANA por 224.48737829209648 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-05-13 21:38:15,473 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-13 21:38:15,742 - INFO - Par com SOL não encontrado!
+2025-05-13 21:38:35,763 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-05-13 21:38:35,986 - INFO - Par com SOL não encontrado!
+2025-05-13 21:38:56,006 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Goatseus Maximus
+2025-05-13 21:38:56,150 - INFO - Par encontrado: WSOL/GOAT So11111111111111111111111111111111111111112-CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump
+2025-05-13 21:38:58,165 - INFO - Swap com sucesso --- 0.5483333817720157 de SOLANA por 452.1181104328487 ('Goatseus Maximus',) [92mcomprado[0m.
+2025-05-13 21:39:18,420 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-13 21:39:18,599 - INFO - Par com SOL não encontrado!
+2025-05-13 21:39:32,936 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-13 21:39:50,482 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-14 07:48:33,095 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-14 07:48:52,459 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-14 07:53:04,055 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-14 07:53:04,063 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-14 07:53:04,068 - INFO - BTC 1h % : 0
+2025-05-14 07:53:04,074 - INFO - BTC_1H_PERCENT % : -10
+2025-05-14 07:53:04,079 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-14 07:53:04,080 - INFO - entry process_tokens
+2025-05-14 07:53:04,264 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-14 07:53:04,330 - INFO - exit database.get_existing_tokens()
+2025-05-14 07:53:04,338 - INFO - Novos tokens detectados:
+2025-05-14 07:53:04,347 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-14 07:53:04,966 - INFO - Par com SOL não encontrado!
+2025-05-14 07:53:24,986 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-05-14 07:53:25,157 - INFO - Par com SOL não encontrado!
+2025-05-14 07:53:45,174 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar BOOK OF MEME
+2025-05-14 07:53:45,232 - INFO - Par encontrado: BOME/WSOL ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82-So11111111111111111111111111111111111111112
+2025-05-14 07:53:48,125 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-05-14 07:53:48,126 - ERROR - Erro ao comprar BOOK OF MEME
+2025-05-14 07:54:08,146 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Official Melania Meme
+2025-05-14 07:54:08,262 - INFO - Par encontrado: MELANIA/WSOL FUAfBo2jgks6gB4Z4LfZkqSZgzNucisEHqnNebaRxM1P-So11111111111111111111111111111111111111112
+2025-05-14 07:54:10,216 - INFO - Swap com sucesso --- 0.5503154627251223 de SOLANA por 217.94061859683913 ('Official Melania Meme',) [92mcomprado[0m.
+2025-05-14 07:54:30,445 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-05-14 07:54:30,663 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-05-14 07:54:32,568 - INFO - Swap com sucesso --- 0.5503154627251223 de SOLANA por 325.5448366806009 ('Moo Deng (moodengsol.com)',) [92mcomprado[0m.
+2025-05-14 07:54:52,803 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-05-14 07:54:52,872 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-05-14 07:54:54,294 - INFO - Swap com sucesso --- 0.5503154627251223 de SOLANA por 26.957772622202565 ('Raydium',) [92mcomprado[0m.
+2025-05-14 07:55:14,500 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-14 07:55:14,788 - INFO - Par com SOL não encontrado!
+2025-05-14 07:55:34,809 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-05-14 07:55:34,867 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-05-14 07:55:36,492 - INFO - Swap com sucesso --- 0.5503154627251223 de SOLANA por 46.1771781599215 ('Jito',) [92mcomprado[0m.
+2025-05-14 07:55:56,702 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-05-14 07:55:56,818 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-05-14 07:55:58,568 - INFO - Swap com sucesso --- 0.5503154627251223 de SOLANA por 70.23734071104265 ('Fartcoin',) [92mcomprado[0m.

@@ -600,7 +600,7 @@ def buy_tokens(pools):
                                 if token['name'] == data['name'][0]:
                                     top_tokens.remove(token)
                                     break 
-                    asyncio.sleep(int(get_config_value('SWAP_EXECUTION'))) 
+                    time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
                 database.save_tokens_to_db(top_tokens)
             else:
                 logger.info("Nenhuma alteração nos tokens detectada. ---- ")

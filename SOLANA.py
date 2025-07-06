@@ -62,6 +62,9 @@ def get_config_value(key):
     except ValueError:
         return config.get(type, key)
 
+def str_to_bool(s: str) -> bool:
+    return s.strip().lower() in ("true", "1", "yes", "y")
+
 type = 'CENTRALIZED'
 
 parameters = {
@@ -291,7 +294,8 @@ def getWalletTokens():
     return getWalletTokensValues()
     
 def getWalletTokensValues():
-    url = "https://node_app:8443/get-token-accounts/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
+    
+    url = f"{get_config_value('SWAP_EXECUTION')}/get-token-accounts/EKgp8RPjCYRwhyikF3UcscBpuzUoUDuoB9beG1ArbdxC"
     
     response = requests.get(url, verify=False, headers=headers)
     
@@ -394,8 +398,28 @@ def getInfsclGetSecret():
             "mensagem": str(e)
         }), 500
     
-    
-    
+def getInfsclGetXSecret():
+    try:
+        global infisicaClient
+
+        secret_name = 'tst'
+        project_id = '55241c89-0380-4a8e-bd01-abbeb262e9c9'
+
+        # Buscar o segredo
+        secret = infisicaClient.secrets.get_secret_by_name(
+            secret_name=secret_name,
+            project_id=project_id,
+            environment_slug="dev",
+            secret_path="/"
+        )
+        
+        return secret.secretValue
+
+    except Exception as e:
+        return jsonify({
+            "estado": "Erro",
+            "mensagem": str(e)
+        }), 500    
 
 def read_config():
     config = configparser.ConfigParser()
@@ -562,7 +586,6 @@ def buy_tokens(pools):
                     data = get_price_in_solana(solana_quote['price'], token['price'], float(get_config_value('BUY_VALUE_IN_USD')))
                     solana_amount = data['solana_amount']
                     token_quantity = data['token_quantity']
-                    executeSwap = get_config_value("EXECUTE_SWAP")
 
                     data = {
                         'id': id,
@@ -581,11 +604,11 @@ def buy_tokens(pools):
                         'solana_amount' : solana_amount,
                         'token_amount' : token_quantity,
                         'comprado': '1',
-                        'executeSwap': executeSwap
+                        'executeSwap': get_config_value("EXECUTE_SWAP")
                     }
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
-                    response = swapToken(data, pools)
+                    response = swapToken(data, pools, True)
                     if response is not None:
                         if(response.status_code == 200):
                             #if response.json().get('txid') is not None:
@@ -614,7 +637,7 @@ def buy_tokens(pools):
 
 
 
-def swapToken(swapPairs, pools):
+def swapToken(swapPairs, pools, compraVenda):
     data = {
         'symbol': swapPairs['symbol'], 
         'name': swapPairs['name'],
@@ -629,10 +652,10 @@ def swapToken(swapPairs, pools):
         client_cert = ('/etc/ssl/myapp/node-client-cert.pem', '/etc/ssl/myapp/node-client-key.pem')
         ca_cert = '/etc/ssl/myapp/myCA.pem'
 
-    url = "https://node_app:8443/swap"
+    url = f"{get_config_value('NODE_URL')}:8443/swap"
 
-    if swapPairs['comprado'] == '1':
-        token_amount = swapPairs['solana_amount']
+    if compraVenda:
+        token_amount = int(swapPairs['solana_amount'] * 1_000_000_000)
     else:
         token_amount = swapPairs['token_amount']
 
@@ -642,8 +665,9 @@ def swapToken(swapPairs, pools):
         "quoteAsset": swapPairs['platform_token_address'],
         "baseAsset": "So11111111111111111111111111111111111111112",
         "tokenAmount": token_amount,
-        "buy": swapPairs['comprado'],
-        "executeSwap": swapPairs['executeSwap'],
+        "buy": compraVenda,
+        "executeSwap": str_to_bool(swapPairs['executeSwap']),
+        # "secret": getInfsclGetXSecret(),
     }
     
     headers = {
@@ -763,7 +787,6 @@ def sell_tokens(pools):
 
 
                 if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
-                    executeSwap = get_config_value("EXECUTE_SWAP")
                     data = {
                         'id': id,
                         'platform_token_address': platform_token_address,
@@ -777,14 +800,14 @@ def sell_tokens(pools):
                         'market_cap': market_cap,
                         'score': score,
                         'solana_amount' : solana_amount,
-                        'token_amount': '0',
+                        'token_amount': '10000',
                         #'token_amount': token_amount_in_wallet,
                         'comprado': '0',
-                        'executeSwap': executeSwap
+                        'executeSwap': get_config_value("EXECUTE_SWAP")
                     }
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
-                    response = swapToken(data, pools)
+                    response = swapToken(data, pools, False)
                     logger.info(" --- out swapToken --- ")
                     if response is not None:
                         if(response.status_code == 200):

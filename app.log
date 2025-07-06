@@ -6413,3 +6413,1439 @@
 2025-05-14 07:55:56,702 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
 2025-05-14 07:55:56,818 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
 2025-05-14 07:55:58,568 - INFO - Swap com sucesso --- 0.5503154627251223 de SOLANA por 70.23734071104265 ('Fartcoin',) [92mcomprado[0m.
+2025-05-17 15:45:54,613 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 15:46:04,594 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 15:46:58,483 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-17 15:46:58,487 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-17 15:46:58,489 - INFO - BTC 1h % : 0
+2025-05-17 15:46:58,493 - INFO - BTC_1H_PERCENT % : -10
+2025-05-17 15:46:58,497 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-17 15:46:58,498 - INFO - entry process_tokens
+2025-05-17 15:46:58,996 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-17 15:47:01,978 - ERROR - Error: local variable 'connection' referenced before assignment.
+2025-05-17 16:15:47,200 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 16:15:58,828 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 16:18:44,113 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-17 16:18:44,113 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-17 16:18:44,123 - INFO - BTC 1h % : 0
+2025-05-17 16:18:44,123 - INFO - BTC_1H_PERCENT % : -10
+2025-05-17 16:18:44,128 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-17 16:18:44,128 - INFO - entry process_tokens
+2025-05-17 16:18:44,498 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-17 16:18:44,506 - ERROR - Error: local variable 'connection' referenced before assignment.
+2025-05-17 16:23:11,631 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 16:23:22,210 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 16:23:31,134 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-17 16:23:31,136 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-17 16:23:31,138 - INFO - BTC 1h % : 0
+2025-05-17 16:23:31,142 - INFO - BTC_1H_PERCENT % : -10
+2025-05-17 16:23:31,145 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-17 16:23:31,146 - INFO - entry process_tokens
+2025-05-17 16:23:31,576 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-17 16:23:31,864 - INFO - exit database.get_existing_tokens()
+2025-05-17 16:23:31,869 - INFO - Novos tokens detectados:
+2025-05-17 16:23:31,872 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-17 16:23:32,419 - INFO - Par com SOL não encontrado!
+2025-05-17 16:23:52,452 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-17 16:23:53,075 - INFO - Par com SOL não encontrado!
+2025-05-17 16:24:13,089 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-05-17 16:24:13,238 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-05-17 16:24:13,245 - ERROR - Erro na requisição: No connection adapters were found for '20:8443/swap'
+2025-05-17 16:24:33,257 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-17 16:24:33,268 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-17 16:24:33,277 - ERROR - Erro na requisição: No connection adapters were found for '20:8443/swap'
+2025-05-17 16:24:53,292 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-17 16:24:54,203 - INFO - Par com SOL não encontrado!
+2025-05-17 16:25:14,222 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-17 16:25:14,789 - INFO - Par com SOL não encontrado!
+2025-05-17 16:25:34,795 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Metaplex
+2025-05-17 16:25:35,044 - INFO - Par encontrado: MPLX/WSOL METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m-So11111111111111111111111111111111111111112
+2025-05-17 16:25:35,048 - ERROR - Erro na requisição: No connection adapters were found for '20:8443/swap'
+2025-05-17 16:25:55,062 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-05-17 16:25:55,706 - INFO - Par com SOL não encontrado!
+2025-05-17 16:26:15,721 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-05-17 16:26:16,310 - INFO - Par com SOL não encontrado!
+2025-05-17 16:26:36,325 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-05-17 16:26:36,896 - INFO - Par com SOL não encontrado!
+2025-05-17 22:10:15,202 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 22:10:24,991 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 22:10:32,910 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-17 22:10:32,913 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-17 22:10:32,914 - INFO - BTC 1h % : 0
+2025-05-17 22:10:32,915 - INFO - BTC_1H_PERCENT % : -10
+2025-05-17 22:10:32,916 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-17 22:10:32,917 - INFO - entry process_tokens
+2025-05-17 22:10:33,444 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-17 22:10:33,488 - INFO - exit database.get_existing_tokens()
+2025-05-17 22:10:33,491 - INFO - Novos tokens detectados:
+2025-05-17 22:10:33,494 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-17 22:10:33,990 - INFO - Par com SOL não encontrado!
+2025-05-17 22:10:53,996 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-17 22:10:54,576 - INFO - Par com SOL não encontrado!
+2025-05-17 22:11:14,601 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-17 22:11:15,129 - INFO - Par com SOL não encontrado!
+2025-05-17 22:11:35,144 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-17 22:11:35,156 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-17 22:11:35,163 - ERROR - Erro na requisição: Failed to parse: https://localhost:8443:8443/swap
+2025-05-17 22:11:55,186 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-05-17 22:11:55,668 - INFO - Par com SOL não encontrado!
+2025-05-17 22:12:15,677 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-05-17 22:12:16,518 - INFO - Par com SOL não encontrado!
+2025-05-17 22:12:36,535 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-05-17 22:12:36,580 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-05-17 22:12:36,586 - ERROR - Erro na requisição: Failed to parse: https://localhost:8443:8443/swap
+2025-05-17 22:12:56,602 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Metaplex
+2025-05-17 22:12:56,820 - INFO - Par encontrado: MPLX/WSOL METAewgxyPbgwsseH8T16a39CQ5VyVxZi9zXiDPY18m-So11111111111111111111111111111111111111112
+2025-05-17 22:12:56,823 - ERROR - Erro na requisição: Failed to parse: https://localhost:8443:8443/swap
+2025-05-17 22:13:16,831 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-05-17 22:13:17,368 - INFO - Par com SOL não encontrado!
+2025-05-17 22:13:37,379 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-17 22:13:37,865 - INFO - Par com SOL não encontrado!
+2025-05-17 22:15:58,156 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 22:16:07,771 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-17 22:17:48,628 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-17 22:17:48,630 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-17 22:17:48,632 - INFO - BTC 1h % : 0
+2025-05-17 22:17:48,633 - INFO - BTC_1H_PERCENT % : -10
+2025-05-17 22:17:48,636 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-17 22:17:48,636 - INFO - entry process_tokens
+2025-05-17 22:17:48,780 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-17 22:17:48,805 - INFO - exit database.get_existing_tokens()
+2025-05-17 22:17:48,809 - INFO - Novos tokens detectados:
+2025-05-17 22:17:48,811 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-17 22:17:49,094 - INFO - Par com SOL não encontrado!
+2025-05-17 22:18:09,103 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-17 22:18:09,496 - INFO - Par com SOL não encontrado!
+2025-05-17 22:18:29,514 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-05-17 22:18:29,558 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-05-18 10:06:31,515 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-18 10:06:41,866 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-18 10:07:15,048 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-18 10:07:15,050 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-18 10:07:15,052 - INFO - BTC 1h % : 0
+2025-05-18 10:07:15,054 - INFO - BTC_1H_PERCENT % : -10
+2025-05-18 10:07:15,055 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-18 10:07:15,056 - INFO - entry process_tokens
+2025-05-18 10:07:15,251 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-18 10:07:15,286 - INFO - exit database.get_existing_tokens()
+2025-05-18 10:07:15,287 - INFO - Novos tokens detectados:
+2025-05-18 10:07:15,288 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-05-18 10:07:15,553 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-05-18 10:07:15,556 - ERROR - Erro na requisição: Failed to parse: https://localhost:8443:8443/swap
+2025-05-18 10:07:35,560 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-18 10:07:35,904 - INFO - Par com SOL não encontrado!
+2025-05-18 10:08:02,960 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-18 10:08:12,338 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-18 10:08:19,195 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-18 10:08:19,197 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-18 10:08:19,198 - INFO - BTC 1h % : 0
+2025-05-18 10:08:19,200 - INFO - BTC_1H_PERCENT % : -10
+2025-05-18 10:08:19,202 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-18 10:08:19,202 - INFO - entry process_tokens
+2025-05-18 10:08:19,335 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-18 10:08:19,367 - INFO - exit database.get_existing_tokens()
+2025-05-18 10:08:19,369 - INFO - Novos tokens detectados:
+2025-05-18 10:08:19,371 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-05-18 10:08:19,686 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-05-18 10:08:23,480 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-05-18 10:08:23,481 - ERROR - Erro ao comprar Moo Deng (moodengsol.com)
+2025-05-18 10:13:05,869 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-18 10:13:15,555 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-18 10:13:20,968 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-18 10:13:20,970 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-18 10:13:20,971 - INFO - BTC 1h % : 0
+2025-05-18 10:13:20,971 - INFO - BTC_1H_PERCENT % : -10
+2025-05-18 10:13:20,971 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-18 10:13:20,971 - INFO - entry process_tokens
+2025-05-18 10:13:21,163 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-18 10:13:21,191 - INFO - exit database.get_existing_tokens()
+2025-05-18 10:13:21,192 - INFO - Novos tokens detectados:
+2025-05-18 10:13:21,193 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-05-18 10:13:21,471 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-05-18 10:13:25,483 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-05-18 10:13:25,484 - ERROR - Erro ao comprar Moo Deng (moodengsol.com)
+2025-05-18 10:13:45,491 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Goatseus Maximus
+2025-05-18 10:13:45,690 - INFO - Par encontrado: WSOL/GOAT So11111111111111111111111111111111111111112-CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump
+2025-05-18 10:13:49,378 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 570.7669200612944 ('Goatseus Maximus',) [92mcomprado[0m.
+2025-05-18 10:14:09,503 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-05-18 10:14:09,818 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-05-18 10:14:13,351 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 278.0968211617673 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-05-18 10:14:33,421 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-05-18 10:14:33,547 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-05-18 10:14:37,148 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 94.41631635375646 ('dogwifhat',) [92mcomprado[0m.
+2025-05-18 10:14:57,219 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar BOOK OF MEME
+2025-05-18 10:14:57,347 - INFO - Par encontrado: BOME/WSOL ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82-So11111111111111111111111111111111111111112
+2025-05-18 10:15:00,987 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 42557.788982639824 ('BOOK OF MEME',) [92mcomprado[0m.
+2025-05-18 10:15:21,039 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Gigachad
+2025-05-18 10:15:21,360 - INFO - Par encontrado: GIGA/WSOL 63LfDmNb3MQ8mw9MtZ2To9bEA2M71kZUUGq5tiJxcqj9-So11111111111111111111111111111111111111112
+2025-05-18 10:15:25,191 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 3896.7164246065627 ('Gigachad',) [92mcomprado[0m.
+2025-05-18 10:15:45,261 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-18 10:15:45,657 - INFO - Par com SOL não encontrado!
+2025-05-18 10:16:05,669 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-18 10:16:06,028 - INFO - Par com SOL não encontrado!
+2025-05-18 10:16:26,041 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar cat in a dogs world
+2025-05-18 10:16:26,195 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-05-18 10:16:29,625 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 29493.75650144189 ('cat in a dogs world',) [92mcomprado[0m.
+2025-05-30 23:27:17,986 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-30 23:27:18,032 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-30 23:27:18,035 - INFO - BTC 1h % : 0
+2025-05-30 23:27:18,037 - INFO - BTC_1H_PERCENT % : -10
+2025-05-30 23:27:18,040 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-30 23:27:18,041 - INFO - entry process_tokens
+2025-05-30 23:27:18,397 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-30 23:27:18,436 - INFO - exit database.get_existing_tokens()
+2025-05-30 23:27:18,439 - INFO - Novos tokens detectados:
+2025-05-30 23:27:18,441 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-05-30 23:27:20,890 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-05-30 23:27:26,403 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 363.7103640926712 ('Moo Deng (moodengsol.com)',) [92mcomprado[0m.
+2025-05-30 23:27:46,454 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-30 23:27:46,746 - INFO - Par com SOL não encontrado!
+2025-05-30 23:28:06,749 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Goatseus Maximus
+2025-05-30 23:28:06,971 - INFO - Par encontrado: WSOL/GOAT So11111111111111111111111111111111111111112-CzLSujWBLFsSjncfkh59rUFqvafWcY5tzedWJSuypump
+2025-05-30 23:28:10,707 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 570.7669200612944 ('Goatseus Maximus',) [92mcomprado[0m.
+2025-05-30 23:28:30,764 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-05-30 23:28:31,260 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-05-30 23:28:34,616 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 278.0968211617673 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-05-30 23:28:54,660 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-05-30 23:28:54,729 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-05-30 23:29:01,605 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 94.41631635375646 ('dogwifhat',) [92mcomprado[0m.
+2025-05-30 23:29:21,676 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar BOOK OF MEME
+2025-05-30 23:29:21,799 - INFO - Par encontrado: BOME/WSOL ukHH6c7mMyiWCf1b9pnWe25TSpkDDt3H5pQZgZ74J82-So11111111111111111111111111111111111111112
+2025-05-30 23:29:27,149 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-05-30 23:29:27,163 - ERROR - Erro ao comprar BOOK OF MEME
+2025-05-30 23:29:47,169 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar io.net
+2025-05-30 23:29:47,489 - INFO - Par com SOL não encontrado!
+2025-05-30 23:30:07,500 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-05-30 23:30:07,936 - INFO - Par com SOL não encontrado!
+2025-05-30 23:30:27,944 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar cat in a dogs world
+2025-05-30 23:30:28,124 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-05-30 23:30:31,708 - INFO - Swap com sucesso --- 0.5833501462021384 de SOLANA por 29493.75650144189 ('cat in a dogs world',) [92mcomprado[0m.
+2025-05-31 07:27:30,464 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-31 07:27:44,238 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-31 07:28:40,110 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-31 07:28:40,113 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-31 07:28:40,116 - INFO - BTC 1h % : 0
+2025-05-31 07:28:40,120 - INFO - BTC_1H_PERCENT % : -10
+2025-05-31 07:28:40,125 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-31 07:28:40,127 - INFO - entry process_tokens
+2025-05-31 07:28:40,767 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-31 07:28:40,805 - INFO - exit database.get_existing_tokens()
+2025-05-31 07:28:40,807 - INFO - Novos tokens detectados:
+2025-05-31 07:28:40,813 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-31 07:28:41,544 - INFO - Par com SOL não encontrado!
+2025-05-31 07:29:01,559 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-31 07:29:02,903 - INFO - Par com SOL não encontrado!
+2025-05-31 07:29:22,939 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-05-31 07:29:23,925 - INFO - Par com SOL não encontrado!
+2025-05-31 07:29:43,959 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-05-31 07:29:44,031 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-05-31 07:32:42,833 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-05-31 07:33:56,960 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-31 07:34:12,466 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-05-31 07:34:44,380 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-31 07:34:44,382 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-31 07:34:44,385 - INFO - BTC 1h % : 0
+2025-05-31 07:34:44,388 - INFO - BTC_1H_PERCENT % : -10
+2025-05-31 07:34:44,404 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-31 07:34:44,405 - INFO - entry process_tokens
+2025-05-31 07:34:44,857 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-31 07:34:44,892 - INFO - exit database.get_existing_tokens()
+2025-05-31 07:34:44,895 - INFO - Novos tokens detectados:
+2025-05-31 07:34:44,898 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-31 07:34:45,472 - INFO - Par com SOL não encontrado!
+2025-05-31 07:35:12,348 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-05-31 07:35:13,133 - INFO - Par com SOL não encontrado!
+2025-05-31 07:35:16,255 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-05-31 07:35:16,505 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-05-31 07:35:50,875 - INFO - Swap com sucesso --- 0.6451835884612733 de SOLANA por 60.79027377629924 ('Jito',) [92mcomprado[0m.
+2025-05-31 07:35:53,946 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-05-31 07:35:54,002 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-05-31 07:36:25,141 - INFO - Swap com sucesso --- 0.6451835884612733 de SOLANA por 170.4200482833698 ('would',) [92mcomprado[0m.
+2025-05-31 07:36:28,229 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-31 07:36:29,343 - INFO - Par com SOL não encontrado!
+2025-05-31 07:36:32,519 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-31 07:36:33,857 - INFO - Par com SOL não encontrado!
+2025-05-31 07:36:37,023 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-05-31 07:36:38,197 - INFO - Par com SOL não encontrado!
+2025-05-31 07:36:41,351 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-31 07:36:42,247 - INFO - Par com SOL não encontrado!
+2025-05-31 07:36:45,409 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-05-31 07:36:46,204 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-05-31 07:36:54,245 - INFO - Swap com sucesso --- 0.6451835884612733 de SOLANA por 73601085043.14043 ('Baby Doge Coin',) [92mcomprado[0m.
+2025-05-31 07:36:57,320 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-31 07:36:57,328 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-31 07:37:08,942 - INFO - Swap com sucesso --- 0.6451835884612733 de SOLANA por 9.304317416826395 ('OFFICIAL TRUMP',) [92mcomprado[0m.
+2025-05-31 07:40:46,853 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-31 07:40:46,857 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-31 07:40:46,859 - INFO - BTC 1h % : 0
+2025-05-31 07:40:46,863 - INFO - BTC_1H_PERCENT % : -10
+2025-05-31 07:40:46,865 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-31 07:40:46,866 - INFO - entry process_tokens
+2025-05-31 07:40:47,309 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-31 07:40:47,325 - INFO - exit database.get_existing_tokens()
+2025-05-31 07:40:47,329 - INFO - Novos tokens detectados:
+2025-05-31 07:40:47,334 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-31 07:40:48,031 - INFO - Par com SOL não encontrado!
+2025-05-31 07:40:51,752 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-05-31 07:40:52,782 - INFO - Par com SOL não encontrado!
+2025-05-31 07:40:55,913 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-05-31 07:40:56,074 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-05-31 07:41:49,159 - ERROR - Erro na requisição: ('Connection aborted.', ConnectionResetError(10054, 'Uma ligação existente foi forçada a fechar pelo anfitrião remoto', None, 10054, None))
+2025-05-31 07:41:52,178 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-05-31 07:41:52,277 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-05-31 07:41:56,564 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2D30FD90>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 07:41:59,585 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-31 07:42:00,340 - INFO - Par com SOL não encontrado!
+2025-05-31 07:42:03,463 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-31 07:42:04,061 - INFO - Par com SOL não encontrado!
+2025-05-31 07:42:07,190 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-05-31 07:42:08,114 - INFO - Par com SOL não encontrado!
+2025-05-31 07:42:11,233 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-31 07:42:12,041 - INFO - Par com SOL não encontrado!
+2025-05-31 07:42:15,163 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-05-31 07:42:15,542 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-05-31 07:42:19,715 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2E3BC700>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 07:42:22,726 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-31 07:42:22,739 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-31 07:42:26,938 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D0A013A60>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 11:17:31,162 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-31 11:17:31,207 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-31 11:17:31,209 - INFO - BTC 1h % : 0
+2025-05-31 11:17:31,226 - INFO - BTC_1H_PERCENT % : -10
+2025-05-31 11:17:31,228 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-31 11:17:31,228 - INFO - entry process_tokens
+2025-05-31 11:17:31,734 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-31 11:17:31,905 - INFO - exit database.get_existing_tokens()
+2025-05-31 11:17:31,908 - INFO - Novos tokens detectados:
+2025-05-31 11:17:31,910 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-31 11:17:34,213 - INFO - Par com SOL não encontrado!
+2025-05-31 11:17:38,131 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-05-31 11:17:38,709 - INFO - Par com SOL não encontrado!
+2025-05-31 11:17:41,825 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-05-31 11:17:42,036 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-05-31 11:18:23,880 - ERROR - Erro na requisição: ('Connection aborted.', ConnectionResetError(10054, 'Uma ligação existente foi forçada a fechar pelo anfitrião remoto', None, 10054, None))
+2025-05-31 11:18:26,903 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-05-31 11:18:26,980 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-05-31 11:18:31,155 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2D30F640>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 11:18:34,165 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-31 11:18:34,859 - INFO - Par com SOL não encontrado!
+2025-05-31 11:18:37,976 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-31 11:18:38,511 - INFO - Par com SOL não encontrado!
+2025-05-31 11:18:41,643 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-05-31 11:18:42,267 - INFO - Par com SOL não encontrado!
+2025-05-31 11:18:45,432 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-31 11:18:45,927 - INFO - Par com SOL não encontrado!
+2025-05-31 11:18:49,058 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-05-31 11:18:49,417 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-05-31 11:18:53,614 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2E3BCE20>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 11:18:56,633 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-31 11:18:56,646 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-31 11:19:00,826 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2E3383A0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 11:20:15,322 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-31 11:20:15,325 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-31 11:20:15,326 - INFO - BTC 1h % : 0
+2025-05-31 11:20:15,330 - INFO - BTC_1H_PERCENT % : -10
+2025-05-31 11:20:15,332 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-31 11:20:15,332 - INFO - entry process_tokens
+2025-05-31 11:20:15,792 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-31 11:20:15,811 - INFO - exit database.get_existing_tokens()
+2025-05-31 11:20:15,814 - INFO - Novos tokens detectados:
+2025-05-31 11:20:15,817 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-31 11:20:16,327 - INFO - Par com SOL não encontrado!
+2025-05-31 11:20:19,506 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-05-31 11:20:20,295 - INFO - Par com SOL não encontrado!
+2025-05-31 11:20:23,507 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-05-31 11:20:23,661 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-05-31 11:20:43,314 - ERROR - Erro na requisição: ('Connection aborted.', ConnectionResetError(10054, 'Uma ligação existente foi forçada a fechar pelo anfitrião remoto', None, 10054, None))
+2025-05-31 11:20:46,326 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-05-31 11:20:46,373 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-05-31 11:20:50,535 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2D353F10>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 11:20:53,557 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-31 11:20:54,087 - INFO - Par com SOL não encontrado!
+2025-05-31 11:20:57,211 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-31 11:20:57,780 - INFO - Par com SOL não encontrado!
+2025-05-31 11:21:00,898 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-05-31 11:21:01,463 - INFO - Par com SOL não encontrado!
+2025-05-31 11:21:04,575 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-31 11:21:05,112 - INFO - Par com SOL não encontrado!
+2025-05-31 11:21:08,208 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-05-31 11:21:08,605 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-05-31 11:21:12,753 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2D30FD90>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 11:21:15,758 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-31 11:21:15,774 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-31 11:21:19,963 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2D345100>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 11:22:05,588 - INFO - INICIAR BUY ######################################################################################################################
+2025-05-31 11:22:05,588 - INFO - EXECUTE_OPERATIONS: 1
+2025-05-31 11:22:05,588 - INFO - BTC 1h % : 0
+2025-05-31 11:22:05,607 - INFO - BTC_1H_PERCENT % : -10
+2025-05-31 11:22:05,609 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-05-31 11:22:05,610 - INFO - entry process_tokens
+2025-05-31 11:22:05,944 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-05-31 11:22:05,950 - INFO - exit database.get_existing_tokens()
+2025-05-31 11:22:05,961 - INFO - Novos tokens detectados:
+2025-05-31 11:22:05,965 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-05-31 11:22:06,443 - INFO - Par com SOL não encontrado!
+2025-05-31 11:22:09,560 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-05-31 11:22:10,123 - INFO - Par com SOL não encontrado!
+2025-05-31 11:22:13,227 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-05-31 11:22:13,422 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-05-31 11:45:08,927 - ERROR - Erro na requisição: ('Connection aborted.', ConnectionResetError(10054, 'Uma ligação existente foi forçada a fechar pelo anfitrião remoto', None, 10054, None))
+2025-05-31 11:45:11,945 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-05-31 11:45:12,031 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-05-31 11:45:16,885 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2D345460>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 11:45:19,897 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-05-31 11:45:20,462 - INFO - Par com SOL não encontrado!
+2025-05-31 11:45:23,575 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-05-31 11:45:24,186 - INFO - Par com SOL não encontrado!
+2025-05-31 11:45:27,293 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-05-31 11:45:27,882 - INFO - Par com SOL não encontrado!
+2025-05-31 11:45:31,012 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-05-31 11:45:31,569 - INFO - Par com SOL não encontrado!
+2025-05-31 11:45:34,674 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-05-31 11:45:35,160 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-05-31 11:45:39,361 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D2D30F7C0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-05-31 11:45:42,370 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-05-31 11:45:42,381 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-05-31 11:45:46,594 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014D0A013C70>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-06-02 19:59:19,175 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-02 19:59:19,218 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-02 19:59:19,224 - INFO - BTC 1h % : 0
+2025-06-02 19:59:19,243 - INFO - BTC_1H_PERCENT % : -10
+2025-06-02 19:59:19,245 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-02 19:59:19,246 - INFO - entry process_tokens
+2025-06-02 19:59:20,113 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-02 19:59:20,155 - INFO - exit database.get_existing_tokens()
+2025-06-02 19:59:20,158 - INFO - Novos tokens detectados:
+2025-06-02 19:59:20,163 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-06-02 19:59:23,680 - INFO - Par com SOL não encontrado!
+2025-06-02 19:59:27,574 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-06-02 19:59:28,221 - INFO - Par com SOL não encontrado!
+2025-06-02 19:59:31,349 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-06-02 19:59:31,537 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-06-02 19:59:52,245 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'failed to get recent blockhash: TypeError: fetch failed'}
+2025-06-02 19:59:52,247 - ERROR - Erro ao comprar Jito
+2025-06-02 19:59:55,266 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-06-02 19:59:55,903 - INFO - Par com SOL não encontrado!
+2025-06-02 19:59:59,041 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-06-02 19:59:59,741 - INFO - Par com SOL não encontrado!
+2025-06-02 20:00:02,994 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-06-02 20:00:03,780 - INFO - Par com SOL não encontrado!
+2025-06-02 20:00:06,916 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-06-02 20:00:07,862 - INFO - Par com SOL não encontrado!
+2025-06-02 20:00:11,006 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-06-02 20:00:11,558 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-06-02 20:00:53,673 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'failed to get recent blockhash: TypeError: fetch failed'}
+2025-06-02 20:00:53,691 - ERROR - Erro ao comprar Baby Doge Coin
+2025-06-13 07:12:58,468 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-13 07:12:58,510 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-13 07:12:58,514 - INFO - BTC 1h % : 0
+2025-06-13 07:12:58,517 - INFO - BTC_1H_PERCENT % : -10
+2025-06-13 07:12:58,518 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-13 07:12:58,519 - INFO - entry process_tokens
+2025-06-13 07:12:59,043 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-13 07:12:59,071 - INFO - exit database.get_existing_tokens()
+2025-06-13 07:12:59,074 - INFO - Novos tokens detectados:
+2025-06-13 07:12:59,077 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-06-13 07:13:01,021 - INFO - Par com SOL não encontrado!
+2025-06-13 07:13:04,290 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-06-13 07:13:05,218 - INFO - Par com SOL não encontrado!
+2025-06-13 07:13:08,339 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-06-13 07:13:08,488 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-06-13 07:13:32,070 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'failed to get recent blockhash: TypeError: fetch failed'}
+2025-06-13 07:13:32,071 - ERROR - Erro ao comprar Jito
+2025-06-13 07:13:35,094 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-06-13 07:13:35,700 - INFO - Par com SOL não encontrado!
+2025-06-13 07:13:38,822 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-06-13 07:13:39,445 - INFO - Par com SOL não encontrado!
+2025-06-13 07:13:42,573 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-06-13 07:13:43,084 - INFO - Par com SOL não encontrado!
+2025-06-13 07:13:46,199 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-06-13 07:13:46,827 - INFO - Par com SOL não encontrado!
+2025-06-13 07:13:49,944 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-06-13 07:13:50,269 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-06-13 07:14:35,062 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'fetch failed'}
+2025-06-13 07:14:35,063 - ERROR - Erro ao comprar Baby Doge Coin
+2025-06-13 07:17:20,837 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-13 07:17:20,839 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-13 07:17:20,843 - INFO - BTC 1h % : 0
+2025-06-13 07:17:20,845 - INFO - BTC_1H_PERCENT % : -10
+2025-06-13 07:17:20,847 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-13 07:17:20,848 - INFO - entry process_tokens
+2025-06-13 07:17:21,196 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-13 07:17:21,212 - INFO - exit database.get_existing_tokens()
+2025-06-13 07:17:21,214 - INFO - Novos tokens detectados:
+2025-06-13 07:17:21,219 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-06-13 07:17:21,722 - INFO - Par com SOL não encontrado!
+2025-06-13 07:17:25,287 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-06-13 07:17:25,967 - INFO - Par com SOL não encontrado!
+2025-06-13 07:17:29,075 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-06-13 07:17:29,276 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-06-13 07:17:36,293 - INFO - Swap com sucesso --- 0.6451835884612733 de SOLANA por 60.79027377629924 ('Jito',) [92mcomprado[0m.
+2025-06-13 07:17:39,369 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-06-13 07:17:39,416 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-06-13 07:17:43,283 - INFO - Swap com sucesso --- 0.6451835884612733 de SOLANA por 170.4200482833698 ('would',) [92mcomprado[0m.
+2025-06-13 07:17:46,356 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-06-13 07:17:46,910 - INFO - Par com SOL não encontrado!
+2025-06-13 07:17:50,038 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-06-13 07:17:50,742 - INFO - Par com SOL não encontrado!
+2025-06-13 07:17:53,888 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-06-13 07:17:54,437 - INFO - Par com SOL não encontrado!
+2025-06-13 07:17:57,551 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-06-13 07:17:58,262 - INFO - Par com SOL não encontrado!
+2025-06-13 07:18:01,399 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-06-13 07:18:01,742 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-06-13 07:18:06,122 - INFO - Swap com sucesso --- 0.6451835884612733 de SOLANA por 73601085043.14043 ('Baby Doge Coin',) [92mcomprado[0m.
+2025-06-13 07:18:09,188 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-06-13 07:18:09,201 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-06-13 07:18:21,247 - INFO - Swap com sucesso --- 0.6451835884612733 de SOLANA por 9.304317416826395 ('OFFICIAL TRUMP',) [92mcomprado[0m.
+2025-06-13 07:21:57,172 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-13 07:21:57,175 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-13 07:21:57,176 - INFO - BTC 1h % : 0
+2025-06-13 07:21:57,181 - INFO - BTC_1H_PERCENT % : -10
+2025-06-13 07:21:57,183 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-13 07:21:57,184 - INFO - entry process_tokens
+2025-06-13 07:21:57,500 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-13 07:21:57,522 - INFO - exit database.get_existing_tokens()
+2025-06-13 07:21:57,524 - INFO - Novos tokens detectados:
+2025-06-13 07:21:57,527 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-06-13 07:21:58,040 - INFO - Par com SOL não encontrado!
+2025-06-13 07:22:01,237 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-06-13 07:22:01,891 - INFO - Par com SOL não encontrado!
+2025-06-13 07:22:05,023 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-06-13 07:22:05,139 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-06-13 07:23:27,893 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'fetch failed'}
+2025-06-13 07:23:27,894 - ERROR - Erro ao comprar Jito
+2025-06-13 07:23:30,909 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-06-13 07:23:31,619 - INFO - Par com SOL não encontrado!
+2025-06-13 07:23:35,440 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-06-13 07:23:36,095 - INFO - Par com SOL não encontrado!
+2025-06-13 07:23:39,215 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-06-13 07:23:39,979 - INFO - Par com SOL não encontrado!
+2025-06-13 07:23:43,115 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solana Swap
+2025-06-13 07:23:43,660 - INFO - Par com SOL não encontrado!
+2025-06-13 07:23:46,787 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-06-13 07:23:47,405 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-06-13 07:23:50,584 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-06-13 07:23:50,585 - ERROR - Erro ao comprar Baby Doge Coin
+2025-06-13 07:24:23,847 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-13 07:24:23,881 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-13 07:24:23,886 - INFO - BTC 1h % : 0
+2025-06-13 07:24:23,889 - INFO - BTC_1H_PERCENT % : -10
+2025-06-13 07:24:23,892 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-13 07:24:23,893 - INFO - entry process_tokens
+2025-06-13 07:24:24,208 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-13 07:24:24,222 - INFO - exit database.get_existing_tokens()
+2025-06-13 07:24:24,224 - INFO - Novos tokens detectados:
+2025-06-13 07:24:24,226 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-06-13 07:24:24,750 - INFO - Par com SOL não encontrado!
+2025-06-13 07:24:27,891 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-06-13 07:24:28,480 - INFO - Par com SOL não encontrado!
+2025-06-13 07:24:31,615 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-06-13 07:24:31,824 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-06-13 07:24:35,194 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-06-13 07:24:35,195 - ERROR - Erro ao comprar Jito
+2025-06-13 07:24:38,213 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-06-13 07:24:38,729 - INFO - Par com SOL não encontrado!
+2025-06-13 07:24:41,892 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-06-13 07:24:42,449 - INFO - Par com SOL não encontrado!
+2025-06-13 07:25:43,742 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-06-13 07:25:55,794 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-06-13 07:27:48,007 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-13 07:27:48,009 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-13 07:27:48,011 - INFO - BTC 1h % : 0
+2025-06-13 07:27:48,013 - INFO - BTC_1H_PERCENT % : -10
+2025-06-13 07:27:48,016 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-13 07:27:48,017 - INFO - entry process_tokens
+2025-06-13 07:27:48,395 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-13 07:27:48,414 - INFO - exit database.get_existing_tokens()
+2025-06-13 07:27:48,417 - INFO - Novos tokens detectados:
+2025-06-13 07:27:48,422 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-06-13 07:27:48,670 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-06-13 07:28:25,143 - INFO - Swap com sucesso --- 0.6990908587556982 de SOLANA por 636.0642149942008 ('Aura',) [92mcomprado[0m.
+2025-06-13 07:28:28,253 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Kamino Finance
+2025-06-13 07:28:29,014 - INFO - Par com SOL não encontrado!
+2025-06-13 07:28:32,177 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-06-13 07:28:32,853 - INFO - Par com SOL não encontrado!
+2025-06-13 07:28:36,607 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-06-13 07:28:37,335 - INFO - Par com SOL não encontrado!
+2025-06-13 07:28:40,476 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar would
+2025-06-13 07:28:40,563 - INFO - Par encontrado: WSOL/WOULD So11111111111111111111111111111111111111112-J1Wpmugrooj1yMyQKrdZ2vwRXG5rhfx3vTnYE39gpump
+2025-06-19 12:04:55,265 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-06-19 12:05:07,228 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-06-19 12:05:46,847 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-19 12:05:46,849 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-19 12:05:46,850 - INFO - BTC 1h % : 0
+2025-06-19 12:05:46,851 - INFO - BTC_1H_PERCENT % : -10
+2025-06-19 12:05:46,854 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-19 12:05:46,854 - INFO - entry process_tokens
+2025-06-19 12:05:47,318 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-19 12:05:47,487 - INFO - exit database.get_existing_tokens()
+2025-06-19 12:05:47,489 - INFO - Novos tokens detectados:
+2025-06-19 12:05:47,493 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-06-19 12:05:47,741 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-06-19 12:05:50,449 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 12:05:50,450 - ERROR - Erro ao comprar Aura
+2025-06-19 12:05:53,462 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-06-19 12:05:53,608 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-06-19 12:05:55,992 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 12:05:55,993 - ERROR - Erro ao comprar Jito
+2025-06-19 12:05:59,000 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-06-19 12:05:59,587 - INFO - Par com SOL não encontrado!
+2025-06-19 12:06:02,713 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-06-19 12:06:02,879 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-06-19 12:06:05,261 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 12:06:05,262 - ERROR - Erro ao comprar Popcat (SOL)
+2025-06-19 12:06:08,275 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-06-19 12:06:08,861 - INFO - Par com SOL não encontrado!
+2025-06-19 12:06:11,997 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-06-19 12:06:12,143 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-06-19 12:06:14,528 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 12:06:14,528 - ERROR - Erro ao comprar dogwifhat
+2025-06-19 12:12:52,088 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-19 12:12:52,090 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-19 12:12:52,092 - INFO - BTC 1h % : 0
+2025-06-19 12:12:52,093 - INFO - BTC_1H_PERCENT % : -10
+2025-06-19 12:12:52,095 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-19 12:12:52,095 - INFO - entry process_tokens
+2025-06-19 12:12:52,628 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-19 12:12:52,648 - INFO - exit database.get_existing_tokens()
+2025-06-19 12:12:52,651 - INFO - Novos tokens detectados:
+2025-06-19 12:12:52,656 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-06-19 12:12:53,065 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-06-19 12:12:58,623 - INFO - Swap com sucesso --- 0.6845417899897247 de SOLANA por 594.5854998755559 ('Aura',) [92mcomprado[0m.
+2025-06-19 12:13:01,697 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-06-19 12:13:01,895 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-06-19 12:13:13,982 - INFO - Swap com sucesso --- 0.6845417899897247 de SOLANA por 44.004831840227716 ('Raydium',) [92mcomprado[0m.
+2025-06-19 12:13:17,057 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jito
+2025-06-19 12:13:17,194 - INFO - Par encontrado: WSOL/JTO So11111111111111111111111111111111111111112-jtojtomepa8beP8AuQc6eXt5FriJwfFMwQx2v2f9mCL
+2025-06-19 12:13:21,125 - INFO - Swap com sucesso --- 0.6845417899897247 de SOLANA por 42.88198432779656 ('Jito',) [92mcomprado[0m.
+2025-06-19 12:13:24,193 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-06-19 12:13:24,331 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-06-19 12:13:28,499 - INFO - Swap com sucesso --- 0.6845417899897247 de SOLANA por 246.67100719569234 ('Jupiter',) [92mcomprado[0m.
+2025-06-19 12:13:31,566 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Orca
+2025-06-19 12:13:32,276 - INFO - Par com SOL não encontrado!
+2025-06-19 12:13:35,406 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-06-19 12:13:35,511 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-06-19 12:13:39,256 - INFO - Swap com sucesso --- 0.6845417899897247 de SOLANA por 335.3946158403477 ('Popcat (SOL)',) [92mcomprado[0m.
+2025-06-19 12:13:42,320 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-06-19 12:13:42,776 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-06-19 12:13:54,771 - INFO - Swap com sucesso --- 0.6845417899897247 de SOLANA por 448.95155385951165 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-06-19 12:13:57,830 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-06-19 12:13:58,401 - INFO - Par com SOL não encontrado!
+2025-06-19 12:14:01,537 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-06-19 12:14:01,697 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-06-19 12:14:05,633 - INFO - Swap com sucesso --- 0.6845417899897247 de SOLANA por 126.63359988607682 ('dogwifhat',) [92mcomprado[0m.
+2025-06-19 12:14:08,697 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pyth Network
+2025-06-19 12:14:09,122 - INFO - Par encontrado: WSOL/PYTH So11111111111111111111111111111111111111112-HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3
+2025-06-19 12:14:21,206 - INFO - Swap com sucesso --- 0.6845417899897247 de SOLANA por 1011.3542146470335 ('Pyth Network',) [92mcomprado[0m.
+2025-06-19 23:08:59,712 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-06-19 23:09:11,506 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-06-19 23:09:50,023 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-19 23:09:50,025 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-19 23:09:50,027 - INFO - BTC 1h % : 0
+2025-06-19 23:09:50,030 - INFO - BTC_1H_PERCENT % : -10
+2025-06-19 23:09:50,032 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-19 23:09:50,032 - INFO - entry process_tokens
+2025-06-19 23:09:50,481 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-19 23:09:50,508 - INFO - exit database.get_existing_tokens()
+2025-06-19 23:09:50,511 - INFO - Novos tokens detectados:
+2025-06-19 23:09:50,514 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-06-19 23:09:50,680 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-06-19 23:09:53,398 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:09:53,400 - ERROR - Erro ao comprar Raydium
+2025-06-19 23:09:56,417 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-06-19 23:09:57,003 - INFO - Par com SOL não encontrado!
+2025-06-19 23:10:00,124 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-06-19 23:10:00,789 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-06-19 23:10:03,268 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:10:03,268 - ERROR - Erro ao comprar Moo Deng (moodengsol.com)
+2025-06-19 23:10:06,289 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-06-19 23:10:06,440 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-06-19 23:10:08,894 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:10:08,899 - ERROR - Erro ao comprar dogwifhat
+2025-06-19 23:10:11,920 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-06-19 23:10:12,352 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-06-19 23:10:16,018 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:10:16,018 - ERROR - Erro ao comprar Peanut the Squirrel
+2025-06-19 23:10:19,039 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-06-19 23:10:19,180 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-06-19 23:11:20,421 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:11:20,422 - ERROR - Erro ao comprar Jupiter
+2025-06-19 23:12:19,165 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-19 23:12:19,167 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-19 23:12:19,171 - INFO - BTC 1h % : 0
+2025-06-19 23:12:19,173 - INFO - BTC_1H_PERCENT % : -10
+2025-06-19 23:12:19,175 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-19 23:12:19,176 - INFO - entry process_tokens
+2025-06-19 23:12:19,533 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-19 23:12:19,557 - INFO - exit database.get_existing_tokens()
+2025-06-19 23:12:19,559 - INFO - Novos tokens detectados:
+2025-06-19 23:12:19,563 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-06-19 23:12:19,719 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-06-19 23:12:46,831 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:12:46,832 - ERROR - Erro ao comprar Raydium
+2025-06-19 23:12:49,842 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-06-19 23:12:50,495 - INFO - Par com SOL não encontrado!
+2025-06-19 23:12:53,647 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-06-19 23:12:54,392 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-06-19 23:13:30,412 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:13:30,412 - ERROR - Erro ao comprar Moo Deng (moodengsol.com)
+2025-06-19 23:13:33,432 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-06-19 23:13:33,616 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-06-19 23:13:41,981 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:13:41,981 - ERROR - Erro ao comprar dogwifhat
+2025-06-19 23:13:45,009 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-06-19 23:13:45,456 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-06-19 23:13:50,063 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:13:50,063 - ERROR - Erro ao comprar Peanut the Squirrel
+2025-06-19 23:13:53,084 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-06-19 23:13:53,259 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-06-19 23:14:10,806 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:14:10,809 - ERROR - Erro ao comprar Jupiter
+2025-06-19 23:18:22,847 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-19 23:18:22,847 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-19 23:18:22,862 - INFO - BTC 1h % : 0
+2025-06-19 23:18:22,864 - INFO - BTC_1H_PERCENT % : -10
+2025-06-19 23:18:22,866 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-19 23:18:22,866 - INFO - entry process_tokens
+2025-06-19 23:18:23,246 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-19 23:18:23,265 - INFO - exit database.get_existing_tokens()
+2025-06-19 23:18:23,267 - INFO - Novos tokens detectados:
+2025-06-19 23:18:23,268 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-06-19 23:18:23,392 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-06-19 23:18:31,878 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-19 23:18:31,878 - ERROR - Erro ao comprar Raydium
+2025-06-19 23:18:34,892 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-06-19 23:18:35,449 - INFO - Par com SOL não encontrado!
+2025-06-19 23:18:38,589 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-06-19 23:18:39,229 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-06-20 00:06:17,486 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/tstPKey] [Method=get] [StatusCode=401] Token missing'}
+2025-06-20 00:06:17,496 - ERROR - Erro ao comprar Moo Deng (moodengsol.com)
+2025-06-20 00:06:20,521 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-06-20 00:06:21,127 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-06-20 00:07:18,826 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'fetch failed'}
+2025-06-20 00:07:18,829 - ERROR - Erro ao comprar dogwifhat
+2025-06-20 00:07:21,835 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-06-20 00:07:23,641 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-06-20 00:08:02,785 - INFO - Swap com sucesso --- 0.6838915545137978 de SOLANA por 451.8176188592589 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-06-20 00:08:06,120 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-06-20 00:08:06,138 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-06-20 00:09:15,836 - INFO - Swap com sucesso --- 0.6838915545137978 de SOLANA por 10.73200495862653 ('OFFICIAL TRUMP',) [92mcomprado[0m.
+2025-06-20 00:09:18,916 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-06-20 00:09:19,043 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-06-20 00:09:40,024 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'rpc simulateTransaction error'}
+2025-06-20 00:09:40,024 - ERROR - Erro ao comprar Jupiter
+2025-06-20 00:10:52,672 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-20 00:10:52,675 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-20 00:10:52,677 - INFO - BTC 1h % : 0
+2025-06-20 00:10:52,738 - INFO - BTC_1H_PERCENT % : -10
+2025-06-20 00:10:52,746 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-20 00:10:52,750 - INFO - entry process_tokens
+2025-06-20 00:10:53,228 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-20 00:10:53,251 - INFO - exit database.get_existing_tokens()
+2025-06-20 00:10:53,253 - INFO - Novos tokens detectados:
+2025-06-20 00:10:53,256 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-06-20 00:10:53,403 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-06-20 00:38:38,248 - INFO - Swap com sucesso --- 0.6838915545137978 de SOLANA por 45.007736399202706 ('Raydium',) [92mcomprado[0m.
+2025-06-20 00:38:41,320 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Launch Coin on Believe
+2025-06-20 00:38:42,088 - INFO - Par com SOL não encontrado!
+2025-06-20 00:38:46,006 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Solayer
+2025-06-20 00:38:46,479 - INFO - Par com SOL não encontrado!
+2025-06-20 00:38:49,609 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-06-20 00:38:50,216 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-06-20 00:39:55,198 - INFO - Swap com sucesso --- 0.6838915545137978 de SOLANA por 659.104266833187 ('Moo Deng (moodengsol.com)',) [92mcomprado[0m.
+2025-06-20 00:39:58,259 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-06-20 00:39:58,779 - INFO - Par com SOL não encontrado!
+2025-06-20 00:40:02,026 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-06-20 00:40:02,159 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-06-20 00:40:23,959 - INFO - Swap com sucesso --- 0.6838915545137978 de SOLANA por 125.98420747773122 ('dogwifhat',) [92mcomprado[0m.
+2025-06-20 00:40:27,028 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-06-20 00:40:27,645 - INFO - Par com SOL não encontrado!
+2025-06-20 00:40:30,777 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Peanut the Squirrel
+2025-06-20 00:40:31,385 - INFO - Par encontrado: WSOL/Pnut  So11111111111111111111111111111111111111112-2qEHjDLDLbuBgRYvsxhc5D6uDWAivNFZGan56P1tpump
+2025-06-20 00:41:16,779 - INFO - Swap com sucesso --- 0.6838915545137978 de SOLANA por 451.8176188592589 ('Peanut the Squirrel',) [92mcomprado[0m.
+2025-06-20 00:41:19,835 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar OFFICIAL TRUMP
+2025-06-20 00:41:19,841 - INFO - Par encontrado: TRUMP/WSOL 6p6xgHyF7AeE6TZkSmFsko444wqoP15icUSqi2jfGiPN-So11111111111111111111111111111111111111112
+2025-06-20 00:41:53,252 - INFO - Swap com sucesso --- 0.6838915545137978 de SOLANA por 10.73200495862653 ('OFFICIAL TRUMP',) [92mcomprado[0m.
+2025-06-20 00:41:56,312 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-06-20 00:41:56,501 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-06-20 00:42:00,842 - ERROR - Erro na requisição: ('Connection aborted.', ConnectionResetError(10054, 'Uma ligação existente foi forçada a fechar pelo anfitrião remoto', None, 10054, None))
+2025-06-26 22:36:31,940 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-06-26 22:36:45,312 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-06-26 22:36:58,497 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-26 22:36:58,500 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-26 22:36:58,501 - INFO - BTC 1h % : 0
+2025-06-26 22:36:58,504 - INFO - BTC_1H_PERCENT % : -10
+2025-06-26 22:36:58,508 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-26 22:36:58,509 - INFO - entry process_tokens
+2025-06-26 22:36:58,904 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-26 22:36:59,196 - INFO - exit database.get_existing_tokens()
+2025-06-26 22:36:59,198 - INFO - Novos tokens detectados:
+2025-06-26 22:36:59,201 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-06-26 22:36:59,969 - INFO - Par com SOL não encontrado!
+2025-06-26 22:37:02,990 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-06-26 22:37:03,599 - INFO - Par com SOL não encontrado!
+2025-06-26 22:37:06,605 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pyth Network
+2025-06-26 22:37:07,067 - INFO - Par encontrado: WSOL/PYTH So11111111111111111111111111111111111111112-HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3
+2025-06-26 22:37:07,071 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-06-26 22:39:26,585 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-26 22:39:26,588 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-26 22:39:26,588 - INFO - BTC 1h % : 0
+2025-06-26 22:39:26,595 - INFO - BTC_1H_PERCENT % : -10
+2025-06-26 22:39:26,596 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-26 22:39:26,598 - INFO - entry process_tokens
+2025-06-26 22:39:26,966 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-26 22:39:26,995 - INFO - exit database.get_existing_tokens()
+2025-06-26 22:39:26,995 - INFO - Novos tokens detectados:
+2025-06-26 22:39:27,005 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-06-26 22:39:54,007 - INFO - Par com SOL não encontrado!
+2025-06-26 22:40:13,773 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-06-26 22:40:18,807 - INFO - Par com SOL não encontrado!
+2025-06-26 22:40:25,957 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pyth Network
+2025-06-26 22:40:47,170 - INFO - Par encontrado: WSOL/PYTH So11111111111111111111111111111111111111112-HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3
+2025-06-26 22:41:20,716 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-06-26 22:41:24,543 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-26 22:41:24,545 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-26 22:41:24,547 - INFO - BTC 1h % : 0
+2025-06-26 22:41:24,551 - INFO - BTC_1H_PERCENT % : -10
+2025-06-26 22:41:24,554 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-26 22:41:24,555 - INFO - entry process_tokens
+2025-06-26 22:41:25,001 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-26 22:41:25,021 - INFO - exit database.get_existing_tokens()
+2025-06-26 22:41:25,025 - INFO - Novos tokens detectados:
+2025-06-26 22:41:25,028 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-06-26 22:41:31,064 - INFO - Par com SOL não encontrado!
+2025-06-26 22:42:36,747 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-06-26 22:42:58,833 - INFO - Par com SOL não encontrado!
+2025-06-26 22:44:47,376 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pyth Network
+2025-06-26 22:50:09,515 - INFO - Par encontrado: WSOL/PYTH So11111111111111111111111111111111111111112-HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3
+2025-06-26 22:50:16,804 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-06-26 22:50:29,675 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-26 22:50:29,677 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-26 22:50:29,684 - INFO - BTC 1h % : 0
+2025-06-26 22:50:29,688 - INFO - BTC_1H_PERCENT % : -10
+2025-06-26 22:50:29,693 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-26 22:50:29,694 - INFO - entry process_tokens
+2025-06-26 22:50:30,470 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-26 22:50:30,498 - INFO - exit database.get_existing_tokens()
+2025-06-26 22:50:30,503 - INFO - Novos tokens detectados:
+2025-06-26 22:50:30,510 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-06-26 22:50:31,413 - INFO - Par com SOL não encontrado!
+2025-06-26 22:50:34,441 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-06-26 22:50:35,368 - INFO - Par com SOL não encontrado!
+2025-06-26 22:50:38,394 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pyth Network
+2025-06-26 22:50:39,077 - INFO - Par encontrado: WSOL/PYTH So11111111111111111111111111111111111111112-HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3
+2025-06-26 22:50:39,081 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-06-26 22:58:11,687 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-26 22:58:11,690 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-26 22:58:11,692 - INFO - BTC 1h % : 0
+2025-06-26 22:58:11,694 - INFO - BTC_1H_PERCENT % : -10
+2025-06-26 22:58:11,698 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-26 22:58:11,698 - INFO - entry process_tokens
+2025-06-26 22:58:12,125 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-26 22:58:12,145 - INFO - exit database.get_existing_tokens()
+2025-06-26 22:58:12,148 - INFO - Novos tokens detectados:
+2025-06-26 22:58:12,152 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-06-26 22:58:12,692 - INFO - Par com SOL não encontrado!
+2025-06-26 22:58:15,720 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-06-26 22:58:16,273 - INFO - Par com SOL não encontrado!
+2025-06-26 22:58:19,289 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pyth Network
+2025-06-26 22:58:19,800 - INFO - Par encontrado: WSOL/PYTH So11111111111111111111111111111111111111112-HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3
+2025-06-26 22:58:19,810 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-06-26 22:58:29,265 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-26 22:58:29,270 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-26 22:58:29,273 - INFO - BTC 1h % : 0
+2025-06-26 22:58:29,277 - INFO - BTC_1H_PERCENT % : -10
+2025-06-26 22:58:29,280 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-26 22:58:29,281 - INFO - entry process_tokens
+2025-06-26 22:58:29,744 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-26 22:58:29,762 - INFO - exit database.get_existing_tokens()
+2025-06-26 22:58:29,765 - INFO - Novos tokens detectados:
+2025-06-26 22:58:29,769 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-06-26 22:58:34,490 - INFO - Par com SOL não encontrado!
+2025-06-26 22:58:40,573 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-06-26 22:58:43,352 - INFO - Par com SOL não encontrado!
+2025-06-26 22:58:49,059 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pyth Network
+2025-06-26 22:59:09,328 - INFO - Par encontrado: WSOL/PYTH So11111111111111111111111111111111111111112-HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3
+2025-06-26 23:00:15,188 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-06-26 23:00:24,463 - INFO - INICIAR BUY ######################################################################################################################
+2025-06-26 23:00:24,470 - INFO - EXECUTE_OPERATIONS: 1
+2025-06-26 23:00:24,474 - INFO - BTC 1h % : 0
+2025-06-26 23:00:24,481 - INFO - BTC_1H_PERCENT % : -10
+2025-06-26 23:00:24,483 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-06-26 23:00:24,483 - INFO - entry process_tokens
+2025-06-26 23:00:24,839 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-06-26 23:00:24,853 - INFO - exit database.get_existing_tokens()
+2025-06-26 23:00:24,857 - INFO - Novos tokens detectados:
+2025-06-26 23:00:24,861 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-06-26 23:00:25,471 - INFO - Par com SOL não encontrado!
+2025-06-26 23:00:34,398 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-06-26 23:00:35,034 - INFO - Par com SOL não encontrado!
+2025-06-26 23:00:42,106 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pyth Network
+2025-06-26 23:00:42,586 - INFO - Par encontrado: WSOL/PYTH So11111111111111111111111111111111111111112-HZ1JovNiVvGrGNiiYvEozEVgZ58xaU3RKwX8eACQBCt3
+2025-07-04 22:38:25,216 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-04 22:38:40,593 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-04 22:40:06,956 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-04 22:40:06,995 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-04 22:40:07,000 - INFO - BTC 1h % : 0
+2025-07-04 22:40:07,025 - INFO - BTC_1H_PERCENT % : -10
+2025-07-04 22:40:07,032 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-04 22:40:07,045 - INFO - entry process_tokens
+2025-07-04 22:40:08,854 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-04 22:40:09,388 - INFO - exit database.get_existing_tokens()
+2025-07-04 22:40:09,394 - INFO - Novos tokens detectados:
+2025-07-04 22:40:09,402 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-07-04 22:40:10,761 - INFO - Par com SOL não encontrado!
+2025-07-04 22:41:49,976 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-07-04 22:41:50,337 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-07-04 22:41:50,342 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-07-04 22:42:36,294 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-04 22:42:36,301 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-04 22:42:36,301 - INFO - BTC 1h % : 0
+2025-07-04 22:42:36,309 - INFO - BTC_1H_PERCENT % : -10
+2025-07-04 22:42:36,313 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-04 22:42:36,314 - INFO - entry process_tokens
+2025-07-04 22:42:37,027 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-04 22:42:37,059 - INFO - exit database.get_existing_tokens()
+2025-07-04 22:42:37,064 - INFO - Novos tokens detectados:
+2025-07-04 22:42:37,073 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-07-04 22:42:38,208 - INFO - Par com SOL não encontrado!
+2025-07-04 22:42:41,231 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-07-04 22:42:41,721 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-07-04 22:42:41,729 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-07-04 23:32:29,884 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-04 23:32:29,888 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-04 23:32:29,891 - INFO - BTC 1h % : 0
+2025-07-04 23:32:29,894 - INFO - BTC_1H_PERCENT % : -10
+2025-07-04 23:32:29,898 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-04 23:32:29,899 - INFO - entry process_tokens
+2025-07-04 23:32:30,337 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-04 23:32:30,364 - INFO - exit database.get_existing_tokens()
+2025-07-04 23:32:30,367 - INFO - Novos tokens detectados:
+2025-07-04 23:32:30,371 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-07-04 23:32:55,713 - INFO - Par com SOL não encontrado!
+2025-07-04 23:34:33,156 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-07-04 23:34:47,390 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-07-04 23:36:01,788 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-07-04 23:36:19,696 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-04 23:36:19,699 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-04 23:36:19,701 - INFO - BTC 1h % : 0
+2025-07-04 23:36:19,703 - INFO - BTC_1H_PERCENT % : -10
+2025-07-04 23:36:19,705 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-04 23:36:19,706 - INFO - entry process_tokens
+2025-07-04 23:36:20,239 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-04 23:36:20,257 - INFO - exit database.get_existing_tokens()
+2025-07-04 23:36:20,259 - INFO - Novos tokens detectados:
+2025-07-04 23:36:20,262 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-07-04 23:36:30,711 - INFO - Par com SOL não encontrado!
+2025-07-04 23:36:47,948 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-07-04 23:36:53,290 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-07-04 23:37:42,024 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-07-04 23:43:59,959 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-04 23:44:29,483 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-04 23:48:01,067 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-04 23:48:01,074 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-04 23:48:01,082 - INFO - BTC 1h % : 0
+2025-07-04 23:48:01,095 - INFO - BTC_1H_PERCENT % : -10
+2025-07-04 23:48:01,108 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-04 23:48:01,109 - INFO - entry process_tokens
+2025-07-04 23:48:02,533 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-04 23:48:02,729 - INFO - exit database.get_existing_tokens()
+2025-07-04 23:48:02,739 - INFO - Novos tokens detectados:
+2025-07-04 23:48:02,751 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-07-04 23:48:19,200 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-07-04 23:59:35,384 - ERROR - Error: Object of type Response is not JSON serializable.
+2025-07-05 00:00:22,356 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-05 00:01:03,338 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-05 00:07:32,786 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-05 00:07:32,791 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-05 00:07:32,794 - INFO - BTC 1h % : 0
+2025-07-05 00:07:32,797 - INFO - BTC_1H_PERCENT % : -10
+2025-07-05 00:07:32,801 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-05 00:07:32,808 - INFO - entry process_tokens
+2025-07-05 00:07:34,193 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-05 00:07:34,280 - INFO - exit database.get_existing_tokens()
+2025-07-05 00:07:34,285 - INFO - Novos tokens detectados:
+2025-07-05 00:07:34,295 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-07-05 00:07:35,043 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-07-05 00:08:34,177 - ERROR - Falha na requisição: {'error': 'Erro ao executar apiSwap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-05 00:08:34,185 - ERROR - Erro ao comprar Aura
+2025-07-05 00:08:37,225 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-07-05 00:08:38,692 - INFO - Par com SOL não encontrado!
+2025-07-05 00:08:41,713 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-07-05 00:08:43,717 - INFO - Par com SOL não encontrado!
+2025-07-05 00:08:46,763 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar GOHOME
+2025-07-05 00:08:47,431 - INFO - Par encontrado: GOHOME/WSOL 2Wu1g2ft7qZHfTpfzP3wLdfPeV1is4EwQ3CXBfRYAciD-So11111111111111111111111111111111111111112
+2025-07-05 00:14:57,400 - ERROR - Falha na requisição: {'error': 'Erro ao executar apiSwap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-05 00:14:57,450 - ERROR - Erro ao comprar GOHOME
+2025-07-05 00:15:00,478 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-07-05 00:15:02,115 - INFO - Par com SOL não encontrado!
+2025-07-05 00:15:05,143 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-07-05 00:15:05,420 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-07-05 00:16:06,777 - ERROR - Falha na requisição: {'error': 'Erro ao executar apiSwap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-05 00:16:06,791 - ERROR - Erro ao comprar Alchemist AI
+2025-07-05 00:16:09,845 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter Perps LP
+2025-07-05 00:16:11,465 - INFO - Par com SOL não encontrado!
+2025-07-05 00:21:27,828 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-05 00:21:27,833 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-05 00:21:27,848 - INFO - BTC 1h % : 0
+2025-07-05 00:21:27,854 - INFO - BTC_1H_PERCENT % : -10
+2025-07-05 00:21:27,888 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-05 00:21:27,890 - INFO - entry process_tokens
+2025-07-05 00:21:29,896 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-05 00:21:29,941 - INFO - exit database.get_existing_tokens()
+2025-07-05 00:21:29,948 - INFO - Novos tokens detectados:
+2025-07-05 00:21:29,956 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-07-05 00:21:31,250 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-07-05 00:21:53,583 - INFO - Swap com sucesso --- 0.6740987130691535 de SOLANA por 719.7962939793207 ('Aura',) [92mcomprado[0m.
+2025-07-05 00:21:56,734 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Drift
+2025-07-05 00:21:58,241 - INFO - Par com SOL não encontrado!
+2025-07-05 00:22:01,267 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Useless Coin
+2025-07-05 00:22:03,213 - INFO - Par com SOL não encontrado!
+2025-07-05 00:22:06,280 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-07-05 00:22:08,064 - INFO - Par com SOL não encontrado!
+2025-07-05 00:22:11,091 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar GOHOME
+2025-07-05 00:22:11,970 - INFO - Par encontrado: GOHOME/WSOL 2Wu1g2ft7qZHfTpfzP3wLdfPeV1is4EwQ3CXBfRYAciD-So11111111111111111111111111111111111111112
+2025-07-05 00:45:40,361 - ERROR - Falha na requisição: {'error': 'Erro ao executar apiSwap', 'details': 'write ECONNABORTED'}
+2025-07-05 00:45:40,481 - ERROR - Erro ao comprar GOHOME
+2025-07-05 00:45:43,651 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Zebec Network
+2025-07-05 00:45:44,903 - INFO - Par com SOL não encontrado!
+2025-07-05 00:45:47,941 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Alchemist AI
+2025-07-05 00:45:48,270 - INFO - Par encontrado: WSOL/ALCH So11111111111111111111111111111111111111112-HNg5PYJmtqcmzXrv6S9zP1CDKk5BgDuyFBxbvNApump
+2025-07-05 01:49:38,689 - INFO - Swap com sucesso --- 0.6740987130691535 de SOLANA por 702.3663359478988 ('Alchemist AI',) [92mcomprado[0m.
+2025-07-05 01:49:58,105 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-07-05 01:49:59,580 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-05 02:01:17,387 - ERROR - Falha na requisição: {'error': 'Erro ao executar apiSwap', 'details': '429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "2fd48e28-8c04-4105-bbc5-bddf107603db" } \r\n'}
+2025-07-05 02:01:17,403 - ERROR - Erro ao comprar Moo Deng (moodengsol.com)
+2025-07-06 18:33:21,307 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 18:33:31,369 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 18:37:41,044 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-06 18:37:41,065 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-06 18:37:41,067 - INFO - BTC 1h % : 0
+2025-07-06 18:37:41,069 - INFO - BTC_1H_PERCENT % : -10
+2025-07-06 18:37:41,071 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-06 18:37:41,071 - INFO - entry process_tokens
+2025-07-06 18:37:41,615 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-06 18:37:41,635 - INFO - exit database.get_existing_tokens()
+2025-07-06 18:37:41,640 - INFO - Novos tokens detectados:
+2025-07-06 18:37:41,645 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-07-06 18:37:42,239 - INFO - Par com SOL não encontrado!
+2025-07-06 18:37:45,259 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar cat in a dogs world
+2025-07-06 18:37:45,728 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 18:39:09,264 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'fetch failed'}
+2025-07-06 18:39:09,265 - ERROR - Erro ao comprar cat in a dogs world
+2025-07-06 18:39:12,277 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-07-06 18:39:12,548 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-07-06 18:39:50,024 - INFO - Swap com sucesso --- 0.006545611647081659 de SOLANA por 0.8253624201931582 ('Fartcoin',) [92mcomprado[0m.
+2025-07-06 18:40:13,526 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-07-06 18:40:13,741 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 18:40:40,979 - ERROR - Erro na requisição: ('Connection aborted.', ConnectionResetError(10054, 'Uma ligação existente foi forçada a fechar pelo anfitrião remoto', None, 10054, None))
+2025-07-06 18:40:43,997 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-07-06 18:40:44,131 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-07-06 18:40:48,218 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014E776AE070>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 18:40:51,228 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-07-06 18:40:51,773 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 18:40:55,840 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014E776AE160>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 18:40:58,847 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-07-06 18:40:59,473 - INFO - Par com SOL não encontrado!
+2025-07-06 18:41:02,482 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-07-06 18:41:02,838 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 18:41:06,920 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014E78695D60>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 18:41:09,943 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-07-06 18:41:10,097 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-07-06 18:41:14,156 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x0000014E78695BB0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 18:48:30,042 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 18:48:39,991 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 18:51:01,535 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-06 18:51:01,537 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-06 18:51:01,539 - INFO - BTC 1h % : 0
+2025-07-06 18:51:01,543 - INFO - BTC_1H_PERCENT % : -10
+2025-07-06 18:51:01,545 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-06 18:51:01,546 - INFO - entry process_tokens
+2025-07-06 18:51:01,998 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-06 18:51:02,021 - INFO - exit database.get_existing_tokens()
+2025-07-06 18:51:02,024 - INFO - Novos tokens detectados:
+2025-07-06 18:51:02,027 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-07-06 18:51:29,537 - INFO - Par com SOL não encontrado!
+2025-07-06 18:51:32,553 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-07-06 18:51:48,335 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 18:52:34,838 - ERROR - Erro na requisição: ('Connection aborted.', ConnectionResetError(10054, 'Uma ligação existente foi forçada a fechar pelo anfitrião remoto', None, 10054, None))
+2025-07-06 18:52:37,856 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar cat in a dogs world
+2025-07-06 18:52:41,503 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 18:53:23,296 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 18:53:34,616 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 18:59:02,707 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-06 18:59:02,710 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-06 18:59:02,715 - INFO - BTC 1h % : 0
+2025-07-06 18:59:02,718 - INFO - BTC_1H_PERCENT % : -10
+2025-07-06 18:59:02,721 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-06 18:59:02,722 - INFO - entry process_tokens
+2025-07-06 18:59:03,461 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-06 18:59:03,506 - INFO - exit database.get_existing_tokens()
+2025-07-06 18:59:03,509 - INFO - Novos tokens detectados:
+2025-07-06 18:59:03,514 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-07-06 18:59:18,989 - INFO - Par com SOL não encontrado!
+2025-07-06 18:59:27,502 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-07-06 18:59:29,439 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 19:00:10,395 - ERROR - Erro na requisição: ('Connection aborted.', ConnectionResetError(10054, 'Uma ligação existente foi forçada a fechar pelo anfitrião remoto', None, 10054, None))
+2025-07-06 19:04:01,859 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar cat in a dogs world
+2025-07-06 19:04:04,597 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 19:05:19,553 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 19:05:24,262 - ERROR - Erro ao comprar cat in a dogs world
+2025-07-06 19:05:27,276 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-07-06 19:05:38,514 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 19:07:50,248 - INFO - Swap com sucesso --- 0.006551283269464388 de SOLANA por 0.461009246956334 ('Raydium',) [92mcomprado[0m.
+2025-07-06 19:07:54,685 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-07-06 19:10:55,324 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 19:11:24,420 - INFO - Swap com sucesso --- 0.006551283269464388 de SOLANA por 5.301241937714569 ('Moo Deng (moodengsol.com)',) [92mcomprado[0m.
+2025-07-06 19:11:30,387 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Fartcoin
+2025-07-06 19:11:52,627 - INFO - Par encontrado: WSOL/Fartcoin  So11111111111111111111111111111111111111112-9BB6NFEcjBCtnNLFko2FqVQBq8HHM13kCyYcdQbgpump
+2025-07-06 19:14:05,145 - INFO - Swap com sucesso --- 0.006551283269464388 de SOLANA por 0.827336741516682 ('Fartcoin',) [92mcomprado[0m.
+2025-07-06 19:14:09,658 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-07-06 20:21:20,783 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-07-06 20:21:52,187 - INFO - Swap com sucesso --- 0.006551283269464388 de SOLANA por 2.22120666616617 ('Jupiter',) [92mcomprado[0m.
+2025-07-06 20:22:20,803 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-07-06 20:22:51,898 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 20:32:04,544 - INFO - Swap com sucesso --- 0.006551283269464388 de SOLANA por 857015571.2437243 ('Baby Doge Coin',) [92mcomprado[0m.
+2025-07-06 20:32:57,145 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Pudgy Penguins
+2025-07-06 20:33:08,660 - INFO - Par com SOL não encontrado!
+2025-07-06 20:36:44,412 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 20:36:54,827 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 20:37:43,997 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-06 20:37:43,999 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-06 20:37:44,001 - INFO - BTC 1h % : 0
+2025-07-06 20:37:44,002 - INFO - BTC_1H_PERCENT % : -10
+2025-07-06 20:37:44,005 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-06 20:37:44,006 - INFO - entry process_tokens
+2025-07-06 20:37:44,445 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-06 20:37:44,474 - INFO - exit database.get_existing_tokens()
+2025-07-06 20:37:44,480 - INFO - Novos tokens detectados:
+2025-07-06 20:38:16,905 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-07-06 20:38:23,754 - INFO - Par com SOL não encontrado!
+2025-07-06 20:39:03,443 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-07-06 20:39:11,115 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 20:40:46,088 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'fetch failed'}
+2025-07-06 20:40:46,091 - ERROR - Erro ao comprar Moo Deng (moodengsol.com)
+2025-07-06 20:40:49,111 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-07-06 20:40:56,077 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 20:41:25,352 - ERROR - Erro na requisição: ('Connection aborted.', ConnectionResetError(10054, 'Uma ligação existente foi forçada a fechar pelo anfitrião remoto', None, 10054, None))
+2025-07-06 20:41:28,372 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-07-06 20:41:28,561 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 20:41:32,684 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A882B19730>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 20:41:35,709 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-07-06 20:41:35,874 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-07-06 20:41:39,986 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A881A9AE80>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 20:41:43,003 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Saros
+2025-07-06 20:41:43,636 - INFO - Par com SOL não encontrado!
+2025-07-06 20:41:46,648 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-07-06 20:41:47,081 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 20:41:51,143 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A881A69190>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 20:41:54,168 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-07-06 20:41:54,352 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-07-06 20:41:58,441 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A881A9AE20>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 20:42:01,451 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-07-06 20:42:02,144 - INFO - Par com SOL não encontrado!
+2025-07-06 20:48:50,196 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-06 20:48:50,199 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-06 20:48:50,201 - INFO - BTC 1h % : 0
+2025-07-06 20:48:50,204 - INFO - BTC_1H_PERCENT % : -10
+2025-07-06 20:48:50,207 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-06 20:48:50,207 - INFO - entry process_tokens
+2025-07-06 20:48:50,590 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-06 20:48:50,610 - INFO - exit database.get_existing_tokens()
+2025-07-06 20:48:50,613 - INFO - Novos tokens detectados:
+2025-07-06 20:48:50,619 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-07-06 20:48:51,082 - INFO - Par com SOL não encontrado!
+2025-07-06 20:48:54,093 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-07-06 20:48:54,746 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 20:49:18,272 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 20:49:18,272 - ERROR - Erro ao comprar Moo Deng (moodengsol.com)
+2025-07-06 20:49:21,293 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-07-06 20:49:21,501 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 20:49:23,771 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 20:49:23,773 - ERROR - Erro ao comprar dogwifhat
+2025-07-06 20:49:26,792 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-07-06 20:49:26,930 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-07-06 20:49:29,187 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 20:49:29,187 - ERROR - Erro ao comprar Popcat (SOL)
+2025-07-06 20:49:32,203 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-07-06 20:49:32,721 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 20:49:34,948 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 20:49:34,949 - ERROR - Erro ao comprar Baby Doge Coin
+2025-07-06 20:49:37,958 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar ai16z
+2025-07-06 20:49:38,613 - INFO - Par com SOL não encontrado!
+2025-07-06 20:52:48,667 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-06 20:52:48,671 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-06 20:52:48,674 - INFO - BTC 1h % : 0
+2025-07-06 20:52:48,678 - INFO - BTC_1H_PERCENT % : -10
+2025-07-06 20:52:48,682 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-06 20:52:48,683 - INFO - entry process_tokens
+2025-07-06 20:52:49,108 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-06 20:52:49,124 - INFO - exit database.get_existing_tokens()
+2025-07-06 20:52:49,128 - INFO - Novos tokens detectados:
+2025-07-06 20:52:49,130 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-07-06 20:52:49,579 - INFO - Par com SOL não encontrado!
+2025-07-06 20:52:52,590 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Moo Deng (moodengsol.com)
+2025-07-06 20:52:52,984 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 20:53:05,348 - INFO - Swap com sucesso --- 0.006610243546056421 de SOLANA por 5.241116980886202 ('Moo Deng (moodengsol.com)',) [92mcomprado[0m.
+2025-07-06 20:53:08,408 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar cat in a dogs world
+2025-07-06 20:53:08,847 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 20:53:17,317 - INFO - Swap com sucesso --- 0.006610243546056421 de SOLANA por 357.6302989800597 ('cat in a dogs world',) [92mcomprado[0m.
+2025-07-06 20:53:20,375 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-07-06 20:53:20,598 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 20:53:31,136 - INFO - Swap com sucesso --- 0.006610243546056421 de SOLANA por 1.1300753845772071 ('dogwifhat',) [92mcomprado[0m.
+2025-07-06 20:53:34,191 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-07-06 20:53:34,441 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 20:53:44,193 - INFO - Swap com sucesso --- 0.006610243546056421 de SOLANA por 0.45748616920653784 ('Raydium',) [92mcomprado[0m.
+2025-07-06 20:53:47,272 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-07-06 20:53:47,421 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-07-06 20:53:58,274 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "42e2e38d-7d0e-4894-ba21-fb3d681d9195" } \r\n'}
+2025-07-06 20:53:58,280 - ERROR - Erro ao comprar Popcat (SOL)
+2025-07-06 20:54:01,287 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-07-06 20:54:01,749 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 20:54:15,052 - INFO - Swap com sucesso --- 0.006610243546056421 de SOLANA por 854182314.9438024 ('Baby Doge Coin',) [92mcomprado[0m.
+2025-07-06 20:54:18,108 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-07-06 20:54:18,283 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-07-06 20:54:28,899 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "ffac3c7f-e42b-4c15-853d-8a5c6460d8ee" } \r\n'}
+2025-07-06 20:54:28,899 - ERROR - Erro ao comprar Jupiter
+2025-07-06 21:05:03,662 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 21:05:08,756 - INFO - Moo Deng (moodengsol.com) - ganho:  0.0%
+2025-07-06 21:05:08,760 - INFO - cat in a dogs world - ganho:  0.0%
+2025-07-06 21:05:08,765 - INFO - dogwifhat - ganho:  0.0%
+2025-07-06 21:05:08,770 - INFO - Raydium - ganho:  0.0%
+2025-07-06 21:05:08,773 - INFO - Baby Doge Coin - ganho:  0.0%
+2025-07-06 21:06:06,913 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 21:07:47,346 - INFO - Moo Deng (moodengsol.com) - ganho:  0.0%
+2025-07-06 21:08:03,086 - INFO - cat in a dogs world - ganho:  0.0%
+2025-07-06 21:09:05,804 - INFO - dogwifhat - ganho:  0.0%
+2025-07-06 21:13:03,246 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Raydium
+2025-07-06 21:13:03,498 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 21:13:07,597 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A882B0F1C0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:13:07,598 - INFO -  --- out swapToken --- 
+2025-07-06 21:13:18,031 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Baby Doge Coin
+2025-07-06 21:13:18,479 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 21:13:22,580 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A8819FA7C0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:13:22,582 - INFO -  --- out swapToken --- 
+2025-07-06 21:15:58,176 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 21:16:42,085 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 21:17:09,001 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 21:19:18,139 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A881A9AC40>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:19:18,142 - INFO -  --- out swapToken --- 
+2025-07-06 21:19:20,051 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender cat in a dogs world
+2025-07-06 21:19:29,311 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 21:19:35,173 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A881AD59A0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:19:35,174 - INFO -  --- out swapToken --- 
+2025-07-06 21:19:42,387 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender dogwifhat
+2025-07-06 21:19:46,767 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 21:19:53,352 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A882B3CB80>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:19:53,354 - INFO -  --- out swapToken --- 
+2025-07-06 21:19:53,358 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Raydium
+2025-07-06 21:19:53,500 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 21:19:57,587 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A881A9A280>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:19:57,589 - INFO -  --- out swapToken --- 
+2025-07-06 21:19:57,596 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Baby Doge Coin
+2025-07-06 21:19:58,116 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 21:20:02,207 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A8819FA1C0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:20:02,207 - INFO -  --- out swapToken --- 
+2025-07-06 21:20:47,710 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 21:20:52,793 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 21:20:53,557 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 21:20:57,666 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A882B3C3D0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:20:57,667 - INFO -  --- out swapToken --- 
+2025-07-06 21:20:57,673 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender cat in a dogs world
+2025-07-06 21:20:58,066 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 21:21:02,134 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A881A9A4C0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:21:02,136 - INFO -  --- out swapToken --- 
+2025-07-06 21:21:02,139 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender dogwifhat
+2025-07-06 21:21:02,294 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 21:21:06,381 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A881A9A280>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:21:06,385 - INFO -  --- out swapToken --- 
+2025-07-06 21:21:06,388 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Raydium
+2025-07-06 21:21:06,541 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 21:21:10,617 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A882B3CBB0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:21:10,618 - INFO -  --- out swapToken --- 
+2025-07-06 21:21:10,621 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Baby Doge Coin
+2025-07-06 21:21:10,987 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 21:21:15,070 - ERROR - Erro na requisição: HTTPSConnectionPool(host='localhost', port=8443): Max retries exceeded with url: /swap (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x000001A8819FA7C0>: Failed to establish a new connection: [WinError 10061] Nenhuma ligação pôde ser feita porque o computador de destino\r\nas recusou ativamente'))
+2025-07-06 21:21:15,071 - INFO -  --- out swapToken --- 
+2025-07-06 21:25:33,776 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 21:25:38,876 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 21:25:39,685 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 21:25:42,030 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 21:25:42,031 - INFO -  --- out swapToken --- 
+2025-07-06 21:25:42,031 - ERROR - Erro ao vender Moo Deng (moodengsol.com)
+2025-07-06 21:25:42,034 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender cat in a dogs world
+2025-07-06 21:25:42,345 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 21:25:44,494 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 21:25:44,495 - INFO -  --- out swapToken --- 
+2025-07-06 21:25:44,496 - ERROR - Erro ao vender cat in a dogs world
+2025-07-06 21:25:44,502 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender dogwifhat
+2025-07-06 21:25:44,704 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 21:25:46,837 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 21:25:46,855 - INFO -  --- out swapToken --- 
+2025-07-06 21:25:46,857 - ERROR - Erro ao vender dogwifhat
+2025-07-06 21:25:46,864 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Raydium
+2025-07-06 21:25:47,075 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 21:25:49,219 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 21:25:49,221 - INFO -  --- out swapToken --- 
+2025-07-06 21:25:49,222 - ERROR - Erro ao vender Raydium
+2025-07-06 21:25:49,229 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Baby Doge Coin
+2025-07-06 21:25:49,725 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 21:25:51,861 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 21:25:51,861 - INFO -  --- out swapToken --- 
+2025-07-06 21:25:51,861 - ERROR - Erro ao vender Baby Doge Coin
+2025-07-06 21:26:28,265 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 21:26:52,388 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 22:19:43,076 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 22:19:53,967 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 22:20:05,236 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:20:06,311 - INFO -  $MOODENG - max_price updated from - $0.1928515195065094 - to - $0.1928515195065094
+2025-07-06 22:20:07,372 - INFO -  $MEW - max_price updated from - $0.0027997863620992437 - to - $0.0027997863620992437
+2025-07-06 22:20:08,422 - INFO -  $WIF - max_price updated from - $0.8872955854010449 - to - $0.8872955854010449
+2025-07-06 22:20:09,470 - INFO -  $RAY - max_price updated from - $2.192680026361491 - to - $2.192680026361491
+2025-07-06 22:20:10,505 - INFO -  $BabyDoge - max_price updated from - $1.176331418653712e-09 - to - $1.176331418653712e-09
+2025-07-06 22:20:10,514 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 22:22:02,147 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 22:23:16,725 - ERROR - Error: 'bool' object has no attribute 'strip'.
+2025-07-06 22:23:29,941 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:23:35,004 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 22:24:12,259 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 22:25:19,952 - ERROR - Error: 'bool' object has no attribute 'strip'.
+2025-07-06 22:25:25,110 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:25:30,197 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 22:25:34,930 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 22:26:04,460 - ERROR - Error: 'bool' object has no attribute 'strip'.
+2025-07-06 22:26:10,026 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:26:15,140 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 22:26:20,202 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 22:28:40,734 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 22:28:51,370 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 22:30:03,960 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:30:06,051 - INFO -  $MEW - max_price updated from - $0.002815923889457059 - to - $0.002815923889457059
+2025-07-06 22:30:07,080 - INFO -  $WIF - max_price updated from - $0.8949362114725422 - to - $0.8949362114725422
+2025-07-06 22:30:08,115 - INFO -  $RAY - max_price updated from - $2.1985895106024724 - to - $2.1985895106024724
+2025-07-06 22:30:09,149 - INFO -  $BabyDoge - max_price updated from - $1.183965375894405e-09 - to - $1.183965375894405e-09
+2025-07-06 22:30:09,156 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 22:30:28,546 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 22:31:12,728 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 22:31:12,730 - INFO -  --- out swapToken --- 
+2025-07-06 22:31:12,732 - ERROR - Erro ao vender Moo Deng (moodengsol.com)
+2025-07-06 22:31:12,738 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender cat in a dogs world
+2025-07-06 22:31:17,141 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 22:31:23,301 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 22:31:23,301 - INFO -  --- out swapToken --- 
+2025-07-06 22:31:23,302 - ERROR - Erro ao vender cat in a dogs world
+2025-07-06 22:31:23,306 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender dogwifhat
+2025-07-06 22:31:29,519 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 22:31:39,435 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 22:31:39,440 - INFO -  --- out swapToken --- 
+2025-07-06 22:31:39,441 - ERROR - Erro ao vender dogwifhat
+2025-07-06 22:31:39,446 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Raydium
+2025-07-06 22:31:47,559 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 22:31:49,809 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 22:31:49,810 - INFO -  --- out swapToken --- 
+2025-07-06 22:31:49,810 - ERROR - Erro ao vender Raydium
+2025-07-06 22:31:49,814 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Baby Doge Coin
+2025-07-06 22:31:50,136 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 22:31:52,360 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 22:31:52,361 - INFO -  --- out swapToken --- 
+2025-07-06 22:31:52,362 - ERROR - Erro ao vender Baby Doge Coin
+2025-07-06 22:32:11,801 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:32:16,903 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Moo Deng (moodengsol.com)
+2025-07-06 22:32:17,715 - INFO - Par encontrado: WSOL/MOODENG So11111111111111111111111111111111111111112-ED5nyyWEzpPPiWimP8vYm7sD7TD3LAt3Q3gRTWHzPJBY
+2025-07-06 22:32:21,936 - INFO - Swap com sucesso --- 0 de Moo Deng (moodengsol.com) por 0.006629632135176705 de SOLANA [91mvendido[0m.
+2025-07-06 22:32:21,937 - INFO -  --- out swapToken --- 
+2025-07-06 22:32:24,971 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender cat in a dogs world
+2025-07-06 22:32:25,322 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 22:32:36,031 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "b56806e2-cbf4-4663-9caf-2eb68329164d" } \r\n'}
+2025-07-06 22:32:36,033 - INFO -  --- out swapToken --- 
+2025-07-06 22:32:36,034 - ERROR - Erro ao vender cat in a dogs world
+2025-07-06 22:32:36,039 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender dogwifhat
+2025-07-06 22:32:36,220 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 22:32:46,890 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "231d2f70-7e87-4183-9426-caa922839159" } \r\n'}
+2025-07-06 22:32:46,892 - INFO -  --- out swapToken --- 
+2025-07-06 22:32:46,893 - ERROR - Erro ao vender dogwifhat
+2025-07-06 22:32:46,900 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Raydium
+2025-07-06 22:32:47,132 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 22:32:50,413 - INFO - Swap com sucesso --- 0 de Raydium por 0.006599973542680083 de SOLANA [91mvendido[0m.
+2025-07-06 22:32:50,414 - INFO -  --- out swapToken --- 
+2025-07-06 22:32:53,453 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Baby Doge Coin
+2025-07-06 22:32:54,017 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 22:33:04,723 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "cf11d46b-3131-42f1-96e1-5f0be0e752b8" } \r\n'}
+2025-07-06 22:33:04,725 - INFO -  --- out swapToken --- 
+2025-07-06 22:33:04,726 - ERROR - Erro ao vender Baby Doge Coin
+2025-07-06 22:37:12,028 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 22:37:22,501 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 22:42:34,713 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:42:35,792 - INFO -  $MOODENG - max_price updated from - $0.19539273693962284 - to - $0.19539273693962284
+2025-07-06 22:42:36,817 - INFO -  $MEW - max_price updated from - $0.002835185343045191 - to - $0.002835185343045191
+2025-07-06 22:42:37,857 - INFO -  $WIF - max_price updated from - $0.9000537767636437 - to - $0.9000537767636437
+2025-07-06 22:42:38,891 - INFO -  $RAY - max_price updated from - $2.201642342405419 - to - $2.201642342405419
+2025-07-06 22:42:39,925 - INFO -  $BabyDoge - max_price updated from - $1.188845958382076e-09 - to - $1.188845958382076e-09
+2025-07-06 22:42:39,929 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender cat in a dogs world
+2025-07-06 22:42:40,266 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 22:42:43,549 - INFO - Swap com sucesso --- 0 de cat in a dogs world por 0.006618555081276249 de SOLANA [91mvendido[0m.
+2025-07-06 22:42:43,550 - INFO -  --- out swapToken --- 
+2025-07-06 22:42:53,586 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender dogwifhat
+2025-07-06 22:42:53,816 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 22:43:04,600 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '429 Too Many Requests:  {"jsonrpc":"2.0","error":{"code": 429, "message":"Too many requests for a specific RPC call"}, "id": "cf462fe4-fd12-430f-9382-03d0b9194edd" } \r\n'}
+2025-07-06 22:43:04,601 - INFO -  --- out swapToken --- 
+2025-07-06 22:43:04,602 - ERROR - Erro ao vender dogwifhat
+2025-07-06 22:43:04,608 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender Baby Doge Coin
+2025-07-06 22:43:05,098 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 22:43:15,873 - INFO - Swap com sucesso --- 0 de Baby Doge Coin por 0.006628627097888619 de SOLANA [91mvendido[0m.
+2025-07-06 22:43:15,876 - INFO -  --- out swapToken --- 
+2025-07-06 22:45:28,968 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:45:34,051 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender dogwifhat
+2025-07-06 22:45:34,242 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 22:49:44,836 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 22:49:44,837 - INFO -  --- out swapToken --- 
+2025-07-06 22:49:44,838 - ERROR - Erro ao vender dogwifhat
+2025-07-06 22:51:34,077 - INFO - init getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 22:51:43,087 - INFO - end getPools ------------------------------------------------------------------------------------------------------------------------------------
+2025-07-06 22:52:45,632 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:52:50,740 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender dogwifhat
+2025-07-06 22:52:50,901 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 22:53:12,015 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': '[URL=/api/v3/secrets/raw/x3laSolKey] [Method=get] [StatusCode=401] Token missing'}
+2025-07-06 22:53:12,016 - INFO -  --- out swapToken --- 
+2025-07-06 22:53:12,017 - ERROR - Erro ao vender dogwifhat
+2025-07-06 22:53:47,900 - INFO - INICIAR SELL #####################################################################################################################
+2025-07-06 22:53:52,981 - INFO - --------------------------------------------------------------------------------------------------------------------------- a vender dogwifhat
+2025-07-06 22:53:53,141 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 23:06:45,068 - INFO - Swap com sucesso --- 10000 de dogwifhat por 0.006615469076100669 de SOLANA [91mvendido[0m.
+2025-07-06 23:06:45,073 - INFO -  --- out swapToken --- 
+2025-07-06 23:07:50,207 - INFO - INICIAR BUY ######################################################################################################################
+2025-07-06 23:07:50,213 - INFO - EXECUTE_OPERATIONS: 1
+2025-07-06 23:07:50,216 - INFO - BTC 1h % : 0
+2025-07-06 23:07:50,219 - INFO - BTC_1H_PERCENT % : -10
+2025-07-06 23:07:50,223 - INFO - after global_percent_change_1h > float(get_config_value('BTC_1H_PERCENT')):
+2025-07-06 23:07:50,225 - INFO - entry process_tokens
+2025-07-06 23:07:50,743 - INFO - exit process_tokens entry database.get_existing_tokens()
+2025-07-06 23:07:50,760 - INFO - exit database.get_existing_tokens()
+2025-07-06 23:07:50,763 - INFO - Novos tokens detectados:
+2025-07-06 23:07:50,771 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Dog (Bitcoin)
+2025-07-06 23:07:51,270 - INFO - Par com SOL não encontrado!
+2025-07-06 23:08:01,284 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Aura
+2025-07-06 23:08:01,539 - INFO - Par encontrado: WSOL/aura So11111111111111111111111111111111111111112-DtR4D9FtVoTX2569gaL837ZgrB6wNjj6tkmnX9Rdk9B2
+2025-07-06 23:08:24,509 - ERROR - Falha na requisição: {'error': 'Erro interno ao executar swap', 'details': 'fetch failed'}
+2025-07-06 23:08:24,510 - ERROR - Erro ao comprar Aura
+2025-07-06 23:08:34,527 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar dogwifhat
+2025-07-06 23:08:34,685 - INFO - Par encontrado: $WIF/WSOL EKpQGSJtjMFqKZ9KQanSqYXRcF8fBopzLHYxdM65zcjm-So11111111111111111111111111111111111111112
+2025-07-06 23:08:48,727 - INFO - Swap com sucesso --- 0.006552626236051937 de SOLANA por 1.1193403715616443 ('dogwifhat',) [92mcomprado[0m.
+2025-07-06 23:08:58,800 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar cat in a dogs world
+2025-07-06 23:08:59,296 - INFO - Par encontrado: MEW/WSOL MEW1gQWJ3nEXg2qgERiKu7FAFj79PHvQVREQUzScPP5-So11111111111111111111111111111111111111112
+2025-07-06 23:09:17,692 - INFO - Swap com sucesso --- 0.006552626236051937 de SOLANA por 357.0757282885993 ('cat in a dogs world',) [92mcomprado[0m.
+2025-07-06 23:09:27,752 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Baby Doge Coin
+2025-07-06 23:09:28,207 - INFO - Par encontrado: BabyDoge/WSOL 7dUKUopcNWW6CcU4eRxCHh1uiMh32zDrmGf6ufqhxann-So11111111111111111111111111111111111111112
+2025-07-06 23:09:39,654 - INFO - Swap com sucesso --- 0.006552626236051937 de SOLANA por 844414367.139402 ('Baby Doge Coin',) [92mcomprado[0m.
+2025-07-06 23:09:49,729 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Popcat (SOL)
+2025-07-06 23:09:49,886 - INFO - Par encontrado: POPCAT/WSOL 7GCihgDB8fe6KNjn2MYtkzZcRjQy3t9GHdC8uHYmW2hr-So11111111111111111111111111111111111111112
+2025-07-06 23:10:06,665 - INFO - Swap com sucesso --- 0.006552626236051937 de SOLANA por 3.2309464806708954 ('Popcat (SOL)',) [92mcomprado[0m.
+2025-07-06 23:10:16,762 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Grass
+2025-07-06 23:10:17,357 - INFO - Par com SOL não encontrado!
+2025-07-06 23:10:27,365 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Raydium
+2025-07-06 23:10:27,567 - INFO - Par encontrado: RAY/WSOL 4k3Dyjzvzp8eMZWUXbBCjEvwSkkk59S5iCNLY3QrkX6R-So11111111111111111111111111111111111111112
+2025-07-06 23:10:44,391 - INFO - Swap com sucesso --- 0.006552626236051937 de SOLANA por 0.45685699055028967 ('Raydium',) [92mcomprado[0m.
+2025-07-06 23:10:54,459 - INFO - --------------------------------------------------------------------------------------------------------------------------- a comprar Jupiter
+2025-07-06 23:10:54,587 - INFO - Par encontrado: JUP/WSOL JUPyiwrYJFskUPiHa7hkeR8VUtAeFoSYbKedZNsDvCN-So11111111111111111111111111111111111111112
+2025-07-06 23:11:06,141 - INFO - Swap com sucesso --- 0.006552626236051937 de SOLANA por 2.200908332764126 ('Jupiter',) [92mcomprado[0m.

@@ -1,16 +1,30 @@
 import mysql.connector
 import importlib
+import configparser
 
 commons = importlib.import_module("commons")
 
+config_file_path = 'config.centralized.properties'
+
+def get_config_value(key, section='CENTRALIZED'):
+    try:
+        config = configparser.ConfigParser(interpolation=None)
+        config.read(config_file_path)
+        return config.get(section, key)
+    except Exception as e:
+        print(f"Erro ao obter valor de configuração: {e}")
+        return None
+    
 # Configuração da conexão ao MySQL
 config = {
-    'host': 'db',         # Endereço do servidor MySQL
+    'host': get_config_value('DB_URL'),
     'user': 'janganga',       # Seu nome de usuário no MySQL
     'password': 'Terelowmow.123',     # Sua senha do MySQL
     'database': 'degen'  # Nome do banco de dados
 }
 
+
+    
 def getToken(token):
     # Conectando ao banco de dados MySQL
     try:

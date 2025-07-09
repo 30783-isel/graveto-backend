@@ -474,7 +474,6 @@ def calculate_score(token, score_weights):
 def process_tokens(score_weights):
     global list_tokens
     data = list_tokens
-    #print("process_tokens(score_weights)" + str(data))
     if not data:
         return []
 
@@ -901,6 +900,7 @@ def sell_tokensx(pools):
         return tokens_vendidos
 
 def get_tokens_analyzed_from_db():
+    fetch_data()
     resultados = database.getTokens()
     
     if resultados:
@@ -992,12 +992,11 @@ def get_tokens_analyzed_from_db():
 
 
 def getTokenMetrics(id):
-
     global list_tokens
-
-    token = [element for element in list_tokens["data"] if element["id"] == int(id)]
-    if token:
-        return token[0]
+    if list_tokens is not None:
+        token = [element for element in list_tokens["data"] if element["id"] == int(id)]
+        if token:
+            return token[0]
     """"
     url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
     params = {

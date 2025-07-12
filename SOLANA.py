@@ -811,10 +811,10 @@ def sell_tokens_test(pools):
             for token in lista_tokens
         }
         for token in wallet_tokens:
-            mint = token.get('mint')
+            mint = token.get('platform_token_address')
             if mint in tokens_lookup:
                 token_comprado = tokens_lookup[mint]
-                print("Token comprado encontrado:", token['tokenName'])
+                print("Token comprado encontrado:", token['name'])
                 id = token_comprado.get('id', None) 
                 platform_token_address = token_comprado.get('platform_token_address', None) 
                 symbol = token_comprado.get('symbol', None)

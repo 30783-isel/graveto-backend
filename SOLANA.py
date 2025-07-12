@@ -12,6 +12,7 @@ import asyncio
 import pandas as pd
 import configparser
 from datetime import datetime
+from colorama import Fore, Style, init
 from flask import Flask, jsonify, request
 from infisical_sdk import InfisicalSDKClient
 from pairs import get_pair_with_sol, get_pools 
@@ -19,7 +20,8 @@ from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 
 import urllib3
-urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+# urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+urllib3.disable_warnings(urllib3.exceptions.SubjectAltNameWarning)
 
 database = importlib.import_module("1_database")
 
@@ -683,7 +685,7 @@ def swapToken(swapPairs, pools, compraVenda):
                 if(response.json().get('txid') is not None):
                     print(response.json().get('txid'))
             else:
-                logger.error(f"Falha na requisição: {response.json()}")
+                logger.error(Fore.RED + f"Falha na requisição: {response.json()}" + Fore.WHITE)
             return response    
         else:
             return None
@@ -707,7 +709,14 @@ def swapToken(swapPairs, pools, compraVenda):
 def sell_tokens(pools):
     logger.info('INICIAR SELL #####################################################################################################################')
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
-        wallet_tokens = getWalletTokensValues()
+        
+        wallet_tokens = getWalletTokensValues() 
+
+        while isinstance(wallet_tokens, dict) and "error" in wallet_tokens:
+            print(f"Erro: {wallet_tokens['error']}. Tentando novamente em 5 segundos...")
+            time.sleep(5)
+            wallet_tokens = getWalletTokensValues()
+        
         solana_quote = processTokenQuote('5426')
         tokens_vendidos = []
         resultados_formatados = get_tokens_analyzed_from_db()
@@ -718,7 +727,6 @@ def sell_tokens(pools):
             for token in lista_tokens
         }
         for token in wallet_tokens:
-            print(token)
             mint = token.get('mint')
             if mint in tokens_lookup:
                 token_comprado = tokens_lookup[mint]

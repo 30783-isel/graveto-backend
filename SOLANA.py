@@ -849,7 +849,7 @@ def sell_tokens_test(pools):
                         'market_cap': market_cap,
                         'score': score,
                         'solana_amount' : solana_amount,
-                        'token_amount': int(token["token_amount"]),
+                        'token_amount': token["token_amount"],
                         #'token_amount': token_amount_in_wallet,
                         'comprado': '0',
                         'executeSwap': get_config_value("EXECUTE_SWAP")

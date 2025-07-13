@@ -471,11 +471,11 @@ def getTokenData():
                 'solana_amount': token_price_in_solana.get('solana_amount', None),
                 'token_quantity': token.get('tokenAmount', None)
             }
+            if data['token_quantity'] and float(data['token_quantity']) > 0:
+                database.insert_buy(data)
             
-            isInserted = database.insert_buy(data)
-            
-
-            
+            pair = get_pair(mint, pools, logger)
+            pair
         
         return jsonify({
             "estado": "Sucesso",
@@ -778,7 +778,7 @@ def sell_tokens(pools):
     if(int(get_config_value('EXECUTE_SWAP')) == 0):
         sell_tokens_test(pools)
     else:
-        sell_tokens_test(pools)
+        sell_tokens_prod(pools)
 
 
 

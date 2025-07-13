@@ -448,9 +448,31 @@ def getTokenData():
         for token in wallet_tokens:
             mint = token.get('mint')
             
-            token_data = get_pair(mint, pools, logger)
-            token_data
-            #token_data = fetch_token_data(mint + '-So11111111111111111111111111111111111111112')
+            # token_data = get_pair(mint, pools, logger)
+            token_data = fetch_token_data(mint)
+           
+            item = token_data['data'][0]  # ← Um dos itens dentro de token_data['data']
+            quote = item.get('quote', [{}])[0]  # Garante acesso seguro
+
+            solana_quote = processTokenQuote('5426')            
+            token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
+            data = {
+                'id': item.get('dex_id', None),  
+                'symbol': item.get('base_asset_symbol', None),
+                'name': item.get('base_asset_name', None),
+                'platform_name': item.get('network_slug', None),
+                'platform_token_address': item.get('base_asset_contract_address', None),
+                'price': quote.get('price', None),
+                'percent_change_1h': quote.get('percent_change_price_1h', None),
+                'percent_change_24h': quote.get('percent_change_price_24h', None),
+                'volume_24h': quote.get('volume_24h', None),
+                'market_cap': quote.get('fully_diluted_value', None),
+                'score': None,  
+                'solana_amount': token_price_in_solana.get('solana_amount', None),
+                'token_quantity': token.get('tokenAmount', None)
+            }
+            
+            isInserted = database.insert_buy(data)
             
 
             
@@ -469,8 +491,12 @@ def getTokenData():
     
 
 def fetch_token_data(base_asset_contract_address):
-    url = urlGetTokenByBaseAssetContractAddress + base_asset_contract_address + '&quote_asset_contract_address=So11111111111111111111111111111111111111112'
-    response = requests.get(url, params=parameters, headers=headers)
+    params = {
+        "limit": 1, 
+        "convert": "USD"
+    }
+    url = urlGetTokenByBaseAssetContractAddress + base_asset_contract_address
+    response = requests.get(url, params=params, headers=headers)
     if response.status_code == 200:
         return response.json()
     else:

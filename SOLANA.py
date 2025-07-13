@@ -15,7 +15,7 @@ from datetime import datetime
 from colorama import Fore, Style, init
 from flask import Flask, jsonify, request
 from infisical_sdk import InfisicalSDKClient
-from pairs import get_pair_with_sol, get_pools 
+from pairs import get_pair_with_sol, get_pools, get_pair
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 
@@ -430,6 +430,58 @@ def getInfsclGetXSecret():
             "estado": "Erro",
             "mensagem": str(e)
         }), 500    
+        
+        
+
+
+@app.route('/get-token-data', methods=['GET'])
+def getTokenData():
+    try:
+  
+        wallet_tokens = getWalletTokensValues() 
+
+        while isinstance(wallet_tokens, dict) and "error" in wallet_tokens:
+            print(f"Erro: {wallet_tokens['error']}. Tentando novamente em 5 segundos...")
+            time.sleep(5)
+            wallet_tokens = getWalletTokensValues()
+
+        for token in wallet_tokens:
+            mint = token.get('mint')
+            
+            token_data = get_pair(mint, pools, logger)
+            token_data
+            #token_data = fetch_token_data(mint + '-So11111111111111111111111111111111111111112')
+            
+
+            
+        
+        return jsonify({
+            "estado": "Sucesso",
+            "token_data": token_data  
+        }), 200
+
+    except Exception as e:
+        return jsonify({
+            "estado": "Erro",
+            "mensagem": str(e)
+        }), 500
+    
+    
+
+def fetch_token_data(base_asset_contract_address):
+    url = urlGetTokenByBaseAssetContractAddress + base_asset_contract_address + '&quote_asset_contract_address=So11111111111111111111111111111111111111112'
+    response = requests.get(url, params=parameters, headers=headers)
+    if response.status_code == 200:
+        return response.json()
+    else:
+        print(f"Erro ao fazer requisição: {response.status_code}")
+        print(f"Response Text: {response.text}")
+        logger.error(f"Erro ao fazer requisição: {response.status_code}")
+        logger.error(f"Response Text: {response.text}")
+        return None
+    
+    
+    
 
 def read_config():
     config = configparser.ConfigParser()
@@ -1335,3 +1387,15 @@ if __name__ == '__main__':
 
     
     
+
+
+
+
+
+
+
+
+
+
+
+

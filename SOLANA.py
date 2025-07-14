@@ -437,7 +437,7 @@ def getInfsclGetXSecret():
 @app.route('/get-token-data', methods=['GET'])
 def getTokenData():
     try:
-  
+        global list_tokens
         wallet_tokens = getWalletTokensValues() 
 
         while isinstance(wallet_tokens, dict) and "error" in wallet_tokens:
@@ -455,8 +455,13 @@ def getTokenData():
 
             solana_quote = processTokenQuote('5426')            
             token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
+            
+            for tokenx in list_tokens['data']:
+                if tokenx['symbol'] == token_data['data'][0]['base_asset_symbol']:
+                    id = tokenx['id']
+                    
             data = {
-                'id': token_data.get('id', None),  
+                'id': id,  
                 'symbol': item.get('base_asset_symbol', None),
                 'name': item.get('base_asset_name', None),
                 'platform_name': item.get('network_slug', None),

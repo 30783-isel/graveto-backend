@@ -71,14 +71,15 @@ def insert_buy(data):
     
             # Comando SQL para inserção
             query = """
-                INSERT INTO degen.buy_contralized (`id`, `platform_token_address`,`symbol`,`name`,`platform_name`,`price`,`min_price`,`max_price`,`percent_change_1h`,`percent_change_24h`,`volume_24h`,`market_cap`,`score`,`quantity`, `comprado`, `val_sol_sell`)
-                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                INSERT INTO degen.buy_contralized (`id`, `contract_address`, `platform_token_address`,`symbol`,`name`,`platform_name`,`price`,`min_price`,`max_price`,`percent_change_1h`,`percent_change_24h`,`volume_24h`,`market_cap`,`score`,`quantity`, `comprado`, `val_sol_sell`)
+                VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
 
 
             # Criar uma tupla a partir do dicionário `data`
             values = (
                 commons.to_int(data.get('id', '')),
+                commons.convert_2_string(data.get('contract_address', '')),
                 commons.convert_2_string(data.get('platform_token_address', '')),
                 commons.convert_2_string(data.get('symbol', '')),
                 commons.convert_2_string(data.get('name', '')),

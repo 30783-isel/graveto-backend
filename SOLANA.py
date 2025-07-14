@@ -448,7 +448,6 @@ def getTokenData():
         for token in wallet_tokens:
             mint = token.get('mint')
             
-            # token_data = get_pair(mint, pools, logger)
             token_data = fetch_token_data(mint)
            
             item = token_data['data'][0]  # ← Um dos itens dentro de token_data['data']
@@ -457,10 +456,11 @@ def getTokenData():
             solana_quote = processTokenQuote('5426')            
             token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
             data = {
-                'id': item.get('dex_id', None),  
+                'id': token_data.get('id', None),  
                 'symbol': item.get('base_asset_symbol', None),
                 'name': item.get('base_asset_name', None),
                 'platform_name': item.get('network_slug', None),
+                'contract_address': item.get('contract_address', None),
                 'platform_token_address': item.get('base_asset_contract_address', None),
                 'price': quote.get('price', None),
                 'percent_change_1h': quote.get('percent_change_price_1h', None),
@@ -474,9 +474,7 @@ def getTokenData():
             if data['token_quantity'] and float(data['token_quantity']) > 0:
                 database.insert_buy(data)
             
-            pair = get_pair(mint, pools, logger)
-            pair
-        
+
         return jsonify({
             "estado": "Sucesso",
             "token_data": token_data  
@@ -969,21 +967,22 @@ def get_tokens_analyzed_from_db():
         for row in resultados:
             idk = row[0]
             id = row[1]
-            platform_token_address = row[2]
-            symbol = row[3]
-            name = row[4]
-            platform_name = row[5]
-            price = row[6]
-            min_price = row[7]
-            max_price = row[8]
-            percent_change_1h = row[9]
-            percent_change_24h = row[10]
-            volume_24h = row[11]
-            market_cap = row[12]
-            score = row[13]
-            token_amount = row[14]
-            comprado = row[15]
-            val_sol_sell = row[16]
+            contract_address = row[2]
+            platform_token_address = row[3]
+            symbol = row[4]
+            name = row[5]
+            platform_name = row[6]
+            price = row[7]
+            min_price = row[8]
+            max_price = row[9]
+            percent_change_1h = row[10]
+            percent_change_24h = row[11]
+            volume_24h = row[12]
+            market_cap = row[13]
+            score = row[14]
+            token_amount = row[15]
+            comprado = row[16]
+            val_sol_sell = row[17]
             
             try:
                 token_atual = getTokenMetrics(id)
@@ -1019,6 +1018,7 @@ def get_tokens_analyzed_from_db():
 
                     resultado_formatado = {
                         'id': id,
+                        'contract_address': contract_address,
                         'platform_token_address': platform_token_address,
                         'symbol': symbol,
                         'name': name,

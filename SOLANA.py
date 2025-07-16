@@ -83,6 +83,7 @@ headers = {
 
 
 # Obter a URL do arquivo de configurações
+urlspotpairs = get_config_value('urlspotpairs')
 urlGetLatestSpotPairs = get_config_value('urlGetListingLatest')
 urlGetTokenByBaseAssetContractAddress = get_config_value('urlGetTokenByBaseAssetContractAddress')
 serverUrl = get_config_value('serverUrl')
@@ -100,7 +101,7 @@ ADD_REPEATED = int(get_config_value('ADD_REPEATED'))
 
 
 list_tokens = []
-
+list_spot_pairs = []
 
 
 
@@ -450,8 +451,8 @@ def getTokenData():
             
             token_data = fetch_token_data(mint)
            
-            item = token_data['data'][0]  # ← Um dos itens dentro de token_data['data']
-            quote = item.get('quote', [{}])[0]  # Garante acesso seguro
+            item = token_data['data'][0] 
+            quote = item.get('quote', [{}])[0] 
 
             solana_quote = processTokenQuote('5426')            
             token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
@@ -522,7 +523,14 @@ def save_config(config):
         config.write(configfile)
 
 
-
+def fetch_spot_pairs():
+    global list_tokens
+    response = requests.get(urlspotpairs, params=parameters, headers=headers)
+    if response.status_code == 200:
+        list_spot_pairs = response.json()
+    else:
+        logger.error(f"Erro ao fazer requisição: {response.status_code}")
+        
 def fetch_data():
     global list_tokens
     response = requests.get(urlGetLatestSpotPairs, params=parameters, headers=headers)

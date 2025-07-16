@@ -92,7 +92,7 @@ def insert_buy(data):
                 commons.to_float(data.get('volume_24h', 0.0)),
                 commons.to_float(data.get('market_cap', 0.0)),
                 commons.to_float(data.get('score', 0.0)),
-                commons.to_float(data.get('token_quantity', 0.0)),
+                commons.to_float(data.get('token_amount', 0.0)),
                 commons.to_float(data.get('comprado', True)),
                 commons.to_float(data.get('val_sol_sell', 0.0)),
             )

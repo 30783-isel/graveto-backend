@@ -227,7 +227,6 @@ def get_config_endpoint():
             "BUY_VALUE_IN_USD":float( get_config_value('BUY_VALUE_IN_USD')),
             "EXECUTE_OPERATIONS": int(get_config_value('EXECUTE_OPERATIONS')),
             "EXECUTE_SCHEDULER": int(get_config_value('EXECUTE_SCHEDULER')),
-            "PAUSE_TOKEN_METRICS": int(get_config_value('PAUSE_TOKEN_METRICS')),
             "ADD_REPEATED": int(get_config_value('ADD_REPEATED')),
             "EXECUTE_SWAP": int(get_config_value('EXECUTE_SWAP'))
         }
@@ -268,8 +267,6 @@ def update_config_endpoint():
             config.set('CENTRALIZED', 'BUY_VALUE_IN_USD', str(data['BUY_VALUE_IN_USD']))
         if 'EXECUTE_OPERATIONS' in data:
             config.set('CENTRALIZED', 'EXECUTE_OPERATIONS', str(data['EXECUTE_OPERATIONS']))
-        if 'PAUSE_TOKEN_METRICS' in data:
-            config.set('CENTRALIZED', 'PAUSE_TOKEN_METRICS', str(data['PAUSE_TOKEN_METRICS']))
         if 'ADD_REPEATED' in data:
             config.set('CENTRALIZED', 'ADD_REPEATED', str(data['ADD_REPEATED']))
         if 'EXECUTE_SCHEDULER' in data:
@@ -627,7 +624,7 @@ def process_tokens(score_weights):
 
  
 def buy_sell_tokens(pools):
-    fetch_data()
+    fetch_data
     processTokenQuote(1)   
     buy_tokens(pools)
     sell_tokens(pools)
@@ -1001,7 +998,6 @@ def get_tokens_analyzed_from_db():
             
             try:
                 token_atual = getTokenMetrics(id)
-                time.sleep(int(get_config_value('PAUSE_TOKEN_METRICS')))
                 if token_atual:
                     quote = token_atual['quote']['USD']
                     if quote:

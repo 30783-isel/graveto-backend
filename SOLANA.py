@@ -87,9 +87,7 @@ urlspotpairs = get_config_value('urlspotpairs')
 urlGetLatestSpotPairs = get_config_value('urlGetListingLatest')
 urlGetTokenByBaseAssetContractAddress = get_config_value('urlGetTokenByBaseAssetContractAddress')
 serverUrl = get_config_value('serverUrl')
-SCHEDULER_EXECUTION_BTC_QUOTE = int(get_config_value('SCHEDULER_EXECUTION_BTC_QUOTE'))
 SCHEDULER_EXECUTION_BUY = int(get_config_value('SCHEDULER_EXECUTION_BUY'))
-SCHEDULER_EXECUTION_SELL = int(get_config_value('SCHEDULER_EXECUTION_SELL'))
 SWAP_EXECUTION = int(get_config_value('SWAP_EXECUTION'))
 PERCENTAGE_LOSS = float(get_config_value('PERCENTAGE_LOSS'))
 NUM_TOKENS_PROCESSED = int(get_config_value('NUM_TOKENS_PROCESSED'))
@@ -220,8 +218,6 @@ def getCleanSlate():
 def get_config_endpoint():
     try:
         config_data = {
-            "SCHEDULER_EXECUTION_BTC_QUOTE": int(get_config_value('SCHEDULER_EXECUTION_BTC_QUOTE')),
-            "SCHEDULER_EXECUTION_SELL": int(get_config_value('SCHEDULER_EXECUTION_SELL')),
             "SCHEDULER_EXECUTION_BUY": int(get_config_value('SCHEDULER_EXECUTION_BUY')),
             "SWAP_EXECUTION": int(get_config_value('SWAP_EXECUTION')),
             "PERCENTAGE_LOSS": float(get_config_value('PERCENTAGE_LOSS')),
@@ -256,10 +252,6 @@ def update_config_endpoint():
 
         config = read_config()
 
-        if 'SCHEDULER_EXECUTION_BTC_QUOTE' in data:
-            config.set('CENTRALIZED', 'SCHEDULER_EXECUTION_BTC_QUOTE', str(data['SCHEDULER_EXECUTION_BTC_QUOTE']))
-        if 'SCHEDULER_EXECUTION_SELL' in data:
-            config.set('CENTRALIZED', 'SCHEDULER_EXECUTION_SELL', str(data['SCHEDULER_EXECUTION_SELL']))
         if 'SCHEDULER_EXECUTION_BUY' in data:
             config.set('CENTRALIZED', 'SCHEDULER_EXECUTION_BUY', str(data['SCHEDULER_EXECUTION_BUY']))
         if 'SWAP_EXECUTION' in data:
@@ -633,11 +625,15 @@ def process_tokens(score_weights):
     
     return best_tokens.to_dict(orient='records')
 
-    
+ 
+def buy_sell_tokens(pools):
+    fetch_data()
+    processTokenQuote(1)   
+    buy_tokens(pools)
+    sell_tokens(pools)
     
 def buy_tokens(pools):
     logger.info('INICIAR BUY ######################################################################################################################')
-    fetch_data()
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
         top_tokens = []
         global global_percent_change_1h 
@@ -799,6 +795,8 @@ def sell_tokens(pools):
 
 
 
+
+    
 
 
 
@@ -1179,48 +1177,18 @@ def val_sol_wallet():
 
 
 
-geral_scheduler = None
-btc_quote_scheduler = None
+
 buy_scheduler = None
-sell_scheduler = None
 global_percent_change_1h = 0
 pools = None
 infisicaClient = None
 
 
-def schedule_btc_quote(id):
-    logger.info(' A iniciar schedule_btc_quote ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-    return functools.partial(processTokenQuote, id)
 
 def schedule_buy_tokens(pools):
     logger.info(' A iniciar schedule_buy_tokens +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-    return functools.partial(buy_tokens, pools)
+    return functools.partial(buy_sell_tokens, pools) 
 
-def schedule_sell_tokens(pools):
-    logger.info(' A iniciar schedule_sell_tokens ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-    return functools.partial(sell_tokens, pools)
-            
-def start_scheduler_btc_quote():
-    if(int(get_config_value("EXECUTE_SCHEDULER")) == 1):
-        global btc_quote_scheduler
-        if btc_quote_scheduler is None:
-            execute_every_x_minutes = int(get_config_value("SCHEDULER_EXECUTION_BTC_QUOTE"))
-            logger.info(f'A iniciar BTC-Quote scheduler!!! - Executa de {execute_every_x_minutes} segundos')
-            btc_quote_scheduler = BackgroundScheduler()
-            btc_quote_scheduler.add_job(
-                schedule_btc_quote('1'), 
-                'interval', 
-                seconds=execute_every_x_minutes, 
-                next_run_time=datetime.now()
-            )
-            btc_quote_scheduler.start()
-            logger.info("Scheduler btc quote iniciado com sucesso.")
-        else:
-            btc_quote_scheduler.remove_all_jobs()
-            btc_quote_scheduler.shutdown() 
-            btc_quote_scheduler = None 
-            logger.info("Scheduler btc quote reiniciado com sucesso.")
-            start_scheduler_btc_quote()
 
 def start_scheduler_buy():
     if(int(get_config_value("EXECUTE_SCHEDULER")) == 1):
@@ -1247,52 +1215,16 @@ def start_scheduler_buy():
             logger.info("Scheduler buy reiniciado com sucesso.")
             start_scheduler_buy()
 
-def start_scheduler_sell():
-    if(int(get_config_value("EXECUTE_SCHEDULER")) == 1):
-        global sell_scheduler
-        global pools
-        if sell_scheduler is None:
-            execute_every_x_minutes = int(get_config_value("SCHEDULER_EXECUTION_SELL"))
-            logger.info(f'A iniciar SELL scheduler!!! - Executa de {execute_every_x_minutes} segundos')
-            if pools is None:
-                pools = get_pools()
-            sell_scheduler = BackgroundScheduler()
-            sell_scheduler.add_job(
-                schedule_sell_tokens(pools), 
-                'interval', 
-                seconds=execute_every_x_minutes, 
-                next_run_time=datetime.now()
-            )
-            sell_scheduler.start()
-            logger.info("Scheduler sell iniciado com sucesso.")
-        else:
-            sell_scheduler.remove_all_jobs()
-            sell_scheduler.shutdown() 
-            sell_scheduler = None
-            logger.info("Scheduler sell reiniciado com sucesso.")
-            start_scheduler_sell()
-
 def restart_all_schedulers():
     global btc_quote_scheduler, buy_scheduler, sell_scheduler, pools
-    if btc_quote_scheduler:
-        btc_quote_scheduler.remove_all_jobs()
-        btc_quote_scheduler.shutdown() 
-        btc_quote_scheduler = None 
-        logger.info("Scheduler btc quote removido.")
+
     if buy_scheduler:
         buy_scheduler.remove_all_jobs()
         buy_scheduler.shutdown() 
         buy_scheduler = None  
         logger.info("Scheduler buy removido.")
-    if sell_scheduler:
-        sell_scheduler.remove_all_jobs()
-        sell_scheduler.shutdown()  
-        sell_scheduler = None 
-        logger.info("Scheduler sell removido.")
 
-    start_scheduler_btc_quote()
     start_scheduler_buy()
-    start_scheduler_sell()
 
 @app.route('/restart-schedulers', methods=['GET'])
 def restart_schedulers():
@@ -1317,11 +1249,8 @@ def initializeApp():
     pools = get_pools()
     logger.info("end getPools ------------------------------------------------------------------------------------------------------------------------------------")
     
-
-    start_scheduler_btc_quote()
     start_scheduler_buy()
-    start_scheduler_sell()
-    print('Schedulers iniciados com sucesso!')
+    print('Scheduler iniciado com sucesso!')
     
 
 

@@ -1070,23 +1070,17 @@ def get_tokens_analyzed_from_db():
 
 def getTokenMetrics(id):
     global list_tokens
-    if list_tokens is not None:
+    if list_tokens is not None and len(list_tokens) != 0:
         token = [element for element in list_tokens["data"] if element["id"] == int(id)]
         if token:
             return token[0]
-    """"
-    url = 'https://pro-api.coinmarketcap.com/v1/cryptocurrency/quotes/latest'
-    params = {
-        'id': id,
-        'convert': 'USD'
-    }
-    response = requests.get(url, headers=headers, params=params)
-    if response.status_code == 200:
-        data = response.json()
-        return data
     else:
-        logger.error(f"Erro ao acessar a API: {response.status_code}")
-    """
+        fetch_data()
+        if list_tokens is not None and len(list_tokens) != 0:
+            token = [element for element in list_tokens["data"] if element["id"] == int(id)]
+            if token:
+                return token[0]
+    
 
 
 
@@ -1185,24 +1179,6 @@ def val_sol_wallet():
 
 
 
-
-
-
-
-
-
-
-
-
-
-def exec_geral(pools):
-    fetch_data()
-    processTokenQuote('1')
-    top_tokens = buy_tokens(pools)
-    tokens_vendidos = sell_tokens(pools)
-    print('end')
-
-
 geral_scheduler = None
 btc_quote_scheduler = None
 buy_scheduler = None
@@ -1211,9 +1187,6 @@ global_percent_change_1h = 0
 pools = None
 infisicaClient = None
 
-def schedule_execute(pools):
-    logger.info(' A iniciar schedule_execute +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
-    return functools.partial(exec_geral, pools)
 
 def schedule_btc_quote(id):
     logger.info(' A iniciar schedule_btc_quote ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
@@ -1226,31 +1199,6 @@ def schedule_buy_tokens(pools):
 def schedule_sell_tokens(pools):
     logger.info(' A iniciar schedule_sell_tokens ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++')
     return functools.partial(sell_tokens, pools)
-
-def start_scheduler():
-    if(int(get_config_value("EXECUTE_SCHEDULER")) == 1):
-        global geral_scheduler
-        global pools
-        if geral_scheduler is None:
-            execute_every_x_minutes = int(get_config_value("SCHEDULER_EXECUTION_BUY"))
-            logger.info(f'A iniciar BUY scheduler!!! - Executa de {execute_every_x_minutes} segundos')
-            if pools is None: 
-                pools = get_pools()
-            geral_scheduler = BackgroundScheduler()
-            geral_scheduler.add_job(
-                schedule_execute(pools), 
-                'interval', 
-                seconds=execute_every_x_minutes, 
-                next_run_time=datetime.now()
-            )
-            geral_scheduler.start()
-            logger.info("Scheduler buy iniciado com sucesso.")
-        else:
-            geral_scheduler.remove_all_jobs()
-            geral_scheduler.shutdown()
-            geral_scheduler = None  
-            logger.info("Scheduler buy reiniciado com sucesso.")
-            start_scheduler_buy()
             
 def start_scheduler_btc_quote():
     if(int(get_config_value("EXECUTE_SCHEDULER")) == 1):
@@ -1325,12 +1273,7 @@ def start_scheduler_sell():
             start_scheduler_sell()
 
 def restart_all_schedulers():
-    global btc_quote_scheduler, buy_scheduler, sell_scheduler, geral_scheduler, pools
-    if geral_scheduler:
-        geral_scheduler.remove_all_jobs()
-        geral_scheduler.shutdown() 
-        geral_scheduler = None 
-        logger.info("Geral scheduler removido.")
+    global btc_quote_scheduler, buy_scheduler, sell_scheduler, pools
     if btc_quote_scheduler:
         btc_quote_scheduler.remove_all_jobs()
         btc_quote_scheduler.shutdown() 
@@ -1347,7 +1290,6 @@ def restart_all_schedulers():
         sell_scheduler = None 
         logger.info("Scheduler sell removido.")
 
-    start_scheduler()
     start_scheduler_btc_quote()
     start_scheduler_buy()
     start_scheduler_sell()
@@ -1375,7 +1317,7 @@ def initializeApp():
     pools = get_pools()
     logger.info("end getPools ------------------------------------------------------------------------------------------------------------------------------------")
     
-    start_scheduler()
+
     start_scheduler_btc_quote()
     start_scheduler_buy()
     start_scheduler_sell()

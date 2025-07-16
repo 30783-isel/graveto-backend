@@ -524,8 +524,11 @@ def save_config(config):
 
 
 def fetch_spot_pairs():
-    global list_tokens
-    response = requests.get(urlspotpairs, params=parameters, headers=headers)
+    global list_spot_pairs
+    params = {
+        "limit": 100, 
+    }
+    response = requests.get(urlspotpairs, params=params, headers=headers)
     if response.status_code == 200:
         list_spot_pairs = response.json()
     else:
@@ -634,6 +637,7 @@ def process_tokens(score_weights):
     
 def buy_tokens(pools):
     logger.info('INICIAR BUY ######################################################################################################################')
+    fetch_data()
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
         top_tokens = []
         global global_percent_change_1h 
@@ -727,11 +731,12 @@ def buy_tokens(pools):
 
 
 def swapToken(swapPairs, pools, compraVenda):
+    global list_spot_pairs
     data = {
         'symbol': swapPairs['symbol'], 
         'name': swapPairs['name'],
     }
-    pair_address = get_pair_with_sol(swapPairs['platform_token_address'], pools, logger)
+    pair_address = get_pair_with_sol(swapPairs['platform_token_address'], pools,logger)
 
 
     if platform.system() == "Windows":
@@ -972,7 +977,6 @@ def sell_tokens_test(pools):
 
 
 def get_tokens_analyzed_from_db():
-    fetch_data()
     resultados = database.getTokens()
     
     if resultados:
@@ -1366,7 +1370,6 @@ def hello():
 
 
 def initializeApp():
-    fetch_data()
     logger.info("init getPools ------------------------------------------------------------------------------------------------------------------------------------")
     global pools
     pools = get_pools()

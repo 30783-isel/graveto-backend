@@ -137,8 +137,8 @@ def get_existing_tokens():
                 existing_tokens.append({
                     'idk': row[0],
                     'id': row[1],
-                    'platform_token_address': row[2],
-                    'symbol': row[3],
+                    'platform_token_address': row[3],
+                    'symbol': row[4],
                 })
                 
             return existing_tokens

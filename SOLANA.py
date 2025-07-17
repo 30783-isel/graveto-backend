@@ -131,6 +131,7 @@ def get_best_tokens_endpoint():
 def buy_tokens_call():
     try:
         global pools
+        fetch_data()
         if pools is None:
             pools = get_pools() 
         top_tokens = buy_tokens(pools)
@@ -143,6 +144,7 @@ def buy_tokens_call():
 def sell_tokens_call():
     try:
         global pools
+        fetch_data()
         tokens_vendidos = sell_tokens(pools) 
         return jsonify(tokens_vendidos), 200
     except Exception as e:
@@ -523,6 +525,7 @@ def fetch_spot_pairs():
     else:
         logger.error(f"Erro ao fazer requisição: {response.status_code}")
         
+
 def fetch_data():
     global list_tokens
     response = requests.get(urlGetLatestSpotPairs, params=parameters, headers=headers)
@@ -954,8 +957,9 @@ def sell_tokens_test(pools):
                                 'comprado': '0',
                                 'val_sol_sell': response.json().get('data').get('quantidadeTokenSaida') if response.json().get('data') is not None else solana_amount
                             } 
-                            #sucess = database.delete_buy_token(data)
-                            sucess = database.update_buy(updatedData, symbol)
+                            sucess = database.delete_buy_token(data)
+                            #sucess = database.update_buy(updatedData, symbol)
+
                             tokens_vendidos.append(data)
                             time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
                         elif response == False or response.status_code != 200:
@@ -1212,8 +1216,8 @@ def start_scheduler_buy():
             start_scheduler_buy()
 
 def restart_all_schedulers():
-    global btc_quote_scheduler, buy_scheduler, sell_scheduler, pools
-
+    global  buy_scheduler, pools
+    database.clean_slate()
     if buy_scheduler:
         buy_scheduler.remove_all_jobs()
         buy_scheduler.shutdown() 

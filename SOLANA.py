@@ -4,6 +4,7 @@ from werkzeug.serving import run_simple
 import requests
 import json
 import time
+import pprint
 import logging
 import platform
 import importlib
@@ -528,6 +529,7 @@ def fetch_spot_pairs():
 
 def fetch_data():
     global list_tokens
+    list_tokens = []
     response = requests.get(urlGetLatestSpotPairs, params=parameters, headers=headers)
     if response.status_code == 200:
         list_tokens = response.json()
@@ -627,7 +629,7 @@ def process_tokens(score_weights):
 
  
 def buy_sell_tokens(pools):
-    fetch_data
+    fetch_data()
     processTokenQuote(1)   
     buy_tokens(pools)
     sell_tokens(pools)
@@ -826,7 +828,6 @@ def sell_tokens_prod(pools):
             mint = token.get('mint')
             if mint in tokens_lookup:
                 token_comprado = tokens_lookup[mint]
-                print("Token comprado encontrado:", token['tokenName'])
                 id = token_comprado.get('id', None) 
                 platform_token_address = token_comprado.get('platform_token_address', None) 
                 symbol = token_comprado.get('symbol', None)
@@ -847,6 +848,7 @@ def sell_tokens_prod(pools):
 
                 solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
                 
+                logger.info(name + f' - ganho:  {gain_percentage_with_current_price}%' )
                 if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
                     data = {
                         'id': id,
@@ -876,14 +878,21 @@ def sell_tokens_prod(pools):
                                 'val_sol_sell': response.json().get('data').get('quantidadeTokenSaida') if response.json().get('data') is not None else solana_amount
                             } 
                             #sucess = database.delete_buy_token(data)
-                            sucess = database.update_buy(updatedData, symbol)
+                            # = database.update_buy(updatedData, symbol)
                             tokens_vendidos.append(data)
                             time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
                         elif response == False or response.status_code != 200:
                             logger.error("Erro ao vender " + name)
-                else:
-                    logger.info(name + f' - ganho:  {gain_percentage_with_current_price}%' )
 
+                    
+                    
+            wallet_tokens_sell = getWalletTokensValues() 
+            for token in tokens_vendidos:
+                match = next((t for t in wallet_tokens_sell if token['name'] == t['tokenName']), None)
+                if match:
+                    print("Token correspondente encontrado:", match)
+                    if float(match['tokenAmount']) > 10:
+                        sucess = database.delete_buy_token(token)
 
 
 
@@ -906,7 +915,6 @@ def sell_tokens_test(pools):
             mint = token.get('platform_token_address')
             if mint in tokens_lookup:
                 token_comprado = tokens_lookup[mint]
-                print("Token comprado encontrado:", token['name'])
                 id = token_comprado.get('id', None) 
                 platform_token_address = token_comprado.get('platform_token_address', None) 
                 symbol = token_comprado.get('symbol', None)
@@ -927,6 +935,7 @@ def sell_tokens_test(pools):
 
                 solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
                 
+                logger.info(name + f' - ganho:  {gain_percentage_with_current_price}%' )
                 if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
                     data = {
                         'id': id,
@@ -956,16 +965,17 @@ def sell_tokens_test(pools):
                             updatedData  = {
                                 'comprado': '0',
                                 'val_sol_sell': response.json().get('data').get('quantidadeTokenSaida') if response.json().get('data') is not None else solana_amount
-                            } 
+                            }
                             sucess = database.delete_buy_token(data)
                             #sucess = database.update_buy(updatedData, symbol)
-
+                            #TODO Verificar se o valor da wallet
                             tokens_vendidos.append(data)
                             time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
                         elif response == False or response.status_code != 200:
                             logger.error("Erro ao vender " + name)
-                else:
-                    logger.info(name + f' - ganho:  {gain_percentage_with_current_price}%' )
+
+                    
+
 
 
 
@@ -1217,7 +1227,6 @@ def start_scheduler_buy():
 
 def restart_all_schedulers():
     global  buy_scheduler, pools
-    database.clean_slate()
     if buy_scheduler:
         buy_scheduler.remove_all_jobs()
         buy_scheduler.shutdown() 

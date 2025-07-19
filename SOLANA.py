@@ -863,7 +863,7 @@ def sell_tokens_prod(pools):
                         'market_cap': market_cap,
                         'score': score,
                         'solana_amount' : solana_amount,
-                        'token_amount': int(token["tokenAmount"]),
+                        'token_amount': token["tokenAmount"],
                         #'token_amount': token_amount_in_wallet,
                         'comprado': '0',
                         'executeSwap': get_config_value("EXECUTE_SWAP")
@@ -885,14 +885,13 @@ def sell_tokens_prod(pools):
                             logger.error("Erro ao vender " + name)
 
                     
-                    
-            wallet_tokens_sell = getWalletTokensValues() 
-            for token in tokens_vendidos:
-                match = next((t for t in wallet_tokens_sell if token['name'] == t['tokenName']), None)
-                if match:
-                    print("Token correspondente encontrado:", match)
-                    if float(match['tokenAmount']) > 10:
-                        sucess = database.delete_buy_token(token)
+        #for token in wallet_tokens:            
+        wallet_tokens_sell = getWalletTokensValues() 
+        for token in tokens_vendidos:
+            match = next((t for t in wallet_tokens_sell if token['name'] == t['tokenName']), None)
+            if match:
+                if float(match['tokenAmount']) == 0:
+                    sucess = database.delete_buy_token(token)
 
 
 
@@ -966,7 +965,7 @@ def sell_tokens_test(pools):
                                 'comprado': '0',
                                 'val_sol_sell': response.json().get('data').get('quantidadeTokenSaida') if response.json().get('data') is not None else solana_amount
                             }
-                            sucess = database.delete_buy_token(data)
+                            #sucess = database.delete_buy_token(data)
                             #sucess = database.update_buy(updatedData, symbol)
                             #TODO Verificar se o valor da wallet
                             tokens_vendidos.append(data)
@@ -975,7 +974,12 @@ def sell_tokens_test(pools):
                             logger.error("Erro ao vender " + name)
 
                     
-
+        wallet_tokens_sell = get_tokens_analyzed_from_db() 
+        for token in tokens_vendidos:
+            match = next((t for t in wallet_tokens_sell if token['name'] == t['name']), None)
+            if match:
+                if float(match['token_amount']) < 1000000:
+                    sucess = database.delete_buy_token(token)
 
 
 

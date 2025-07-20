@@ -22,7 +22,7 @@ from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 
 import urllib3
 # urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
-urllib3.disable_warnings(urllib3.exceptions.SubjectAltNameWarning)
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
 
 database = importlib.import_module("1_database")
 

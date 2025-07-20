@@ -318,7 +318,7 @@ def delete_buy_token(token):
             cursor.execute(delete_query)
             connection.commit()
     except mysql.connector.Error as err:
-        print(f"Erro ao salvar tokens: {err}")
+        print(f"Erro ao apagar tokens: {err}")
         return False
     finally:
         if connection.is_connected():

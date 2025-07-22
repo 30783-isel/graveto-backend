@@ -286,47 +286,79 @@ def update_config_endpoint():
 
 
 
+
+
+
+def get_connection_2_node_info(node_host):
+
+    is_windows = platform.system() == "Windows"
+    is_localhost = node_host in ["localhost", "127.0.0.1"]
+
+    # Define caminhos dos certificados
+    if is_windows:
+        base_path = r'C:\x3la\xyz\cripto\x3la\python\certificates'
+    else:
+        base_path = '/etc/ssl/myapp'
+
+    if is_localhost:
+        cert_file = os.path.join(base_path, 'node-client-cert.pem')
+        key_file = os.path.join(base_path, 'node-client-key.pem')
+    else:
+        cert_file = os.path.join(base_path, 'node-client-cert.pem')
+        key_file = os.path.join(base_path, 'node-client-key.pem')
+
+    ca_cert = os.path.join(base_path, 'myCA.pem')
+    client_cert = (cert_file, key_file)
+
+    return ca_cert, client_cert
+
+
+
 @app.route('/get-wallet-tokens', methods=['GET'])
 def getWalletTokens():
     return getWalletTokensValues()
     
 def getWalletTokensValues(): 
     
-    url = f"{get_config_value('NODE_URL')}:8443/get-token-accounts"
+    node_host = get_config_value('NODE_URL')
+    url = f"https://{node_host}:8443/get-token-accounts"
     
-    if platform.system() == "Windows":
-        client_cert = ('C:/x3la/xyz/cripto/security/ssl/node-client-cert.pem', 'C:/x3la/xyz/cripto/security/ssl/node-client-key.pem')
-        ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCA.pem'
-    else:
-        client_cert = ('/etc/ssl/myapp/node-client-cert.pem', '/etc/ssl/myapp/node-client-key.pem')
-        ca_cert = '/etc/ssl/myapp/myCA.pem'
+    ca_cert, client_cert = get_connection_2_node_info(node_host)
+    #response = requests.get(url, cert=client_cert, verify=False, headers=headers)
+    print(f"🔍 Fazendo request para {url}")
+    print(f"🔐 Usando certificado: {client_cert}")
+    print(f"🔐 CA usada: {ca_cert}")
     
-    response = requests.get(url, cert=client_cert, verify=ca_cert, headers=headers)
-    
-    if response.status_code == 200:
-        data = json.loads(response.content)
+    try:
+        response = requests.get(url, cert=client_cert, verify=ca_cert, headers=headers)
+        
+        if response.status_code == 200:
+            data = json.loads(response.content)
 
-        # Lista onde os dados serão armazenados
-        account_info_list = []
+            # Lista onde os dados serão armazenadosc
+            account_info_list = []
 
-        # Iterar sobre os tokens
-        for token in data['data']['tokens']:
-            account_info = {
-                'walletAddress': token['walletAddress'],
-                'mint': token['tokenMint'],
-                'tokenName': token['tokenName'],
-                'tokenAmount': token['tokenAmount'],
-                'decimals': token['decimals'],
-                'value': token['value']
-            }
-            account_info_list.append(account_info)
+            # Iterar sobre os tokens
+            for token in data['data']['tokens']:
+                account_info = {
+                    'walletAddress': token['walletAddress'],
+                    'mint': token['tokenMint'],
+                    'tokenName': token['tokenName'],
+                    'tokenAmount': token['tokenAmount'],
+                    'decimals': token['decimals'],
+                    'value': token['value']
+                }
+                account_info_list.append(account_info)
 
-        # Retornar apenas os dados
-        return account_info_list
-    else:
-        # Em caso de erro, retornar uma lista vazia ou uma mensagem de erro
-        return {"error": "Failed to fetch wallet tokens"}
-   
+            # Retornar apenas os dados
+            return account_info_list
+        else:
+            # Em caso de erro, retornar uma lista vazia ou uma mensagem de erro
+            return {"error": "Failed to fetch wallet tokens"}
+    except requests.exceptions.SSLError as ssl_err:
+        return {"error": f"SSL error: {ssl_err}"}
+    except requests.exceptions.RequestException as e:
+        return {"error": f"Request failed: {e}"}
  
 @app.route('/infscl-init', methods=['POST'])
 def getInfsclInit():
@@ -739,14 +771,12 @@ def swapToken(swapPairs, pools, compraVenda):
     pair_address = get_pair_with_sol(swapPairs['platform_token_address'], pools,logger)
 
 
-    if platform.system() == "Windows":
-        client_cert = ('C:/x3la/xyz/cripto/security/ssl/node-client-cert.pem', 'C:/x3la/xyz/cripto/security/ssl/node-client-key.pem')
-        ca_cert = 'C:/x3la/xyz/cripto/security/ssl/myCA.pem'
-    else:
-        client_cert = ('/etc/ssl/myapp/node-client-cert.pem', '/etc/ssl/myapp/node-client-key.pem')
-        ca_cert = '/etc/ssl/myapp/myCA.pem'
+    node_host = get_config_value('NODE_URL')
+    url = f"https://{node_host}:8443/get-token-accounts"
+    
+    ca_cert, client_cert = get_connection_2_node_info(node_host)
 
-    url = f"{get_config_value('NODE_URL')}:8443/swap"
+    url = f"{node_host}:8443/swap"
 
     if compraVenda:
         token_amount = int(swapPairs['solana_amount'] * 1_000_000_000)
@@ -1002,6 +1032,10 @@ def get_tokens_analyzed_from_db():
     if resultados:
         resultados_formatados = []
         for row in resultados:
+            print("ROW -----------------------------------------------------------------------------------------------------------------------------------------------------------:")
+            print("ROW:", row)
+            print(f"Row length: {len(row)}")
+            print("ROW -----------------------------------------------------------------------------------------------------------------------------------------------------------:")
             idk = row[0]
             id = row[1]
             contract_address = row[2]
@@ -1094,7 +1128,7 @@ def getTokenMetrics(id):
         if token:
             return token[0]
     else:
-        logger.error(f"Erro ao processar ao buscar os TokenMetrics.")
+        logger.error(f"Erro ao processar os TokenMetrics.")
     
 
 
@@ -1283,10 +1317,10 @@ def initializeLocalServer():
     
     if platform.system() == "Windows":
         context.load_cert_chain(
-            certfile='C:/x3la/xyz/cripto/security/ssl/python-server.crt',
-            keyfile='C:/x3la/xyz/cripto/security/ssl/python-server.key'
+            certfile='C:/x3la/xyz/cripto/x3la/python/certificates/python-server.crt',
+            keyfile='C:/x3la/xyz/cripto/x3la/python/certificates/python-server.key'
         )
-        context.load_verify_locations(cafile='C:/x3la/xyz/cripto/security/ssl/myCA.pem')
+        context.load_verify_locations(cafile='C:/x3la/xyz/cripto/x3la/python/certificates/myCA.pem')
     else:
         context.load_cert_chain(
             certfile='/etc/ssl/myapp/python-server.crt',

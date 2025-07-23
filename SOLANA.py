@@ -289,58 +289,79 @@ def update_config_endpoint():
 
 
 
-def get_connection_2_node_info(node_host):
-
-    is_windows = platform.system() == "Windows"
-    is_localhost = node_host in ["localhost", "127.0.0.1"]
-
-    # Define caminhos dos certificados
-    if is_windows:
-        base_path = r'C:\x3la\xyz\cripto\x3la\python\certificates'
-    else:
-        base_path = '/etc/ssl/myapp'
-
-    if is_localhost:
-        cert_file = os.path.join(base_path, 'node-client-cert.pem')
-        key_file = os.path.join(base_path, 'node-client-key.pem')
-    else:
-        cert_file = os.path.join(base_path, 'node-client-cert.pem')
-        key_file = os.path.join(base_path, 'node-client-key.pem')
-
-    ca_cert = os.path.join(base_path, 'myCA.pem')
-    client_cert = (cert_file, key_file)
-
-    return ca_cert, client_cert
 
 
 
-@app.route('/get-wallet-tokens', methods=['GET'])
-def getWalletTokens():
-    return getWalletTokensValues()
-    
-def getWalletTokensValues(): 
-    
-    node_host = get_config_value('NODE_URL')
+
+
+
+
+
+
+
+
+
+
+
+
+def get_base_cert_path():
+    return r'C:\x3la\xyz\cripto\x3la\python\certificates' if platform.system() == "Windows" else '/etc/ssl/myapp'
+
+# Função: conexão HTTP sem segurança
+def get_connection_http(node_host):
+    url = f"http://{node_host}:8080/get-token-accounts"
+    return url, None, False
+
+# Função: conexão segura com certificados LOCALHOST
+def get_connection_localhost(node_host):
+    base_path = get_base_cert_path()
+    cert_file = os.path.join(base_path, 'localhost-client-cert.pem')
+    key_file  = os.path.join(base_path, 'localhost-client-key.pem')
+    ca_cert   = os.path.join(base_path, 'myCA.pem')
     url = f"https://{node_host}:8443/get-token-accounts"
-    
-    ca_cert, client_cert = get_connection_2_node_info(node_host)
-    #response = requests.get(url, cert=client_cert, verify=False, headers=headers)
-    print(f"🔍 Fazendo request para {url}")
-    print(f"🔐 Usando certificado: {client_cert}")
-    print(f"🔐 CA usada: {ca_cert}")
-    
+    return url, (cert_file, key_file), ca_cert
+
+# Função: conexão segura com certificados DOCKER
+def get_connection_docker(node_host):
+    base_path = get_base_cert_path()
+    cert_file = os.path.join(base_path, 'node-client-cert.pem')
+    key_file  = os.path.join(base_path, 'node-client-key.pem')
+    ca_cert   = os.path.join(base_path, 'myCA.pem')
+    url = f"https://{node_host}:8443/get-token-accounts"
+    return url, (cert_file, key_file), ca_cert
+
+# Função principal para selecionar o tipo de conexão
+def get_node_connection_info(node_host, mode):
+    if mode == 'http':
+        return get_connection_http(node_host)
+    elif mode == 'localhost':
+        return get_connection_localhost(node_host)
+    elif mode == 'docker':
+        return get_connection_docker(node_host)
+    else:
+        raise ValueError(f"Modo '{mode}' inválido. Use 'http', 'localhost' ou 'docker'.")
+
+# Função de chamada de API
+@app.route('/get-wallet-tokens', methods=['GET'])
+def get_wallet_tokens():
+    return get_wallet_tokens_values()
+
+def get_wallet_tokens_values(): 
+    node_host = get_config_value('NODE_URL')
+    mode = os.environ.get('SERVER_MODE', 'http')  # default: http
+
     try:
-        response = requests.get(url, cert=client_cert, verify=ca_cert, headers=headers)
+        url, client_cert, verify_option = get_node_connection_info(node_host, mode)
+        print(f"🔍 Fazendo request para: {url}")
+        print(f"🔐 Certificados usados: {client_cert}")
+        print(f"🔐 Verificação CA: {verify_option}")
+
+        response = requests.get(url, cert=client_cert, verify=verify_option, headers=headers)
         
         if response.status_code == 200:
             data = json.loads(response.content)
-
-            # Lista onde os dados serão armazenadosc
-            account_info_list = []
-
-            # Iterar sobre os tokens
-            for token in data['data']['tokens']:
-                account_info = {
+            account_info_list = [
+                {
                     'walletAddress': token['walletAddress'],
                     'mint': token['tokenMint'],
                     'tokenName': token['tokenName'],
@@ -348,18 +369,70 @@ def getWalletTokensValues():
                     'decimals': token['decimals'],
                     'value': token['value']
                 }
-                account_info_list.append(account_info)
-
-            # Retornar apenas os dados
+                for token in data['data']['tokens']
+            ]
             return account_info_list
         else:
-            # Em caso de erro, retornar uma lista vazia ou uma mensagem de erro
             return {"error": "Failed to fetch wallet tokens"}
+    
     except requests.exceptions.SSLError as ssl_err:
         return {"error": f"SSL error: {ssl_err}"}
     except requests.exceptions.RequestException as e:
         return {"error": f"Request failed: {e}"}
- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @app.route('/infscl-init', methods=['POST'])
 def getInfsclInit():
     try:

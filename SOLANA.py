@@ -308,50 +308,83 @@ def get_base_cert_path():
     return r'C:\x3la\xyz\cripto\x3la\python\certificates' if platform.system() == "Windows" else '/etc/ssl/myapp'
 
 # Função: conexão HTTP sem segurança
-def get_connection_http(node_host):
-    url = f"http://{node_host}:8080/get-token-accounts"
+def get_connection_http(node_host, endpoint):
+    url = f"http://{node_host}:8080/{endpoint}"
+    return url, None, False
+
+# Função: conexão HTTP entre containers Docker
+def get_connection_docker_http(node_host, endpoint):
+    url = f"http://{node_host}:8080/{endpoint}"
     return url, None, False
 
 # Função: conexão segura com certificados LOCALHOST
-def get_connection_localhost(node_host):
+def get_connection_localhost(node_host, endpoint):
     base_path = get_base_cert_path()
     cert_file = os.path.join(base_path, 'localhost-client-cert.pem')
     key_file  = os.path.join(base_path, 'localhost-client-key.pem')
     ca_cert   = os.path.join(base_path, 'myCA.pem')
-    url = f"https://{node_host}:8443/get-token-accounts"
+    url = f"https://{node_host}:8443/{endpoint}"
     return url, (cert_file, key_file), ca_cert
 
 # Função: conexão segura com certificados DOCKER
-def get_connection_docker(node_host):
+def get_connection_docker(node_host, endpoint):
     base_path = get_base_cert_path()
     cert_file = os.path.join(base_path, 'node-client-cert.pem')
     key_file  = os.path.join(base_path, 'node-client-key.pem')
     ca_cert   = os.path.join(base_path, 'myCA.pem')
-    url = f"https://{node_host}:8443/get-token-accounts"
+    url = f"https://{node_host}:8443/{endpoint}"
     return url, (cert_file, key_file), ca_cert
 
 # Função principal para selecionar o tipo de conexão
-def get_node_connection_info(node_host, mode):
+def get_node_connection_info(node_host, mode, endpoint):
     if mode == 'http':
-        return get_connection_http(node_host)
+        return get_connection_http(node_host, endpoint)
     elif mode == 'localhost':
-        return get_connection_localhost(node_host)
+        return get_connection_localhost(node_host, endpoint)
     elif mode == 'docker':
-        return get_connection_docker(node_host)
+        return get_connection_docker(node_host, endpoint)
+    elif mode == 'docker_http':
+        return get_connection_docker_http(node_host, endpoint)
     else:
-        raise ValueError(f"Modo '{mode}' inválido. Use 'http', 'localhost' ou 'docker'.")
+        raise ValueError(f"Modo '{mode}' inválido. Use 'http', 'localhost', 'docker', 'docker_http' ou 'remote'.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Função de chamada de API
 @app.route('/get-wallet-tokens', methods=['GET'])
 def get_wallet_tokens():
-    return get_wallet_tokens_values()
+    return getWalletTokensValues()
 
-def get_wallet_tokens_values(): 
+
+def getWalletTokensValues(): 
     node_host = get_config_value('NODE_URL')
     mode = os.environ.get('SERVER_MODE', 'http')  # default: http
 
     try:
-        url, client_cert, verify_option = get_node_connection_info(node_host, mode)
+        endpoint = "get-token-accounts"
+        url, client_cert, verify_option = get_node_connection_info(node_host, mode, endpoint)
         print(f"🔍 Fazendo request para: {url}")
         print(f"🔐 Certificados usados: {client_cert}")
         print(f"🔐 Verificação CA: {verify_option}")
@@ -379,7 +412,6 @@ def get_wallet_tokens_values():
         return {"error": f"SSL error: {ssl_err}"}
     except requests.exceptions.RequestException as e:
         return {"error": f"Request failed: {e}"}
-
 
 
 

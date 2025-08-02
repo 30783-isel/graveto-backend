@@ -59,7 +59,7 @@ def getToken(token):
 
 def insert_buy(data):
     """
-    Função para inserir dados na tabela 'buy_contralized'.
+    Função para inserir dados na tabela 'buy_centralized'.
     :param data: Tupla com os dados a serem inseridos na tabela
     Exemplo de 'data': {'symbol': 'token_example', 'price': 100, 'name': 'example_name', ...}
     """
@@ -71,7 +71,7 @@ def insert_buy(data):
     
             # Comando SQL para inserção
             query = """
-                INSERT INTO degen.buy_contralized (`id`, `contract_address`, `platform_token_address`,`symbol`,`name`,`platform_name`,`price`,`min_price`,`max_price`,`percent_change_1h`,`percent_change_24h`,`volume_24h`,`market_cap`,`score`,`quantity`, `comprado`, `val_sol_sell`)
+                INSERT INTO degen.buy_centralized (`id`, `contract_address`, `platform_token_address`,`symbol`,`name`,`platform_name`,`price`,`min_price`,`max_price`,`percent_change_1h`,`percent_change_24h`,`volume_24h`,`market_cap`,`score`,`quantity`, `comprado`, `val_sol_sell`)
                 VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
             """
 
@@ -92,7 +92,7 @@ def insert_buy(data):
                 commons.to_float(data.get('volume_24h', 0.0)),
                 commons.to_float(data.get('market_cap', 0.0)),
                 commons.to_float(data.get('score', 0.0)),
-                commons.to_float(data.get('token_amount', 0.0)),
+                commons.to_float(data.get('token_quantity', 0.0)),
                 commons.to_float(data.get('comprado', True)),
                 commons.to_float(data.get('val_sol_sell', 0.0)),
             )
@@ -126,7 +126,7 @@ def get_existing_tokens():
             cursor = connection.cursor()
 
             # Consulta para pegar os tokens da tabela 'top10'
-            query = "SELECT * FROM buy_contralized"
+            query = "SELECT * FROM buy_centralized"
             cursor.execute(query)
 
             # Recuperando os resultados
@@ -204,7 +204,7 @@ def getTokens():
         connection = mysql.connector.connect(**config)
         if connection.is_connected():
             cursor = connection.cursor()
-            query = f"SELECT * FROM buy_contralized "
+            query = f"SELECT * FROM buy_centralized "
             cursor.execute(query, ()) 
             resultados = cursor.fetchall()
             return resultados
@@ -284,7 +284,7 @@ def update_buy(data, symbol):
             # Adiciona o WHERE com o contract_address
             set_clause_str = ", ".join(set_clause)
             query = f"""
-                UPDATE buy_contralized
+                UPDATE buy_centralized
                 SET {set_clause_str}
                 WHERE symbol = %s
             """
@@ -314,7 +314,7 @@ def delete_buy_token(token):
         connection = mysql.connector.connect(**config)
         if connection.is_connected():
             cursor = connection.cursor()
-            delete_query = f"DELETE FROM buy_contralized WHERE id = {token.get('id', None)}"
+            delete_query = f"DELETE FROM buy_centralized WHERE id = {token.get('id', None)}"
             cursor.execute(delete_query)
             connection.commit()
     except mysql.connector.Error as err:
@@ -378,7 +378,7 @@ def clean_slate():
             query = "UPDATE number_buys SET number_buyscol = 0"
             cursor.execute(query)
 
-            tables_to_truncate = ["buy_contralized", "top10_centralized"]
+            tables_to_truncate = ["buy_centralized", "top10_centralized"]
 
             for table in tables_to_truncate:
                 query = f"TRUNCATE TABLE {table}"

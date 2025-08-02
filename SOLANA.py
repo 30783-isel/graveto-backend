@@ -380,7 +380,7 @@ def get_wallet_tokens():
 
 def getWalletTokensValues(): 
     node_host = get_config_value('NODE_URL')
-    mode = os.environ.get('SERVER_MODE', 'http')  # default: http
+    mode = get_config_value('SERVER_MODE') 
 
     try:
         endpoint = "get-token-accounts"
@@ -874,54 +874,55 @@ def swapToken(swapPairs, pools, compraVenda):
         'name': swapPairs['name'],
     }
     pair_address = get_pair_with_sol(swapPairs['platform_token_address'], pools,logger)
-
-
-    node_host = get_config_value('NODE_URL')
-    url = f"https://{node_host}:8443/get-token-accounts"
+    if pair_address is not None:
+        node_host = get_config_value('NODE_URL')
+        mode = get_config_value('SERVER_MODE') 
+        endpoint = "swap"
     
-    ca_cert, client_cert = get_connection_2_node_info(node_host)
+        url, client_cert, verify_option = get_node_connection_info(node_host, mode, endpoint)
+        print(f"🔍 Fazendo request para: {url}")
+        print(f"🔐 Certificados usados: {client_cert}")
+        print(f"🔐 Verificação CA: {verify_option}")
 
-    url = f"{node_host}:8443/swap"
-
-    if compraVenda:
-        token_amount = int(swapPairs['solana_amount'] * 1_000_000_000)
-    else:
-        token_amount = swapPairs['token_amount']
-
-      
-    payload = {
-        "pairAdress": pair_address,
-        "quoteAsset": swapPairs['platform_token_address'],
-        "baseAsset": "So11111111111111111111111111111111111111112",
-        "tokenAmount": token_amount,
-        "buy": compraVenda,
-        "executeSwap": str_to_bool(swapPairs['executeSwap']),
-        # "secret": getInfsclGetXSecret(),
-    }
-    
-    headers = {
-        'Content-Type': 'application/json'
-    }
-    try:
-        pair_address = payload.get('pairAdress')
-        if pair_address is not None:
-            response = requests.post(url, cert=client_cert, verify=ca_cert, data=json.dumps(payload), headers=headers)
-            if response.status_code == 200:
-                if swapPairs.get('comprado') == '1': 
-                    logger.info(f"Swap com sucesso --- {swapPairs['solana_amount']} de SOLANA por {swapPairs['token_amount']} {swapPairs['name']} \033[92mcomprado\033[0m.")
-                else:
-                    logger.info(f"Swap com sucesso --- {swapPairs['token_amount']} de {swapPairs['name']} por {swapPairs['solana_amount']} de SOLANA \033[91mvendido\033[0m.")
-                if(response.json().get('txid') is not None):
-                    print(response.json().get('txid'))
-            else:
-                logger.error(Fore.RED + f"Falha na requisição: {response.json()}" + Fore.WHITE)
-            return response    
+        if compraVenda:
+            token_amount = int(swapPairs['solana_amount'] * 1_000_000_000)
         else:
-            return None
-    except requests.exceptions.RequestException as e:
-        logger.error(f"Erro na requisição: {e}")
-        return None
+            token_amount = swapPairs['token_amount']
 
+        
+        payload = {
+            "pairAdress": pair_address,
+            "quoteAsset": swapPairs['platform_token_address'],
+            "baseAsset": "So11111111111111111111111111111111111111112",
+            "tokenAmount": token_amount,
+            "buy": compraVenda,
+            "executeSwap": str_to_bool(swapPairs['executeSwap']),
+            # "secret": getInfsclGetXSecret(),
+        }
+        
+        headers = {
+            'Content-Type': 'application/json'
+        }
+        try:
+            pair_address = payload.get('pairAdress')
+            if pair_address is not None:
+                response = requests.post(url, cert=client_cert, verify=verify_option, data=json.dumps(payload), headers=headers)
+                if response.status_code == 200:
+                    if swapPairs.get('comprado') == '1': 
+                        logger.info(f"Swap com sucesso --- {swapPairs['solana_amount']} de SOLANA por {swapPairs['token_amount']} {swapPairs['name']} \033[92mcomprado\033[0m.")
+                    else:
+                        logger.info(f"Swap com sucesso --- {swapPairs['token_amount']} de {swapPairs['name']} por {swapPairs['solana_amount']} de SOLANA \033[91mvendido\033[0m.")
+                    if(response.json().get('txid') is not None):
+                        print(response.json().get('txid'))
+                else:
+                    logger.error(Fore.RED + f"Falha na requisição: {response.json()}" + Fore.WHITE)
+                return response    
+            else:
+                return None
+        except requests.exceptions.RequestException as e:
+            logger.error(f"Erro na requisição: {e}")
+            return None
+    return None
 
 
 
@@ -1137,10 +1138,6 @@ def get_tokens_analyzed_from_db():
     if resultados:
         resultados_formatados = []
         for row in resultados:
-            print("ROW -----------------------------------------------------------------------------------------------------------------------------------------------------------:")
-            print("ROW:", row)
-            print(f"Row length: {len(row)}")
-            print("ROW -----------------------------------------------------------------------------------------------------------------------------------------------------------:")
             idk = row[0]
             id = row[1]
             contract_address = row[2]
@@ -1398,9 +1395,44 @@ def hello():
 
 
 
+
+@app.route('/test')
+def helloWordl():
+    connection = getTestConnection()
+    if connection:
+        return jsonify(message="Ligação segura com mTLS estabelecida!"), 200
+    return jsonify(error="Falha na ligação."), 403
+
+
+
+
+
+def getTestConnection(): 
+    node_host = get_config_value('NODE_URL')
+    mode = get_config_value('SERVER_MODE') 
+    try:
+        endpoint = "test"
+        url, client_cert, verify_option = get_node_connection_info(node_host, mode, endpoint)
+        print(f"🔍 Fazendo request para: {url}")
+        print(f"🔐 Certificados usados: {client_cert}")
+        print(f"🔐 Verificação CA: {verify_option}")
+        response = requests.get(url, cert=client_cert, verify=verify_option, headers=headers)
+        if response.status_code == 200:
+            return True
+        else:
+            return False
+    
+    except requests.exceptions.SSLError as ssl_err:
+        return {"error": f"SSL error: {ssl_err}"}
+    except requests.exceptions.RequestException as e:
+        return {"error": f"Request failed: {e}"}
+
+
+
 def initializeApp():
     logger.info("init getPools ------------------------------------------------------------------------------------------------------------------------------------")
     global pools
+    fetch_data()
     pools = get_pools()
     logger.info("end getPools ------------------------------------------------------------------------------------------------------------------------------------")
     

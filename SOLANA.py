@@ -93,6 +93,7 @@ SWAP_EXECUTION = int(get_config_value('SWAP_EXECUTION'))
 PERCENTAGE_LOSS = float(get_config_value('PERCENTAGE_LOSS'))
 NUM_TOKENS_PROCESSED = int(get_config_value('NUM_TOKENS_PROCESSED'))
 NUM_TOKENS_COINMARKETCAP = int(get_config_value('NUM_TOKENS_COINMARKETCAP'))
+NAME_MAIN_TOKEN = get_config_value('NAME_MAIN_TOKEN')
 BTC_1H_PERCENT = float(get_config_value('BTC_1H_PERCENT'))
 BUY_VALUE_IN_USD = float(get_config_value('BUY_VALUE_IN_USD'))
 ADD_REPEATED = int(get_config_value('ADD_REPEATED'))
@@ -127,6 +128,22 @@ def get_best_tokens_endpoint():
     except Exception as e:
         logger.error(f"Error: {e}.")
         return jsonify({"estado": "Erro"}), 500
+
+
+
+@app.route('/buy-sell-tokens', methods=['GET'])
+def buy_sell_tokens_call():
+    try:
+        global pools
+        fetch_data()
+        if pools is None:
+            pools = get_pools() 
+        top_tokens = buy_sell_tokens(pools)
+        return jsonify(top_tokens), 200
+    except Exception as e:
+        logger.error(f"Error: {e}.")
+        return jsonify({"estado": "Erro"}), 500 
+    
 
 @app.route('/buy-tokens', methods=['GET'])
 def buy_tokens_call():
@@ -227,6 +244,7 @@ def get_config_endpoint():
             "NUM_TOKENS_PROCESSED": int(get_config_value('NUM_TOKENS_PROCESSED')),
             "NUM_TOKENS_COINMARKETCAP": int(get_config_value('NUM_TOKENS_COINMARKETCAP')),
             "BTC_1H_PERCENT": float(get_config_value('BTC_1H_PERCENT')),
+            "NAME_MAIN_TOKEN": float(get_config_value('NAME_MAIN_TOKEN')),
             "BUY_VALUE_IN_USD":float( get_config_value('BUY_VALUE_IN_USD')),
             "EXECUTE_OPERATIONS": int(get_config_value('EXECUTE_OPERATIONS')),
             "EXECUTE_SCHEDULER": int(get_config_value('EXECUTE_SCHEDULER')),
@@ -264,6 +282,8 @@ def update_config_endpoint():
             config.set('CENTRALIZED', 'NUM_TOKENS_PROCESSED', str(data['NUM_TOKENS_PROCESSED']))
         if 'NUM_TOKENS_COINMARKETCAP' in data:
             config.set('CENTRALIZED', 'NUM_TOKENS_COINMARKETCAP', str(data['NUM_TOKENS_COINMARKETCAP']))
+        if 'NAME_MAIN_TOKEN' in data:
+            config.set('CENTRALIZED', 'NAME_MAIN_TOKEN', str(data['NAME_MAIN_TOKEN']))           
         if 'BTC_1H_PERCENT' in data:
             config.set('CENTRALIZED', 'BTC_1H_PERCENT', str(data['BTC_1H_PERCENT']))
         if 'BUY_VALUE_IN_USD' in data:
@@ -385,9 +405,9 @@ def getWalletTokensValues():
     try:
         endpoint = "get-token-accounts"
         url, client_cert, verify_option = get_node_connection_info(node_host, mode, endpoint)
-        print(f"🔍 Fazendo request para: {url}")
-        print(f"🔐 Certificados usados: {client_cert}")
-        print(f"🔐 Verificação CA: {verify_option}")
+        #print(f"🔍 Fazendo request para: {url}")
+        #print(f"🔐 Certificados usados: {client_cert}")
+        #print(f"🔐 Verificação CA: {verify_option}")
 
         response = requests.get(url, cert=client_cert, verify=verify_option, headers=headers)
         
@@ -568,6 +588,7 @@ def getInfsclGetXSecret():
 def getTokenData():
     try:
         global list_tokens
+        
         wallet_tokens = getWalletTokensValues() 
 
         while isinstance(wallet_tokens, dict) and "error" in wallet_tokens:
@@ -623,6 +644,56 @@ def getTokenData():
     
     
 
+
+@app.route('/update-token-data', methods=['GET'])
+def updateTokenData():
+    try:
+        global list_tokens
+        
+        wallet_tokens = getWalletTokensValues() 
+
+        while isinstance(wallet_tokens, dict) and "error" in wallet_tokens:
+            print(f"Erro: {wallet_tokens['error']}. Tentando novamente em 5 segundos...")
+            time.sleep(5)
+            wallet_tokens = getWalletTokensValues()
+
+        for token in wallet_tokens:
+            mint = token.get('mint')
+            
+            token_data = fetch_token_data(mint)
+           
+            item = token_data['data'][0] 
+            quote = item.get('quote', [{}])[0] 
+
+            solana_quote = processTokenQuote('5426')            
+            token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
+            
+            for tokenx in list_tokens['data']:
+                if tokenx['symbol'] == token_data['data'][0]['base_asset_symbol']:
+                    id = tokenx['id']
+                    
+            data = {
+                'quantity': token.get('tokenAmount', None)
+            }
+            
+            database.update_buy(data, item.get('base_asset_symbol', None))
+            
+
+        return jsonify({
+            "estado": "Sucesso",
+            "token_data": token_data  
+        }), 200
+
+    except Exception as e:
+        return jsonify({
+            "estado": "Erro",
+            "mensagem": str(e)
+        }), 500
+        
+        
+        
+        
+        
 def fetch_token_data(base_asset_contract_address):
     params = {
         "limit": 1, 
@@ -856,7 +927,7 @@ def buy_tokens(pools):
             else:
                 logger.info("Nenhuma alteração nos tokens detectada. ---- ")
         else:
-            logger.info(f"Variação % BTC 1h - {Fore.YELLOW}{global_percent_change_1h}% {Fore.WHITE}menor que: {Fore.YELLOW}{float(get_config_value('BTC_1H_PERCENT'))}%{Fore.WHITE}")
+            logger.info(f"Variação % {get_config_value('NAME_MAIN_TOKEN')} 1h - {Fore.YELLOW}{global_percent_change_1h}% {Fore.WHITE}menor que: {Fore.YELLOW}{float(get_config_value('BTC_1H_PERCENT'))}%{Fore.WHITE}")
         return top_tokens
 
 
@@ -880,9 +951,9 @@ def swapToken(swapPairs, pools, compraVenda):
         endpoint = "swap"
     
         url, client_cert, verify_option = get_node_connection_info(node_host, mode, endpoint)
-        print(f"🔍 Fazendo request para: {url}")
-        print(f"🔐 Certificados usados: {client_cert}")
-        print(f"🔐 Verificação CA: {verify_option}")
+        #print(f"🔍 Fazendo request para: {url}")
+        #print(f"🔐 Certificados usados: {client_cert}")
+        #print(f"🔐 Verificação CA: {verify_option}")
 
         if compraVenda:
             token_amount = int(swapPairs['solana_amount'] * 1_000_000_000)
@@ -948,83 +1019,68 @@ def sell_tokens_prod(pools):
         
         resultados_formatados = get_tokens_analyzed_from_db()
         if resultados_formatados is not None and len(resultados_formatados) > 0: 
-            wallet_tokens = getWalletTokensValues() 
-
-            while isinstance(wallet_tokens, dict) and "error" in wallet_tokens:
-                print(f"Erro: {wallet_tokens['error']}. Tentando novamente em 5 segundos...")
-                time.sleep(5)
-                wallet_tokens = getWalletTokensValues()
-            
             solana_quote = processTokenQuote('5426')
             tokens_vendidos = []
             
-            lista_tokens = [token for token in resultados_formatados if token['comprado'] == True]
-            tokens_lookup = {
-                token['platform_token_address']: token
-                for token in lista_tokens
-            }
-            for token in wallet_tokens:             
-                mint = token.get('mint')
-                if mint in tokens_lookup:
-                    token_comprado = tokens_lookup[mint]
-                    id = token_comprado.get('id', None) 
-                    if(float(token['tokenAmount']) == 0.0):
-                        sucess = database.delete_buy_token(token_comprado)
-                    else:
-                        platform_token_address = token_comprado.get('platform_token_address', None) 
-                        symbol = token_comprado.get('symbol', None)
-                        name = token_comprado.get('name', None)
-                        platform_name = token_comprado.get('platform_name', None)
-                        price = token_comprado.get('price', None)
-                        min_price = token_comprado.get('min_price', None)
-                        max_price = token_comprado.get('max_price', None)
-                        current_price = token_comprado.get('current_price', None)
-                        percent_change_1h = token_comprado.get('percent_change_1h', None)
-                        percent_change_24h = token_comprado.get('spercent_change_24h', None)
-                        volume_24h = token_comprado.get('volume_24h', None)
-                        market_cap = token_comprado.get('market_cap', None)
-                        score = token_comprado.get('score', None)
-                        token_amount = token_comprado.get('token_amount', None)
-                        gain_percentage_with_current_price = token_comprado.get('gain_percentage_with_current_price', None)
-                        gain_percentage_with_max_price = token_comprado.get('gain_percentage_with_max_price', None)
+            for token_comprado in resultados_formatados:             
+                id = token_comprado.get('id', None) 
+                if(float(token_comprado['token_amount'])  == 0.0):
+                    sucess = database.delete_buy_token(token_comprado)
+                else:
+                    platform_token_address = token_comprado.get('platform_token_address', None) 
+                    symbol = token_comprado.get('symbol', None)
+                    name = token_comprado.get('name', None)
+                    platform_name = token_comprado.get('platform_name', None)
+                    price = token_comprado.get('price', None)
+                    min_price = token_comprado.get('min_price', None)
+                    max_price = token_comprado.get('max_price', None)
+                    current_price = token_comprado.get('current_price', None)
+                    percent_change_1h = token_comprado.get('percent_change_1h', None)
+                    percent_change_24h = token_comprado.get('spercent_change_24h', None)
+                    volume_24h = token_comprado.get('volume_24h', None)
+                    market_cap = token_comprado.get('market_cap', None)
+                    score = token_comprado.get('score', None)
+                    token_amount = token_comprado.get('token_amount', None)
+                    gain_percentage_with_current_price = token_comprado.get('gain_percentage_with_current_price', None)
+                    gain_percentage_with_max_price = token_comprado.get('gain_percentage_with_max_price', None)
 
-                        solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
+                    solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
+                    logger.info("-------------------------------------------------------------------------------------------- a processar " + name)
+                    logger.info(name + f' - ganho:  {gain_percentage_with_current_price}%' )
+                    if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
+                        data = {
+                            'id': id,
+                            'platform_token_address': platform_token_address,
+                            'symbol': symbol,
+                            'name': name,
+                            'platform_name': platform_name,
+                            'price': price,
+                            'percent_change_1h': percent_change_1h,
+                            'percent_change_24h': percent_change_24h,
+                            'volume_24h': volume_24h,
+                            'market_cap': market_cap,
+                            'score': score,
+                            'solana_amount' : solana_amount,
+                            'token_amount': float(token_comprado['token_amount']),
+                            #'token_amount': token_amount_in_wallet,
+                            'comprado': '0',
+                            'executeSwap': get_config_value("EXECUTE_SWAP")
+                        }
+
                         
-                        logger.info(name + f' - ganho:  {gain_percentage_with_current_price}%' )
-                        if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
-                            data = {
-                                'id': id,
-                                'platform_token_address': platform_token_address,
-                                'symbol': symbol,
-                                'name': name,
-                                'platform_name': platform_name,
-                                'price': price,
-                                'percent_change_1h': percent_change_1h,
-                                'percent_change_24h': percent_change_24h,
-                                'volume_24h': volume_24h,
-                                'market_cap': market_cap,
-                                'score': score,
-                                'solana_amount' : solana_amount,
-                                'token_amount': token["tokenAmount"],
-                                #'token_amount': token_amount_in_wallet,
-                                'comprado': '0',
-                                'executeSwap': get_config_value("EXECUTE_SWAP")
-                            }
-
-                            logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
-                            response = swapToken(data, pools, False)
-                            if response is not None:
-                                if(response.status_code == 200):
-                                    updatedData  = {
-                                        'comprado': '0',
-                                        'val_sol_sell': response.json().get('data').get('quantidadeTokenSaida') if response.json().get('data') is not None else solana_amount
-                                    } 
-                                    #sucess = database.delete_buy_token(data)
-                                    # = database.update_buy(updatedData, symbol)
-                                    tokens_vendidos.append(data)
-                                    time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
-                                elif response == False or response.status_code != 200:
-                                    logger.error("Erro ao vender " + name)
+                        response = swapToken(data, pools, False)
+                        if response is not None:
+                            if(response.status_code == 200):
+                                updatedData  = {
+                                    'comprado': '0',
+                                    'val_sol_sell': response.json().get('data').get('quantidadeTokenSaida') if response.json().get('data') is not None else solana_amount
+                                } 
+                                #sucess = database.delete_buy_token(data)
+                                # = database.update_buy(updatedData, symbol)
+                                tokens_vendidos.append(data)
+                                time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
+                            elif response == False or response.status_code != 200:
+                                logger.error("Erro ao vender " + name)
 
             if tokens_vendidos is not None and len(tokens_vendidos) > 0:              
                 wallet_tokens_sell = getWalletTokensValues() 
@@ -1040,23 +1096,16 @@ def sell_tokens_prod(pools):
 
 def sell_tokens_test(pools):
     logger.info('INICIAR SELL #####################################################################################################################')
-    if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
-        
-        wallet_tokens = get_tokens_analyzed_from_db() 
-        
+    if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):    
         solana_quote = processTokenQuote('5426')
         tokens_vendidos = []
         resultados_formatados = get_tokens_analyzed_from_db()
 
-        lista_tokens = [token for token in resultados_formatados if token['comprado'] == True]
-        tokens_lookup = {
-            token['platform_token_address']: token
-            for token in lista_tokens
-        }
-        for token in wallet_tokens:
-            mint = token.get('platform_token_address')
-            if mint in tokens_lookup:
-                token_comprado = tokens_lookup[mint]
+        for token_comprado in resultados_formatados:
+            id = token_comprado.get('id', None) 
+            if(float(token_comprado['token_amount'])  == 0.0):
+                sucess = database.delete_buy_token(token_comprado)
+            else:
                 id = token_comprado.get('id', None) 
                 platform_token_address = token_comprado.get('platform_token_address', None) 
                 symbol = token_comprado.get('symbol', None)
@@ -1076,7 +1125,7 @@ def sell_tokens_test(pools):
                 gain_percentage_with_max_price = token_comprado.get('gain_percentage_with_max_price', None)
 
                 solana_amount = get_solana_from_token(solana_quote['price'], current_price, token_amount)
-                
+                logger.info("-------------------------------------------------------------------------------------------- a processar " + name)
                 logger.info(name + f' - ganho:  {gain_percentage_with_current_price}%' )
                 if(gain_percentage_with_max_price < float(get_config_value('PERCENTAGE_LOSS'))):
                     data = {
@@ -1092,15 +1141,12 @@ def sell_tokens_test(pools):
                         'market_cap': market_cap,
                         'score': score,
                         'solana_amount' : solana_amount,
-                        'token_amount': token["token_amount"],
+                        'token_amount': float(token_comprado['token_amount']) ,
                         #'token_amount': token_amount_in_wallet,
                         'comprado': '0',
                         'executeSwap': get_config_value("EXECUTE_SWAP")
                     }
                     
-                    
-
-                    logger.info("--------------------------------------------------------------------------------------------------------------------------- a vender " + name)
                     response = swapToken(data, pools, False)
                     if response is not None:
                         if(response.status_code == 200):
@@ -1163,7 +1209,7 @@ def get_tokens_analyzed_from_db():
                     quote = token_atual['quote']['USD']
                     if quote:
                         price_atual = quote.get('price') 
-                        if price_atual > max_price:
+                        if price_atual >= max_price:
                             max_price = price_atual
                             updatedData  = {
                                 'max_price': price_atual
@@ -1270,7 +1316,7 @@ def processTokenQuote(id):
             'last_updated': token_quote['last_updated'], 
         }
 
-        if(token_quote['name'] == 'Bitcoin'):
+        if(token_quote['name'] == get_config_value('NAME_MAIN_TOKEN')):
             global_percent_change_1h = token_quote['quote']['USD']['percent_change_1h']
         
 
@@ -1413,9 +1459,9 @@ def getTestConnection():
     try:
         endpoint = "test"
         url, client_cert, verify_option = get_node_connection_info(node_host, mode, endpoint)
-        print(f"🔍 Fazendo request para: {url}")
-        print(f"🔐 Certificados usados: {client_cert}")
-        print(f"🔐 Verificação CA: {verify_option}")
+        #print(f"🔍 Fazendo request para: {url}")
+        #print(f"🔐 Certificados usados: {client_cert}")
+        #print(f"🔐 Verificação CA: {verify_option}")
         response = requests.get(url, cert=client_cert, verify=verify_option, headers=headers)
         if response.status_code == 200:
             return True

@@ -608,8 +608,12 @@ def getTokenData():
             token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
             
             for tokenx in list_tokens['data']:
-                if tokenx['symbol'] == token_data['data'][0]['base_asset_symbol']:
-                    id = tokenx['id']
+                if tokenx and token_data.get('data') and len(token_data['data']) > 0 and tokenx['platform'] :
+                    if tokenx['platform']['token_address'] == token_data['data'][0]['base_asset_contract_address']:
+                        id = tokenx['id']
+                    else:
+                        print("token_data ou token_data['data'] está vazio ou nulo")
+                    
                     
             data = {
                 'id': id,  
@@ -741,7 +745,7 @@ def fetch_data():
     response = requests.get(urlGetLatestSpotPairs, params=parameters, headers=headers)
     if response.status_code == 200:
         list_tokens = response.json()
-        processTokenQuote(1)  
+        processTokenQuote('1')  
     else:
         logger.error(f"Erro ao fazer requisição: {response.status_code}")
 
@@ -1209,8 +1213,9 @@ def get_tokens_analyzed_from_db():
                     quote = token_atual['quote']['USD']
                     if quote:
                         price_atual = quote.get('price') 
+                        if price_atual == max_price:
+                            logger.info(f"Preços iguais")
                         if price_atual >= max_price:
-                            max_price = price_atual
                             updatedData  = {
                                 'max_price': price_atual
                             } 
@@ -1274,14 +1279,16 @@ def getTokenMetrics(id):
     if list_tokens is not None and len(list_tokens) != 0:
         token = [element for element in list_tokens["data"] if element["id"] == int(id)]
         if token:
-            return token[0]
+           return token[0]
+        else:
+            logger.error(f"Nenhum token com o id = "+ id)
     else:
-        logger.error(f"Erro ao processar os TokenMetrics.")
+        logger.error(f"Lista global list_tokens vazia.")
     
 
 
 
-
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      
 
 def processTokenQuote(id):
     global global_percent_change_1h 

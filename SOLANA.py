@@ -435,10 +435,72 @@ def getWalletTokensValues():
 
 
 
+# Função de chamada de API
+@app.route('/get-sol-balance', methods=['GET'])
+def get_sol_balance():
+    return getSOLBalance()
+
+def getSOLBalance(): 
+    node_host = get_config_value('NODE_URL')
+    mode = get_config_value('SERVER_MODE') 
+
+    try:
+        endpoint = "get-sol-balance"
+        url, client_cert, verify_option = get_node_connection_info(node_host, mode, endpoint)
+        #print(f"🔍 Fazendo request para: {url}")
+        #print(f"🔐 Certificados usados: {client_cert}")
+        #print(f"🔐 Verificação CA: {verify_option}")
+
+        response = requests.get(url, cert=client_cert, verify=verify_option, headers=headers)
+        
+        if response.status_code == 200:
+            data = json.loads(response.content)
+            if data.get('data') :
+                return jsonify({
+                    "solBalance": data.get('data').get('solBalance'),
+                    "mensagem": "Balanço SOL devolvido com sucesso."
+                }), 200
+        else:
+            return {"error": "Failed to fetch SOL balance"}
+    
+    except requests.exceptions.SSLError as ssl_err:
+        return {"error": f"SSL error: {ssl_err}"}
+    except requests.exceptions.RequestException as e:
+        return {"error": f"Request failed: {e}"}
 
 
 
+@app.route('/get-sol-reserved-balance', methods=['GET'])
+def get_sol_reserved_balance():
+    return getSOLReservedBalance()
 
+def getSOLReservedBalance(): 
+    node_host = get_config_value('NODE_URL')
+    mode = get_config_value('SERVER_MODE') 
+
+    try:
+        endpoint = "get-sol-reserved-balance"
+        url, client_cert, verify_option = get_node_connection_info(node_host, mode, endpoint)
+        #print(f"🔍 Fazendo request para: {url}")
+        #print(f"🔐 Certificados usados: {client_cert}")
+        #print(f"🔐 Verificação CA: {verify_option}")
+
+        response = requests.get(url, cert=client_cert, verify=verify_option, headers=headers)
+        
+        if response.status_code == 200:
+            data = json.loads(response.content)
+            if data.get('data') :
+                return jsonify({
+                    "solBalance": data.get('data').get('solBalance'),
+                    "mensagem": "Balanço SOL devolvido com sucesso."
+                }), 200
+        else:
+            return {"error": "Failed to fetch SOL balance"}
+    
+    except requests.exceptions.SSLError as ssl_err:
+        return {"error": f"SSL error: {ssl_err}"}
+    except requests.exceptions.RequestException as e:
+        return {"error": f"Request failed: {e}"}
 
 
 
@@ -597,43 +659,44 @@ def getTokenData():
             wallet_tokens = getWalletTokensValues()
 
         for token in wallet_tokens:
-            mint = token.get('mint')
-            
-            token_data = fetch_token_data(mint)
-           
-            item = token_data['data'][0] 
-            quote = item.get('quote', [{}])[0] 
+            if float(token.get('tokenAmount')) != 0:
+                mint = token.get('mint')
+                print('-------------------------------------------- ' + token.get('tokenName'))
+                token_data = fetch_token_data(mint)
+                if len(token_data['data']) > 0:
+                    item = token_data['data'][0] 
+                    quote = item.get('quote', [{}])[0] 
 
-            solana_quote = processTokenQuote('5426')            
-            token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
-            
-            for tokenx in list_tokens['data']:
-                if tokenx and token_data.get('data') and len(token_data['data']) > 0 and tokenx['platform'] :
-                    if tokenx['platform']['token_address'] == token_data['data'][0]['base_asset_contract_address']:
-                        id = tokenx['id']
-                    else:
-                        print("token_data ou token_data['data'] está vazio ou nulo")
-                    
-                    
-            data = {
-                'id': id,  
-                'symbol': item.get('base_asset_symbol', None),
-                'name': item.get('base_asset_name', None),
-                'platform_name': item.get('network_slug', None),
-                'contract_address': item.get('contract_address', None),
-                'platform_token_address': item.get('base_asset_contract_address', None),
-                'price': quote.get('price', None),
-                'percent_change_1h': quote.get('percent_change_price_1h', None),
-                'percent_change_24h': quote.get('percent_change_price_24h', None),
-                'volume_24h': quote.get('volume_24h', None),
-                'market_cap': quote.get('fully_diluted_value', None),
-                'score': None,  
-                'solana_amount': token_price_in_solana.get('solana_amount', None),
-                'token_quantity': token.get('tokenAmount', None)
-            }
-            if data['token_quantity'] and float(data['token_quantity']) > 0:
-                database.insert_buy(data)
-            
+                    solana_quote = processTokenQuote('5426')            
+                    token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
+                    #TODO Aqui pode haver algum que tenha subido na lista acima de 300 
+                    for tokenx in list_tokens['data']:
+                        if tokenx and token_data.get('data') and len(token_data['data']) > 0 :
+                            if tokenx['symbol']== token_data['data'][0]['base_asset_symbol']:
+                                print(tokenx['platform']['token_address'])
+                                id = tokenx['id']
+                            
+                            
+                    data = {
+                        'id': id,  
+                        'symbol': item.get('base_asset_symbol', None),
+                        'name': item.get('base_asset_name', None),
+                        'platform_name': item.get('network_slug', None),
+                        'contract_address': item.get('contract_address', None),
+                        'platform_token_address': item.get('base_asset_contract_address', None),
+                        'price': quote.get('price', None),
+                        'percent_change_1h': quote.get('percent_change_price_1h', None),
+                        'percent_change_24h': quote.get('percent_change_price_24h', None),
+                        'volume_24h': quote.get('volume_24h', None),
+                        'market_cap': quote.get('fully_diluted_value', None),
+                        'score': None,  
+                        'solana_amount': token_price_in_solana.get('solana_amount', None),
+                        'token_quantity': token.get('tokenAmount', None)
+                    }
+                    if data['token_quantity'] and float(data['token_quantity']) > 0:
+                        print('A inserir ' + data.get('name'))
+                        database.insert_buy(data)
+                
 
         return jsonify({
             "estado": "Sucesso",
@@ -650,6 +713,12 @@ def getTokenData():
 
 
 @app.route('/update-token-data', methods=['GET'])
+def updateTokenDataEndpoint():
+    updateTokenData()
+
+
+
+
 def updateTokenData():
     try:
         global list_tokens
@@ -662,25 +731,29 @@ def updateTokenData():
             wallet_tokens = getWalletTokensValues()
 
         for token in wallet_tokens:
-            mint = token.get('mint')
-            
-            token_data = fetch_token_data(mint)
-           
-            item = token_data['data'][0] 
-            quote = item.get('quote', [{}])[0] 
+            if float(token.get('tokenAmount')) != 0:
+                mint = token.get('mint')
+                
+                token_data = fetch_token_data(mint)
+                if len(token_data['data']) > 0:
+                    item = token_data['data'][0] 
+                    quote = item.get('quote', [{}])[0] 
 
-            solana_quote = processTokenQuote('5426')            
-            token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
-            
-            for tokenx in list_tokens['data']:
-                if tokenx['symbol'] == token_data['data'][0]['base_asset_symbol']:
-                    id = tokenx['id']
+                    solana_quote = processTokenQuote('5426')            
+                    token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
+                    #TODO Aqui pode haver algum que tenha subido na lista acima de 300
+                    for tokenx in list_tokens['data']:
+                        if tokenx and token_data.get('data') and len(token_data['data']) > 0 :
+                            if tokenx['symbol']== token_data['data'][0]['base_asset_symbol']:
+                                print(tokenx['platform']['token_address'])
+                                id = tokenx['id']
+                            
+                    data = {
+                        'id': id,
+                        'quantity': token.get('tokenAmount', None)
+                    }
                     
-            data = {
-                'quantity': token.get('tokenAmount', None)
-            }
-            
-            database.update_buy(data, item.get('base_asset_symbol', None))
+                    database.update_buy(data, item.get('base_asset_symbol', None))
             
 
         return jsonify({

@@ -100,8 +100,7 @@ ADD_REPEATED = int(get_config_value('ADD_REPEATED'))
 
 
 
-list_tokens = []
-list_spot_pairs = []
+
 
 
 
@@ -395,10 +394,13 @@ def get_node_connection_info(node_host, mode, endpoint):
 # Função de chamada de API
 @app.route('/get-wallet-tokens', methods=['GET'])
 def get_wallet_tokens():
-    return getWalletTokensValues()
-
+    return getWalletTokensValuesX()
 
 def getWalletTokensValues(): 
+    global walletTokens
+    return walletTokens
+
+def getWalletTokensValuesX(): 
     node_host = get_config_value('NODE_URL')
     mode = get_config_value('SERVER_MODE') 
 
@@ -438,9 +440,9 @@ def getWalletTokensValues():
 # Função de chamada de API
 @app.route('/get-sol-balance', methods=['GET'])
 def get_sol_balance():
-    return getSOLBalance()
+    return get()
 
-def getSOLBalance(): 
+def get(): 
     node_host = get_config_value('NODE_URL')
     mode = get_config_value('SERVER_MODE') 
 
@@ -457,7 +459,7 @@ def getSOLBalance():
             data = json.loads(response.content)
             if data.get('data') :
                 return jsonify({
-                    "solBalance": data.get('data').get('solBalance'),
+                    "": data.get('data').get(''),
                     "mensagem": "Balanço SOL devolvido com sucesso."
                 }), 200
         else:
@@ -490,10 +492,10 @@ def getSOLReservedBalance():
         if response.status_code == 200:
             data = json.loads(response.content)
             if data.get('data') :
-                return jsonify({
-                    "solBalance": data.get('data').get('solBalance'),
+                return {
+                    "solBalance": data['data'].get('solBalance'),
                     "mensagem": "Balanço SOL devolvido com sucesso."
-                }), 200
+                }, 200
         else:
             return {"error": "Failed to fetch SOL balance"}
     
@@ -667,7 +669,8 @@ def getTokenData():
                     item = token_data['data'][0] 
                     quote = item.get('quote', [{}])[0] 
 
-                    solana_quote = processTokenQuote('5426')            
+                    global solQuote
+                    solana_quote = solQuote             
                     token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
                     #TODO Aqui pode haver algum que tenha subido na lista acima de 300 
                     for tokenx in list_tokens['data']:
@@ -676,28 +679,27 @@ def getTokenData():
                                 print(tokenx['platform']['token_address'])
                                 id = tokenx['id']
                             
-                            
-                    data = {
-                        'id': id,  
-                        'symbol': item.get('base_asset_symbol', None),
-                        'name': item.get('base_asset_name', None),
-                        'platform_name': item.get('network_slug', None),
-                        'contract_address': item.get('contract_address', None),
-                        'platform_token_address': item.get('base_asset_contract_address', None),
-                        'price': quote.get('price', None),
-                        'percent_change_1h': quote.get('percent_change_price_1h', None),
-                        'percent_change_24h': quote.get('percent_change_price_24h', None),
-                        'volume_24h': quote.get('volume_24h', None),
-                        'market_cap': quote.get('fully_diluted_value', None),
-                        'score': None,  
-                        'solana_amount': token_price_in_solana.get('solana_amount', None),
-                        'token_quantity': token.get('tokenAmount', None)
-                    }
-                    if data['token_quantity'] and float(data['token_quantity']) > 0:
-                        print('A inserir ' + data.get('name'))
-                        database.insert_buy(data)
-                
-
+                    if id is not None:        
+                        data = {
+                            'id': id,  
+                            'symbol': item.get('base_asset_symbol', None),
+                            'name': item.get('base_asset_name', None),
+                            'platform_name': item.get('network_slug', None),
+                            'contract_address': item.get('contract_address', None),
+                            'platform_token_address': item.get('base_asset_contract_address', None),
+                            'price': quote.get('price', None),
+                            'percent_change_1h': quote.get('percent_change_price_1h', None),
+                            'percent_change_24h': quote.get('percent_change_price_24h', None),
+                            'volume_24h': quote.get('volume_24h', None),
+                            'market_cap': quote.get('fully_diluted_value', None),
+                            'score': None,  
+                            'solana_amount': token_price_in_solana.get('solana_amount', None),
+                            'token_quantity': token.get('tokenAmount', None)
+                        }
+                        if data['token_quantity'] and float(data['token_quantity']) > 0:
+                            print('A inserir ' + data.get('name'))
+                            database.insert_buy(data)
+                    
         return jsonify({
             "estado": "Sucesso",
             "token_data": token_data  
@@ -738,8 +740,8 @@ def updateTokenData():
                 if len(token_data['data']) > 0:
                     item = token_data['data'][0] 
                     quote = item.get('quote', [{}])[0] 
-
-                    solana_quote = processTokenQuote('5426')            
+                    global solQuote
+                    solana_quote = solQuote           
                     token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
                     #TODO Aqui pode haver algum que tenha subido na lista acima de 300
                     for tokenx in list_tokens['data']:
@@ -756,13 +758,13 @@ def updateTokenData():
                     database.update_buy(data, item.get('base_asset_symbol', None))
             
 
-        return jsonify({
+        return json.dumps({
             "estado": "Sucesso",
             "token_data": token_data  
         }), 200
 
     except Exception as e:
-        return jsonify({
+        return json.dumps({
             "estado": "Erro",
             "mensagem": str(e)
         }), 500
@@ -913,13 +915,11 @@ def process_tokens(score_weights):
     
     return best_tokens.to_dict(orient='records')
 
- 
-def buy_sell_tokens(pools):
-    fetch_data() 
-    buy_tokens(pools)
-    sell_tokens(pools)
+
     
 def buy_tokens(pools):
+    global buyValueDeclaredInUsdInProperties2Sol
+    global reserved
     logger.info('INICIAR BUY ######################################################################################################################')
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
         top_tokens = []
@@ -945,7 +945,8 @@ def buy_tokens(pools):
 
 
             if new_tokens:
-                solana_quote = processTokenQuote('5426')
+                global solQuote
+                solana_quote = solQuote 
 
                 for token in new_tokens:
                     id = token.get('id', None),
@@ -984,7 +985,12 @@ def buy_tokens(pools):
                     }
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
-                    response = swapToken(data, pools, True)
+                    response = None
+                    if reserved > buyValueDeclaredInUsdInProperties2Sol:
+                        response = swapToken(data, pools, True) 
+                        reserved = reserved - buyValueDeclaredInUsdInProperties2Sol
+                    else:
+                        print('Lamports insuficientes - ' + reserved + ' necessários ' + buyValueDeclaredInUsdInProperties2Sol) 
                     if response is not None:
                         if(response.status_code == 200):
                             #if response.json().get('txid') is not None:
@@ -1096,7 +1102,8 @@ def sell_tokens_prod(pools):
         
         resultados_formatados = get_tokens_analyzed_from_db()
         if resultados_formatados is not None and len(resultados_formatados) > 0: 
-            solana_quote = processTokenQuote('5426')
+            global solQuote
+            solana_quote = solQuote 
             tokens_vendidos = []
             
             for token_comprado in resultados_formatados:             
@@ -1174,7 +1181,8 @@ def sell_tokens_prod(pools):
 def sell_tokens_test(pools):
     logger.info('INICIAR SELL #####################################################################################################################')
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):    
-        solana_quote = processTokenQuote('5426')
+        global solQuote
+        solana_quote = solQuote 
         tokens_vendidos = []
         resultados_formatados = get_tokens_analyzed_from_db()
 
@@ -1425,7 +1433,8 @@ def val_sol_wallet():
     lista_tokens = get_tokens_analyzed_from_db()
     soma_total_sol = 0
     if lista_tokens:
-        solana_quote = processTokenQuote('5426')
+        global solQuote
+        solana_quote = solQuote 
         for token in lista_tokens:
             if token.get('comprado') == True:
                 sol_amount = get_solana_from_token(solana_quote['price'], token.get('current_price', 0), token.get('token_amount', 0))
@@ -1457,10 +1466,7 @@ def val_sol_wallet():
 
 
 
-buy_scheduler = None
-global_percent_change_1h = 0
-pools = None
-infisicaClient = None
+
 
 
 
@@ -1555,18 +1561,77 @@ def getTestConnection():
 
 
 
+def usd_to_lamports(usd_amount):
+    global solQuote
+    try:
+        sol_price_usd = solQuote['price']
+        lamports_per_sol = 1_000_000_000
+
+        lamports = (usd_amount / sol_price_usd) * lamports_per_sol
+
+        print(f"{usd_amount} USD = {int(lamports):,} lamports")
+        return int(lamports)
+    except Exception as e:
+        print("Erro ao buscar o preço do SOL:", e)
+
+
+
+
+
+
+
+
+
+
+buy_scheduler = None
+global_percent_change_1h = 0
+pools = None
+infisicaClient = None
+list_tokens = []
+list_spot_pairs = []
+walletTokens = []
+reserved = 0
+solQuote = 0
+buyValueDeclaredInUsdInProperties2Sol = 0
+
+
 def initializeApp():
+    global walletTokens
+    global reserved
+    global solQuote
+    global buyValueDeclaredInUsdInProperties2Sol
     logger.info("init getPools ------------------------------------------------------------------------------------------------------------------------------------")
     global pools
     fetch_data()
     pools = get_pools()
     logger.info("end getPools ------------------------------------------------------------------------------------------------------------------------------------")
-    
+    solQuote = processTokenQuote('5426')
+    buyValueDeclaredInUsdInProperties2Sol = usd_to_lamports(float(get_config_value('BUY_VALUE_IN_USD')))
+    walletTokens = getWalletTokensValuesX()
+    reservBalance = getSOLReservedBalance()
+    reserved = reservBalance[0]['solBalance'] 
+    time.sleep(int(get_config_value('INIT_EXECUTION')))
     start_scheduler_buy()
     print('Scheduler iniciado com sucesso!')
     
+    
 
-
+def buy_sell_tokens(pools):
+    global walletTokens
+    global reserved
+    global solQuote
+    global buyValueDeclaredInUsdInProperties2Sol
+    fetch_data() 
+    solQuote = processTokenQuote('5426')
+    buyValueDeclaredInUsdInProperties2Sol = usd_to_lamports(float(get_config_value('BUY_VALUE_IN_USD')))
+    walletTokens = getWalletTokensValuesX()
+    reservBalance = getSOLReservedBalance()
+    reserved = reservBalance[0]['solBalance'] 
+    updateTokenData()
+    time.sleep(int(get_config_value('INIT_EXECUTION')))
+    buy_tokens(pools)
+    sell_tokens(pools)
+    
 
 def initializeLocalServer():
     # HTTP

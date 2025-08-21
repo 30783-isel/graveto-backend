@@ -12,11 +12,12 @@ import functools
 import asyncio
 import pandas as pd
 import configparser
+from typing import Union
 from datetime import datetime
 from colorama import Fore, Style, init
 from flask import Flask, jsonify, request
 from infisical_sdk import InfisicalSDKClient
-from pairs import get_pair_with_sol, get_pools, get_pair
+from pairs import get_pair_with_sol
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 
@@ -311,6 +312,41 @@ def update_config_endpoint():
 
 
 
+def get_pools(use_cache: bool = True) -> Union[list, None]:
+    cache_file = "pools.json"
+    
+    if(int(get_config_value("GET_POOL_CACHE")) == 1):
+    # Verifica se o cache existe e se deve usá-lo
+        if use_cache and os.path.exists(cache_file):
+            try:
+                with open(cache_file, "r") as file:
+                    pools = json.load(file)
+                print("Dados carregados do cache.")
+                return pools
+            except (json.JSONDecodeError, IOError) as e:
+                print(f"Erro ao carregar cache: {e}")
+    
+    
+    # Se não há cache ou use_cache é False, faz a chamada à API
+    try:
+        raydium_api_url = "https://api.raydium.io/pairs"
+        response = requests.get(raydium_api_url)
+        response.raise_for_status()
+        
+        pools = response.json()
+        
+        # Salva os dados no arquivo
+        try:
+            with open(cache_file, "w") as file:
+                json.dump(pools, file, indent=4)
+            print("Dados salvos no cache.")
+        except IOError as e:
+            print(f"Erro ao salvar cache: {e}")
+            
+        return pools
+    except requests.exceptions.RequestException as e:
+        print(f"Erro na requisição: {e}")
+        return None
 
 
 
@@ -672,16 +708,10 @@ def getTokenData():
                     global solQuote
                     solana_quote = solQuote             
                     token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
-                    #TODO Aqui pode haver algum que tenha subido na lista acima de 300 
-                    for tokenx in list_tokens['data']:
-                        if tokenx and token_data.get('data') and len(token_data['data']) > 0 :
-                            if tokenx['symbol']== token_data['data'][0]['base_asset_symbol']:
-                                print(tokenx['platform']['token_address'])
-                                id = tokenx['id']
                             
                     if id is not None:        
                         data = {
-                            'id': id,  
+                            'id': item.get('base_asset_ucid', None),  
                             'symbol': item.get('base_asset_symbol', None),
                             'name': item.get('base_asset_name', None),
                             'platform_name': item.get('network_slug', None),
@@ -1362,7 +1392,7 @@ def getTokenMetrics(id):
         if token:
            return token[0]
         else:
-            logger.error(f"Nenhum token com o id = "+ id)
+            logger.error(f"Nenhum token com o id = {id}")
     else:
         logger.error(f"Lista global list_tokens vazia.")
     
@@ -1596,20 +1626,10 @@ buyValueDeclaredInUsdInProperties2Sol = 0
 
 
 def initializeApp():
-    global walletTokens
-    global reserved
-    global solQuote
-    global buyValueDeclaredInUsdInProperties2Sol
-    logger.info("init getPools ------------------------------------------------------------------------------------------------------------------------------------")
     global pools
-    fetch_data()
+    logger.info("init getPools ------------------------------------------------------------------------------------------------------------------------------------")
     pools = get_pools()
     logger.info("end getPools ------------------------------------------------------------------------------------------------------------------------------------")
-    solQuote = processTokenQuote('5426')
-    buyValueDeclaredInUsdInProperties2Sol = usd_to_lamports(float(get_config_value('BUY_VALUE_IN_USD')))
-    walletTokens = getWalletTokensValuesX()
-    reservBalance = getSOLReservedBalance()
-    reserved = reservBalance[0]['solBalance'] 
     time.sleep(int(get_config_value('INIT_EXECUTION')))
     start_scheduler_buy()
     print('Scheduler iniciado com sucesso!')

@@ -108,8 +108,8 @@ ADD_REPEATED = int(get_config_value('ADD_REPEATED'))
 
 @app.before_request
 def limit_remote_addr():
-    client_ip = request.remote_addr
-    if client_ip.startswith('87.') or client_ip.startswith('89.')  or client_ip.startswith('172.') or client_ip.startswith('192.168.') or client_ip == '127.0.0.1':
+    client_ip = request.remote_addr  #100.100.94.97
+    if client_ip.startswith('87.') or client_ip.startswith('89.')  or client_ip.startswith('172.') or client_ip.startswith('192.168.')  or client_ip == '100.100.94.97'  or client_ip == '100.105.58.42'  or client_ip == '127.0.0.1':
         return None
     logger.error('Bloqueado Ip - ' + client_ip)
     return jsonify({"estado": "Erro", "mensagem": "IP não autorizado"}), 403
@@ -135,7 +135,6 @@ def get_best_tokens_endpoint():
 def buy_sell_tokens_call():
     try:
         global pools
-        fetch_data()
         if pools is None:
             pools = get_pools() 
         top_tokens = buy_sell_tokens(pools)
@@ -244,7 +243,7 @@ def get_config_endpoint():
             "NUM_TOKENS_PROCESSED": int(get_config_value('NUM_TOKENS_PROCESSED')),
             "NUM_TOKENS_COINMARKETCAP": int(get_config_value('NUM_TOKENS_COINMARKETCAP')),
             "BTC_1H_PERCENT": float(get_config_value('BTC_1H_PERCENT')),
-            "NAME_MAIN_TOKEN": float(get_config_value('NAME_MAIN_TOKEN')),
+            "NAME_MAIN_TOKEN": str(get_config_value('NAME_MAIN_TOKEN')),
             "BUY_VALUE_IN_USD":float( get_config_value('BUY_VALUE_IN_USD')),
             "EXECUTE_OPERATIONS": int(get_config_value('EXECUTE_OPERATIONS')),
             "EXECUTE_SCHEDULER": int(get_config_value('EXECUTE_SCHEDULER')),
@@ -529,6 +528,7 @@ def getSOLReservedBalance():
             data = json.loads(response.content)
             if data.get('data') :
                 return {
+                    "balanceLamports": data['data'].get('balanceLamports'),
                     "solBalance": data['data'].get('solBalance'),
                     "mensagem": "Balanço SOL devolvido com sucesso."
                 }, 200
@@ -682,71 +682,79 @@ def getInfsclGetXSecret():
         }), 500    
         
         
-
-
 @app.route('/get-token-data', methods=['GET'])
+def getTokenDataEndpoint():
+    response = getTokenData()
+    return jsonify({"status": "ok", "data": response})
+
+
 def getTokenData():
     try:
         global list_tokens
         
         wallet_tokens = getWalletTokensValues() 
 
-        while isinstance(wallet_tokens, dict) and "error" in wallet_tokens:
+        tentativas = 0
+        max_tentativas = 3
+
+        while isinstance(wallet_tokens, dict) and "error" in wallet_tokens and tentativas < max_tentativas:
             print(f"Erro: {wallet_tokens['error']}. Tentando novamente em 5 segundos...")
-            time.sleep(5)
+            time.sleep(10)
             wallet_tokens = getWalletTokensValues()
+            tentativas += 1
 
-        for token in wallet_tokens:
-            if float(token.get('tokenAmount')) != 0:
-                mint = token.get('mint')
-                print('-------------------------------------------- ' + token.get('tokenName'))
-                token_data = fetch_token_data(mint)
-                if len(token_data['data']) > 0:
-                    item = token_data['data'][0] 
-                    quote = item.get('quote', [{}])[0] 
+        if wallet_tokens:
+            existing_tokens = database.get_existing_tokens()
+            for token in wallet_tokens:
+                if float(token.get('tokenAmount')) != 0:
+                    if token['mint'] not in [existing['platform_token_address'] for existing in existing_tokens]:
+                        mint = token.get('mint')
+                        print('-------------------------------------------- ' + token.get('tokenName'))
+                        token_data = fetch_token_data(mint)
+                        if len(token_data['data']) > 0:
+                            item = token_data['data'][0] 
+                            quote = item.get('quote', [{}])[0] 
 
-                    global solQuote
-                    solana_quote = solQuote             
-                    token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
-                            
-                    if id is not None:        
-                        data = {
-                            'id': item.get('base_asset_ucid', None),  
-                            'symbol': item.get('base_asset_symbol', None),
-                            'name': item.get('base_asset_name', None),
-                            'platform_name': item.get('network_slug', None),
-                            'contract_address': item.get('contract_address', None),
-                            'platform_token_address': item.get('base_asset_contract_address', None),
-                            'price': quote.get('price', None),
-                            'percent_change_1h': quote.get('percent_change_price_1h', None),
-                            'percent_change_24h': quote.get('percent_change_price_24h', None),
-                            'volume_24h': quote.get('volume_24h', None),
-                            'market_cap': quote.get('fully_diluted_value', None),
-                            'score': None,  
-                            'solana_amount': token_price_in_solana.get('solana_amount', None),
-                            'token_quantity': token.get('tokenAmount', None)
-                        }
-                        if data['token_quantity'] and float(data['token_quantity']) > 0:
-                            print('A inserir ' + data.get('name'))
-                            database.insert_buy(data)
-                    
-        return jsonify({
-            "estado": "Sucesso",
-            "token_data": token_data  
-        }), 200
+                            global solQuote
+                            solana_quote = solQuote             
+                            token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
+                                    
+                            if id is not None:        
+                                data = {
+                                    'id': item.get('base_asset_ucid', None),  
+                                    'symbol': item.get('base_asset_symbol', None),
+                                    'name': item.get('base_asset_name', None),
+                                    'platform_name': item.get('network_slug', None),
+                                    'contract_address': item.get('contract_address', None),
+                                    'platform_token_address': item.get('base_asset_contract_address', None),
+                                    'price': quote.get('price', None),
+                                    'percent_change_1h': quote.get('percent_change_price_1h', None),
+                                    'percent_change_24h': quote.get('percent_change_price_24h', None),
+                                    'volume_24h': quote.get('volume_24h', None),
+                                    'market_cap': quote.get('fully_diluted_value', None),
+                                    'score': None,  
+                                    'solana_amount': token_price_in_solana.get('solana_amount', None),
+                                    'token_quantity': token.get('tokenAmount', None)
+                                }
+                                if data['token_quantity'] and float(data['token_quantity']) > 0:
+                                    print('A inserir ' + data.get('name'))
+                                    database.insert_buy(data)
+                        print(' ------- ')
+                else:
+                    if token['mint'] in [existing['platform_token_address'] for existing in existing_tokens]:
+                        database.delete_by_platform_token_address(token['mint'])        
+        return True
 
     except Exception as e:
-        return jsonify({
-            "estado": "Erro",
-            "mensagem": str(e)
-        }), 500
+        return False
     
     
 
 
 @app.route('/update-token-data', methods=['GET'])
 def updateTokenDataEndpoint():
-    updateTokenData()
+    response = updateTokenData()
+    return jsonify({"status": "ok", "data": response})
 
 
 
@@ -757,36 +765,32 @@ def updateTokenData():
         
         wallet_tokens = getWalletTokensValues() 
 
-        while isinstance(wallet_tokens, dict) and "error" in wallet_tokens:
-            print(f"Erro: {wallet_tokens['error']}. Tentando novamente em 5 segundos...")
-            time.sleep(5)
-            wallet_tokens = getWalletTokensValues()
+        tentativas = 0
+        max_tentativas = 3
 
-        for token in wallet_tokens:
-            if float(token.get('tokenAmount')) != 0:
-                mint = token.get('mint')
-                
-                token_data = fetch_token_data(mint)
-                if len(token_data['data']) > 0:
-                    item = token_data['data'][0] 
-                    quote = item.get('quote', [{}])[0] 
-                    global solQuote
-                    solana_quote = solQuote           
-                    token_price_in_solana = get_price_in_solana(solana_quote['price'], item['quote'][0]['price'], float(get_config_value('BUY_VALUE_IN_USD')))
-                    #TODO Aqui pode haver algum que tenha subido na lista acima de 300
-                    for tokenx in list_tokens['data']:
-                        if tokenx and token_data.get('data') and len(token_data['data']) > 0 :
-                            if tokenx['symbol']== token_data['data'][0]['base_asset_symbol']:
-                                print(tokenx['platform']['token_address'])
-                                id = tokenx['id']
-                            
-                    data = {
-                        'id': id,
-                        'quantity': token.get('tokenAmount', None)
-                    }
+        while isinstance(wallet_tokens, dict) and "error" in wallet_tokens and tentativas < max_tentativas:
+            print(f"Erro: {wallet_tokens['error']}. Tentando novamente em 5 segundos...")
+            time.sleep(10)
+            wallet_tokens = getWalletTokensValues()
+            tentativas += 1
+
+        if wallet_tokens:
+            for token in wallet_tokens:
+                if float(token.get('tokenAmount')) != 0:
+                    mint = token.get('mint')
                     
-                    database.update_buy(data, item.get('base_asset_symbol', None))
-            
+                    token_data = fetch_token_data(mint)
+                    if len(token_data['data']) > 0:
+                        item = token_data['data'][0] 
+                        quote = item.get('quote', [{}])[0] 
+    
+                        data = {
+                            'id': item['base_asset_ucid'],
+                            'quantity': token.get('tokenAmount', None)
+                        }
+                        
+                        database.update_buy(data, item.get('base_asset_symbol', None))
+                
 
         return json.dumps({
             "estado": "Sucesso",
@@ -950,6 +954,7 @@ def process_tokens(score_weights):
 def buy_tokens(pools):
     global buyValueDeclaredInUsdInProperties2Sol
     global reserved
+    global balanceLamports
     logger.info('INICIAR BUY ######################################################################################################################')
     if(int(get_config_value("EXECUTE_OPERATIONS")) == 1):
         top_tokens = []
@@ -1015,12 +1020,13 @@ def buy_tokens(pools):
                     }
 
                     logger.info("--------------------------------------------------------------------------------------------------------------------------- a comprar " + name[0])
+                    saldoDisponivel = calcular_saldo_swap(data, balanceLamports)
                     response = None
-                    if reserved > buyValueDeclaredInUsdInProperties2Sol:
+                    if saldoDisponivel > buyValueDeclaredInUsdInProperties2Sol:
                         response = swapToken(data, pools, True) 
-                        reserved = reserved - buyValueDeclaredInUsdInProperties2Sol
+                        balanceLamports = balanceLamports - buyValueDeclaredInUsdInProperties2Sol
                     else:
-                        print('Lamports insuficientes - ' + reserved + ' necessários ' + buyValueDeclaredInUsdInProperties2Sol) 
+                        print(f'Lamports insuficientes - {saldoDisponivel} e são necessários {buyValueDeclaredInUsdInProperties2Sol}')
                     if response is not None:
                         if(response.status_code == 200):
                             #if response.json().get('txid') is not None:
@@ -1627,9 +1633,19 @@ buyValueDeclaredInUsdInProperties2Sol = 0
 
 def initializeApp():
     global pools
+    global solQuote
+    global reserved
+    global walletTokens
+    global buyValueDeclaredInUsdInProperties2Sol
     logger.info("init getPools ------------------------------------------------------------------------------------------------------------------------------------")
     pools = get_pools()
     logger.info("end getPools ------------------------------------------------------------------------------------------------------------------------------------")
+    fetch_data() 
+    walletTokens = getWalletTokensValuesX()
+    solQuote = processTokenQuote('5426')
+    buyValueDeclaredInUsdInProperties2Sol = usd_to_lamports(float(get_config_value('BUY_VALUE_IN_USD')))
+    reservBalance = getSOLReservedBalance()
+    reserved = reservBalance[0]['balanceLamports'] 
     time.sleep(int(get_config_value('INIT_EXECUTION')))
     start_scheduler_buy()
     print('Scheduler iniciado com sucesso!')
@@ -1639,6 +1655,7 @@ def initializeApp():
 def buy_sell_tokens(pools):
     global walletTokens
     global reserved
+    global balanceLamports
     global solQuote
     global buyValueDeclaredInUsdInProperties2Sol
     fetch_data() 
@@ -1647,11 +1664,31 @@ def buy_sell_tokens(pools):
     walletTokens = getWalletTokensValuesX()
     reservBalance = getSOLReservedBalance()
     reserved = reservBalance[0]['solBalance'] 
+    balanceLamports = reservBalance[0]['balanceLamports']
     updateTokenData()
+    getTokenData()
     time.sleep(int(get_config_value('INIT_EXECUTION')))
     buy_tokens(pools)
     sell_tokens(pools)
-    
+   
+
+def calcular_saldo_swap(data, lamports_total):
+    global walletTokens
+    global list_tokens
+    tem_ata=False
+    TAXA_BASE = 100_000  # margem de segurança para taxa
+    for walletToken in walletTokens:
+        if walletToken['tokenName'].lower() == data.get('name')[0].lower() or walletToken['tokenName'].lower() == data.get('symbol')[0].lower():
+            print(f"Match found: {walletToken['tokenName']} == {data.get('name')[0]} or {data.get('symbol')[0]}")
+            tem_ata=True
+            break 
+            
+    CUSTO_ATA = 2_039_280 if not tem_ata else 0
+    reservado = TAXA_BASE + CUSTO_ATA
+    saldo_disponivel = max(0, lamports_total - reservado)
+    return saldo_disponivel
+
+ 
 
 def initializeLocalServer():
     # HTTP

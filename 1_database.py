@@ -324,6 +324,25 @@ def delete_buy_token(token):
         if connection.is_connected():
             cursor.close()
             connection.close()
+            
+            
+def delete_by_platform_token_address(platform_token_address):
+    try:
+        connection = mysql.connector.connect(**config)
+        if connection.is_connected():
+            cursor = connection.cursor()
+            delete_query = "DELETE FROM buy_centralized WHERE platform_token_address = %s"
+            cursor.execute(delete_query, (platform_token_address,))
+            connection.commit()
+            print("Registro(s) deletado(s) com sucesso.")
+            return True
+    except mysql.connector.Error as err:
+        print(f"Erro ao apagar tokens: {err}")
+        return False
+    finally:
+        if connection.is_connected():
+            cursor.close()
+            connection.close()
 
 
 def updateNumberBuys():

@@ -1614,6 +1614,42 @@ def usd_to_lamports(usd_amount):
 
 
 
+def get_fear_and_greed_index(api_key, start=1, limit=1):
+    url = "https://pro-api.coinmarketcap.com/v3/fear-and-greed/historical"
+    headers = {
+        "X-CMC_PRO_API_KEY": api_key
+    }
+    params = {
+        "start": start,
+        "limit": limit
+    }
+
+    try:
+        response = requests.get(url, headers=headers, params=params)
+        response.raise_for_status()
+        return response.json()
+    except requests.exceptions.RequestException as e:
+        return {"error": str(e)}
+
+@app.route('/fear-and-greed')
+def fear_and_greed_index():
+    API_KEY = 'ff716c6f-21b5-4f8c-850d-8c5b2792e9a2'
+    result = get_fear_and_greed_index(API_KEY)
+
+    # ⚠️ Verifica se o resultado contém 'data'
+    if result and "data" in result and isinstance(result["data"], list) and len(result["data"]) > 0:
+        latest = result["data"][0]
+        return jsonify({
+            "value": latest.get("value"),
+            "classification": latest.get("value_classification"),
+            "timestamp": latest.get("timestamp")
+        })
+    else:
+        return jsonify({"error": "Dados não encontrados ou estrutura inesperada."}), 500
+
+
+
+
 
 
 

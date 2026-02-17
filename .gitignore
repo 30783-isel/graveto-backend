@@ -4,3 +4,6 @@ config.properties
 config.centralized.properties
 git.txt
 git-commit-push.bat
+__pycache__
+.venv
+.vscode

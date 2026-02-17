@@ -526,7 +526,8 @@ def get_connection_localhost(node_host, endpoint):
     key_file  = os.path.join(base_path, 'localhost-client-key.pem')
     ca_cert   = os.path.join(base_path, 'myCA.pem')
     url = f"https://{node_host}:8443/{endpoint}"
-    return url, (cert_file, key_file), ca_cert
+    #TODO trocar verify_option para ca_cert quando for colocar o certificado CA no servidor
+    return url, (cert_file, key_file), False
 
 # Função: conexão segura com certificados DOCKER
 def get_connection_docker(node_host, endpoint):
@@ -869,7 +870,36 @@ def fetch_token_data(base_asset_contract_address):
         logger.error(f"Response Text: {response.text}")
         return None
     
+def get_pair_with_sol(token_address, pools, logger):
+    try:        
+        for pool in pools:
+            if 'pair_id' in pool:
+                pair_id = pool['pair_id']
+                if token_address in pair_id and 'So11111111111111111111111111111111111111112' in pair_id:
+                    logger.info(f"Par encontrado: {pool['name']} {pool['pair_id']}")
+                    return pool['amm_id']
+        
+        logger.info("Par com SOL não encontrado!")
     
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Erro na requisição à API: {e}")
+        
+        
+        
+def get_pair(token_address, pools, logger):
+    try:        
+        for pool in pools:
+            if 'pair_id' in pool:
+                pair_id = pool['pair_id']
+                if token_address in pair_id and 'So11111111111111111111111111111111111111112' in pair_id:
+                    logger.info(f"Par encontrado: {pool['name']} {pool['pair_id']}")
+                    return pool
+        
+        logger.info("Par com SOL não encontrado!")
+    
+    except requests.exceptions.RequestException as e:
+        logger.error(f"Erro na requisição à API: {e}")
+            
     
 
 def read_config():
@@ -1665,34 +1695,6 @@ reserved = 0
 solQuote = 0
 buyValueDeclaredInUsdInProperties2Sol = 0
 
-
-def initializeApp():
-    global pools
-    global solQuote
-    global reserved
-    global walletTokens
-    global buyValueDeclaredInUsdInProperties2Sol
-    logger.info("init getPools ------------------------------------------------------------------------------------------------------------------------------------")
-    pools = get_pools()
-    logger.info("end getPools ------------------------------------------------------------------------------------------------------------------------------------")
-    fetch_data() 
-    walletTokens = getWalletTokensValuesX()
-    solQuote = processTokenQuote('5426')
-    buyValueDeclaredInUsdInProperties2Sol = usd_to_lamports(float(get_config_value('BUY_VALUE_IN_USD')))
-    
-    
-    try:
-        reservBalance = getSOLReservedBalance()
-        reserved = reservBalance[0]['balanceLamports'] 
-    except (KeyError, IndexError):
-        reserved = 0
-        logger.warning("reservBalance vazio ou sem balanceLamports")
-    
-    
-    time.sleep(int(get_config_value('INIT_EXECUTION')))
-    start_scheduler_buy()
-    print('Scheduler iniciado com sucesso!')
-    
     
 
 def buy_sell_tokens(pools):
@@ -1741,7 +1743,41 @@ def calcular_saldo_swap(data, lamports_total):
     saldo_disponivel = max(0, lamports_total - reservado)
     return saldo_disponivel
 
- 
+
+
+
+
+
+def initializeApp():
+    global pools
+    global solQuote
+    global reserved
+    global walletTokens
+    global buyValueDeclaredInUsdInProperties2Sol
+    logger.info("init getPools ------------------------------------------------------------------------------------------------------------------------------------")
+    pools = get_pools()
+    logger.info("end getPools ------------------------------------------------------------------------------------------------------------------------------------")
+    fetch_data() 
+    walletTokens = getWalletTokensValuesX()
+    solQuote = processTokenQuote('5426')
+    buyValueDeclaredInUsdInProperties2Sol = usd_to_lamports(float(get_config_value('BUY_VALUE_IN_USD')))
+    
+    
+    try:
+        reservBalance = getSOLReservedBalance()
+        reserved = reservBalance[0]['balanceLamports'] 
+    except (KeyError, IndexError):
+        reserved = 0
+        logger.warning("reservBalance vazio ou sem balanceLamports")
+    
+    
+    time.sleep(int(get_config_value('INIT_EXECUTION')))
+    start_scheduler_buy()
+    print('Scheduler iniciado com sucesso!')
+    
+    
+    
+     
 
 def initializeLocalServer():
     # HTTP
@@ -1777,26 +1813,13 @@ def initializeLocalServer():
 
 
 initializeApp()
+
+
     
 if __name__ == '__main__':
     try:
         initializeLocalServer()
     except Exception as e:
         logger.error(f"Error: {e}.")
-
-
-
-    
-    
-
-
-
-
-
-
-
-
-
-
 
 

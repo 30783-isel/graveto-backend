@@ -19,6 +19,7 @@ from flask import Flask, jsonify, request
 from infisical_sdk import InfisicalSDKClient
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
+from strategies import get_strategy
 
 import urllib3
 # urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -767,6 +768,13 @@ def getTokenData():
                         mint = token.get('mint')
                         print('-------------------------------------------- ' + token.get('tokenName'))
                         token_data = fetch_token_data(mint)
+                        
+                        pair = next(
+                            (p for p in data["data"]
+                            if p["base_asset_contract_address"] == mint),
+                            None
+                        )
+                        
                         if len(token_data['data']) > 0:
                             item = token_data['data'][0] 
                             quote = item.get('quote', [{}])[0] 
@@ -856,10 +864,15 @@ def updateTokenData():
         
 def fetch_token_data(base_asset_contract_address):
     params = {
-        "limit": 1, 
+        "network_id": 16,
+        "dex_slug": "raydium",
+        "quote_asset_contract_address": "So11111111111111111111111111111111111111112",
+        "base_asset_contract_address": base_asset_contract_address,
+        "limit": 1,
         "convert": "USD"
     }
-    url = urlGetTokenByBaseAssetContractAddress + base_asset_contract_address
+    url = "https://pro-api.coinmarketcap.com/v4/dex/spot-pairs/latest"
+    
     response = requests.get(url, params=params, headers=headers)
     if response.status_code == 200:
         return response.json()
@@ -1049,11 +1062,9 @@ def buy_tokens(pools):
             if int(get_config_value('ADD_REPEATED')) == 1:
                 new_tokens = top_tokens
             else:
-                
                 for token in top_tokens:
                     if token['symbol'] not in [existing['symbol'] for existing in existing_tokens]:
                         new_tokens.append(token)
-
 
             if new_tokens:
                 global solQuote
@@ -1089,8 +1100,8 @@ def buy_tokens(pools):
                         'volume_24h': volume_24h,
                         'market_cap': market_cap,
                         'score': score,
-                        'solana_amount' : solana_amount,
-                        'token_amount' : token_quantity,
+                        'solana_amount': solana_amount,
+                        'token_amount': token_quantity,
                         'comprado': '1',
                         'executeSwap': get_config_value("EXECUTE_SWAP")
                     }
@@ -1099,16 +1110,25 @@ def buy_tokens(pools):
                     saldoDisponivel = calcular_saldo_swap(data, balanceLamports)
                     response = None
                     if saldoDisponivel > buyValueDeclaredInUsdInProperties2Sol:
-                        response = swapToken(data, pools, True) 
-                        balanceLamports = balanceLamports - buyValueDeclaredInUsdInProperties2Sol
+                        response = swapToken(data, pools, True)
+                        # ← removido: balanceLamports = balanceLamports - buyValueDeclaredInUsdInProperties2Sol
                     else:
                         print(f'Lamports insuficientes - {saldoDisponivel} e são necessários {buyValueDeclaredInUsdInProperties2Sol}')
+
                     if response is not None:
-                        if(response.status_code == 200):
-                            #if response.json().get('txid') is not None:
+                        if response.status_code == 200:
                             if response.json().get('data') is not None:
                                 data['token_amount'] = response.json().get('data').get('quantidadeTokenSaida')
-        
+
+                            # Recarrega saldo real após compra com sucesso
+                            try:
+                                reservBalance = getSOLReservedBalance()
+                                balanceLamports = reservBalance[0]['balanceLamports']
+                                reserved = reservBalance[0]['solBalance']
+                            except (KeyError, IndexError):
+                                logger.warning("Não foi possível recarregar balanceLamports após compra")
+                                balanceLamports = balanceLamports - buyValueDeclaredInUsdInProperties2Sol  # fallback
+
                             isInserted = database.insert_buy(data)
                             database.updateNumberBuys()
                         elif response == False or response.status_code != 200:
@@ -1116,15 +1136,15 @@ def buy_tokens(pools):
                             for token in top_tokens:
                                 if token['name'] == data['name'][0]:
                                     top_tokens.remove(token)
-                                    break 
-                    time.sleep(int(get_config_value('SWAP_EXECUTION'))) 
+                                    break
+
+                    time.sleep(int(get_config_value('SWAP_EXECUTION')))
                 database.save_tokens_to_db(top_tokens)
             else:
-                logger.info("Nenhuma alteração nos tokens detectada. ---- ")
+                logger.info("Nenhuma alteração nos tokens detectada.")
         else:
             logger.info(f"Variação % {get_config_value('NAME_MAIN_TOKEN')} 1h - {Fore.YELLOW}{global_percent_change_1h}% {Fore.WHITE}menor que: {Fore.YELLOW}{float(get_config_value('BTC_1H_PERCENT'))}%{Fore.WHITE}")
         return top_tokens
-
 
 
 
@@ -1711,8 +1731,8 @@ def buy_sell_tokens(pools):
     try:
         
         reservBalance = getSOLReservedBalance()
-        reserved = reservBalance[0]['solBalance'] 
         balanceLamports = reservBalance[0]['balanceLamports']
+        reserved = balanceLamports  # mesma unidade
      
     except (KeyError, IndexError):
         reserved = 0

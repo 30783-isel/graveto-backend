@@ -1,2 +1,4 @@
 pools.json
 app.log
+config.properties
+config.centralized.properties

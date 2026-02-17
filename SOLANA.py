@@ -17,7 +17,6 @@ from datetime import datetime
 from colorama import Fore, Style, init
 from flask import Flask, jsonify, request
 from infisical_sdk import InfisicalSDKClient
-from pairs import get_pair_with_sol
 from apscheduler.schedulers.background import BackgroundScheduler
 from apscheduler.events import EVENT_JOB_EXECUTED, EVENT_JOB_ERROR
 

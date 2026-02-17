@@ -3,3 +3,4 @@ app.log
 config.properties
 config.centralized.properties
 git.txt
+git-commit-push.bat
